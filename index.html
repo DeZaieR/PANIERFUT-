@@ -3,10 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DYRO WEB</title>
+<title data-i18n="meta.title">Création de site web au Luxembourg | DYRO WEB</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="DYRO WEB crée des sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois." data-i18n-attr="content:meta.desc">
 <meta name="theme-color" content="#03050a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DYRO WEB">
+<meta property="og:title" content="Création de site web au Luxembourg | DYRO WEB">
+<meta property="og:description" content="Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en 5 langues : FR · DE · EN · PT · LU.">
+<meta property="og:url" content="https://dyroweb.online/">
+<meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="fr" href="https://dyroweb.online/">
 <link rel="alternate" hreflang="de" href="https://dyroweb.online/?lang=de">
 <link rel="alternate" hreflang="en" href="https://dyroweb.online/?lang=en">
@@ -14,26 +27,126 @@
 <link rel="alternate" hreflang="lb" href="https://dyroweb.online/?lang=lb">
 <link rel="alternate" hreflang="x-default" href="https://dyroweb.online/">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/fonts.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 <script>
   (function () {
-    var r = document.documentElement;
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'], lang = null;
     r.classList.add('js', 'is-loading');
+    try { var q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; if (codes.indexOf(q) > -1) lang = q; } catch (e) {}
+    if (!lang) { try { var s = localStorage.getItem('dyro-lang'); if (codes.indexOf(s) > -1) lang = s; } catch (e) {} }
+    try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
+    if (lang && lang !== 'fr' && !window.DYRO_I18N) {
+      r.classList.add('i18n-wait');
+      var el = document.createElement('script');
+      el.src = 'assets/js/i18n.js?v=3';
+      el.id = 'dyro-i18n';
+      document.head.appendChild(el);
+      setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
+    }
     setTimeout(function () {
       if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
     }, 4000);
   })();
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DYRO WEB",
+  "url": "https://dyroweb.online/",
+  "logo": "https://dyroweb.online/assets/img/apple-touch-icon.png",
+  "image": "https://dyroweb.online/assets/img/og-image.jpg",
+  "description": "Création de sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.",
+  "email": "contact@dyroweb.online",
+  "telephone": "+352 691 349 632",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "LU"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Luxembourg"
+    },
+    {
+      "@type": "Place",
+      "name": "Grande Région"
+    }
+  ],
+  "priceRange": "€€",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "contact@dyroweb.online",
+    "telephone": "+352 691 349 632",
+    "availableLanguage": [
+      "French",
+      "German",
+      "English",
+      "Portuguese",
+      "Luxembourgish"
+    ]
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Landing page",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 890,
+        "maxPrice": 1290,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Site vitrine Pro",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 1890,
+        "maxPrice": 2900,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium multilingue",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 3500,
+        "maxPrice": 6000,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "E-commerce",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 4500,
+        "valueAddedTaxIncluded": false
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<a class="skip" href="#top" data-i18n="skip">Aller au contenu</a>
 
 <!-- Préchargement -->
 <div class="loader" aria-hidden="true">
   <div class="loader__stage">
     <svg class="loader__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" pathLength="1"/></svg>
-    <img class="loader__mark" src="assets/img/dyro-mark.webp" alt="" width="720" height="417">
+    <img class="loader__mark" src="assets/img/dyro-mark-320.webp" alt="" width="320" height="185">
   </div>
   <div class="loader__meta">
     <span>Create Beyond Limits</span>
@@ -70,8 +183,8 @@
 <header class="header" data-header>
   <div class="container header__inner">
     <a href="#top" class="brand" aria-label="DYRO WEB, retour en haut de page" data-i18n-attr="aria-label:brand.aria">
-      <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
-      <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+      <img src="assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+      <img src="assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
     </a>
 
     <nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
@@ -133,7 +246,7 @@
   </nav>
 </div>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
@@ -153,7 +266,7 @@
 
         <h1 class="hero__title" id="hero-title" data-split-hero data-i18n="hero.title">Des sites web qui vous amènent des <span class="nowrap"><span class="hl hl--swoosh">clients<svg class="swoosh" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#0060ed"/><stop offset=".55" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs><path d="M2 22 C 80 21, 190 14, 298 2 C 205 15, 110 24, 6 26 Z" fill="url(#swg)"/></svg></span>.</span></h1>
 
-        <p class="hero__lead" data-intro style="--d:6" data-i18n="hero.lead">Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg et de la Grande Région. Conçus, développés et maintenus au Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.</p>
+        <p class="hero__lead" data-intro style="--d:6" data-i18n="hero.lead">Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg et de la Grande Région. Conçus, développés et maintenus sur place, en français, allemand, anglais, portugais et luxembourgeois.</p>
 
         <div class="hero__actions" data-intro style="--d:7" data-hero-actions>
           <a href="devis.html" class="btn btn--chrome btn--lg" data-magnetic>
@@ -602,7 +715,7 @@
     <div class="cta__stage" aria-hidden="true" data-cta-stage>
       <div class="cta__ringwrap"><div class="ring ring--big"><div class="ring__comet"><i></i></div></div></div>
       <div class="cta__markwrap" data-cta-mark>
-        <img src="assets/img/dyro-mark.webp" alt="" class="cta__mark" width="720" height="417">
+        <img src="assets/img/dyro-mark-480.webp" alt="" class="cta__mark" width="480" height="278" loading="lazy" decoding="async">
         <span class="cta__sheen"></span>
       </div>
     </div>
@@ -630,7 +743,10 @@
         <div class="contact__card">
           <span class="contact__label" data-i18n="contact.phone">Téléphone</span>
           <a class="contact__val" href="tel:+352691349632">+352 691 349 632</a>
-          <button class="copy" type="button" data-copy="+352 691 349 632" data-i18n="copy">Copier</button>
+          <div class="contact__actions">
+            <button class="copy" type="button" data-copy="+352 691 349 632" data-i18n="copy">Copier</button>
+            <a class="copy copy--wa" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20un%20site%20web." target="_blank" rel="noopener" data-i18n-attr="href:wa.href">WhatsApp</a>
+          </div>
         </div>
         <div class="contact__card">
           <span class="contact__label" data-i18n="contact.based">Basés au</span>
@@ -642,12 +758,18 @@
   </section>
 </main>
 
+<nav class="mbar" aria-label="Actions rapides" data-i18n-attr="aria-label:bar.aria">
+  <a class="mbar__btn mbar__btn--quote" href="devis.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-i18n="bar.quote">Devis</span></a>
+  <a class="mbar__btn mbar__btn--wa" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20un%20site%20web." target="_blank" rel="noopener" data-i18n-attr="href:wa.href"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.3-.2z"/></svg><span>WhatsApp</span></a>
+  <a class="mbar__btn" href="tel:+352691349632"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i18n="bar.call">Appeler</span></a>
+</nav>
+
 <footer class="footer">
   <div class="container footer__top">
     <div class="footer__brand">
       <a href="#top" class="brand brand--lg" aria-label="DYRO WEB, retour en haut de page" data-i18n-attr="aria-label:brand.aria">
-        <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
-        <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+        <img src="assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+        <img src="assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
       </a>
       <p data-i18n="foot.desc">Création de sites web pour les entreprises du Luxembourg et de la Grande Région.</p>
     </div>
@@ -683,7 +805,6 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js" defer></script>
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>

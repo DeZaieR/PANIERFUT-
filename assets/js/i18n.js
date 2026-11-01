@@ -25,7 +25,7 @@ window.DYRO_I18N = {
     "cta.quote": "Angebot anfordern",
     "hero.pill": "Webagentur · Luxemburg",
     "hero.title": "Websites, die Ihnen [[Kunden]] bringen.",
-    "hero.lead": "Firmenwebsites, Landingpages und Onlineshops für Unternehmen in Luxemburg und der Großregion. Konzipiert, entwickelt und betreut in Luxemburg, auf Französisch, Deutsch, Englisch, Portugiesisch und Luxemburgisch.",
+    "hero.lead": "Firmenwebsites, Landingpages und Onlineshops für Unternehmen in Luxemburg und der Großregion. Vor Ort konzipiert, entwickelt und betreut, auf Französisch, Deutsch, Englisch, Portugiesisch und Luxemburgisch.",
     "hero.offers": "Preise ansehen",
     "hero.f1": "Websites in 5 Sprachen",
     "hero.f2": "2 Korrekturschleifen inklusive",
@@ -259,7 +259,16 @@ window.DYRO_I18N = {
     "dv.fb.text": "Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage. Falls nichts passiert, kopieren Sie den Text unten und senden Sie ihn an contact@dyroweb.online.",
     "dv.fb.mail": "E-Mail-Programm öffnen",
     "dv.home": "Zur Startseite",
-    "dv.subject": "Angebotsanfrage"
+    "dv.subject": "Angebotsanfrage",
+    "meta.title": "Website-Erstellung in Luxemburg | DYRO WEB",
+    "skip": "Zum Inhalt springen",
+    "bar.aria": "Schnellaktionen",
+    "bar.quote": "Angebot",
+    "bar.call": "Anrufen",
+    "wa.href": "https://wa.me/352691349632?text=Hallo%20DYRO%20WEB%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.",
+    "e404.doctitle": "Seite nicht gefunden · DYRO WEB",
+    "e404.title": "Seite nicht gefunden.",
+    "e404.text": "Diese Seite existiert nicht oder wurde verschoben."
   },
   "en": {
     "meta.desc": "DYRO WEB builds business websites, landing pages and online shops for companies in Luxembourg, in French, German, English, Portuguese and Luxembourgish.",
@@ -282,7 +291,7 @@ window.DYRO_I18N = {
     "cta.quote": "Request a quote",
     "hero.pill": "Web agency · Luxembourg",
     "hero.title": "Websites that bring you [[customers]].",
-    "hero.lead": "Business websites, landing pages and online shops for companies in Luxembourg and the Greater Region. Designed, built and maintained in Luxembourg, in French, German, English, Portuguese and Luxembourgish.",
+    "hero.lead": "Business websites, landing pages and online shops for companies in Luxembourg and the Greater Region. Designed, built and maintained locally, in French, German, English, Portuguese and Luxembourgish.",
     "hero.offers": "See pricing",
     "hero.f1": "Websites in 5 languages",
     "hero.f2": "2 rounds of revisions included",
@@ -516,7 +525,16 @@ window.DYRO_I18N = {
     "dv.fb.text": "Your email app opens with the request already written. If nothing happens, copy the text below and send it to contact@dyroweb.online.",
     "dv.fb.mail": "Open my email app",
     "dv.home": "Back to home",
-    "dv.subject": "Quote request"
+    "dv.subject": "Quote request",
+    "meta.title": "Website design in Luxembourg | DYRO WEB",
+    "skip": "Skip to content",
+    "bar.aria": "Quick actions",
+    "bar.quote": "Quote",
+    "bar.call": "Call",
+    "wa.href": "https://wa.me/352691349632?text=Hello%20DYRO%20WEB%2C%20I%27m%20interested%20in%20a%20website.",
+    "e404.doctitle": "Page not found · DYRO WEB",
+    "e404.title": "Page not found.",
+    "e404.text": "This page doesn't exist or has moved."
   },
   "pt": {
     "meta.desc": "A DYRO WEB cria sites institucionais, landing pages e lojas online para empresas no Luxemburgo, em francês, alemão, inglês, português e luxemburguês.",
@@ -539,7 +557,7 @@ window.DYRO_I18N = {
     "cta.quote": "Pedir orçamento",
     "hero.pill": "Agência web · Luxemburgo",
     "hero.title": "Sites que lhe trazem [[clientes]].",
-    "hero.lead": "Sites institucionais, landing pages e lojas online para empresas do Luxemburgo e da Grande Região. Concebidos, desenvolvidos e mantidos no Luxemburgo, em francês, alemão, inglês, português e luxemburguês.",
+    "hero.lead": "Sites institucionais, landing pages e lojas online para empresas do Luxemburgo e da Grande Região. Concebidos, desenvolvidos e mantidos localmente, em francês, alemão, inglês, português e luxemburguês.",
     "hero.offers": "Ver preços",
     "hero.f1": "Sites em 5 línguas",
     "hero.f2": "2 rondas de correções incluídas",
@@ -773,7 +791,16 @@ window.DYRO_I18N = {
     "dv.fb.text": "O seu email abre com o pedido já escrito. Se nada acontecer, copie o texto abaixo e envie-o para contact@dyroweb.online.",
     "dv.fb.mail": "Abrir o meu email",
     "dv.home": "Voltar à página inicial",
-    "dv.subject": "Pedido de orçamento"
+    "dv.subject": "Pedido de orçamento",
+    "meta.title": "Criação de sites no Luxemburgo | DYRO WEB",
+    "skip": "Saltar para o conteúdo",
+    "bar.aria": "Ações rápidas",
+    "bar.quote": "Orçamento",
+    "bar.call": "Ligar",
+    "wa.href": "https://wa.me/352691349632?text=Ol%C3%A1%20DYRO%20WEB%2C%20gostaria%20de%20ter%20um%20site.",
+    "e404.doctitle": "Página não encontrada · DYRO WEB",
+    "e404.title": "Página não encontrada.",
+    "e404.text": "Esta página não existe ou foi movida."
   },
   "lb": {
     "meta.desc": "DYRO WEB mécht Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch.",
@@ -796,7 +823,7 @@ window.DYRO_I18N = {
     "cta.quote": "Offer ufroen",
     "hero.pill": "Webagence · Lëtzebuerg",
     "hero.title": "Websäiten, déi Iech [[Clienten]] bréngen.",
-    "hero.lead": "Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg an an der Groussregioun. Konzipéiert, entwéckelt a betreit zu Lëtzebuerg, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch.",
+    "hero.lead": "Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg an an der Groussregioun. Hei am Land konzipéiert, entwéckelt a betreit, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch.",
     "hero.offers": "Präisser kucken",
     "hero.f1": "Websäiten a 5 Sproochen",
     "hero.f2": "2 Korrekturronnen inklusiv",
@@ -1030,6 +1057,15 @@ window.DYRO_I18N = {
     "dv.fb.text": "Är E-Mail-App mécht mat der fäerdeger Ufro op. Wann näischt geschitt, kopéiert den Text hei ënnendrënner a schéckt en un contact@dyroweb.online.",
     "dv.fb.mail": "E-Mail-App opmaachen",
     "dv.home": "Zréck op d'Haaptsäit",
-    "dv.subject": "Offer-Ufro"
+    "dv.subject": "Offer-Ufro",
+    "meta.title": "Websäit-Kreatioun zu Lëtzebuerg | DYRO WEB",
+    "skip": "Op den Inhalt sprangen",
+    "bar.aria": "Séier Aktiounen",
+    "bar.quote": "Offer",
+    "bar.call": "Uruffen",
+    "wa.href": "https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20eng%20Webs%C3%A4it.",
+    "e404.doctitle": "Säit net fonnt · DYRO WEB",
+    "e404.title": "Säit net fonnt.",
+    "e404.text": "Dës Säit gëtt et net oder si gouf geréckelt."
   }
 };

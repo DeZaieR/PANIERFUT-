@@ -29,6 +29,8 @@ Site statique (HTML, CSS, JavaScript sans framework) en 5 langues : FR · DE · 
 
 Domaine : **dyroweb.online**. Envoyer tout le dossier à la racine du site (ou connecter ce dépôt GitHub dans hPanel pour un déploiement automatique). Aucune compilation n'est nécessaire.
 
+`.htaccess` gère HTTPS, la compression, le cache et la page 404. Après une modification du CSS ou du JS, augmenter le numéro `?v=` dans les pages.
+
 `sitemap.xml` et `robots.txt` sont prêts : après la mise en ligne, déclarer `https://dyroweb.online/sitemap.xml` dans Google Search Console.
 
 Les polices sont hébergées sur le site (`assets/fonts/`) : aucune requête vers Google, conformément à la politique de confidentialité.
