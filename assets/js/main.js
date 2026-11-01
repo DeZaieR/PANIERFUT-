@@ -138,12 +138,12 @@
   }
 
   /* ------------------------------------------------------------------
-     Langues : le français vit dans le HTML, DE · EN · PT dans i18n.js
+     Langues : le français vit dans le HTML, DE · EN · PT · LB dans i18n.js
   ------------------------------------------------------------------ */
   const DICT = window.DYRO_I18N || {};
-  const LANG_CODES = ['fr', 'de', 'en', 'pt'];
-  const LOCALES = { fr: 'fr-FR', de: 'de-DE', en: 'en-GB', pt: 'pt-PT' };
-  const LANG_NAMES = { fr: 'Français', de: 'Deutsch', en: 'English', pt: 'Português' };
+  const LANG_CODES = ['fr', 'de', 'en', 'pt', 'lb'];
+  const LOCALES = { fr: 'fr-FR', de: 'de-DE', en: 'en-GB', pt: 'pt-PT', lb: 'de-LU' };
+  const LANG_NAMES = { fr: 'Français', de: 'Deutsch', en: 'English', pt: 'Português', lb: 'Lëtzebuergesch' };
   const FR = {
     'menu.open': 'Ouvrir le menu', 'menu.close': 'Fermer le menu',
     copy: 'Copier', copied: 'Copié', selected: 'Sélectionné',
