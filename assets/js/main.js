@@ -712,7 +712,7 @@
     const box = $('[data-serp]');
     if (!box) return;
     const q = $('[data-serp-q]', box);
-    const query = 'plombier wiltz';
+    const query = 'plombier luxembourg';
     if (reduce) { q.textContent = query; box.classList.add('is-shown'); return; }
     let running = false;
     const run = async () => {
