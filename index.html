@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DYRO WEB</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="DYRO WEB crée des sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand et anglais. Basés à Wiltz.">
+<meta name="theme-color" content="#03050a">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    var r = document.documentElement;
+    r.classList.add('js', 'is-loading');
+    setTimeout(function () {
+      if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
+    }, 4000);
+  })();
+</script>
+</head>
+<body>
+
+<!-- Préchargement -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__stage">
+    <svg class="loader__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" pathLength="1"/></svg>
+    <img class="loader__mark" src="assets/img/dyro-mark.webp" alt="" width="720" height="417">
+  </div>
+  <div class="loader__meta">
+    <span>Create Beyond Limits</span>
+    <span class="loader__count"><span data-load-count>000</span></span>
+  </div>
+</div>
+
+<!-- Curseur personnalisé (souris uniquement) -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><div class="cursor__circle"><span class="cursor__label"></span></div></div>
+</div>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Bandeau -->
+<div class="banner" data-banner>
+  <div class="container banner__inner">
+    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span>Sites en français, allemand et anglais pour le Luxembourg et la Grande Région. <a href="#contact" class="banner__link">Demander un devis <span aria-hidden="true">→</span></a></p>
+    <button class="banner__close" type="button" aria-label="Fermer le bandeau" data-banner-close>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- En-tête -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a href="#top" class="brand" aria-label="DYRO WEB, retour en haut de page">
+      <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
+      <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#services" class="nav__link" data-roll>Services</a>
+      <a href="#pourquoi" class="nav__link" data-roll>Pourquoi nous</a>
+      <a href="#methode" class="nav__link" data-roll>Méthode</a>
+      <a href="#offres" class="nav__link" data-roll>Offres</a>
+      <a href="#faq" class="nav__link" data-roll>FAQ</a>
+    </nav>
+
+    <div class="header__cta">
+      <a href="tel:+352691349632" class="btn btn--ghost btn--sm header__phone">+352 691 349 632</a>
+      <a href="#contact" class="btn btn--sm header__quote" data-magnetic="0.25">
+        <span>Demander un devis</span>
+        <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="menu" id="menu" hidden>
+  <nav class="container menu__inner" aria-label="Menu mobile">
+    <a href="#services" class="menu__link" style="--i:0">Services</a>
+    <a href="#pourquoi" class="menu__link" style="--i:1">Pourquoi nous</a>
+    <a href="#methode" class="menu__link" style="--i:2">Méthode</a>
+    <a href="#offres" class="menu__link" style="--i:3">Offres</a>
+    <a href="#faq" class="menu__link" style="--i:4">FAQ</a>
+    <a href="#contact" class="menu__link" style="--i:5">Contact</a>
+    <div class="menu__foot" style="--i:6">
+      <a href="mailto:contact@dyrostudios.com">contact@dyrostudios.com</a>
+      <a href="tel:+352691349632">+352 691 349 632</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__aurora"></div>
+      <div class="hero__aurora hero__aurora--2"></div>
+      <div class="hero__ringwrap" data-hero-ring>
+        <div class="ring"><div class="ring__comet"><i></i></div></div>
+      </div>
+      <canvas class="hero__streaks" data-streaks></canvas>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="pill" data-intro style="--d:0"><span class="pulse" aria-hidden="true"></span>Agence web · Wiltz, Luxembourg</p>
+
+        <h1 class="hero__title" id="hero-title" data-split-hero>Des sites web qui vous amènent des <span class="nowrap"><span class="hl hl--swoosh">clients<svg class="swoosh" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#0060ed"/><stop offset=".55" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs><path d="M2 22 C 80 21, 190 14, 298 2 C 205 15, 110 24, 6 26 Z" fill="url(#swg)"/></svg></span>.</span></h1>
+
+        <p class="hero__lead" data-intro style="--d:6">Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg. Conçus, développés et maintenus à Wiltz, en français, allemand et anglais.</p>
+
+        <div class="hero__actions" data-intro style="--d:7" data-hero-actions>
+          <a href="#contact" class="btn btn--chrome btn--lg" data-magnetic>
+            <span>Demander un devis</span>
+            <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#offres" class="btn btn--ghost btn--lg">Voir les offres</a>
+        </div>
+
+        <ul class="hero__facts" data-intro style="--d:8">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>Sites FR · DE · EN</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>2 tours de corrections inclus</li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg>Le site vous appartient</li>
+        </ul>
+      </div>
+
+      <div class="hero__visual" data-intro style="--d:3" aria-label="Aperçu animé d'un site en construction">
+        <div class="scene" data-scene>
+
+          <div class="mock" data-mock>
+            <div class="mock__bar">
+              <span class="mock__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mock__url"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.5"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg><span data-mock-url>votre-entreprise.lu</span></span>
+            </div>
+            <div class="mock__body">
+              <div class="mock__nav bld" style="--d:0">
+                <span class="sk sk--logo"></span>
+                <span class="mock__navlinks"><span class="sk sk--xs"></span><span class="sk sk--xs"></span><span class="sk sk--xs"></span></span>
+                <span class="sk sk--btn"></span>
+              </div>
+              <div class="mock__hero">
+                <div class="mock__copy">
+                  <span class="sk sk--kicker bld" style="--d:1"></span>
+                  <p class="mock__h bld" style="--d:2" data-mock-h>Votre activité, enfin visible en ligne.</p>
+                  <span class="sk sk--line bld" style="--d:3"></span>
+                  <span class="sk sk--line sk--short bld" style="--d:3"></span>
+                  <span class="mock__cta bld" style="--d:4" data-mock-cta>Prendre rendez-vous</span>
+                </div>
+                <div class="mock__img bld" style="--d:3"><span class="mock__orb"></span><span class="mock__slash"></span></div>
+              </div>
+              <div class="mock__cards">
+                <div class="mcard bld" style="--d:5"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="mcard bld" style="--d:6"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="mcard bld" style="--d:7"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+              </div>
+            </div>
+            <svg class="fcursor" data-fcursor viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 7.5-6.2 1.6L10 18.5z"/></svg>
+          </div>
+
+          <div class="code" aria-hidden="true">
+            <div class="code__bar"><span class="code__tab is-active">index.html</span><span class="code__tab">style.css</span></div>
+            <pre class="code__pre"><code data-typing></code><span class="caret"></span></pre>
+          </div>
+
+          <div class="langchip" role="group" aria-label="Langue de l'aperçu">
+            <span class="langchip__pill" aria-hidden="true"></span>
+            <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+            <button type="button" data-lang="de" aria-pressed="false">DE</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+
+          <div class="toast" data-toast aria-hidden="true">
+            <span class="toast__ic"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7"/></svg></span>
+            <span class="toast__txt"><strong data-toast-t>Nouvelle demande reçue</strong><span data-toast-s>via le formulaire de contact</span></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <a href="#services" class="hero__scroll" data-intro style="--d:9"><span class="hero__scrollline" aria-hidden="true"></span>Défiler</a>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee" aria-label="Nos expertises">
+    <div class="marquee__row marquee__row--a" data-marquee="1">
+      <div class="marquee__track">
+        <span>Sites vitrines</span><i class="slash"></i>
+        <span class="o">Landing pages</span><i class="slash"></i>
+        <span>E-commerce</span><i class="slash"></i>
+        <span class="o">SEO local</span><i class="slash"></i>
+        <span>FR · DE · EN</span><i class="slash"></i>
+        <span class="o">Maintenance</span><i class="slash"></i>
+      </div>
+    </div>
+    <div class="marquee__row marquee__row--b" data-marquee="-1">
+      <div class="marquee__track">
+        <span>Design sur mesure</span><i class="dot"></i>
+        <span>Responsive mobile</span><i class="dot"></i>
+        <span>Réservation en ligne</span><i class="dot"></i>
+        <span>Formulaires avancés</span><i class="dot"></i>
+        <span>Hébergement</span><i class="dot"></i>
+        <span>Fiche Google</span><i class="dot"></i>
+        <span>Sauvegardes</span><i class="dot"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>Services</p>
+        <h2 class="section__title" id="services-title" data-split>Ce que nous construisons pour vous</h2>
+        <p class="section__lead" data-reveal>Du site d'une page à la boutique en ligne, chaque projet part de la même question : qu'est-ce qui fera décrocher le téléphone de vos clients ?</p>
+      </header>
+
+      <div class="services__grid" data-stagger data-spotlight-group>
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" pathLength="1"/><path d="M3 8h18" pathLength="1"/><circle cx="12" cy="14.5" r="3.5" pathLength="1"/><circle cx="12" cy="14.5" r=".8" pathLength="1"/></svg></div>
+          <h3>Landing page</h3>
+          <p>Une page, un seul objectif : recevoir des demandes. Pour lancer une offre, un service ou une campagne publicitaire.</p>
+          <div class="svc__foot"><span class="tag">One-page</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Landing page"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5" pathLength="1"/><path d="M2.5 8.5h19M9 8.5V20" pathLength="1"/><path d="M12 12h6M12 15h4" pathLength="1"/></svg></div>
+          <h3>Site vitrine</h3>
+          <p>5 à 7 pages en français et en allemand pour présenter votre activité et rassurer vos clients avant le premier appel.</p>
+          <div class="svc__foot"><span class="tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Site vitrine"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" pathLength="1"/><path d="M3 12h18" pathLength="1"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" pathLength="1"/></svg></div>
+          <h3>Site multilingue</h3>
+          <p>Français, allemand et anglais. Chaque visiteur lit votre site dans sa langue, et Google le référence dans chacune.</p>
+          <div class="svc__foot"><span class="tag">FR · DE · EN</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Premium multilingue"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" pathLength="1"/><path d="M9 10V7a3 3 0 0 1 6 0v3" pathLength="1"/></svg></div>
+          <h3>E-commerce</h3>
+          <p>Une boutique en ligne rapide et simple à gérer au quotidien : catalogue, paiement en ligne, suivi des commandes.</p>
+          <div class="svc__foot"><span class="tag">Dès 4 500 € HT</span><a href="#offres" class="svc__go" aria-label="Voir l'offre E-commerce"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" pathLength="1"/><path d="M15.5 15.5 21 21" pathLength="1"/><path d="M10.5 13.6s-2.6-2.2-2.6-4a2.6 2.6 0 0 1 5.2 0c0 1.8-2.6 4-2.6 4z" pathLength="1"/></svg></div>
+          <h3>SEO local</h3>
+          <p>Structure, balises et fiche Google pensées pour apparaître quand on cherche votre métier près de chez vous.</p>
+          <div class="svc__foot"><span class="tag">Google</span><a href="#pourquoi" class="svc__go" aria-label="En savoir plus sur le SEO local"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z" pathLength="1"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6" pathLength="1"/></svg></div>
+          <h3>Maintenance &amp; hébergement</h3>
+          <p>Mises à jour, sauvegardes et surveillance. Votre site reste rapide, sécurisé et en ligne, sans que vous y pensiez.</p>
+          <div class="svc__foot"><span class="tag">Dès 49 € / mois</span><a href="#offres" class="svc__go" aria-label="Voir les formules de maintenance"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTE (texte révélé au scroll) -->
+  <section class="statement" aria-label="Notre approche">
+    <div class="container">
+      <p class="statement__text" data-scrub>Un beau site ne suffit pas. Le vôtre doit charger <em>vite</em>, parler la <em>langue</em> de vos clients et leur donner une raison claire de vous <em>appeler</em>.</p>
+    </div>
+  </section>
+
+  <!-- POURQUOI (bento) -->
+  <section class="section why" id="pourquoi" aria-labelledby="why-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal>Pourquoi DYRO WEB</p>
+        <h2 class="section__title" id="why-title" data-split>Rapide, visible, et à vous.</h2>
+      </header>
+
+      <div class="bento" data-stagger data-spotlight-group>
+
+        <article class="card bento__item b-speed">
+          <div class="b-speed__viz" aria-hidden="true">
+            <svg class="gauge" viewBox="0 0 220 124">
+              <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#0060ed"/><stop offset=".6" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs>
+              <path class="gauge__track" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
+              <path class="gauge__val" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
+            </svg>
+            <div class="gauge__num"><span data-count-to="90">0</span><sup>+</sup></div>
+            <div class="gauge__cap">Objectif PageSpeed mobile</div>
+          </div>
+          <div class="bento__txt">
+            <h3>Rapide par défaut</h3>
+            <p>Un site lent perd ses visiteurs avant qu'ils aient lu une ligne. Nous visons 90+ sur mobile dès la mise en ligne.</p>
+            <ul class="mini-list">
+              <li>Images compressées et redimensionnées</li>
+              <li>Code léger, sans extensions inutiles</li>
+              <li>Chargement différé des médias</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card bento__item b-mobile">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="phone__feed">
+                <div class="pf-nav"><span class="sk sk--logo"></span><span class="pf-burger"></span></div>
+                <div class="pf-h">Votre activité, enfin visible.</div>
+                <span class="sk sk--line"></span><span class="sk sk--line sk--short"></span>
+                <span class="pf-cta">Appeler</span>
+                <div class="pf-img"></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-img pf-img--2"></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-h">Votre activité, enfin visible.</div>
+                <span class="sk sk--line"></span><span class="sk sk--line sk--short"></span>
+                <span class="pf-cta">Appeler</span>
+              </div>
+            </div>
+          </div>
+          <div class="bento__txt">
+            <h3>Pensé pour le mobile</h3>
+            <p>La majorité de vos visiteurs arrivent depuis un téléphone. Chaque page est dessinée pour le pouce d'abord, puis adaptée à l'écran large.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-lang">
+          <div class="langdemo" aria-hidden="true" data-langdemo>
+            <div class="langdemo__pills"><span class="is-on">FR</span><span>DE</span><span>EN</span></div>
+            <div class="langdemo__h" data-langdemo-h>Bienvenue</div>
+            <div class="langdemo__p" data-langdemo-p>Découvrez nos services</div>
+          </div>
+          <div class="bento__txt">
+            <h3>Trois langues, un seul site</h3>
+            <p>Au Luxembourg, vos clients lisent en français, en allemand ou en anglais. Votre site aussi.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-seo">
+          <div class="serp" aria-hidden="true" data-serp>
+            <div class="serp__bar"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span data-serp-q></span><i class="serp__caret"></i></div>
+            <div class="serp__res serp__res--hit"><span class="serp__url">votre-entreprise.lu</span><span class="serp__title">Votre entreprise · Plombier à Wiltz</span><span class="sk sk--line"></span></div>
+            <div class="serp__res"><span class="sk sk--xs"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+          </div>
+          <div class="bento__txt">
+            <h3>Trouvé près de chez vous</h3>
+            <p>Balisage local, pages par zone et fiche Google cohérente pour apparaître quand on vous cherche.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-own">
+          <ul class="own" aria-hidden="true">
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>Code source</li>
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>Contenus et images</li>
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>Accès administrateur</li>
+          </ul>
+          <div class="bento__txt">
+            <h3>Le site vous appartient</h3>
+            <p>Au paiement du solde, tout vous est transféré. Vous restez libre de changer de prestataire quand vous voulez.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-care">
+          <div class="pulseviz" aria-hidden="true">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none">
+              <path class="pulseviz__base" d="M0 44 H120 L136 44 L146 18 L160 66 L172 30 L182 44 H260 L274 44 L282 30 L292 56 L300 44 H400"/>
+              <path class="pulseviz__run" d="M0 44 H120 L136 44 L146 18 L160 66 L172 30 L182 44 H260 L274 44 L282 30 L292 56 L300 44 H400" pathLength="1"/>
+            </svg>
+            <div class="pulseviz__tags"><span><i></i>En ligne</span><span>Mises à jour</span><span>Sauvegardes</span><span>Surveillance</span></div>
+          </div>
+          <div class="bento__txt">
+            <h3>Suivi après la mise en ligne</h3>
+            <p>Trois formules de maintenance et d'hébergement : 49, 99 ou 199 € HT par mois. Vous vous occupez de vos clients, nous du site.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODE (défilement horizontal) -->
+  <section class="process" id="methode" aria-labelledby="process-title" data-process>
+    <div class="process__sticky">
+      <div class="container process__head">
+        <div>
+          <p class="eyebrow" data-reveal>Méthode</p>
+          <h2 class="section__title" id="process-title" data-split>Quatre étapes, un seul interlocuteur.</h2>
+        </div>
+        <div class="process__bar" aria-hidden="true"><i data-process-bar></i></div>
+      </div>
+
+      <div class="process__viewport">
+        <ol class="process__track" data-process-track>
+          <li class="card step">
+            <span class="step__num" data-n="01">01</span>
+            <h3>Échange découverte</h3>
+            <p>Vous présentez votre activité, vos clients et vos objectifs. Nous identifions ce dont votre site a besoin, et ce dont il peut se passer.</p>
+            <span class="step__tag">Votre besoin, clarifié</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="02">02</span>
+            <h3>Proposition claire</h3>
+            <p>Un devis en trois options, prix HT, périmètre détaillé. Pour les projets de plus de 1 000 € HT, un acompte de 40 % lance le travail.</p>
+            <span class="step__tag">3 options, zéro flou</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="03">03</span>
+            <h3>Design &amp; développement</h3>
+            <p>Maquette, intégration, contenus dans vos langues, optimisation de la vitesse et du référencement. Deux tours de corrections sont inclus.</p>
+            <span class="step__tag">2 tours de corrections</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="04">04</span>
+            <h3>Mise en ligne &amp; suivi</h3>
+            <p>Publication, prise en main, puis maintenance si vous le souhaitez. Le site vous appartient dès le paiement du solde.</p>
+            <span class="step__tag">Le site est à vous</span>
+          </li>
+          <li class="step step--end">
+            <p class="step__endtxt">Votre projet commence par un message.</p>
+            <a href="#contact" class="btn btn--ghost btn--lg">
+              <span>Lancer l'étape 01</span>
+              <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="section pricing" id="offres" aria-labelledby="pricing-title">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal>Offres</p>
+        <h2 class="section__title" id="pricing-title" data-split>Des prix clairs, affichés hors taxes.</h2>
+        <p class="section__lead" data-reveal>Trois formules de création. Le devis fixe le périmètre exact avant tout démarrage.</p>
+      </header>
+
+      <div class="pricing__grid" data-stagger data-spotlight-group>
+        <article class="card price">
+          <header>
+            <h3>Landing page</h3>
+            <p class="price__for">Pour lancer une offre ou une campagne.</p>
+          </header>
+          <p class="price__amount"><span class="price__from">dès</span><span class="price__n" data-count-to="890">890</span><span class="price__cur">€ HT</span></p>
+          <p class="price__range">890 à 1 290 € HT selon le périmètre</p>
+          <ul class="price__list">
+            <li>Une page, un objectif</li>
+            <li>Formulaire de contact</li>
+            <li>Responsive mobile</li>
+            <li>Bases du référencement</li>
+            <li>2 tours de corrections</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost price__btn"><span>Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="card price price--featured">
+          <span class="price__glow" aria-hidden="true"></span>
+          <span class="badge">Recommandé</span>
+          <header>
+            <h3>Site vitrine Pro</h3>
+            <p class="price__for">Pour présenter votre activité et rassurer.</p>
+          </header>
+          <p class="price__amount"><span class="price__from">dès</span><span class="price__n" data-count-to="1890">1 890</span><span class="price__cur">€ HT</span></p>
+          <p class="price__range">1 890 à 2 900 € HT selon le périmètre</p>
+          <ul class="price__list">
+            <li>5 à 7 pages</li>
+            <li>Français et allemand</li>
+            <li>Design sur mesure</li>
+            <li>Référencement des pages</li>
+            <li>Formulaire de contact</li>
+            <li>2 tours de corrections</li>
+          </ul>
+          <a href="#contact" class="btn btn--chrome price__btn" data-magnetic="0.2"><span>Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="card price">
+          <header>
+            <h3>Premium multilingue</h3>
+            <p class="price__for">Pour viser tout le marché luxembourgeois.</p>
+          </header>
+          <p class="price__amount"><span class="price__from">dès</span><span class="price__n" data-count-to="3500">3 500</span><span class="price__cur">€ HT</span></p>
+          <p class="price__range">3 500 à 6 000 € HT selon le périmètre</p>
+          <ul class="price__list">
+            <li>Français, allemand, anglais</li>
+            <li>SEO local</li>
+            <li>Réservation en ligne</li>
+            <li>Formulaires avancés</li>
+            <li>2 tours de corrections</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost price__btn"><span>Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+      </div>
+
+      <div class="pricing__extra" data-stagger>
+        <div class="extra">
+          <span class="extra__label">E-commerce</span>
+          <span class="extra__val">dès 4 500 € HT</span>
+          <span class="extra__note">Boutique en ligne, sur devis</span>
+        </div>
+        <div class="extra">
+          <span class="extra__label">Maintenance &amp; hébergement</span>
+          <span class="extra__val">49 · 99 · 199 € HT / mois</span>
+          <span class="extra__note">Essentiel, Pro, Croissance · engagement 12 mois</span>
+        </div>
+      </div>
+
+      <p class="pricing__note" data-reveal>Prix hors taxes, TVA luxembourgeoise de 17 % en sus. Acompte de 40 % à la signature pour tout projet de plus de 1 000 € HT, solde à la livraison. Nom de domaine, licences et banques d'images facturés en plus.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal>FAQ</p>
+        <h2 class="section__title" id="faq-title" data-split>Questions fréquentes</h2>
+      </header>
+
+      <div class="faq__list" data-stagger>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Combien de temps faut-il pour créer mon site ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Cela dépend du nombre de pages, des langues et des fonctionnalités. Le planning est fixé dans le devis, étape par étape, avant de commencer.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Le site m'appartient-il vraiment ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>Oui. Dès le paiement complet, le site vous est transféré : code, contenus et accès administrateur. Vous n'êtes lié à aucun abonnement obligatoire.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Proposez-vous des sites en allemand et en anglais ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Oui. Le Site vitrine Pro est livré en français et en allemand. L'offre Premium couvre le français, l'allemand et l'anglais.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Comment se passe le paiement ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Pour tout projet de plus de 1 000 € HT, un acompte de 40 % est demandé à la signature. Le solde est réglé à la livraison, à 15 jours.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Combien de corrections sont incluses ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Deux tours de corrections sont inclus dans chaque projet. Au-delà, les modifications sont chiffrées à l'avance.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">Et après la mise en ligne ?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Trois formules de maintenance et d'hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="cta" id="contact" aria-labelledby="cta-title" data-cta>
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="cta__stage" aria-hidden="true" data-cta-stage>
+      <div class="cta__ringwrap"><div class="ring ring--big"><div class="ring__comet"><i></i></div></div></div>
+      <div class="cta__markwrap" data-cta-mark>
+        <img src="assets/img/dyro-mark.webp" alt="" class="cta__mark" width="720" height="417">
+        <span class="cta__sheen"></span>
+      </div>
+    </div>
+
+    <div class="container cta__inner">
+      <p class="eyebrow eyebrow--center" data-reveal>Contact</p>
+      <h2 class="cta__title" id="cta-title" data-split>Moien&nbsp;! Parlons de votre projet.</h2>
+      <p class="cta__lead" data-reveal>Décrivez votre activité et ce que vous attendez de votre site. Vous recevez une proposition claire, en trois options, prix HT.</p>
+      <div class="cta__actions" data-reveal>
+        <a class="btn btn--chrome btn--xl" href="mailto:contact@dyrostudios.com?subject=Projet%20de%20site%20web" data-magnetic data-cursor="Écrire">
+          <span>Écrire à DYRO WEB</span>
+          <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <div class="contact" data-stagger>
+        <div class="contact__card">
+          <span class="contact__label">Email</span>
+          <a class="contact__val" href="mailto:contact@dyrostudios.com">contact@dyrostudios.com</a>
+          <button class="copy" type="button" data-copy="contact@dyrostudios.com">Copier</button>
+        </div>
+        <div class="contact__card">
+          <span class="contact__label">Téléphone</span>
+          <a class="contact__val" href="tel:+352691349632">+352 691 349 632</a>
+          <button class="copy" type="button" data-copy="+352 691 349 632">Copier</button>
+        </div>
+        <div class="contact__card">
+          <span class="contact__label">Basés à</span>
+          <span class="contact__val">Wiltz, Luxembourg</span>
+          <span class="contact__sub">Clients au Luxembourg et dans la Grande Région</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--lg" aria-label="DYRO WEB, retour en haut de page">
+        <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
+        <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+      </a>
+      <p>Création de sites web à Wiltz, pour les entreprises du Luxembourg et de la Grande Région.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Plan du site">
+      <span class="footer__h">Navigation</span>
+      <a href="#services" data-roll>Services</a>
+      <a href="#methode" data-roll>Méthode</a>
+      <a href="#offres" data-roll>Offres</a>
+      <a href="#faq" data-roll>FAQ</a>
+    </nav>
+    <div class="footer__nav">
+      <span class="footer__h">Contact</span>
+      <a href="mailto:contact@dyrostudios.com" data-roll>contact@dyrostudios.com</a>
+      <a href="tel:+352691349632" data-roll>+352 691 349 632</a>
+      <a href="https://web.dyrostudios.com" data-roll>web.dyrostudios.com</a>
+    </div>
+  </div>
+
+  <div class="giant" data-giant aria-hidden="true">
+    <span class="giant__base">Beyond Limits</span>
+    <span class="giant__fill">Beyond Limits</span>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© 2026 DYRO WEB · Dyro Studios · Wiltz, Luxembourg</span>
+    <a href="#top" class="footer__top-link">Retour en haut <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
