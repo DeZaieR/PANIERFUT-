@@ -12,8 +12,8 @@
  */
 declare(strict_types=1);
 
-$TO   = 'contact@dyrostudios.com';
-$FROM = 'noreply@dyrostudios.com';
+$TO   = 'contact@dyroweb.online';
+$FROM = 'noreply@dyroweb.online';
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');

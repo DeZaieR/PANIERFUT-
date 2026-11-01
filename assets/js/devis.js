@@ -28,7 +28,7 @@
   });
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const plain = (s) => String(s).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;| /g, ' ').trim();
-  const TO = 'contact@dyrostudios.com';
+  const TO = 'contact@dyroweb.online';
   const ENDPOINT = 'api/devis.php';
   const startedAt = Date.now();
 
