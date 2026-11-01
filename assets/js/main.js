@@ -144,6 +144,8 @@
   const LANG_CODES = ['fr', 'de', 'en', 'pt', 'lb'];
   const LOCALES = { fr: 'fr-FR', de: 'de-DE', en: 'en-GB', pt: 'pt-PT', lb: 'de-LU' };
   const LANG_NAMES = { fr: 'Français', de: 'Deutsch', en: 'English', pt: 'Português', lb: 'Lëtzebuergesch' };
+  // Libellé affiché : « LU » parle plus aux Luxembourgeois ; le code technique reste « lb » (norme ISO, hreflang)
+  const LANG_LABELS = { fr: 'FR', de: 'DE', en: 'EN', pt: 'PT', lb: 'LU' };
   const FR = {
     'menu.open': 'Ouvrir le menu', 'menu.close': 'Fermer le menu',
     copy: 'Copier', copied: 'Copié', selected: 'Sélectionné',
@@ -180,7 +182,7 @@
 
   // Ordre : ?lang= dans l'URL, puis choix mémorisé, puis langue du navigateur
   function detectLang() {
-    try { const q = new URLSearchParams(location.search).get('lang'); if (LANG_CODES.includes(q)) return q; } catch (e) { /* URL illisible */ }
+    try { let q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; if (LANG_CODES.includes(q)) return q; } catch (e) { /* URL illisible */ }
     try { const s = localStorage.getItem('dyro-lang'); if (LANG_CODES.includes(s)) return s; } catch (e) { /* stockage indisponible */ }
     const prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'fr'];
     for (const l of prefs) { const c = String(l).slice(0, 2).toLowerCase(); if (LANG_CODES.includes(c)) return c; }
@@ -949,7 +951,7 @@
     $$('[data-count-to]').forEach((el) => { if (!el._anim) el.textContent = nf().format(parseFloat(el.dataset.countTo)); });
   }
   function refreshLangUI() {
-    $$('[data-lang-current]').forEach((el) => { el.textContent = curLang.toUpperCase(); });
+    $$('[data-lang-current]').forEach((el) => { el.textContent = LANG_LABELS[curLang]; });
     $$('[data-set-lang]').forEach((b) => b.setAttribute('aria-current', String(b.dataset.setLang === curLang)));
     if (burger) burger.setAttribute('aria-label', tr(menuOpen ? 'menu.close' : 'menu.open'));
   }
@@ -990,7 +992,7 @@
     if (!LANG_CODES.includes(code) || code === curLang || switching) return;
     if (reduce || !wipe) { applyLang(code); return; }
     switching = true;
-    $('[data-wipe-code]', wipe).textContent = code.toUpperCase();
+    $('[data-wipe-code]', wipe).textContent = LANG_LABELS[code];
     $('[data-wipe-name]', wipe).textContent = LANG_NAMES[code];
     wipe.classList.remove('is-run');
     void wipe.offsetWidth;
