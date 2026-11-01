@@ -1,0 +1,17 @@
+/* Polices hébergées sur le site (aucune requête vers Google : conforme RGPD).
+   Sous-ensemble latin : couvre FR, DE, EN, PT, LB et le signe €. */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url("../fonts/archivo-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-latin.woff2") format("woff2");
+}

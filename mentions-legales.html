@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mentions légales · DYRO WEB</title>
+<meta name="description" content="Mentions légales du site DYRO WEB : éditeur, hébergement, propriété intellectuelle.">
+<meta name="theme-color" content="#03050a">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>
+  (function () {
+    var r = document.documentElement;
+    r.classList.add('js', 'is-loading');
+    setTimeout(function () {
+      if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
+    }, 4000);
+  })();
+</script>
+</head>
+<body>
+
+<!-- Curseur personnalisé (souris uniquement) -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><div class="cursor__circle"><span class="cursor__label"></span></div></div>
+</div>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Transition de changement de langue -->
+<div class="lang-wipe" data-lang-wipe aria-hidden="true">
+  <div class="lang-wipe__panel"></div>
+  <div class="lang-wipe__label"><span class="lang-wipe__code" data-wipe-code>FR</span><span class="lang-wipe__name" data-wipe-name>Français</span></div>
+</div>
+
+<!-- Bandeau -->
+<div class="banner" data-banner>
+  <div class="container banner__inner">
+    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span><span data-i18n="banner.text">Sites en 5 langues pour le Luxembourg : FR · DE · EN · PT · LU.</span> <a href="devis.html" class="banner__link"><span data-i18n="banner.link">Demander un devis</span> <span aria-hidden="true">→</span></a></p>
+    <button class="banner__close" type="button" aria-label="Fermer le bandeau" data-i18n-attr="aria-label:banner.close" data-banner-close>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- En-tête -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a href="./" class="brand" aria-label="DYRO WEB, retour en haut de page" data-i18n-attr="aria-label:brand.aria">
+      <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
+      <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="./#services" class="nav__link" data-roll data-i18n="nav.services">Services</a>
+      <a href="./#pourquoi" class="nav__link" data-roll data-i18n="nav.why">Pourquoi nous</a>
+      <a href="./#methode" class="nav__link" data-roll data-i18n="nav.method">Méthode</a>
+      <a href="./#offres" class="nav__link" data-roll data-i18n="nav.offers">Offres</a>
+      <a href="./#faq" class="nav__link" data-roll data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="header__cta">
+      <div class="lang" data-lang-switch>
+        <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Changer de langue" data-i18n-attr="aria-label:lang.aria">
+          <svg class="lang__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          <span class="lang__cur" data-lang-current>FR</span>
+          <svg class="lang__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg>
+        </button>
+        <div class="lang__menu" id="lang-menu">
+          <button type="button" class="lang__opt" data-set-lang="fr" lang="fr" aria-current="true" style="--i:0"><span class="lang__code">FR</span><span class="lang__name">Français</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="de" lang="de" aria-current="false" style="--i:1"><span class="lang__code">DE</span><span class="lang__name">Deutsch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="en" lang="en" aria-current="false" style="--i:2"><span class="lang__code">EN</span><span class="lang__name">English</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="pt" lang="pt" aria-current="false" style="--i:3"><span class="lang__code">PT</span><span class="lang__name">Português</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="lb" lang="lb" aria-current="false" style="--i:4"><span class="lang__code">LU</span><span class="lang__name">Lëtzebuergesch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+        </div>
+      </div>
+      <a href="tel:+352691349632" class="btn btn--ghost btn--sm header__phone">+352 691 349 632</a>
+      <a href="devis.html" class="btn btn--sm header__quote" data-magnetic="0.25">
+        <span data-i18n="cta.quote">Demander un devis</span>
+        <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="menu" id="menu" hidden>
+  <nav class="container menu__inner" aria-label="Menu mobile" data-i18n-attr="aria-label:menu.aria">
+    <a href="./#services" class="menu__link" style="--i:0" data-i18n="nav.services">Services</a>
+    <a href="./#pourquoi" class="menu__link" style="--i:1" data-i18n="nav.why">Pourquoi nous</a>
+    <a href="./#methode" class="menu__link" style="--i:2" data-i18n="nav.method">Méthode</a>
+    <a href="./#offres" class="menu__link" style="--i:3" data-i18n="nav.offers">Offres</a>
+    <a href="./#faq" class="menu__link" style="--i:4" data-i18n="nav.faq">FAQ</a>
+    <a href="./#contact" class="menu__link" style="--i:5" data-i18n="nav.contact">Contact</a>
+    <div class="menu__langs" role="group" aria-label="Langue" data-i18n-attr="aria-label:lang.label" style="--i:6">
+      <button type="button" data-set-lang="fr" lang="fr" aria-current="true">FR</button>
+      <button type="button" data-set-lang="de" lang="de" aria-current="false">DE</button>
+      <button type="button" data-set-lang="en" lang="en" aria-current="false">EN</button>
+      <button type="button" data-set-lang="pt" lang="pt" aria-current="false">PT</button>
+      <button type="button" data-set-lang="lb" lang="lb" aria-current="false">LU</button>
+    </div>
+    <div class="menu__foot" style="--i:7">
+      <a href="mailto:contact@dyrostudios.com">contact@dyrostudios.com</a>
+      <a href="tel:+352691349632">+352 691 349 632</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="page-hero__glow"></div>
+      <div class="page-hero__ring"><div class="ring"><div class="ring__comet"><i></i></div></div></div>
+    </div>
+    <div class="container">
+      <p class="eyebrow" data-reveal data-i18n="legal.eyebrow">Informations légales</p>
+      <h1 class="page-hero__title" data-split>Mentions légales</h1>
+      <p class="page-hero__meta" data-reveal>Dernière mise à jour : 1er novembre 2026</p>
+      <p class="legal__notice" data-i18n="legal.notice">Page disponible en français uniquement.</p>
+    </div>
+  </section>
+
+  <section class="legal">
+    <div class="container legal__grid">
+      <nav class="legal__toc" data-toc aria-label="Sommaire" data-i18n-attr="aria-label:legal.toc">
+        <span class="legal__toc-h" data-i18n="legal.toc">Sommaire</span>
+        <a href="#editeur">Éditeur du site</a>
+        <a href="#publication">Directeur de la publication</a>
+        <a href="#hebergement">Hébergement</a>
+        <a href="#propriete">Propriété intellectuelle</a>
+        <a href="#responsabilite">Responsabilité</a>
+        <a href="#donnees">Données personnelles</a>
+        <a href="#droit">Droit applicable</a>
+      </nav>
+      <div class="prose">
+        <section id="editeur" data-reveal>
+          <h2><span class="num">01</span>Éditeur du site</h2>
+          <p>Le site <strong>DYRO WEB</strong> est édité par l’entreprise individuelle de Dany Martins Freitas, qui exploite les marques Dyro Studios et DYRO WEB.</p>
+          <dl>
+            <dt>Exploitant</dt><dd>Dany Martins Freitas, entreprise individuelle</dd>
+            <dt>Marques</dt><dd>Dyro Studios · DYRO WEB</dd>
+            <dt>Adresse</dt><dd><mark class="todo">[à compléter : adresse du lieu d’exploitation]</mark>, Luxembourg</dd>
+            <dt>Email</dt><dd><a href="mailto:contact@dyrostudios.com">contact@dyrostudios.com</a></dd>
+            <dt>Téléphone</dt><dd><a href="tel:+352691349632">+352 691 349 632</a></dd>
+            <dt>N° RCS</dt><dd><mark class="todo">[à compléter]</mark></dd>
+            <dt>Autorisation d’établissement</dt><dd><mark class="todo">[à compléter]</mark></dd>
+            <dt>N° TVA</dt><dd><mark class="todo">[à compléter : LU…]</mark></dd>
+          </dl>
+        </section>
+        <section id="publication" data-reveal>
+          <h2><span class="num">02</span>Directeur de la publication</h2>
+          <p>Dany Martins Freitas.</p>
+        </section>
+        <section id="hebergement" data-reveal>
+          <h2><span class="num">03</span>Hébergement</h2>
+          <p>Le site est hébergé par Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre (<a href="https://www.hostinger.com" rel="noopener">hostinger.com</a>). <mark class="todo">[à confirmer selon votre hébergeur]</mark></p>
+        </section>
+        <section id="propriete" data-reveal>
+          <h2><span class="num">04</span>Propriété intellectuelle</h2>
+          <p>L’ensemble des éléments du site (textes, logo DYRO WEB, éléments graphiques, animations et code) est la propriété de Dyro Studios, sauf mention contraire.</p>
+          <p>Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable est interdite.</p>
+        </section>
+        <section id="responsabilite" data-reveal>
+          <h2><span class="num">05</span>Responsabilité</h2>
+          <p>Les informations publiées sur ce site sont fournies à titre indicatif et peuvent évoluer. Les prix affichés sont indicatifs et exprimés hors TVA : seul le devis accepté fait foi.</p>
+          <p>DYRO WEB ne peut être tenue responsable du contenu des sites externes vers lesquels renvoient des liens.</p>
+        </section>
+        <section id="donnees" data-reveal>
+          <h2><span class="num">06</span>Données personnelles</h2>
+          <p>Le traitement de vos données personnelles est décrit dans notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+        </section>
+        <section id="droit" data-reveal>
+          <h2><span class="num">07</span>Droit applicable</h2>
+          <p>Le présent site et ses mentions légales sont soumis au droit luxembourgeois.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="./" class="brand brand--lg" aria-label="DYRO WEB, retour en haut de page" data-i18n-attr="aria-label:brand.aria">
+        <img src="assets/img/dyro-mark.webp" alt="" class="brand__mark" width="720" height="417">
+        <img src="assets/img/dyro-wordmark.webp" alt="" class="brand__word" width="640" height="75">
+      </a>
+      <p data-i18n="foot.desc">Création de sites web pour les entreprises du Luxembourg et de la Grande Région.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Plan du site" data-i18n-attr="aria-label:foot.navaria">
+      <span class="footer__h" data-i18n="foot.navh">Navigation</span>
+      <a href="./#services" data-roll data-i18n="nav.services">Services</a>
+      <a href="./#methode" data-roll data-i18n="nav.method">Méthode</a>
+      <a href="./#offres" data-roll data-i18n="nav.offers">Offres</a>
+      <a href="./#faq" data-roll data-i18n="nav.faq">FAQ</a>
+      <a href="devis.html" data-roll data-i18n="cta.quote">Demander un devis</a>
+    </nav>
+    <div class="footer__nav">
+      <span class="footer__h" data-i18n="foot.contacth">Contact</span>
+      <a href="mailto:contact@dyrostudios.com" data-roll>contact@dyrostudios.com</a>
+      <a href="tel:+352691349632" data-roll>+352 691 349 632</a>
+      <a href="https://web.dyrostudios.com" data-roll>web.dyrostudios.com</a>
+    </div>
+  </div>
+
+  <div class="giant" data-giant aria-hidden="true">
+    <span class="giant__base">Beyond Limits</span>
+    <span class="giant__fill">Beyond Limits</span>
+  </div>
+
+  <div class="container footer__bottom">
+    <span data-i18n="foot.copy">© 2026 DYRO WEB · Dyro Studios · Luxembourg</span>
+    <nav class="footer__legal" aria-label="Informations légales" data-i18n-attr="aria-label:legal.eyebrow">
+      <a href="mentions-legales.html" aria-current="page" data-i18n="foot.legal">Mentions légales</a>
+      <a href="confidentialite.html" data-i18n="foot.privacy">Confidentialité</a>
+      <a href="cgv.html" data-i18n="foot.terms">CGV</a>
+    </nav>
+    <a href="#top" class="footer__top-link"><span data-i18n="foot.top">Retour en haut</span> <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -154,6 +154,7 @@
   };
   const marquees = [];
   const scrubs = [];
+  const langListeners = [];
   const attrPairs = (el) => el.dataset.i18nAttr.split(';')
     .map((pair) => { const i = pair.indexOf(':'); return [pair.slice(0, i).trim(), pair.slice(i + 1).trim()]; })
     .filter(([a, k]) => a && k);
@@ -280,6 +281,9 @@
     new IntersectionObserver(([e]) => {
       root.classList.toggle('is-past-hero', !e.isIntersecting && e.boundingClientRect.top < 0);
     }).observe(heroActions);
+  } else {
+    // Pages sans hero : le bouton devis de l'en-tête est directement l'action principale
+    root.classList.add('is-past-hero');
   }
 
   /* Bandeau */
@@ -334,7 +338,7 @@
   if (nav) {
     navLinks.forEach((l) => l.addEventListener('pointerenter', () => movePill(l)));
     nav.addEventListener('pointerleave', () => movePill(activeLink));
-    const sections = navLinks.map((l) => $(l.getAttribute('href'))).filter(Boolean);
+    const sections = navLinks.filter((l) => (l.getAttribute('href') || '').startsWith('#')).map((l) => $(l.getAttribute('href'))).filter(Boolean);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
@@ -345,9 +349,10 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach((s) => io.observe(s));
-    new IntersectionObserver(([e]) => {
+    const heroEl = $('.hero');
+    if (heroEl) new IntersectionObserver(([e]) => {
       if (e.isIntersecting) { activeLink = null; navLinks.forEach((l) => l.classList.remove('is-active')); movePill(null); }
-    }, { rootMargin: '0px 0px -60% 0px' }).observe($('.hero'));
+    }, { rootMargin: '0px 0px -60% 0px' }).observe(heroEl);
   }
 
   /* ------------------------------------------------------------------
@@ -513,6 +518,8 @@
     fr: { h: 'Votre activité, enfin visible en ligne.', cta: 'Prendre rendez-vous', t: 'Nouvelle demande reçue', s: 'via le formulaire de contact', url: 'votre-entreprise.lu' },
     de: { h: 'Ihr Unternehmen, endlich online sichtbar.', cta: 'Termin vereinbaren', t: 'Neue Anfrage erhalten', s: 'über das Kontaktformular', url: 'votre-entreprise.lu/de' },
     en: { h: 'Your business, finally visible online.', cta: 'Book an appointment', t: 'New enquiry received', s: 'via the contact form', url: 'votre-entreprise.lu/en' },
+    pt: { h: 'O seu negócio, finalmente visível online.', cta: 'Marcar reunião', t: 'Novo pedido recebido', s: 'pelo formulário de contacto', url: 'votre-entreprise.lu/pt' },
+    lb: { h: 'Äre Betrib, endlech online siichtbar.', cta: 'Rendez-vous huelen', t: 'Nei Ufro kritt', s: 'iwwer de Kontaktformulaire', url: 'votre-entreprise.lu/lb' },
   };
   const mock = $('[data-mock]');
   const mockH = $('[data-mock-h]');
@@ -585,7 +592,7 @@
   function moveCursorTo(x, y) { fcursor.style.transform = `translate(${x}px, ${y}px)`; }
 
   async function mockLoop() {
-    const order = ['fr', 'de', 'en'];
+    const order = ['fr', 'de', 'en', 'pt', 'lb'];
     await sleep(2600);
     for (;;) {
       if (!heroOn || d.hidden) { await sleep(500); continue; }
@@ -601,7 +608,7 @@
       await sleep(2200);
       toast.classList.remove('is-on');
       await sleep(700);
-      if (performance.now() > userLockUntil) setLang(order[(order.indexOf(lang) + 1) % 3]);
+      if (performance.now() > userLockUntil) setLang(order[(order.indexOf(lang) + 1) % order.length]);
       await sleep(1500);
     }
   }
@@ -762,14 +769,14 @@
     const h = $('[data-langdemo-h]', box);
     const p = $('[data-langdemo-p]', box);
     const pills = $$('.langdemo__pills span', box);
-    const data = [['Bienvenue', 'Découvrez nos services'], ['Willkommen', 'Entdecken Sie unsere Leistungen'], ['Welcome', 'Discover our services']];
+    const data = [['Bienvenue', 'Découvrez nos services'], ['Willkommen', 'Entdecken Sie unsere Leistungen'], ['Welcome', 'Discover our services'], ['Bem-vindo', 'Descubra os nossos serviços'], ['Wëllkomm', 'Entdeckt eis Servicer']];
     let k = 0;
     let visible = false;
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(box);
     if (reduce) return;
     setInterval(() => {
       if (!visible || d.hidden) return;
-      k = (k + 1) % 3;
+      k = (k + 1) % data.length;
       pills.forEach((s, i) => s.classList.toggle('is-on', i === k));
       scramble(h, data[k][0], 500);
       scramble(p, data[k][1], 650);
@@ -940,6 +947,22 @@
   })();
 
   /* ------------------------------------------------------------------
+     Pages légales : le sommaire suit la lecture
+  ------------------------------------------------------------------ */
+  (function toc() {
+    const tocEl = $('[data-toc]');
+    if (!tocEl) return;
+    const links = $$('a[href^="#"]', tocEl);
+    const byId = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) links.forEach((a) => a.classList.toggle('is-active', a === byId.get(e.target.id)));
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    byId.forEach((a, id) => { const sec = d.getElementById(id); if (sec) io.observe(sec); });
+  })();
+
+  /* ------------------------------------------------------------------
      Sélecteur de langue
   ------------------------------------------------------------------ */
   const langRoot = $('[data-lang-switch]');
@@ -970,15 +993,16 @@
     curLang = code;
     marquees.forEach((m) => m.unclone());
     setTexts();
-    $$('[data-split-hero], [data-split]').forEach(splitWords);
+    $$('[data-split-hero][data-i18n], [data-split][data-i18n]').forEach(splitWords);
     $$('[data-roll][data-i18n]').forEach(rollText);
     marquees.forEach((m) => m.reclone());
     scrubs.forEach((f) => f());
     updatePrices();
     refreshLangUI();
     movePill(activeLink);
-    if (LANGS[code]) setLang(code);
+    if (LANGS[code] && mockH) setLang(code);
     rememberLang(code);
+    langListeners.forEach((fn) => fn(code));
     measureDoc();
     onResize.forEach((fn) => fn());
   }
@@ -1012,7 +1036,18 @@
 
   refreshLangUI();
   updatePrices();
-  if (curLang !== 'fr' && LANGS[curLang]) setLang(curLang);
+  if (curLang !== 'fr' && LANGS[curLang] && mockH) setLang(curLang);
+
+  // Petite API pour les scripts propres à une page (formulaire de devis)
+  window.DYRO = {
+    tr,
+    lang: () => curLang,
+    locale: () => LOCALES[curLang],
+    onLang: (fn) => langListeners.push(fn),
+    reveal: (el) => revealIO.observe(el),
+    // Textes français par défaut pour les clés absentes du HTML de la page
+    addDefaults: (o) => Object.keys(o).forEach((k) => { if (!(k in FR)) FR[k] = o[k]; }),
+  };
 
   requestAnimationFrame(frame);
 })();

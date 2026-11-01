@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DYRO WEB</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="DYRO WEB crée des sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand et anglais." data-i18n-attr="content:meta.desc">
+<meta name="description" content="DYRO WEB crée des sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois." data-i18n-attr="content:meta.desc">
 <meta name="theme-color" content="#03050a">
 <link rel="alternate" hreflang="fr" href="https://web.dyrostudios.com/">
 <link rel="alternate" hreflang="de" href="https://web.dyrostudios.com/?lang=de">
@@ -14,9 +14,8 @@
 <link rel="alternate" hreflang="lb" href="https://web.dyrostudios.com/?lang=lb">
 <link rel="alternate" hreflang="x-default" href="https://web.dyrostudios.com/">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>
   (function () {
@@ -60,7 +59,7 @@
 <!-- Bandeau -->
 <div class="banner" data-banner>
   <div class="container banner__inner">
-    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span><span data-i18n="banner.text">Sites en français, allemand et anglais pour le Luxembourg et la Grande Région.</span> <a href="#contact" class="banner__link"><span data-i18n="banner.link">Demander un devis</span> <span aria-hidden="true">→</span></a></p>
+    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span><span data-i18n="banner.text">Sites en 5 langues pour le Luxembourg : FR · DE · EN · PT · LU.</span> <a href="devis.html" class="banner__link"><span data-i18n="banner.link">Demander un devis</span> <span aria-hidden="true">→</span></a></p>
     <button class="banner__close" type="button" aria-label="Fermer le bandeau" data-i18n-attr="aria-label:banner.close" data-banner-close>
       <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
     </button>
@@ -100,7 +99,7 @@
         </div>
       </div>
       <a href="tel:+352691349632" class="btn btn--ghost btn--sm header__phone">+352 691 349 632</a>
-      <a href="#contact" class="btn btn--sm header__quote" data-magnetic="0.25">
+      <a href="devis.html" class="btn btn--sm header__quote" data-magnetic="0.25">
         <span data-i18n="cta.quote">Demander un devis</span>
         <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
@@ -154,10 +153,10 @@
 
         <h1 class="hero__title" id="hero-title" data-split-hero data-i18n="hero.title">Des sites web qui vous amènent des <span class="nowrap"><span class="hl hl--swoosh">clients<svg class="swoosh" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#0060ed"/><stop offset=".55" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs><path d="M2 22 C 80 21, 190 14, 298 2 C 205 15, 110 24, 6 26 Z" fill="url(#swg)"/></svg></span>.</span></h1>
 
-        <p class="hero__lead" data-intro style="--d:6" data-i18n="hero.lead">Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg et de la Grande Région. Conçus, développés et maintenus au Luxembourg, en français, allemand et anglais.</p>
+        <p class="hero__lead" data-intro style="--d:6" data-i18n="hero.lead">Sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg et de la Grande Région. Conçus, développés et maintenus au Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.</p>
 
         <div class="hero__actions" data-intro style="--d:7" data-hero-actions>
-          <a href="#contact" class="btn btn--chrome btn--lg" data-magnetic>
+          <a href="devis.html" class="btn btn--chrome btn--lg" data-magnetic>
             <span data-i18n="cta.quote">Demander un devis</span>
             <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
@@ -165,7 +164,7 @@
         </div>
 
         <ul class="hero__facts" data-intro style="--d:8">
-          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f1">Sites FR · DE · EN</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f1">Sites en 5 langues</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f2">2 tours de corrections inclus</span></li>
           <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f3">Le site vous appartient</span></li>
         </ul>
@@ -214,6 +213,8 @@
             <button type="button" data-lang="fr" aria-pressed="true">FR</button>
             <button type="button" data-lang="de" aria-pressed="false">DE</button>
             <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+            <button type="button" data-lang="lb" aria-pressed="false">LU</button>
           </div>
 
           <div class="toast" data-toast aria-hidden="true">
@@ -236,7 +237,7 @@
         <span class="o" data-i18n="mq.a2">Landing pages</span><i class="slash"></i>
         <span data-i18n="mq.a3">E-commerce</span><i class="slash"></i>
         <span class="o" data-i18n="mq.a4">SEO local</span><i class="slash"></i>
-        <span data-i18n="mq.a5">FR · DE · EN</span><i class="slash"></i>
+        <span data-i18n="mq.a5">FR · DE · EN · PT · LU</span><i class="slash"></i>
         <span class="o" data-i18n="mq.a6">Maintenance</span><i class="slash"></i>
       </div>
     </div>
@@ -273,15 +274,15 @@
         <article class="card svc" data-tilt="5">
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5" pathLength="1"/><path d="M2.5 8.5h19M9 8.5V20" pathLength="1"/><path d="M12 12h6M12 15h4" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.2.h">Site vitrine</h3>
-          <p data-i18n="svc.2.p">5 à 7 pages en français et en allemand pour présenter votre activité et rassurer vos clients avant le premier appel.</p>
+          <p data-i18n="svc.2.p">5 à 7 pages en français et en allemand pour présenter votre activité et rassurer vos clients. Anglais, portugais ou luxembourgeois en option.</p>
           <div class="svc__foot"><span class="tag" data-i18n="svc.2.tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Site vitrine" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" pathLength="1"/><path d="M3 12h18" pathLength="1"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.3.h">Site multilingue</h3>
-          <p data-i18n="svc.3.p">Français, allemand et anglais. Chaque visiteur lit votre site dans sa langue, et Google le référence dans chacune.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.3.tag">FR · DE · EN</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Premium multilingue" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <p data-i18n="svc.3.p">Français, allemand, anglais, portugais et luxembourgeois. Chaque visiteur lit votre site dans sa langue, et Google le référence dans chacune.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.3.tag">5 langues</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Premium multilingue" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
@@ -374,13 +375,13 @@
 
         <article class="card bento__item b-lang">
           <div class="langdemo" aria-hidden="true" data-langdemo>
-            <div class="langdemo__pills"><span class="is-on">FR</span><span>DE</span><span>EN</span></div>
+            <div class="langdemo__pills"><span class="is-on">FR</span><span>DE</span><span>EN</span><span>PT</span><span>LU</span></div>
             <div class="langdemo__h" data-langdemo-h>Bienvenue</div>
             <div class="langdemo__p" data-langdemo-p>Découvrez nos services</div>
           </div>
           <div class="bento__txt">
-            <h3 data-i18n="why.lang.h">Trois langues, un seul site</h3>
-            <p data-i18n="why.lang.p">Au Luxembourg, vos clients lisent en français, en allemand ou en anglais. Votre site aussi.</p>
+            <h3 data-i18n="why.lang.h">Cinq langues, un seul site</h3>
+            <p data-i18n="why.lang.p">Au Luxembourg, vos clients lisent en français, en allemand, en anglais, en portugais ou en luxembourgeois. Votre site aussi.</p>
           </div>
         </article>
 
@@ -465,7 +466,7 @@
           </li>
           <li class="step step--end">
             <p class="step__endtxt" data-i18n="proc.end">Votre projet commence par un message.</p>
-            <a href="#contact" class="btn btn--ghost btn--lg">
+            <a href="devis.html" class="btn btn--ghost btn--lg">
               <span data-i18n="proc.endbtn">Lancer l'étape 01</span>
               <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
             </a>
@@ -499,7 +500,7 @@
             <li data-i18n="price.1.l4">Bases du référencement</li>
             <li data-i18n="price.l.rev">2 tours de corrections</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="devis.html#landing" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
 
         <article class="card price price--featured">
@@ -514,12 +515,13 @@
           <ul class="price__list">
             <li data-i18n="price.2.l1">5 à 7 pages</li>
             <li data-i18n="price.2.l2">Français et allemand</li>
+            <li data-i18n="price.2.lx">Autres langues en option</li>
             <li data-i18n="price.2.l3">Design sur mesure</li>
             <li data-i18n="price.2.l4">Référencement des pages</li>
             <li data-i18n="price.l.form">Formulaire de contact</li>
             <li data-i18n="price.l.rev">2 tours de corrections</li>
           </ul>
-          <a href="#contact" class="btn btn--chrome price__btn" data-magnetic="0.2"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="devis.html#pro" class="btn btn--chrome price__btn" data-magnetic="0.2"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
 
         <article class="card price">
@@ -530,13 +532,13 @@
           <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3500">3 500</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
           <p class="price__range" data-i18n="price.3.range">3 500 à 6 000 € HT selon le périmètre</p>
           <ul class="price__list">
-            <li data-i18n="price.3.l1">Français, allemand, anglais</li>
+            <li data-i18n="price.3.l1">Jusqu'à 5 langues : FR, DE, EN, PT, LU</li>
             <li data-i18n="price.3.l2">SEO local</li>
             <li data-i18n="price.3.l3">Réservation en ligne</li>
             <li data-i18n="price.3.l4">Formulaires avancés</li>
             <li data-i18n="price.l.rev">2 tours de corrections</li>
           </ul>
-          <a href="#contact" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="devis.html#premium" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
       </div>
 
@@ -575,8 +577,8 @@
           <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p data-i18n="faq.a2">Oui. Dès le paiement complet, le site vous est transféré : code, contenus et accès administrateur. Vous n'êtes lié à aucun abonnement obligatoire.</p></div></div>
         </div>
         <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span data-i18n="faq.q3">Proposez-vous des sites en allemand et en anglais ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">Oui. Le Site vitrine Pro est livré en français et en allemand. L'offre Premium couvre le français, l'allemand et l'anglais.</p></div></div>
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span data-i18n="faq.q3">Dans quelles langues faites-vous les sites ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">En français, allemand, anglais, portugais et luxembourgeois. Le Site vitrine Pro est livré en français et en allemand, les autres langues s'ajoutent en option. L'offre Premium couvre jusqu'à cinq langues.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span data-i18n="faq.q4">Comment se passe le paiement ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -610,9 +612,12 @@
       <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien&nbsp;! Parlons de votre projet.</h2>
       <p class="cta__lead" data-reveal data-i18n="cta.lead">Décrivez votre activité et ce que vous attendez de votre site. Vous recevez une proposition claire, en trois options, prix HT.</p>
       <div class="cta__actions" data-reveal>
-        <a class="btn btn--chrome btn--xl" href="mailto:contact@dyrostudios.com?subject=Projet%20de%20site%20web" data-magnetic data-cursor="Écrire" data-i18n-attr="href:cta.mailto;data-cursor:cta.cursor">
-          <span data-i18n="cta.write">Écrire à DYRO WEB</span>
+        <a class="btn btn--chrome btn--xl" href="devis.html" data-magnetic>
+          <span data-i18n="cta.quote">Demander un devis</span>
           <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--xl" href="mailto:contact@dyrostudios.com?subject=Projet%20de%20site%20web" data-cursor="Écrire" data-i18n-attr="href:cta.mailto;data-cursor:cta.cursor">
+          <span data-i18n="cta.write">Écrire à DYRO WEB</span>
         </a>
       </div>
 
@@ -652,6 +657,7 @@
       <a href="#methode" data-roll data-i18n="nav.method">Méthode</a>
       <a href="#offres" data-roll data-i18n="nav.offers">Offres</a>
       <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
+      <a href="devis.html" data-roll data-i18n="cta.quote">Demander un devis</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Contact</span>
@@ -668,6 +674,11 @@
 
   <div class="container footer__bottom">
     <span data-i18n="foot.copy">© 2026 DYRO WEB · Dyro Studios · Luxembourg</span>
+    <nav class="footer__legal" aria-label="Informations légales" data-i18n-attr="aria-label:legal.eyebrow">
+      <a href="mentions-legales.html" data-i18n="foot.legal">Mentions légales</a>
+      <a href="confidentialite.html" data-i18n="foot.privacy">Confidentialité</a>
+      <a href="cgv.html" data-i18n="foot.terms">CGV</a>
+    </nav>
     <a href="#top" class="footer__top-link"><span data-i18n="foot.top">Retour en haut</span> <span aria-hidden="true">↑</span></a>
   </div>
 </footer>
