@@ -172,14 +172,14 @@ $headers  = [
     'From: ' . $fromName . ' <' . $FROM . '>',
     'Reply-To: ' . $email,
     'MIME-Version: 1.0',
-    'X-Mailer: DYRO STUDIOS',
 ];
 
 if ($photo) {
     $b = 'dyro-' . bin2hex(random_bytes(12));
     $headers[] = 'Content-Type: multipart/mixed; boundary="' . $b . '"';
-    $mail  = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n";
-    $mail .= chunk_split(base64_encode($body)) . "\r\n";
+    $mail  = "This is a multi-part message in MIME format.\r\n\r\n";
+    $mail .= "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n";
+    $mail .= quoted_printable_encode(str_replace("\n", "\r\n", $body)) . "\r\n";
     $mail .= "--$b\r\nContent-Type: {$photo['mime']}; name=\"{$photo['name']}\"\r\nContent-Transfer-Encoding: base64\r\n";
     $mail .= "Content-Disposition: attachment; filename=\"{$photo['name']}\"\r\n\r\n";
     $mail .= chunk_split(base64_encode($photo['data'])) . "\r\n--$b--";
