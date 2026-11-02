@@ -146,6 +146,26 @@ $OFFERS = [
     'pub-film-sur-mesure' => 'Film publicitaire sur mesure — dès 990 €', 'pub-pack-3-videos' => 'Pack 3 vidéos courtes — dès 599 €',
 ];
 
+// Photo : enregistrée dans un dossier privé (api/uploads, inaccessible directement), lien secret dans l'email.
+// Une pièce jointe fait classer l'email en indésirables ; un lien, non. Suppression automatique après 90 jours.
+$photoLink = '';
+if ($photo) {
+    $dir = __DIR__ . '/uploads';
+    if (is_dir($dir) || @mkdir($dir, 0750, true)) {
+        foreach (glob($dir . '/*.{jpg,png,webp}', GLOB_BRACE) ?: [] as $old) {
+            if (@filemtime($old) < time() - 90 * 86400) {
+                @unlink($old);
+            }
+        }
+        $key = bin2hex(random_bytes(16));
+        $ext = pathinfo($photo['name'], PATHINFO_EXTENSION);
+        if (@file_put_contents($dir . '/' . $key . '.' . $ext, $photo['data'], LOCK_EX) !== false) {
+            $host = preg_replace('/[^a-z0-9.\-]/i', '', $_SERVER['HTTP_HOST'] ?? 'dyrostudios.com');
+            $photoLink = 'https://' . $host . '/api/photo.php?k=' . $key;
+        }
+    }
+}
+
 $rows = [
     'Demande'    => $TYPES[$type],
     'Offre'      => $OFFERS[$offre] ?? 'À définir',
@@ -155,7 +175,7 @@ $rows = [
     'Téléphone'  => $tel !== '' ? $tel : '—',
     'Pays'       => $pays,
     'Lien'       => $lien !== '' ? $lien : '—',
-    'Photo'      => $photo ? $photo['name'] . ' (jointe)' : '—',
+    'Photo'      => $photoLink !== '' ? $photoLink : ($photo ? $photo['name'] . ' (jointe)' : '—'),
 ];
 $body = '';
 foreach ($rows as $k => $v) {
@@ -174,7 +194,7 @@ $headers  = [
     'MIME-Version: 1.0',
 ];
 
-if ($photo) {
+if ($photo && $photoLink === '') { // repli : pièce jointe si l'enregistrement a échoué
     $b = 'dyro-' . bin2hex(random_bytes(12));
     $headers[] = 'Content-Type: multipart/mixed; boundary="' . $b . '"';
     $mail  = "This is a multi-part message in MIME format.\r\n\r\n";
