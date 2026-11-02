@@ -186,8 +186,8 @@ $body .= 'Langue du site : ' . strtoupper($lang) . "\n";
 $body .= 'Reçu le : ' . date('d/m/Y H:i') . "\n";
 $body .= 'Consentement RGPD : oui · Autorisation photos : ' . ($auth ? 'oui' : 'sans objet') . ' · Newsletter : ' . ($news ? 'oui' : 'non') . "\n";
 
-$subject  = '=?UTF-8?B?' . base64_encode($TYPES[$type] . ' – ' . $nom . ' (' . $societe . ')') . '?=';
-$fromName = '=?UTF-8?B?' . base64_encode('DYRO STUDIOS · Site') . '?=';
+$subject  = '=?UTF-8?B?' . base64_encode('Nouvelle demande – ' . $TYPES[$type] . ' – ' . $societe) . '?=';
+$fromName = '=?UTF-8?B?' . base64_encode('DYRO STUDIOS') . '?=';
 $headers  = [
     'From: ' . $fromName . ' <' . $FROM . '>',
     'Reply-To: ' . $email,
