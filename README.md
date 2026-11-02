@@ -21,4 +21,14 @@ Site statique (HTML/CSS/JS sans dépendance) en français, allemand et anglais, 
 ## Avant la mise en ligne
 - Compléter les mentions légales (adresse, RCS, autorisation d'établissement, TVA) : textes `[à compléter]`.
 - Valider les durées de conservation dans la politique de confidentialité.
-- Vérifier que l'adresse noreply@dyrostudios.com peut envoyer (sinon remplacer `$FROM` dans `api/contact.php`).
+
+## Formulaire et emails
+- Les emails partent de la boîte noreply@dyrostudios.com (SMTP authentifié, signé DKIM). Ses identifiants sont dans `api/.smtp.php`, **uniquement sur le serveur** (jamais dans Git, bloqué par `.htaccess`). Sans ce fichier, le site se rabat sur `mail()`.
+- Si le site est recréé sur Hostinger, redéposer `api/.smtp.php` (modèle en tête de `send_mail()` dans `api/contact.php`).
+- L'en-tête `Auto-Submitted: auto-generated` est indispensable : sans lui, la notification arrive dans les indésirables.
+- Les photos reçues sont stockées dans `api/uploads/` (fermé au public), ouvertes via le lien secret de l'email (`api/photo.php`), supprimées après 90 jours.
+- Anti-abus : 4 envois par 15 minutes et par visiteur.
+
+## Hébergement
+- Production : https://dyrostudios.com (déploiement automatique de la branche `claude/dyro-studios-site`).
+- Test : https://teal-barracuda-408224.hostingersite.com (même branche, même déploiement automatique).
