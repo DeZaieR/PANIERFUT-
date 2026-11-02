@@ -59,7 +59,10 @@ AddType font/woff2 .woff2
   </FilesMatch>
 </IfModule>
 
-# Fichiers sensibles inaccessibles
-<FilesMatch "^(README\.md|\.git.*)$">
+# Fichiers et dossiers techniques du dépôt inaccessibles (dépôt Git, scripts, documents de travail)
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/(\.git|scripts|docs)(/|$)
+</IfModule>
+<FilesMatch "^(README\.md|\.gitignore|\.htaccess)$">
   Require all denied
 </FilesMatch>
