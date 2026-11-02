@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kerne Bau · Démonstration DYRO WEB</title>
+<meta name="description" content="Site de démonstration réalisé par DYRO WEB : entreprise de rénovation fictive, maison 3D, avant/après et estimation de devis.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#eeebe4">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preload" href="../assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/demo-core.css?v=1">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="dc-progress" aria-hidden="true"></div>
+
+<a class="demo-flag" href="https://dyroweb.online/#realisations" data-cursor="DYRO">
+  <b>Démo</b><span>Entreprise fictive<span class="demo-flag__long"> · site réalisé par <u>DYRO WEB</u></span></span>
+</a>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <a href="#top" class="logo" aria-label="Kerne Bau, accueil"><span class="logo__mark" aria-hidden="true"></span>KERNE<b>BAU</b></a>
+    <nav class="nav__links" data-menu aria-label="Navigation principale">
+      <a href="#services" data-roll>Services</a>
+      <a href="#avant-apres" data-roll>Avant / après</a>
+      <a href="#methode" data-roll>Méthode</a>
+      <a href="#zone" data-roll>Zone</a>
+    </nav>
+    <a href="tel:+35200000000" class="nav__tel" data-scramble>+352 00 00 00 00</a>
+    <a href="#devis" class="btn btn--sm" data-magnetic>Devis gratuit</a>
+    <button class="burger" data-burger aria-expanded="false" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HÉROS : la maison se construit au scroll -->
+  <section class="hero" id="hero" data-progress="sticky">
+    <div class="hero__sticky">
+      <div class="blueprint" aria-hidden="true"></div>
+      <div class="scene" id="scene" aria-hidden="true"></div>
+      <div class="labels" id="labels" aria-hidden="true">
+        <span class="lbl" data-l="0">Fondations</span>
+        <span class="lbl" data-l="1">Murs isolés</span>
+        <span class="lbl" data-l="2">Toiture</span>
+        <span class="lbl" data-l="3">Menuiseries</span>
+        <span class="lbl" data-l="4">Panneaux solaires</span>
+      </div>
+      <div class="wrap hero__content">
+        <p class="chip" data-reveal><span></span>Rénovation · Esch-sur-Alzette &amp; tout le pays</p>
+        <h1 class="hero__title" data-split="chars">On rénove. <span class="o">Vous</span> respirez.</h1>
+        <p class="hero__lead" data-reveal style="--si:3">Isolation, toiture, salles de bains, rénovation complète. Un seul interlocuteur, un planning tenu, un chantier propre.</p>
+        <div class="hero__ctas" data-reveal style="--si:4">
+          <a href="#devis" class="btn btn--lg" data-magnetic>Estimer mon projet <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="#avant-apres" class="btn btn--line btn--lg" data-magnetic>Voir un avant / après</a>
+        </div>
+        <ul class="trust" data-stagger>
+          <li><b>10 ans</b>Garantie décennale</li>
+          <li><b>48 h</b>Devis détaillé</li>
+          <li><b>4,9/5</b>Avis clients*</li>
+        </ul>
+      </div>
+      <div class="meter" aria-hidden="true"><span>Chantier</span><b class="meter__val">0 %</b><i><em></em></i></div>
+    </div>
+  </section>
+
+  <div class="marquee mega" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Isolation</span><i></i><span>Toiture</span><i></i><span>Salles de bains</span><i></i><span>Façades</span><i></i><span>Rénovation complète</span><i></i>
+      <span>Isolation</span><i></i><span>Toiture</span><i></i><span>Salles de bains</span><i></i><span>Façades</span><i></i><span>Rénovation complète</span><i></i>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" data-reveal>Nos métiers</p>
+        <h2 class="title" data-split>Du sol au toit, <span class="o">un seul</span> interlocuteur.</h2>
+      </div>
+      <div class="svc-grid" data-stagger>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">01</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 22 24 8l18 14"/><path d="M11 19v21h26V19"/><path d="M15 26h18M15 31h18M15 36h18"/></svg><h3>Isolation</h3><p>Combles, murs, sols. Jusqu'à 30 % d'économies de chauffage.</p><span class="svc__go">→</span></a>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">02</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 26 24 10l20 16"/><path d="M10 21l14-11 14 11"/><path d="M33 13V7h4v9"/></svg><h3>Toiture</h3><p>Réfection, ardoise, zinc, étanchéité et fenêtres de toit.</p><span class="svc__go">→</span></a>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">03</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 24h32v6a8 8 0 0 1-8 8H16a8 8 0 0 1-8-8z"/><path d="M12 24V12a4 4 0 0 1 8 0"/><path d="M16 38l-2 4M32 38l2 4"/></svg><h3>Salles de bains</h3><p>Douche à l'italienne, accessibilité, carrelage grand format.</p><span class="svc__go">→</span></a>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">04</span><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="2"/><path d="M8 19h32M8 30h32M19 8v11M29 19v11M19 30v10"/></svg><h3>Façades</h3><p>Ravalement, crépi, bardage bois et isolation par l'extérieur.</p><span class="svc__go">→</span></a>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">05</span><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="14" width="34" height="20" rx="2"/><path d="M7 21h34M7 27h34M18 14v20M30 14v20"/><path d="M24 34v6M16 40h16"/></svg><h3>Énergie</h3><p>Panneaux solaires, pompe à chaleur, aides de l'État.</p><span class="svc__go">→</span></a>
+        <a href="#devis" class="svc" data-fill><span class="svc__n">06</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V18L24 6l16 12v22z"/><path d="M19 40V28h10v12"/><circle cx="34" cy="14" r="6"/><path d="m31.5 14 2 2 3-4"/></svg><h3>Clé en main</h3><p>Rénovation complète coordonnée, de l'étude à la remise des clés.</p><span class="svc__go">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANT / APRÈS -->
+  <section class="section ba-section" id="avant-apres">
+    <div class="wrap">
+      <div class="head head--split">
+        <div>
+          <p class="eyebrow" data-reveal>Avant / après</p>
+          <h2 class="title" data-split>Glissez pour voir <span class="o">la différence.</span></h2>
+        </div>
+        <p class="lead" data-reveal>Salle de bains d'une maison de 1974 à Dudelange : 3 semaines de travaux, douche à l'italienne, plancher chauffant. <small>(Projet fictif)</small></p>
+      </div>
+      <div class="ba" id="ba" data-reveal data-cursor="Glisser">
+        <div class="room room--after" aria-hidden="true">
+          <div class="r-wall"></div><div class="r-tiles"></div><div class="r-floor"></div>
+          <div class="r-shower"><i></i></div><div class="r-vanity"><i></i></div><div class="r-mirror"></div><div class="r-plant"><i></i></div><div class="r-lamp"></div>
+        </div>
+        <div class="room room--before" aria-hidden="true">
+          <div class="r-wall"></div><div class="r-tiles"></div><div class="r-floor"></div>
+          <div class="r-tub"></div><div class="r-sink"></div><div class="r-crack"></div><div class="r-radiator"></div><div class="r-bulb"></div>
+        </div>
+        <span class="ba__tag ba__tag--l">Avant</span><span class="ba__tag ba__tag--r">Après</span>
+        <div class="ba__handle" aria-hidden="true"><span>⟷</span></div>
+        <input class="ba__range" type="range" min="0" max="100" value="50" aria-label="Comparer avant et après">
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODE : cartes empilées en 3D -->
+  <section class="section" id="methode">
+    <div class="wrap method">
+      <div class="method__aside">
+        <p class="eyebrow" data-reveal>Méthode</p>
+        <h2 class="title" data-split>4 étapes, <span class="o">zéro</span> surprise.</h2>
+        <p class="lead" data-reveal>Un planning écrit, un chef de chantier dédié, des photos d'avancement chaque semaine.</p>
+      </div>
+      <ol class="stack">
+        <li class="stack__card" data-progress><span class="stack__n">01</span><h3>Visite &amp; diagnostic</h3><p>Nous passons chez vous, mesurons, photographions et identifions les priorités. Gratuit, sans engagement.</p><div class="stack__bar"><i style="--w:25%"></i></div></li>
+        <li class="stack__card" data-progress><span class="stack__n">02</span><h3>Devis détaillé en 48 h</h3><p>Poste par poste, avec les aides possibles (Klimabonus, PRIMe House) déjà calculées.</p><div class="stack__bar"><i style="--w:50%"></i></div></li>
+        <li class="stack__card" data-progress><span class="stack__n">03</span><h3>Chantier suivi</h3><p>Un seul chef de chantier, un planning partagé, un rapport photo chaque vendredi.</p><div class="stack__bar"><i style="--w:75%"></i></div></li>
+        <li class="stack__card" data-progress><span class="stack__n">04</span><h3>Réception &amp; garantie</h3><p>Visite de fin de chantier, levée des réserves, garantie décennale et suivi à 1 an.</p><div class="stack__bar"><i style="--w:100%"></i></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CHIFFRES -->
+  <section class="numbers">
+    <div class="wrap numbers__grid" data-stagger>
+      <div><b><span data-count="420">0</span>+</b><p>chantiers livrés</p></div>
+      <div><b><span data-count="18">0</span></b><p>artisans salariés</p></div>
+      <div><b><span data-count="97">0</span>%</b><p>délais respectés</p></div>
+      <div><b><span data-count="4.9">0</span>/5</b><p>satisfaction</p></div>
+    </div>
+    <p class="wrap fine">* Entreprise et chiffres fictifs, site de démonstration.</p>
+  </section>
+
+  <!-- ZONE -->
+  <section class="section zone" id="zone">
+    <div class="wrap zone__grid">
+      <div>
+        <p class="eyebrow" data-reveal>Zone d'intervention</p>
+        <h2 class="title" data-split>Partout au <span class="o">Luxembourg.</span></h2>
+        <p class="lead" data-reveal>Basés à Esch-sur-Alzette, nous intervenons dans tout le pays. Survolez une ville.</p>
+        <ul class="towns" data-stagger>
+          <li data-town="lux">Luxembourg-Ville</li><li data-town="esch">Esch-sur-Alzette</li><li data-town="diff">Differdange</li><li data-town="dud">Dudelange</li><li data-town="ett">Ettelbruck</li><li data-town="wiltz">Wiltz</li><li data-town="ech">Echternach</li><li data-town="rem">Remich</li>
+        </ul>
+      </div>
+      <div class="radar" data-reveal aria-hidden="true">
+        <div class="radar__sweep"></div>
+        <span class="pin" data-town="lux" style="--x:52%;--y:62%"></span>
+        <span class="pin pin--home" data-town="esch" style="--x:40%;--y:84%"></span>
+        <span class="pin" data-town="diff" style="--x:30%;--y:78%"></span>
+        <span class="pin" data-town="dud" style="--x:50%;--y:86%"></span>
+        <span class="pin" data-town="ett" style="--x:50%;--y:38%"></span>
+        <span class="pin" data-town="wiltz" style="--x:30%;--y:26%"></span>
+        <span class="pin" data-town="ech" style="--x:76%;--y:40%"></span>
+        <span class="pin" data-town="rem" style="--x:72%;--y:80%"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVIS -->
+  <section class="section quote" id="devis">
+    <div class="wrap quote__box" data-reveal>
+      <div class="quote__l">
+        <p class="eyebrow eyebrow--light">Estimation en ligne</p>
+        <h2 class="title title--light">Votre projet, <span class="o">chiffré</span> en 20 secondes.</h2>
+        <p class="lead lead--light">Choisissez vos travaux et la surface : nous affichons une fourchette indicative. Le devis précis suit la visite.</p>
+      </div>
+      <form class="est" id="est" novalidate>
+        <fieldset class="est__types"><legend>Travaux</legend>
+          <label><input type="checkbox" value="isolation" data-rate="85" checked><span>Isolation</span></label>
+          <label><input type="checkbox" value="toiture" data-rate="140"><span>Toiture</span></label>
+          <label><input type="checkbox" value="sdb" data-rate="0" data-fixed="14000"><span>Salle de bains</span></label>
+          <label><input type="checkbox" value="facade" data-rate="95"><span>Façade</span></label>
+          <label><input type="checkbox" value="solaire" data-rate="0" data-fixed="9500"><span>Solaire</span></label>
+        </fieldset>
+        <label class="est__range"><span>Surface <output id="surf">120</output> m²</span><input type="range" min="30" max="300" step="5" value="120" id="surface"></label>
+        <div class="est__out" aria-live="polite"><span>Estimation indicative</span><b id="estv">—</b><small>Prix fictifs · démonstration</small></div>
+        <button class="btn btn--lg btn--full" data-magnetic="0.12">Recevoir mon devis détaillé</button>
+        <p class="est__ok" role="status" hidden>Démonstration : aucune demande n'a été envoyée. Sur un vrai site, vous seriez recontacté sous 48 h.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__big" aria-hidden="true">KERNE<b>BAU</b></div>
+  <div class="wrap foot__grid">
+    <p>Entreprise fictive créée pour une démonstration.<br>12 rue de l'Exemple, L-0000 Esch-sur-Alzette</p>
+    <p>+352 00 00 00 00<br>contact@exemple.lu</p>
+    <p>Site de démonstration conçu et développé par <a href="https://dyroweb.online/" data-roll>DYRO WEB</a>.</p>
+    <a href="https://dyroweb.online/devis.html" class="btn btn--sm" data-magnetic>Je veux un site comme ça</a>
+  </div>
+</footer>
+
+<script src="../assets/demo-core.js?v=1"></script>
+<script src="app.js?v=1"></script>
+<script type="module" src="scene.js?v=1"></script>
+</body>
+</html>

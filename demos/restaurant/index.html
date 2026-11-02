@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sauge &amp; Ardoise · Démonstration DYRO WEB</title>
+<meta name="description" content="Site de démonstration réalisé par DYRO WEB : restaurant fictif, réservation en ligne, carte animée et scène 3D.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#120d09">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preload" href="../assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/demo-core.css?v=1">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="dc-progress" aria-hidden="true"></div>
+
+<a class="demo-flag" href="https://dyroweb.online/#realisations" data-cursor="DYRO">
+  <b>Démo</b><span>Restaurant fictif<span class="demo-flag__long"> · site réalisé par <u>DYRO WEB</u></span></span>
+</a>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <a href="#top" class="logo" aria-label="Sauge et Ardoise, accueil">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4c8 6 11 14 7 22-3 6-9 9-15 9 2-9 1-18 8-31z"/><path d="M12 35c3-8 7-15 13-22"/></svg>
+      <span>Sauge <i>&amp;</i> Ardoise</span>
+    </a>
+    <nav class="nav__links" data-menu aria-label="Navigation principale">
+      <a href="#carte" data-roll>La carte</a>
+      <a href="#maison" data-roll>La maison</a>
+      <a href="#galerie" data-roll>Galerie</a>
+      <a href="#infos" data-roll>Infos</a>
+    </nav>
+    <a href="#reserver" class="btn btn--sm" data-magnetic>Réserver</a>
+    <button class="burger" data-burger aria-expanded="false" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HÉROS : l'assiette se compose au scroll -->
+  <section class="hero" id="hero" data-progress="sticky">
+    <div class="hero__sticky">
+      <div class="scene" id="scene" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="wrap hero__content">
+        <p class="kicker" data-reveal>Bistronomie · Luxembourg-Grund</p>
+        <h1 class="hero__title" data-split="chars">Cuisine de <em>saison,</em> au cœur du Grund.</h1>
+        <p class="hero__lead" data-reveal style="--si:3">Produits de la Moselle et du marché, une carte courte qui change chaque mois, et une table qui vous attend.</p>
+        <div class="hero__ctas" data-reveal style="--si:4">
+          <a href="#reserver" class="btn btn--lg" data-magnetic>Réserver une table <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="#carte" class="btn btn--ghost btn--lg" data-magnetic>Voir la carte</a>
+        </div>
+      </div>
+      <div class="hero__steps" aria-hidden="true">
+        <p class="hero__step hero__step--1"><span>01</span> Risotto crémeux à l'épeautre</p>
+        <p class="hero__step hero__step--2"><span>02</span> Tomates confites, sauge croustillante</p>
+        <p class="hero__step hero__step--3"><span>03</span> Servi sur ardoise, avec un riesling de la Moselle</p>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span></span>Faites défiler, l'assiette se compose</div>
+    </div>
+  </section>
+
+  <div class="marquee band" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Produits locaux</span><i>✦</i><span>Fait maison</span><i>✦</i><span>Vins de la Moselle</span><i>✦</i><span>Carte de saison</span><i>✦</i><span>Terrasse sur l'Alzette</span><i>✦</i>
+      <span>Produits locaux</span><i>✦</i><span>Fait maison</span><i>✦</i><span>Vins de la Moselle</span><i>✦</i><span>Carte de saison</span><i>✦</i><span>Terrasse sur l'Alzette</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- CARTE -->
+  <section class="section menu" id="carte">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker" data-reveal>La carte · Novembre</p>
+        <h2 class="title" data-split>Courte, de saison, <em>généreuse.</em></h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Catégories de la carte" data-reveal>
+        <button role="tab" aria-selected="true" aria-controls="t-entrees" id="tab-entrees" data-tab="entrees">Entrées</button>
+        <button role="tab" aria-selected="false" aria-controls="t-plats" id="tab-plats" data-tab="plats">Plats</button>
+        <button role="tab" aria-selected="false" aria-controls="t-desserts" id="tab-desserts" data-tab="desserts">Desserts</button>
+        <span class="tabs__pill" aria-hidden="true"></span>
+      </div>
+
+      <div class="panels">
+        <ul class="dishes is-active" id="t-entrees" role="tabpanel" aria-labelledby="tab-entrees">
+          <li class="dish" data-preview="velo"><div class="dish__l"><h3>Velouté de potimarron</h3><p>Noisettes torréfiées, crème crue, huile de courge</p></div><span class="dish__dots"></span><b>12 €</b></li>
+          <li class="dish" data-preview="tartare"><div class="dish__l"><h3>Tartare de truite de l'Our</h3><p>Pomme verte, raifort, aneth du jardin</p></div><span class="dish__dots"></span><b>16 €</b></li>
+          <li class="dish" data-preview="burrata"><div class="dish__l"><h3>Burrata &amp; betteraves rôties</h3><p>Miel de forêt, pistaches, vinaigrette au cassis</p></div><span class="dish__dots"></span><b>15 €</b></li>
+          <li class="dish" data-preview="judd"><div class="dish__l"><h3>Judd mat Gaardebounen, en tapas</h3><p>Collier de porc fumé, fèves des marais, croûtons</p></div><span class="dish__dots"></span><b>14 €</b></li>
+        </ul>
+        <ul class="dishes" id="t-plats" role="tabpanel" aria-labelledby="tab-plats" hidden>
+          <li class="dish" data-preview="risotto"><div class="dish__l"><h3>Risotto d'épeautre à la sauge</h3><p>Tomates confites, parmesan 24 mois, sauge croustillante</p></div><span class="dish__dots"></span><b>26 €</b></li>
+          <li class="dish" data-preview="sandre"><div class="dish__l"><h3>Sandre au riesling</h3><p>Beurre blanc, poireaux fondants, pommes grenaille</p></div><span class="dish__dots"></span><b>31 €</b></li>
+          <li class="dish" data-preview="boeuf"><div class="dish__l"><h3>Joue de bœuf braisée 12 h</h3><p>Purée fumée, carottes glacées, jus réduit</p></div><span class="dish__dots"></span><b>29 €</b></li>
+          <li class="dish" data-preview="veggie"><div class="dish__l"><h3>Courge rôtie, lentilles &amp; grenade</h3><p>Yaourt aux herbes, dukkah maison</p></div><span class="dish__dots"></span><b>23 €</b></li>
+        </ul>
+        <ul class="dishes" id="t-desserts" role="tabpanel" aria-labelledby="tab-desserts" hidden>
+          <li class="dish" data-preview="tarte"><div class="dish__l"><h3>Quetschentaart revisitée</h3><p>Prunes rôties, crème glacée cannelle</p></div><span class="dish__dots"></span><b>11 €</b></li>
+          <li class="dish" data-preview="choco"><div class="dish__l"><h3>Chocolat 70 %, sarrasin</h3><p>Ganache montée, sablé breton, fleur de sel</p></div><span class="dish__dots"></span><b>12 €</b></li>
+          <li class="dish" data-preview="fromage"><div class="dish__l"><h3>Fromages affinés du Grand-Duché</h3><p>Chutney de coings, pain aux noix</p></div><span class="dish__dots"></span><b>14 €</b></li>
+        </ul>
+      </div>
+      <p class="menu__note" data-reveal>Menu du midi : entrée + plat ou plat + dessert, 24 €. Allergènes sur demande.</p>
+    </div>
+  </section>
+
+  <!-- MAISON : cartes 3D au scroll -->
+  <section class="section house" id="maison">
+    <div class="wrap house__grid">
+      <div class="house__text">
+        <p class="kicker" data-reveal>La maison</p>
+        <h2 class="title" data-split>Une cuisine sincère, <em>sans détour.</em></h2>
+        <p class="lead" data-reveal>Dans une ancienne maison de pierre au bord de l'Alzette, notre équipe cuisine ce que les producteurs de la région récoltent cette semaine. Pas de carte interminable : quelques assiettes, faites avec soin.</p>
+        <div class="stats" data-stagger>
+          <div><b data-count="38">0</b><span>couverts</span></div>
+          <div><b data-count="12">0</b><span>producteurs locaux</span></div>
+          <div><b data-count="4.9">0</b><span>note moyenne*</span></div>
+        </div>
+        <p class="fine">* Chiffres fictifs, site de démonstration.</p>
+      </div>
+      <div class="house__cards" data-progress>
+        <article class="pcard pcard--1" data-tilt="10"><span class="pcard__n">01</span><h3>Le marché</h3><p>Chaque mardi, la carte suit ce que le marché propose.</p><div class="plate plate--sm" style="--f1:#c9762f;--f2:#7f9a5d;--f3:#e9d6a8"></div></article>
+        <article class="pcard pcard--2" data-tilt="10"><span class="pcard__n">02</span><h3>La cave</h3><p>Rieslings, crémants et pinots de la Moselle luxembourgeoise.</p><div class="glass" aria-hidden="true"></div></article>
+        <article class="pcard pcard--3" data-tilt="10"><span class="pcard__n">03</span><h3>La terrasse</h3><p>24 places au bord de l'eau, d'avril à octobre.</p><div class="sun" aria-hidden="true"></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE : carrousel 3D piloté par le scroll -->
+  <section class="gallery" id="galerie" data-progress="sticky">
+    <div class="gallery__sticky">
+      <div class="wrap gallery__head">
+        <p class="kicker">Galerie</p>
+        <h2 class="title">Dans nos <em>assiettes.</em></h2>
+      </div>
+      <div class="ring" aria-label="Galerie de plats">
+        <div class="ring__in" id="ring">
+          <figure class="shot" data-cursor="Miam"><div class="plate" style="--f1:#d9a441;--f2:#6f8f4e;--f3:#c2412d"></div><figcaption>Risotto à la sauge</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate plate--fish" style="--f1:#f1e3c8;--f2:#8db36a;--f3:#e2b04a"></div><figcaption>Sandre au riesling</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate plate--dark" style="--f1:#4a2617;--f2:#e68a3c;--f3:#9fb86f"></div><figcaption>Joue de bœuf 12 h</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate" style="--f1:#8b2346;--f2:#f3efe6;--f3:#a3c06a"></div><figcaption>Burrata &amp; betteraves</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate plate--tart" style="--f1:#6d2a4f;--f2:#d99c52;--f3:#f6eadb"></div><figcaption>Quetschentaart</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate plate--dark" style="--f1:#2b1712;--f2:#c58b4b;--f3:#efe2cf"></div><figcaption>Chocolat &amp; sarrasin</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate" style="--f1:#e58a2f;--f2:#3d5e2f;--f3:#f2e7d1"></div><figcaption>Velouté de potimarron</figcaption></figure>
+          <figure class="shot" data-cursor="Miam"><div class="plate plate--fish" style="--f1:#e7a59a;--f2:#7fae7a;--f3:#f1f0e2"></div><figcaption>Tartare de truite</figcaption></figure>
+        </div>
+      </div>
+      <p class="gallery__hint">Faites défiler pour tourner la galerie</p>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section class="section quotes">
+    <div class="wrap">
+      <p class="kicker" data-reveal>Ils en parlent</p>
+      <div class="quotes__grid" data-stagger>
+        <blockquote class="quote" data-tilt="6"><p>« Le risotto à la sauge vaut le détour à lui seul. Service attentionné, ambiance chaleureuse. »</p><footer>Avis fictif · Démo</footer></blockquote>
+        <blockquote class="quote" data-tilt="6"><p>« Enfin une carte courte où tout est bon. La terrasse au bord de l'eau, un bonheur en été. »</p><footer>Avis fictif · Démo</footer></blockquote>
+        <blockquote class="quote" data-tilt="6"><p>« Réservé en 30 secondes depuis mon téléphone, confirmé par email. Parfait pour un déjeuner d'affaires. »</p><footer>Avis fictif · Démo</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉSERVATION -->
+  <section class="section book" id="reserver">
+    <div class="wrap book__grid">
+      <div>
+        <p class="kicker" data-reveal>Réservation</p>
+        <h2 class="title" data-split>Votre table, <em>en 30 secondes.</em></h2>
+        <p class="lead" data-reveal>Confirmation immédiate par email. Pour les groupes de plus de 8 personnes, appelez-nous.</p>
+      </div>
+      <form class="bform" id="bform" data-reveal novalidate>
+        <div class="bform__row">
+          <label class="field"><span>Date</span><input type="date" name="date" required></label>
+          <div class="field"><span>Personnes</span>
+            <div class="stepper"><button type="button" data-step="-1" aria-label="Moins">−</button><output id="guests">2</output><button type="button" data-step="1" aria-label="Plus">+</button></div>
+          </div>
+        </div>
+        <fieldset class="times"><legend>Heure</legend>
+          <label><input type="radio" name="t" value="12:00"><span>12:00</span></label>
+          <label><input type="radio" name="t" value="12:30" checked><span>12:30</span></label>
+          <label><input type="radio" name="t" value="13:00"><span>13:00</span></label>
+          <label><input type="radio" name="t" value="19:00"><span>19:00</span></label>
+          <label><input type="radio" name="t" value="19:30"><span>19:30</span></label>
+          <label><input type="radio" name="t" value="20:30"><span>20:30</span></label>
+        </fieldset>
+        <label class="field"><span>Nom</span><input type="text" name="name" autocomplete="name" placeholder="Votre nom" required></label>
+        <button class="btn btn--lg btn--full" data-magnetic="0.15">Confirmer la réservation</button>
+        <p class="bform__ok" role="status" hidden>✦ Démonstration : aucune réservation n'a été envoyée. Sur un vrai site, vous recevriez ici votre confirmation.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" id="infos">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__logo">Sauge <i>&amp;</i> Ardoise</p>
+      <p class="foot__muted">Restaurant fictif créé pour une démonstration.</p>
+    </div>
+    <div><h4>Adresse</h4><p>12 rue de l'Exemple<br>L-0000 Luxembourg-Grund</p></div>
+    <div><h4>Horaires</h4><p>Mar–Sam · 12:00–14:00<br>19:00–22:00</p></div>
+    <div><h4>Contact</h4><p>+352 00 00 00 00<br>bonjour@exemple.lu</p></div>
+  </div>
+  <div class="wrap foot__bottom">
+    <p>Site de démonstration conçu et développé par <a href="https://dyroweb.online/" data-roll>DYRO WEB</a>. Entreprise, avis et chiffres fictifs.</p>
+    <a href="https://dyroweb.online/devis.html" class="btn btn--sm" data-magnetic>Je veux un site comme ça</a>
+  </div>
+</footer>
+
+<div class="follow" data-follow aria-hidden="true"><div class="follow__in"><div class="plate plate--follow"></div></div></div>
+
+<script src="../assets/demo-core.js?v=1"></script>
+<script src="app.js?v=1"></script>
+<script type="module" src="scene.js?v=1"></script>
+</body>
+</html>

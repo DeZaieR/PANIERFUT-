@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valéa Immobilier · Démonstration DYRO WEB</title>
+<meta name="description" content="Site de démonstration réalisé par DYRO WEB : agence immobilière fictive, tour 3D, annonces filtrables et estimation en ligne.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b1416">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="preload" href="../assets/fonts/cormorant-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/demo-core.css?v=1">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="dc-progress" aria-hidden="true"></div>
+
+<a class="demo-flag" href="https://dyroweb.online/#realisations" data-cursor="DYRO">
+  <b>Démo</b><span>Agence fictive<span class="demo-flag__long"> · site réalisé par <u>DYRO WEB</u></span></span>
+</a>
+
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <a href="#top" class="logo" aria-label="Valéa Immobilier, accueil"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 16 27 28 6"/><path d="M10 6l6 11 6-11"/></svg><span>Valéa</span></a>
+    <nav class="nav__links" data-menu aria-label="Navigation principale">
+      <a href="#biens" data-roll>Acheter</a>
+      <a href="#residence" data-roll>Programme neuf</a>
+      <a href="#quartiers" data-roll>Quartiers</a>
+      <a href="#estimer" data-roll>Estimer</a>
+    </nav>
+    <div class="langs" aria-label="Langues (démonstration)"><button class="is-on" type="button">FR</button><button type="button">DE</button><button type="button">EN</button><button type="button">LU</button></div>
+    <a href="#estimer" class="btn btn--sm" data-magnetic>Estimer mon bien</a>
+    <button class="burger" data-burger aria-expanded="false" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HÉROS : la tour passe du jour au soir, puis s'ouvre étage par étage -->
+  <section class="hero" id="hero" data-progress="sticky">
+    <div class="hero__sticky">
+      <div class="sky sky--day" aria-hidden="true"></div>
+      <div class="sky sky--dusk" aria-hidden="true"></div>
+      <div class="stars" aria-hidden="true"></div>
+      <div class="scene" id="scene" aria-hidden="true"></div>
+      <div class="floors" id="floors" aria-hidden="true">
+        <div class="flab" data-f="0"><b>Rez · Commerces</b><span>Boulangerie, pharmacie</span></div>
+        <div class="flab" data-f="1"><b>Étages 1–5 · 2 chambres</b><span>dès 845 000 €</span></div>
+        <div class="flab" data-f="2"><b>Étages 6–9 · 3 chambres</b><span>dès 1 190 000 €</span></div>
+        <div class="flab" data-f="3"><b>Penthouse · 4 chambres</b><span>Terrasse 92 m² · sur demande</span></div>
+      </div>
+      <div class="wrap hero__content">
+        <p class="kicker" data-reveal>Agence immobilière · Luxembourg-Kirchberg</p>
+        <h1 class="hero__title" data-split="words">Habiter la ville, <em>autrement.</em></h1>
+        <p class="hero__lead" data-reveal style="--si:2">Achat, vente et programmes neufs au Luxembourg. Des biens choisis, une estimation honnête, un accompagnement en quatre langues.</p>
+      </div>
+      <form class="search" id="search" role="search" aria-label="Rechercher un bien">
+        <label><span>Type</span><select id="s-type"><option value="all">Tous les biens</option><option value="appart">Appartement</option><option value="maison">Maison</option><option value="penthouse">Penthouse</option></select></label>
+        <label><span>Commune</span><select id="s-town"><option value="all">Tout le pays</option><option>Luxembourg</option><option>Strassen</option><option>Esch-sur-Alzette</option><option>Mersch</option></select></label>
+        <label><span>Budget max <output id="s-bout">2 000 000 €</output></span><input type="range" id="s-budget" min="400000" max="3000000" step="50000" value="2000000"></label>
+        <button class="btn" data-magnetic="0.2">Rechercher <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg></button>
+      </form>
+      <p class="hero__time" aria-hidden="true"><span class="hero__clock">14:00</span> Kirchberg</p>
+    </div>
+  </section>
+
+  <!-- ANNONCES -->
+  <section class="section" id="biens">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="kicker" data-reveal>Sélection du moment</p>
+          <h2 class="title" data-split>Des biens choisis, <em>pas empilés.</em></h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrer par type" data-reveal>
+          <button class="is-on" data-filter="all">Tous</button>
+          <button data-filter="appart">Appartements</button>
+          <button data-filter="maison">Maisons</button>
+          <button data-filter="penthouse">Penthouses</button>
+        </div>
+      </div>
+      <p class="count" aria-live="polite"><b id="count">6</b> biens correspondent</p>
+      <div class="listings" id="listings">
+        <article class="prop" data-type="appart" data-town="Luxembourg" data-price="895000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v1"><span class="prop__badge">Nouveau</span><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Luxembourg · Belair</p><h3>Appartement lumineux, 2 chambres</h3><ul class="prop__specs"><li>92 m²</li><li>2 ch.</li><li>Balcon</li><li class="ec ec--a">A</li></ul><p class="prop__price">895 000 €</p></div>
+        </article>
+        <article class="prop" data-type="maison" data-town="Strassen" data-price="1650000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v2"><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Strassen</p><h3>Maison d'architecte avec jardin</h3><ul class="prop__specs"><li>210 m²</li><li>4 ch.</li><li>Jardin 6 a</li><li class="ec ec--a">A</li></ul><p class="prop__price">1 650 000 €</p></div>
+        </article>
+        <article class="prop" data-type="penthouse" data-town="Luxembourg" data-price="2450000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v3"><span class="prop__badge prop__badge--gold">Exclusivité</span><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Luxembourg · Kirchberg</p><h3>Penthouse, terrasse panoramique</h3><ul class="prop__specs"><li>168 m²</li><li>3 ch.</li><li>Terrasse 70 m²</li><li class="ec ec--a">A</li></ul><p class="prop__price">2 450 000 €</p></div>
+        </article>
+        <article class="prop" data-type="appart" data-town="Esch-sur-Alzette" data-price="545000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v4"><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Esch-sur-Alzette · Belval</p><h3>Loft dans une halle rénovée</h3><ul class="prop__specs"><li>78 m²</li><li>1 ch.</li><li>Parking</li><li class="ec ec--b">B</li></ul><p class="prop__price">545 000 €</p></div>
+        </article>
+        <article class="prop" data-type="maison" data-town="Mersch" data-price="980000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v5"><span class="prop__badge">Coup de cœur</span><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Mersch</p><h3>Maison familiale rénovée</h3><ul class="prop__specs"><li>165 m²</li><li>4 ch.</li><li>Garage</li><li class="ec ec--b">B</li></ul><p class="prop__price">980 000 €</p></div>
+        </article>
+        <article class="prop" data-type="appart" data-town="Luxembourg" data-price="1240000" data-tilt="6" data-cursor="Voir">
+          <div class="prop__img v6"><button class="fav" type="button" aria-label="Ajouter aux favoris"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></button></div>
+          <div class="prop__body"><p class="prop__where">Luxembourg · Limpertsberg</p><h3>Duplex avec vue sur le parc</h3><ul class="prop__specs"><li>134 m²</li><li>3 ch.</li><li>Terrasse</li><li class="ec ec--a">A</li></ul><p class="prop__price">1 240 000 €</p></div>
+        </article>
+      </div>
+      <p class="empty" id="empty" hidden>Aucun bien ne correspond. Élargissez votre budget ou votre commune.</p>
+      <p class="fine">Biens, prix et agence fictifs, site de démonstration.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAMME NEUF : carte qui se redresse en 3D -->
+  <section class="feature" id="residence" data-progress>
+    <div class="wrap feature__in">
+      <div class="feature__card">
+        <div class="feature__img"><span class="feature__chip">Programme neuf · Livraison 2028</span></div>
+        <div class="feature__body">
+          <p class="kicker">Résidence Lumen</p>
+          <h2 class="title title--sm">40 appartements, <em>une seule tour.</em></h2>
+          <div class="feature__stats">
+            <div><b data-count="40">0</b><span>logements</span></div>
+            <div><b data-count="11">0</b><span>étages</span></div>
+            <div><b data-count="92">0</b><span>m² de terrasse au penthouse</span></div>
+          </div>
+          <a href="#hero" class="btn btn--ghost" data-magnetic>Revoir la tour en 3D ↑</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUARTIERS : liste avec aperçu qui suit le curseur -->
+  <section class="section" id="quartiers">
+    <div class="wrap">
+      <p class="kicker" data-reveal>Quartiers</p>
+      <h2 class="title" data-split>Où vivre <em>au Luxembourg ?</em></h2>
+      <ul class="hoods">
+        <li data-preview="kirch"><span class="hoods__n">01</span><h3>Kirchberg</h3><p>Tours de verre, parc central, tram</p><b>12 400 €/m²</b></li>
+        <li data-preview="belair"><span class="hoods__n">02</span><h3>Belair</h3><p>Résidentiel, écoles, commerces</p><b>13 900 €/m²</b></li>
+        <li data-preview="limp"><span class="hoods__n">03</span><h3>Limpertsberg</h3><p>Familial, à deux pas du centre</p><b>12 800 €/m²</b></li>
+        <li data-preview="cloche"><span class="hoods__n">04</span><h3>Cloche d'Or</h3><p>Nouveau quartier, bureaux et shopping</p><b>11 600 €/m²</b></li>
+        <li data-preview="belval"><span class="hoods__n">05</span><h3>Esch-Belval</h3><p>Hauts-fourneaux, université, loft</p><b>8 300 €/m²</b></li>
+      </ul>
+      <p class="fine">Prix au m² indicatifs et fictifs.</p>
+    </div>
+  </section>
+
+  <!-- ESTIMATION -->
+  <section class="section estimate" id="estimer">
+    <div class="wrap est__grid">
+      <div>
+        <p class="kicker" data-reveal>Estimation gratuite</p>
+        <h2 class="title" data-split>Combien vaut <em>votre bien ?</em></h2>
+        <p class="lead" data-reveal>Une première fourchette en ligne, puis une visite d'un de nos agents pour un avis de valeur signé, sous 72 h.</p>
+      </div>
+      <form class="est" id="est" data-reveal novalidate>
+        <div class="seg" role="radiogroup" aria-label="Type de bien">
+          <label><input type="radio" name="k" value="11800" checked><span>Appartement</span></label>
+          <label><input type="radio" name="k" value="10200"><span>Maison</span></label>
+        </div>
+        <label class="f"><span>Commune</span><select id="e-town"><option value="1">Luxembourg-Ville</option><option value="0.86">Strassen</option><option value="0.68">Esch-sur-Alzette</option><option value="0.62">Mersch</option></select></label>
+        <label class="f"><span>Surface habitable <output id="e-sout">95</output> m²</span><input type="range" id="e-surf" min="30" max="300" value="95"></label>
+        <div class="est__res" aria-live="polite"><span>Valeur estimée</span><b id="e-val">—</b><small>Estimation fictive · démonstration</small></div>
+        <button class="btn btn--full" data-magnetic="0.12">Demander un avis de valeur</button>
+        <p class="est__ok" role="status" hidden>Démonstration : aucune demande n'a été envoyée.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div><a href="#top" class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6 16 27 28 6"/><path d="M10 6l6 11 6-11"/></svg><span>Valéa</span></a><p>Agence immobilière fictive créée pour une démonstration.</p></div>
+    <div><h4>Agence</h4><p>12 avenue de l'Exemple<br>L-0000 Luxembourg-Kirchberg</p></div>
+    <div><h4>Contact</h4><p>+352 00 00 00 00<br>bonjour@exemple.lu</p></div>
+    <div><h4>Langues</h4><p>Français · Deutsch<br>English · Lëtzebuergesch</p></div>
+  </div>
+  <div class="wrap foot__bottom">
+    <p>Site de démonstration conçu et développé par <a href="https://dyroweb.online/" data-roll>DYRO WEB</a>. Agence, biens et prix fictifs.</p>
+    <a href="https://dyroweb.online/devis.html" class="btn btn--sm" data-magnetic>Je veux un site comme ça</a>
+  </div>
+</footer>
+
+<div class="follow" data-follow aria-hidden="true"><div class="follow__in"><div class="hood-img"></div></div></div>
+
+<script src="../assets/demo-core.js?v=1"></script>
+<script src="app.js?v=1"></script>
+<script type="module" src="scene.js?v=1"></script>
+</body>
+</html>
