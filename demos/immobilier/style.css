@@ -240,3 +240,18 @@ input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius
   .flab { min-width: 0; padding: 8px 10px; }
   .flab b { font-size: 16px; }
 }
+
+/* Photos (Pexels, licence libre) */
+.prop__img.has-photo::before, .prop__img.has-photo::after, .feature__img.has-photo::before { display: none; }
+.prop__img img, .feature__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter .6s; }
+.prop:hover .prop__img img { transform: scale(1.08); }
+.prop__img.has-photo::after { content: ""; display: block; position: absolute; inset: 0; height: auto; background: linear-gradient(180deg, rgba(11, 20, 22, .35), transparent 30%, transparent 70%, rgba(11, 20, 22, .25)); transform: none; }
+.feature__img img { transform: scale(calc(1.15 - var(--p, 0) * .15)); }
+.feature__img.has-photo::after { z-index: 1; }
+.hood-img { background: center / cover no-repeat; }
+.hood-img::before { display: none; }
+.follow[data-kind="kirch"] .hood-img { background-image: url("img/h-kirch.webp"); }
+.follow[data-kind="belair"] .hood-img { background-image: url("img/h-belair.webp"); }
+.follow[data-kind="limp"] .hood-img { background-image: url("img/h-limp.webp"); }
+.follow[data-kind="cloche"] .hood-img { background-image: url("img/h-cloche.webp"); }
+.follow[data-kind="belval"] .hood-img { background-image: url("img/h-belval.webp"); }

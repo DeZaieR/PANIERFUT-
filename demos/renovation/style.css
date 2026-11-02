@@ -250,3 +250,7 @@
   .nav .btn { display: none; }
   .burger { margin-left: auto; }
 }
+
+/* Photos (Pexels, licence libre) */
+.room img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.room--before img { filter: sepia(.25) saturate(.8) brightness(.92); }

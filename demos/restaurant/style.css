@@ -253,3 +253,22 @@ em { font-style: italic; color: var(--accent); font-weight: 300; }
   .burger { margin-left: auto; }
   .pcard { width: 86%; }
 }
+
+/* Photos (Pexels, licence libre) */
+.shot img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; transition: transform 1s var(--ease), filter .5s; filter: saturate(.95) contrast(1.02); }
+.shot:hover img { transform: scale(1.05); filter: saturate(1.15); }
+.shot { overflow: hidden; }
+.pcard__img { width: 100%; height: 150px; margin-top: 20px; object-fit: cover; border-radius: 16px; transition: transform .9s var(--ease); }
+.pcard:hover .pcard__img { transform: scale(1.06); }
+.follow__photo { width: 100%; height: 100%; border-radius: 50%; background: center / cover no-repeat; box-shadow: 0 0 0 6px rgba(244, 234, 216, .9), 0 30px 60px -10px rgba(0, 0, 0, .8); animation: spin 22s linear infinite; }
+.follow[data-kind="velo"] .follow__photo { background-image: url("img/velo.webp"); }
+.follow[data-kind="tartare"] .follow__photo { background-image: url("img/tartare.webp"); }
+.follow[data-kind="burrata"] .follow__photo { background-image: url("img/burrata.webp"); }
+.follow[data-kind="judd"] .follow__photo { background-image: url("img/judd.webp"); }
+.follow[data-kind="risotto"] .follow__photo { background-image: url("img/risotto.webp"); }
+.follow[data-kind="sandre"] .follow__photo { background-image: url("img/sandre.webp"); }
+.follow[data-kind="boeuf"] .follow__photo { background-image: url("img/boeuf.webp"); }
+.follow[data-kind="veggie"] .follow__photo { background-image: url("img/veggie.webp"); }
+.follow[data-kind="tarte"] .follow__photo { background-image: url("img/tarte.webp"); }
+.follow[data-kind="choco"] .follow__photo { background-image: url("img/choco.webp"); }
+.follow[data-kind="fromage"] .follow__photo { background-image: url("img/fromage.webp"); }
