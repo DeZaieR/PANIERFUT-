@@ -1,0 +1,3 @@
+__pycache__/
+*.pyc
+src/i18n/_fr.json

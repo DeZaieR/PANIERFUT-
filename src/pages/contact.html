@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="{{@lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{meta.ct.title::Devis et essai gratuit | DYRO STUDIOS}}</title>
+<meta name="description" content="{{meta.ct.desc::Demandez un devis ou testez une photo gratuitement : home staging virtuel, rénovation virtuelle, vidéos et publicités par IA. Réponse par email, aucun paiement en ligne.}}">
+<meta property="og:title" content="{{meta.ct.title::Devis et essai gratuit | DYRO STUDIOS}}">
+<meta property="og:description" content="{{meta.ct.desc::Demandez un devis ou testez une photo gratuitement : home staging virtuel, rénovation virtuelle, vidéos et publicités par IA. Réponse par email, aucun paiement en ligne.}}">
+{{> head}}
+<script src="/assets/js/contact.js?v=1" defer></script>
+</head>
+<body class="page-contact">
+{{> header}}
+<main id="contenu" tabindex="-1">
+  <section class="phero">
+    <div class="hero__glow" aria-hidden="true"><span></span><span></span></div>
+    <div class="wrap form-wrap">
+      <div>
+        <p class="eyebrow" data-reveal>{{ctp.eyebrow::Devis & essai gratuit}}</p>
+        <h1 class="h1" data-split>{{ctp.title::Parlons de <em>votre projet.</em>}}</h1>
+        <p class="lead" data-reveal>{{ctp.lead::Une photo, un objectif, deux minutes. Nous vous répondons par email avec un devis clair, ou le résultat de votre essai.}}</p>
+        <ul class="assure" data-stagger>
+          <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v10H4zM2 7h20v4H2zM12 7v14"/></svg><div><strong>{{ctp.a1.t::1 photo offerte pour tester}}</strong><p>{{ctp.a1.p::Par nouvelle agence, sans engagement, si la photo s’y prête.}}</p></div></li>
+          <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>{{ctp.a2.t::2 à 3 jours ouvrés}}</strong><p>{{ctp.a2.p::Délai indicatif après validation des photos et du brief, confirmé au devis.}}</p></div></li>
+          <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.6-3.4 8.3-8 9-4.6-.7-8-4.4-8-9V6z"/></svg><div><strong>{{ctp.a3.t::Vos photos restent privées}}</strong><p>{{ctp.a3.p::Utilisées uniquement pour répondre à votre demande. Aucun paiement sur ce site.}}</p></div></li>
+          <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>{{ctp.a4.t::Plutôt de vive voix ?}}</strong><p><a href="tel:+352691349632">+352 691 349 632</a> · <a href="https://wa.me/352691349632" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:contact@dyrostudios.com">contact@dyrostudios.com</a></p></div></li>
+        </ul>
+      </div>
+
+      <div class="form" data-reveal>
+        <form id="devis" novalidate action="/api/contact.php" method="post" enctype="multipart/form-data"
+          data-lang="{{@lang}}"
+          data-m-req="{{f.m.req::Ce champ est obligatoire.}}"
+          data-m-email="{{f.m.email::Indiquez une adresse email valide.}}"
+          data-m-file="{{f.m.file::Format accepté : JPG, PNG ou WebP, 10 Mo maximum.}}"
+          data-m-trial="{{f.m.trial::Pour un essai, ajoutez une photo ou un lien.}}"
+          data-m-auth="{{f.m.auth::Merci de confirmer que vous pouvez transmettre ces photos.}}"
+          data-m-check="{{f.m.check::Vérifiez les champs signalés.}}"
+          data-m-fail="{{f.m.fail::L’envoi n’a pas abouti. Réessayez, ou écrivez-nous directement :}}"
+          data-m-wait="{{f.m.wait::Trop de demandes en peu de temps. Réessayez dans quelques minutes, ou écrivez-nous :}}"
+          data-m-sending="{{f.m.sending::Envoi en cours…}}"
+          data-m-remove="{{f.m.remove::Retirer}}">
+          <p class="form__req">{{f.req::Les champs marqués * sont obligatoires.}}</p>
+          <fieldset>
+            <legend>{{f.type::Votre demande *}}</legend>
+            <div class="seg">
+              <label><input type="radio" name="type" value="essai"><span>{{f.type.trial::Essai gratuit}}</span></label>
+              <label><input type="radio" name="type" value="devis" checked><span>{{f.type.quote::Devis}}</span></label>
+              <label><input type="radio" name="type" value="partenariat"><span>{{f.type.partner::Partenariat agence}}</span></label>
+              <label><input type="radio" name="type" value="pub"><span>{{f.type.ads::Publicité IA}}</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label class="lbl" for="f-offre">{{f.offer::Offre envisagée}}</label>
+            <select id="f-offre" name="offre">
+              <option value="">{{f.offer.none::À définir ensemble}}</option>
+              <optgroup label="{{f.og.immo::Immobilier}}">
+                <option value="a-la-carte">{{f.o.p1::À la carte — 39 € HT / photo}}</option>
+                <option value="pack-essentiel">{{f.o.p2::Pack Essentiel — 149 € HT, 5 photos}}</option>
+                <option value="pack-signature">{{f.o.p3::Pack Signature — 249 € HT, 8 photos}}</option>
+                <option value="agence-partenaire">{{f.o.p4::Agence partenaire — 499 € HT / mois}}</option>
+                <option value="renovation-virtuelle">{{f.o.reno::Rénovation virtuelle — sur devis}}</option>
+                <option value="retouche-lumiere-couleurs">{{f.o.x1::Retouche lumière / couleurs — dès 15 € HT}}</option>
+                <option value="video-immobiliere">{{f.o.x2::Vidéo à partir de vos photos — dès 99 € HT}}</option>
+                <option value="carrousel-social">{{f.o.x3::Carrousel réseaux sociaux — dès 49 € HT}}</option>
+              </optgroup>
+              <optgroup label="{{f.og.auto::Publicité automobile}}">
+                <option value="auto-essential">{{f.o.a1::Essential — 149 € HT / vidéo}}</option>
+                <option value="auto-cinematic">{{f.o.a2::Cinematic — 249 € HT / vidéo}}</option>
+                <option value="auto-premium">{{f.o.a3::Premium — dès 449 € HT / vidéo}}</option>
+                <option value="auto-forfait">{{f.o.a4::Forfait mensuel garage}}</option>
+              </optgroup>
+              <optgroup label="{{f.og.brand::Publicité marque & produit}}">
+                <option value="pub-ugc-produit">{{f.o.b1::Publicité UGC IA / produit — dès 249 € HT}}</option>
+                <option value="pub-commerces-agences">{{f.o.b2::Publicité commerce ou agence — dès 349 € HT}}</option>
+                <option value="pub-cinematique-premium">{{f.o.b3::Publicité cinématique premium — dès 599 € HT}}</option>
+                <option value="pub-film-sur-mesure">{{f.o.b4::Film publicitaire sur mesure — dès 990 € HT}}</option>
+                <option value="pub-pack-3-videos">{{f.o.b5::Pack de 3 vidéos courtes — dès 599 € HT}}</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="grid2">
+            <div class="field"><label class="lbl" for="f-nom">{{f.name::Votre nom *}}</label><input id="f-nom" name="nom" autocomplete="name" required maxlength="120"></div>
+            <div class="field"><label class="lbl" for="f-societe">{{f.company::Agence / entreprise *}}</label><input id="f-societe" name="societe" autocomplete="organization" required maxlength="160"></div>
+            <div class="field"><label class="lbl" for="f-email">{{f.email::Email professionnel *}}</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+            <div class="field"><label class="lbl" for="f-tel">{{f.phone::Téléphone (facultatif)}}</label><input id="f-tel" name="tel" type="tel" autocomplete="tel" maxlength="40"></div>
+          </div>
+          <div class="field">
+            <label class="lbl" for="f-pays">{{f.country::Pays *}}</label>
+            <select id="f-pays" name="pays" required>
+              <option value="">{{f.country.pick::Choisir}}</option>
+              <option value="Luxembourg">{{f.c.lu::Luxembourg}}</option>
+              <option value="France">{{f.c.fr::France}}</option>
+              <option value="Belgique">{{f.c.be::Belgique}}</option>
+              <option value="Allemagne">{{f.c.de::Allemagne}}</option>
+              <option value="Autre">{{f.c.other::Autre pays}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="lbl" for="f-msg">{{f.msg::Votre projet *}}</label>
+            <textarea id="f-msg" name="message" required maxlength="4000" placeholder="{{f.msg.ph::Ex. : salon vide à meubler, style naturel, annonce à publier lundi.}}"></textarea>
+          </div>
+          <div class="field">
+            <span class="lbl" id="f-photo-l">{{f.photo::Votre photo (facultatif)}}</span>
+            <label class="drop" data-drop>
+              <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" aria-labelledby="f-photo-l">
+              <span class="drop__ico" data-drop-ico><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v4h16v-4"/></svg></span>
+              <span><strong data-drop-name>{{f.photo.pick::Choisir ou glisser une photo}}</strong><span data-drop-info>{{f.photo.fmt::JPG, PNG ou WebP · 10 Mo maximum}}</span></span>
+            </label>
+          </div>
+          <div class="field">
+            <label class="lbl" for="f-lien">{{f.link::Lien de téléchargement (facultatif)}}</label>
+            <input id="f-lien" name="lien" type="url" inputmode="url" maxlength="500" placeholder="https://">
+            <span class="hint">{{f.link.h::Pour plusieurs photos ou un gros fichier (WeTransfer, Google Drive, Dropbox…).}}</span>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Site web<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="t" value="">
+          <input type="hidden" name="lang" value="{{@lang}}">
+          <label class="check"><input type="checkbox" name="rgpd" value="1" required><span>{{f.rgpd::J’accepte que mes coordonnées et éléments transmis soient utilisés pour répondre à ma demande, selon la <a href="/confidentialite/">politique de confidentialité</a>. *}}</span></label>
+          <label class="check" data-auth><input type="checkbox" name="auth" value="1"><span>{{f.auth::Je confirme être autorisé(e) à transmettre ces photos et à demander leur traitement.}}</span></label>
+          <label class="check"><input type="checkbox" name="news" value="1"><span>{{f.news::J’accepte de recevoir de temps en temps les nouveautés de DYRO STUDIOS par email (facultatif, désinscription à tout moment).}}</span></label>
+          <button class="btn btn--gold btn--lg form__send" type="submit" data-magnetic>{{f.send::Envoyer ma demande}}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="form__note">{{f.note::Aucun paiement. Réponse par email.}}</p>
+          <div class="form__alert" role="alert" hidden></div>
+        </form>
+        <div class="done" hidden tabindex="-1">
+          <div class="done__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>{{f.done.t::Merci, c’est envoyé.}}</h2>
+          <p>{{f.done.p::Nous avons bien reçu votre demande et vous répondons par email. Une confirmation vient de vous être envoyée.}}</p>
+          <p class="fine">{{f.done.spam::Pensez à vérifier vos courriers indésirables.}}</p>
+          <p style="margin-top:24px"><a class="btn btn--ghost" href="{{@url}}">{{f.done.back::Retour à l’accueil}}</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+</body>
+</html>

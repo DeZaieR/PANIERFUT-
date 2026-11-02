@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dyrostudios.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/de/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/publicites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/publicites/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/de/publicites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/publicites/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/en/publicites/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dyrostudios.com/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dyrostudios.com/de/publicites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dyrostudios.com/en/publicites/"/>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/mentions-legales/</loc>
+  </url>
+  <url>
+    <loc>https://dyrostudios.com/confidentialite/</loc>
+  </url>
+</urlset>

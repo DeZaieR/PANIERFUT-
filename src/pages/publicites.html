@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="{{@lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{meta.ads.title::Publicités vidéo par IA · automobile et marques, dès 149 € HT | DYRO STUDIOS}}</title>
+<meta name="description" content="{{meta.ads.desc::Vidéos publicitaires cinématiques produites à distance à partir de vos photos : concessions, garages, marques, e-commerce, commerces. Dès 149 € HT, formats Reels, TikTok et web.}}">
+<meta property="og:title" content="{{meta.ads.title::Publicités vidéo par IA · automobile et marques, dès 149 € HT | DYRO STUDIOS}}">
+<meta property="og:description" content="{{meta.ads.desc::Vidéos publicitaires cinématiques produites à distance à partir de vos photos : concessions, garages, marques, e-commerce, commerces. Dès 149 € HT, formats Reels, TikTok et web.}}">
+{{> head}}
+</head>
+<body class="page-ads">
+{{> header}}
+<main id="contenu" tabindex="-1">
+  <section class="phero">
+    <div class="hero__glow" aria-hidden="true"><span></span><span></span></div>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>{{ads.eyebrow::Publicités par IA}}</p>
+      <h1 class="h1" data-split>{{adsp.title::Vos véhicules et vos produits, <em>au cinéma.</em>}}</h1>
+      <p class="lead" data-reveal>{{adsp.lead::Des vidéos publicitaires cinématiques, produites 100 % à distance à partir de vos photos. Vous validez le devis, puis chaque plan avant livraison.}}</p>
+      <div class="tabs" data-stagger>
+        <a href="#auto" data-reveal><strong>{{ads.auto.t::Publicités automobiles}}</strong><span>{{ads.auto.price::Dès 149 € HT}}</span></a>
+        <a href="#marques" data-reveal><strong>{{ads.brand.t::Marques & produits}}</strong><span>{{ads.brand.price::Dès 249 € HT}}</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOMOBILE -->
+  <section class="sec sec--alt" id="auto" aria-labelledby="auto-title">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow" data-reveal>{{auto.eyebrow::Concessions & garages}}</p>
+          <h2 id="auto-title" class="h2" data-split>{{auto.title::Vos véhicules, <em>en vidéo cinéma.</em>}}</h2>
+          <p class="sec__lead" data-reveal>{{auto.lead::Des vidéos prêtes pour Instagram Reels, TikTok, Facebook et votre site, réalisées à partir de vos photos.}}</p>
+          <ul class="bullets" data-stagger>
+            <li data-reveal>{{auto.b1::Aucun tournage ni déplacement : tout part de vos photos.}}</li>
+            <li data-reveal>{{auto.b2::Couleur, jantes et options vérifiées avant livraison, pour un rendu fidèle.}}</li>
+            <li data-reveal>{{auto.b3::Formats vertical et horizontal selon vos supports.}}</li>
+          </ul>
+        </div>
+        <div class="split__media" data-reveal="clip"><img data-parallax src="/assets/img/pub-auto-1200.webp" srcset="/assets/img/pub-auto-640.webp 640w, /assets/img/pub-auto-1200.webp 1200w" sizes="(min-width: 900px) 560px, 92vw" width="1200" height="686" alt="{{ads.auto.alt::Création publicitaire automobile générée par IA — véhicule de luxe en studio}}"><span class="chip">{{adsp.demo::Démonstration IA · non contractuelle}}</span></div>
+      </div>
+
+      <div class="subhead" data-reveal><h3>{{auto.p.title::Trois formules, prix affichés}}</h3><p>{{auto.p.lead::Tarifs HT par vidéo. Livrables, retouches et délai confirmés au devis.}}</p></div>
+      <div class="plans plans--3" data-stagger>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">Essential</h3>
+          <p class="plan__for">{{auto.p1.f::Une première vidéo, percutante.}}</p>
+          <p class="plan__price"><span data-count="149">149</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <ul class="plan__list"><li>{{auto.p1.l1::10 à 15 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p1.l3::1 format au choix}}</li><li>{{auto.l.adj::1 série de retouches}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=auto-essential">{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan plan--best" data-reveal data-spot>
+          <span class="plan__badge">{{auto.best::Le plus cinématique}}</span>
+          <h3 class="plan__name">Cinematic</h3>
+          <p class="plan__for">{{auto.p2.f::Une ambiance cinéma, plus immersive.}}</p>
+          <p class="plan__price"><span data-count="249">249</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <ul class="plan__list"><li>{{auto.p2.l1::20 à 30 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p2.l3::Formats vertical et horizontal}}</li><li>{{auto.l.adj::1 série de retouches}}</li></ul>
+          <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=auto-cinematic" data-magnetic>{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">Premium</h3>
+          <p class="plan__for">{{auto.p3.f::Le format le plus abouti, sur mesure.}}</p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="449">449</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <ul class="plan__list"><li>{{auto.p3.l1::30 à 60 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p3.l3::Tous formats de diffusion}}</li><li>{{auto.p3.l4::Retouches confirmées au devis}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=auto-premium">{{cta.quote::Demander un devis}}</a>
+        </article>
+      </div>
+      <div class="band" data-reveal>
+        <div><h3>{{auto.forfait.t::Garages : forfait mensuel}}</h3><p>{{auto.forfait.p::Plusieurs véhicules chaque mois ? Volume, rythme et formats définis ensemble, puis confirmés au devis.}}</p></div>
+        <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=auto-forfait" data-magnetic>{{auto.forfait.cta::Discuter d’un forfait}}</a>
+      </div>
+
+      <div class="subhead" data-reveal><h3>{{auto.how.title::De la demande à la diffusion}}</h3></div>
+      <ol class="mini mini--4" data-stagger>
+        <li data-reveal data-spot><span class="n">01</span><h3>{{auto.s1.t::Vous demandez un devis}}</h3><p>{{auto.s1.p::Véhicule, formule et objectif. Rien ne démarre sans votre accord.}}</p></li>
+        <li data-reveal data-spot><span class="n">02</span><h3>{{auto.s2.t::Vous envoyez les photos}}</h3><p>{{auto.s2.p::Photos nettes et caractéristiques exactes : couleur, jantes, options.}}</p></li>
+        <li data-reveal data-spot><span class="n">03</span><h3>{{auto.s3.t::Nous produisons, vous validez}}</h3><p>{{auto.s3.p::Chaque plan est vérifié et soumis à votre validation.}}</p></li>
+        <li data-reveal data-spot><span class="n">04</span><h3>{{auto.s4.t::Vous diffusez}}</h3><p>{{auto.s4.p::Vidéos livrées aux formats Reels, TikTok, Facebook et web.}}</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- MARQUES -->
+  <section class="sec" id="marques" aria-labelledby="brand-title">
+    <div class="wrap">
+      <div class="split">
+        <div class="split__media" data-reveal="clip"><img data-parallax src="/assets/img/pub-marques-1200.webp" srcset="/assets/img/pub-marques-640.webp 640w, /assets/img/pub-marques-1200.webp 1200w" sizes="(min-width: 900px) 560px, 92vw" width="1200" height="686" loading="lazy" alt="{{ads.brand.alt::Composition publicitaire générée par IA — parfum et vêtement en studio}}"><span class="chip">{{adsp.demo::Démonstration IA · non contractuelle}}</span></div>
+        <div>
+          <p class="eyebrow" data-reveal>{{brand.eyebrow::Marques, produits & entreprises}}</p>
+          <h2 id="brand-title" class="h2" data-split>{{brand.title::Votre produit. <em>Notre créativité.</em>}}</h2>
+          <p class="sec__lead" data-reveal>{{brand.lead::Envoyez votre idée ou les photos de votre produit : nous imaginons la publicité, du scénario au montage.}}</p>
+          <ul class="tags" data-stagger aria-label="{{brand.for::Pour qui}}">
+            <li data-reveal>{{brand.t1::Marques & e-commerce}}</li><li data-reveal>{{brand.t2::Agences immobilières}}</li><li data-reveal>{{brand.t3::Garages & concessions}}</li>
+            <li data-reveal>{{brand.t4::Hôtels}}</li><li data-reveal>{{brand.t5::Restaurants & cafés}}</li><li data-reveal>{{brand.t6::Commerces}}</li>
+            <li data-reveal>{{brand.t7::Applications & startups}}</li><li data-reveal>{{brand.t8::Créateurs}}</li><li data-reveal>{{brand.t9::Votre projet}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subhead" data-reveal><h3>{{brand.make.title::Ce que nous produisons}}</h3></div>
+      <ul class="mini" data-stagger>
+        <li data-reveal data-spot><h3>{{brand.m1.t::UGC avec avatar IA}}</h3><p>{{brand.m1.p::Un format « utilisateur » qui présente votre produit. Jamais présenté comme un vrai avis client.}}</p></li>
+        <li data-reveal data-spot><h3>{{brand.m2.t::Démonstrations produit}}</h3><p>{{brand.m2.p::Détails, gestes et usages : votre produit expliqué en quelques secondes.}}</p></li>
+        <li data-reveal data-spot><h3>{{brand.m3.t::Films de marque cinématiques}}</h3><p>{{brand.m3.p::Lumière, rythme et narration pour une image qui marque.}}</p></li>
+        <li data-reveal data-spot><h3>{{brand.m4.t::TikTok, Reels, Shorts}}</h3><p>{{brand.m4.p::Le format vertical, court et fait pour être partagé.}}</p></li>
+        <li data-reveal data-spot><h3>{{brand.m5.t::Scénario, voix off & musique}}</h3><p>{{brand.m5.p::Un récit et une ambiance sonore alignés sur le ton de votre marque.}}</p></li>
+        <li data-reveal data-spot><h3>{{brand.m6.t::Montage & identité visuelle}}</h3><p>{{brand.m6.p::Découpe, étalonnage, couleurs et typographies selon votre brief.}}</p></li>
+      </ul>
+
+      <ul class="formats" data-stagger style="margin-top:14px">
+        <li data-reveal><b>9:16</b><div><strong>TikTok · Reels · Shorts</strong><span>{{brand.f1::Vertical, pour le mobile.}}</span></div></li>
+        <li data-reveal><b>16:9</b><div><strong>{{brand.f2.t::Site · YouTube}}</strong><span>{{brand.f2::Horizontal, pour vos pages et écrans.}}</span></div></li>
+        <li data-reveal><b>1:1</b><div><strong>{{brand.f3.t::Réseaux sociaux}}</strong><span>{{brand.f3::Carré, pour les fils d’actualité.}}</span></div></li>
+      </ul>
+
+      <div class="subhead" data-reveal><h3>{{brand.p.title::Cinq offres, à partir de}}</h3><p>{{brand.p.lead::Tarifs indicatifs HT, selon la complexité et les retouches. Le devis confirme le prix.}}</p></div>
+      <div class="plans plans--5" data-stagger>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">{{brand.o1.n::Publicité UGC IA ou produit}}</h3>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="249">249</span>&nbsp;€ <small>HT</small></p>
+          <ul class="plan__list"><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-ugc-produit">{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">{{brand.o2.n::Commerces & agences}}</h3>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="349">349</span>&nbsp;€ <small>HT</small></p>
+          <ul class="plan__list"><li>{{brand.o2.l1::Commerce, restaurant, hôtel ou agence}}</li><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-commerces-agences">{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan plan--best" data-reveal data-spot>
+          <span class="plan__badge">{{price.best::Le plus complet}}</span>
+          <h3 class="plan__name">{{brand.o3.n::Cinématique premium}}</h3>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="599">599</span>&nbsp;€ <small>HT</small></p>
+          <ul class="plan__list"><li>{{brand.o3.l1::20 à 40 secondes}}</li><li>{{brand.o3.l2::Direction cinématique premium}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
+          <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=pub-cinematique-premium" data-magnetic>{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">{{brand.o4.n::Film publicitaire sur mesure}}</h3>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="990">990</span>&nbsp;€ <small>HT</small></p>
+          <ul class="plan__list"><li>{{brand.o4.l1::45 à 90 secondes}}</li><li>{{brand.o4.l2::Scénario et storytelling sur mesure}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-film-sur-mesure">{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan" data-reveal data-spot>
+          <h3 class="plan__name">{{brand.o5.n::Pack de 3 vidéos courtes}}</h3>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="599">599</span>&nbsp;€ <small>HT</small></p>
+          <ul class="plan__list"><li>{{brand.o5.l1::3 vidéos de 10 à 20 secondes}}</li><li>{{brand.o5.l2::Cohérence visuelle entre les vidéos}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.o5.l4::Format vertical 9:16}}</li></ul>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-pack-3-videos">{{cta.quote::Demander un devis}}</a>
+        </article>
+        <article class="plan plan--custom" data-reveal data-spot>
+          <h3 class="plan__name">{{brand.o6.n::Une idée différente ?}}</h3>
+          <p class="plan__for">{{brand.o6.p::Décrivez votre produit, votre activité ou votre concept : nous l’étudions et vous proposons un devis clair.}}</p>
+          <div style="flex:1"></div>
+          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub">{{brand.o6.cta::Décrire mon projet}}</a>
+        </article>
+      </div>
+      <p class="fine center" data-reveal style="margin-top:22px">{{brand.fine::Aucune promesse de performance ou de résultat garanti. Les avatars UGC sont générés par IA et ne sont pas de vrais clients.}}</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec sec--alt" id="faq-pub" aria-labelledby="faqp-title">
+    <div class="wrap faq">
+      <div class="sec__head">
+        <p class="eyebrow" data-reveal>{{faq.eyebrow::Questions fréquentes}}</p>
+        <h2 id="faqp-title" class="h2" data-split>{{faqp.title::Ce qu’il faut <em>savoir.</em>}}</h2>
+      </div>
+      <div class="faq__list" data-stagger>
+        <details data-reveal><summary>{{faqp.1.q::Les vidéos sont-elles filmées sur place ?}}</summary><div class="faq__a"><p>{{faqp.1.a::Non. Tout est produit à distance, à partir des photos, vidéos et éléments que vous transmettez, et généré avec l’intelligence artificielle.}}</p></div></details>
+        <details data-reveal><summary>{{faqp.2.q::Le véhicule ou le produit représenté est-il fidèle ?}}</summary><div class="faq__a"><p>{{faqp.2.a::Les images générées sont des créations publicitaires. Les caractéristiques visuelles (couleur, jantes, options, détails du produit) sont vérifiées à partir de vos photos, et chaque plan est soumis à votre validation avant livraison.}}</p></div></details>
+        <details data-reveal><summary>{{faqp.3.q::Quels formats vais-je recevoir ?}}</summary><div class="faq__a"><p>{{faqp.3.a::Vertical 9:16 pour TikTok, Reels et Shorts, horizontal 16:9 pour votre site et YouTube, carré 1:1 pour les réseaux sociaux. Les formats inclus dépendent de l’offre et sont confirmés au devis.}}</p></div></details>
+        <details data-reveal><summary>{{faqp.4.q::Les avatars UGC sont-ils de vraies personnes ?}}</summary><div class="faq__a"><p>{{faqp.4.a::Non. Ils sont générés par IA et utilisés comme format publicitaire, jamais pour simuler un avis ou un témoignage client.}}</p></div></details>
+        <details data-reveal><summary>{{faqp.5.q::Comment envoyer mes photos ?}}</summary><div class="faq__a"><p>{{faqp.5.a::Ajoutez une photo directement dans le formulaire, ou un lien de téléchargement pour un lot. Si besoin, nous vous indiquons comment nous transmettre vos fichiers après la demande.}}</p></div></details>
+        <details data-reveal><summary>{{faqp.6.q::Proposez-vous un suivi mensuel ?}}</summary><div class="faq__a"><p>{{faqp.6.a::Oui, notamment pour les garages et concessions avec plusieurs véhicules : volume, rythme et formats sont définis ensemble, puis confirmés au devis.}}</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="trial" aria-labelledby="idea-title" data-glow>
+    <div class="wrap trial__in">
+      <p class="eyebrow" data-reveal>{{idea.eyebrow::Une idée à transformer}}</p>
+      <h2 id="idea-title" class="h2" data-split>{{idea.title::Vous avez une idée ? <em>Faisons-en une publicité.</em>}}</h2>
+      <p class="sec__lead" data-reveal>{{idea.lead::Décrivez votre produit, votre activité ou votre concept. Nous vous proposons un concept et un devis clair, sans engagement.}}</p>
+      <div class="trial__cta" data-reveal>
+        <a class="btn btn--gold btn--lg" href="{{@url contact/}}?type=pub" data-magnetic>{{idea.cta::Demander ma publicité}}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+</body>
+</html>

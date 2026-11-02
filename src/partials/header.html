@@ -1,0 +1,44 @@
+<a class="skip" href="#contenu">{{ui.skip::Aller au contenu}}</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em></em></span></div>
+<header class="hdr" data-hdr>
+  <div class="hdr__in wrap">
+    <a class="brand" href="{{@url}}" aria-label="{{ui.home::DYRO STUDIOS — Accueil}}">
+      <img class="brand__mark" src="/assets/img/logo-mark.webp" width="46" height="38" alt="">
+      <span class="brand__name">DYRO <span>STUDIOS</span></span>
+    </a>
+    <nav class="nav" aria-label="{{ui.nav::Navigation principale}}">
+      <a href="{{@url}}#avant-apres">{{nav.ba::Avant / Après}}</a>
+      <a href="{{@url}}#tarifs">{{nav.prices::Tarifs}}</a>
+      <a href="{{@url}}#methode">{{nav.how::Comment ça marche}}</a>
+      <a href="{{@url publicites/}}">{{nav.ads::Publicités IA}}</a>
+      <a href="{{@url}}#faq">{{nav.faq::FAQ}}</a>
+    </nav>
+    <div class="hdr__end">
+      <div class="lang" data-lang>
+        <button class="lang__btn" type="button" aria-expanded="false" aria-label="{{ui.lang::Changer de langue}}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg>
+          <span>{{@LANG}}</span>
+        </button>
+        <ul class="lang__menu">{{@langlinks}}</ul>
+      </div>
+      <a class="btn btn--gold btn--sm hdr__cta" href="{{@url contact/}}?type=devis" data-magnetic>{{cta.quote::Demander un devis}}</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="{{ui.menu::Ouvrir le menu}}"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="menu" id="menu" hidden>
+  <nav class="menu__nav" aria-label="{{ui.navm::Menu mobile}}">
+    <a href="{{@url}}#avant-apres">{{nav.ba::Avant / Après}}</a>
+    <a href="{{@url}}#tarifs">{{nav.prices::Tarifs}}</a>
+    <a href="{{@url}}#methode">{{nav.how::Comment ça marche}}</a>
+    <a href="{{@url publicites/}}">{{nav.ads::Publicités IA}}</a>
+    <a href="{{@url}}#faq">{{nav.faq::FAQ}}</a>
+    <a href="{{@url contact/}}">{{nav.contact::Contact}}</a>
+  </nav>
+  <ul class="menu__lang">{{@langlinks}}</ul>
+  <div class="menu__cta">
+    <a class="btn btn--gold" href="{{@url contact/}}?type=devis">{{cta.quote::Demander un devis}}</a>
+    <a class="btn btn--ghost" href="{{@url contact/}}?type=essai">{{cta.trial::Tester une photo gratuitement}}</a>
+  </div>
+</div>
