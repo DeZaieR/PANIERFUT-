@@ -32,8 +32,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=5">
-<link rel="stylesheet" href="/assets/css/style.css?v=5">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=6">
+<link rel="stylesheet" href="/assets/css/style.css?v=6">
 <!-- analytics:start -->
 <!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
      1. créer le site dyroweb.online sur plausible.io ;
@@ -63,7 +63,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=5';
+      el.src = '/assets/js/i18n.js?v=6';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -581,20 +581,7 @@
         <article class="card work__card work--resto" data-tilt="4" data-cursor="Open" data-i18n-attr="data-cursor:work.cursor">
           <div class="work__screen" aria-hidden="true">
             <div class="work__bar"><i></i><i></i><i></i><span>votre-restaurant.lu</span></div>
-            <div class="work__page">
-              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
-              <div class="wp-hero"><p class="wp-h" data-i18n="work.1.h">Your restaurant</p><span class="wp-cta" data-i18n="work.1.cta">Book a table</span></div>
-              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
-              <div class="wp-menu">
-                <div class="wp-item"><span class="wp-line"></span><b></b></div>
-                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
-                <div class="wp-item"><span class="wp-line"></span><b></b></div>
-                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
-              </div>
-              <div class="wp-gallery"><i></i><i></i><i></i></div>
-              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
-              <div class="wp-foot"></div>
-            </div>
+            <div class="work__shots"><img class="work__shot" src="/assets/img/work-restaurant.webp" alt="Aperçu du site de démonstration du restaurant" width="960" height="600" loading="lazy"><img class="work__shot work__shot--b" src="/assets/img/work-restaurant-b.webp" alt="" width="960" height="600" loading="lazy"></div>
           </div>
           <div class="work__meta">
             <div class="work__top"><h3 data-i18n="work.1.title">Restaurant</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
@@ -607,19 +594,7 @@
         <article class="card work__card work--build" data-tilt="4" data-cursor="Open" data-i18n-attr="data-cursor:work.cursor">
           <div class="work__screen" aria-hidden="true">
             <div class="work__bar"><i></i><i></i><i></i><span>votre-renovation.lu</span></div>
-            <div class="work__page">
-              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
-              <div class="wp-hero"><p class="wp-h" data-i18n="work.2.h">Your renovation company</p><span class="wp-cta" data-i18n="cta.quote">Request a quote</span></div>
-              <div class="wp-grid">
-                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
-                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
-                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
-              </div>
-              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
-              <div class="wp-zone"><i></i><i></i><i></i></div>
-              <div class="wp-section"><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
-              <div class="wp-foot"></div>
-            </div>
+            <div class="work__shots"><img class="work__shot" src="/assets/img/work-renovation.webp" alt="Aperçu du site de démonstration de rénovation" width="960" height="600" loading="lazy"><img class="work__shot work__shot--b" src="/assets/img/work-renovation-b.webp" alt="" width="960" height="600" loading="lazy"></div>
           </div>
           <div class="work__meta">
             <div class="work__top"><h3 data-i18n="work.2.title">Building trades</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
@@ -632,19 +607,7 @@
         <article class="card work__card work--immo" data-tilt="4" data-cursor="Open" data-i18n-attr="data-cursor:work.cursor">
           <div class="work__screen" aria-hidden="true">
             <div class="work__bar"><i></i><i></i><i></i><span>votre-agence.lu</span></div>
-            <div class="work__page">
-              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-langs">FR DE EN LU</span></div>
-              <div class="wp-hero"><p class="wp-h" data-i18n="work.3.h">Your real estate agency</p><span class="wp-cta" data-i18n="work.3.cta">View properties</span></div>
-              <div class="wp-search"><span></span><span></span><b></b></div>
-              <div class="wp-props">
-                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
-                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
-                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
-                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
-              </div>
-              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
-              <div class="wp-foot"></div>
-            </div>
+            <div class="work__shots"><img class="work__shot" src="/assets/img/work-immobilier.webp" alt="Aperçu du site de démonstration immobilier" width="960" height="600" loading="lazy"><img class="work__shot work__shot--b" src="/assets/img/work-immobilier-b.webp" alt="" width="960" height="600" loading="lazy"></div>
           </div>
           <div class="work__meta">
             <div class="work__top"><h3 data-i18n="work.3.title">Real estate agency</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
@@ -926,6 +889,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=5" defer></script>
+<script src="/assets/js/main.js?v=6" defer></script>
 </body>
 </html>

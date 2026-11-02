@@ -92,111 +92,69 @@ function init() {
   fake.rotation.x = -Math.PI / 2; fake.position.y = -0.6;
   stage.add(fake);
 
-  /* Assiette en céramique (tour) */
-  const prof = [[0, 0], [0.88, 0], [0.95, 0.02], [1.02, 0.06], [1.22, 0.17], [1.32, 0.215], [1.35, 0.205], [1.25, 0.15], [1.02, 0.085], [0.9, 0.055], [0, 0.055]].map(([x, y]) => new THREE.Vector2(x, y));
-  const plate = new THREE.Mesh(new THREE.LatheGeometry(prof, 128), new THREE.MeshPhysicalMaterial({ color: '#f3eee4', roughness: 0.28, clearcoat: 1, clearcoatRoughness: 0.12 }));
-  plate.castShadow = true; plate.receiveShadow = true;
-  stage.add(plate);
-
-  /* Ingrédients : position finale + point de départ éparpillé */
+  /* Assiette : socle en céramique + vraie photo (Pexels) qui se remplit au scroll */
   const items = [];
-  function addItem(obj, delay, spread = 1) {
-    obj.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
-    const to = { p: obj.position.clone(), q: obj.quaternion.clone(), s: obj.scale.clone() };
-    const a = rand() * Math.PI * 2;
-    const r = (2.2 + rand() * 1.6) * spread;
-    const from = {
-      p: new THREE.Vector3(Math.cos(a) * r, 1.6 + rand() * 2.2, Math.sin(a) * r * 0.7),
-      q: new THREE.Quaternion().setFromEuler(new THREE.Euler(rand() * 6, rand() * 6, rand() * 6)),
-    };
-    items.push({ obj, from, to, delay, phase: rand() * 6 });
-    stage.add(obj);
-  }
+  const base = new THREE.Mesh(new THREE.CylinderGeometry(1.36, 1.26, 0.07, 128), new THREE.MeshPhysicalMaterial({ color: '#4a4a4e', roughness: 0.35, clearcoat: 1, clearcoatRoughness: 0.2 }));
+  base.position.y = 0.035;
+  base.castShadow = true; base.receiveShadow = true;
+  stage.add(base);
 
-  /* Risotto : dôme irrégulier + grains */
-  const risotto = new THREE.Group();
-  const moundGeo = new THREE.SphereGeometry(0.66, 72, 36, 0, Math.PI * 2, 0, Math.PI / 2);
-  const mp = moundGeo.attributes.position;
-  for (let i = 0; i < mp.count; i++) {
-    const v = new THREE.Vector3().fromBufferAttribute(mp, i);
-    const n = 1 + 0.06 * Math.sin(v.x * 9) * Math.cos(v.z * 8) + 0.03 * Math.sin(v.x * 23 + v.z * 17);
-    v.multiplyScalar(n);
-    mp.setXYZ(i, v.x, v.y * 0.42, v.z);
-  }
-  moundGeo.computeVertexNormals();
-  const cream = new THREE.MeshPhysicalMaterial({ color: '#e9d39c', roughness: 0.4, clearcoat: 0.6, clearcoatRoughness: 0.35, sheen: 0.4, sheenColor: new THREE.Color('#fff2cc') });
-  risotto.add(new THREE.Mesh(moundGeo, cream));
-  const grains = new THREE.InstancedMesh(new THREE.CapsuleGeometry(0.013, 0.034, 3, 6), new THREE.MeshPhysicalMaterial({ color: '#efdcaa', roughness: 0.35, clearcoat: 0.8 }), 300);
-  const m4 = new THREE.Matrix4();
-  for (let i = 0; i < 300; i++) {
-    const th = rand() * Math.PI * 2;
-    const ph = Math.acos(1 - rand() * 0.98);
-    const v = new THREE.Vector3(Math.sin(ph) * Math.cos(th) * 0.67, Math.cos(ph) * 0.66 * 0.42 - 0.004, Math.sin(ph) * Math.sin(th) * 0.67);
-    m4.compose(v, new THREE.Quaternion().setFromEuler(new THREE.Euler(rand() * 3, rand() * 3, rand() * 3)), new THREE.Vector3(1, 1, 1));
-    grains.setMatrixAt(i, m4);
-  }
-  risotto.add(grains);
-  risotto.position.set(0, 0.055, 0);
-  addItem(risotto, 0, 0.9);
-
-  /* Tomates cerises confites */
-  const tomatoMat = new THREE.MeshPhysicalMaterial({ color: '#c2311d', roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.05 });
-  const stemMat = new THREE.MeshStandardMaterial({ color: '#4f6b2b', roughness: 0.7 });
-  [[0.32, 0.22, 0.18], [-0.28, 0.24, 0.22], [0.05, 0.3, -0.3], [-0.36, 0.17, -0.2], [0.42, 0.14, -0.16]].forEach(([x, y, z], i) => {
-    const t = new THREE.Group();
-    const s = new THREE.Mesh(new THREE.SphereGeometry(0.115, 32, 24), tomatoMat);
-    s.scale.set(1, 0.88, 1);
-    t.add(s);
-    const stem = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.03, 5), stemMat);
-    stem.position.y = 0.1; stem.rotation.y = i;
-    t.add(stem);
-    t.position.set(x, y, z);
-    t.rotation.set(rand() * 0.6, rand() * 6, rand() * 0.6);
-    addItem(t, 0.14 + i * 0.05);
+  const loader = new THREE.TextureLoader();
+  const tex = (url) => { const t = loader.load(url); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; };
+  const tFull = tex('img/plate-full.webp?v=1');
+  const tEmpty = tex('img/plate-empty.webp?v=1');
+  const tH = loader.load('img/plate-height.webp?v=1');
+  const plateMat = new THREE.ShaderMaterial({
+    toneMapped: false,
+    uniforms: { tFull: { value: tFull }, tEmpty: { value: tEmpty }, tH: { value: tH }, uFill: { value: 0 }, uTime: { value: 0 } },
+    vertexShader: `
+      uniform sampler2D tH; uniform float uFill;
+      varying vec2 vUv; varying float vM; varying float vEdge;
+      float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+      float noise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
+        return mix(mix(hash(i), hash(i + vec2(1, 0)), u.x), mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), u.x), u.y); }
+      float mask(vec2 uv){
+        float r = length(uv - 0.5) * 2.0;
+        float n = noise(uv * 7.0) * 0.6 + noise(uv * 19.0) * 0.4;
+        float thr = r * 1.35 + n * 0.35;
+        return smoothstep(thr - 0.06, thr + 0.02, uFill * 1.75);
+      }
+      void main(){
+        vUv = uv;
+        float m = mask(uv);
+        vM = m;
+        vEdge = m * (1.0 - m) * 4.0;
+        float h = texture2D(tH, uv).r;
+        vec3 p = position;
+        p.y += h * m * 0.12 + h * vEdge * 0.06;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+      }`,
+    fragmentShader: `
+      uniform sampler2D tFull; uniform sampler2D tEmpty; uniform sampler2D tH; uniform float uTime;
+      varying vec2 vUv; varying float vM; varying float vEdge;
+      void main(){
+        float r = length(vUv - 0.5) * 2.0;
+        if (r > 0.985) discard;
+        vec3 full = texture2D(tFull, vUv).rgb;
+        vec3 empty = texture2D(tEmpty, vUv).rgb;
+        float e = 1.0 / 256.0;
+        float hx = texture2D(tH, vUv + vec2(e, 0.0)).r - texture2D(tH, vUv - vec2(e, 0.0)).r;
+        float hy = texture2D(tH, vUv + vec2(0.0, e)).r - texture2D(tH, vUv - vec2(0.0, e)).r;
+        vec3 n = normalize(vec3(-hx * 3.0 * vM, 1.0, -hy * 3.0 * vM));
+        float light = 0.9 + 0.25 * dot(n, normalize(vec3(-0.4, 1.0, 0.5))) - 0.12;
+        vec3 col = mix(empty, full, vM) * light;
+        col += vec3(1.0, 0.62, 0.25) * vEdge * 0.35;
+        col *= 1.0 - smoothstep(0.9, 0.985, r) * 0.35;
+        gl_FragColor = vec4(col, 1.0);
+        #include <colorspace_fragment>
+      }`,
   });
-
-  /* Feuilles de sauge croustillantes */
-  const leafShape = new THREE.Shape();
-  leafShape.moveTo(0, 0);
-  leafShape.bezierCurveTo(0.1, 0.07, 0.12, 0.26, 0, 0.42);
-  leafShape.bezierCurveTo(-0.12, 0.26, -0.1, 0.07, 0, 0);
-  const leafGeo = new THREE.ExtrudeGeometry(leafShape, { depth: 0.006, bevelEnabled: true, bevelThickness: 0.004, bevelSize: 0.004, bevelSegments: 2, curveSegments: 18 });
-  const lp = leafGeo.attributes.position;
-  for (let i = 0; i < lp.count; i++) lp.setZ(i, lp.getZ(i) + Math.pow(lp.getX(i), 2) * 1.6 - Math.pow(lp.getY(i) - 0.2, 2) * 0.4);
-  leafGeo.computeVertexNormals();
-  leafGeo.rotateX(-Math.PI / 2 + 0.25);
-  const leafMat = new THREE.MeshPhysicalMaterial({ color: '#6f8a4c', roughness: 0.55, sheen: 1, sheenColor: new THREE.Color('#c8d9a8'), side: THREE.DoubleSide });
-  for (let i = 0; i < 6; i++) {
-    const l = new THREE.Mesh(leafGeo, leafMat);
-    const a = (i / 6) * Math.PI * 2 + 0.3;
-    l.scale.setScalar(1.35); l.position.set(Math.cos(a) * 0.2, 0.3 - (i % 2) * 0.04, Math.sin(a) * 0.2);
-    l.rotation.set(0, -a + Math.PI / 2, 0);
-    addItem(l, 0.3 + i * 0.04);
-  }
-
-  /* Copeaux de parmesan */
-  const parmMat = new THREE.MeshPhysicalMaterial({ color: '#f1d891', roughness: 0.4, transmission: 0.15, thickness: 0.05, side: THREE.DoubleSide });
-  for (let i = 0; i < 6; i++) {
-    const g = new THREE.PlaneGeometry(0.22, 0.12, 8, 4);
-    const pp = g.attributes.position;
-    for (let k = 0; k < pp.count; k++) pp.setZ(k, Math.sin(pp.getX(k) * 12) * 0.02);
-    g.computeVertexNormals();
-    const pm = new THREE.Mesh(g, parmMat);
-    const a = rand() * Math.PI * 2;
-    pm.position.set(Math.cos(a) * 0.3, 0.28, Math.sin(a) * 0.3);
-    pm.rotation.set(-1.1 + rand() * 0.4, rand() * 6, 0.3);
-    addItem(pm, 0.48 + i * 0.03);
-  }
-
-  /* Points de sauce sur le bord */
-  const sauceMat = new THREE.MeshPhysicalMaterial({ color: '#7a3510', roughness: 0.1, clearcoat: 1 });
-  for (let i = 0; i < 9; i++) {
-    const s = new THREE.Mesh(new THREE.SphereGeometry(0.045 + (i % 3) * 0.012, 20, 12), sauceMat);
-    s.scale.y = 0.35;
-    const a = -0.6 + i * 0.16;
-    s.position.set(Math.cos(a) * 0.93, 0.07, Math.sin(a) * 0.93);
-    addItem(s, 0.58 + i * 0.02, 0.6);
-  }
+  const photoGeo = new THREE.PlaneGeometry(2.7, 2.7, 220, 220);
+  photoGeo.rotateX(-Math.PI / 2);
+  const photo = new THREE.Mesh(photoGeo, plateMat);
+  photo.position.y = 0.071;
+  photo.rotation.y = 0.4;
+  stage.add(photo);
 
   /* Verre de riesling */
   const glassProf = [[0, 0], [0.34, 0], [0.36, 0.015], [0.34, 0.03], [0.05, 0.05], [0.035, 0.08], [0.03, 0.62], [0.06, 0.68], [0.24, 0.8], [0.33, 0.98], [0.34, 1.18], [0.3, 1.42], [0.29, 1.42], [0.325, 1.18], [0.315, 0.98], [0.23, 0.82], [0.05, 0.71], [0, 0.7]].map(([x, y]) => new THREE.Vector2(x, y));
@@ -253,7 +211,9 @@ function init() {
     my += ((DC.fine ? DC.mouse.ny : 0) - my) * k;
     const time = DC.reduce ? 0 : t / 1000;
 
-    /* Assemblage : chaque ingrédient a sa fenêtre de temps */
+    /* Le plat se dépose sur l'assiette (vraie photo) */
+    plateMat.uniforms.uFill.value = sm(0.06, 0.8, cp);
+    plateMat.uniforms.uTime.value = time;
     const build = cp / 0.72;
     items.forEach((it) => {
       const a = ease(sm(it.delay, it.delay + 0.32, build));
@@ -266,12 +226,12 @@ function init() {
     });
 
     /* Décor qui tourne + caméra qui plonge vers l'assiette */
-    const dive = sm(0.55, 1, cp);
+    const dive = sm(0.5, 0.97, cp);
     stage.rotation.y = -0.35 + cp * 1.4 + mx * 0.25 + time * 0.03;
-    stage.position.x = mobile ? 0 : THREE.MathUtils.lerp(1.35, 0.25, sm(0.1, 0.6, cp));
+    stage.position.x = mobile ? 0 : THREE.MathUtils.lerp(1.35, 0.25, sm(0.1, 0.6, cp)) * (1 - dive) + dive * -0.55;
     stage.position.y = mobile ? THREE.MathUtils.lerp(-1.1, -0.6, cp) : 0;
-    const camR = THREE.MathUtils.lerp(7.6, 4.6, dive);
-    const camY = THREE.MathUtils.lerp(2.2, 4.4, dive) - my * 0.35;
+    const camR = THREE.MathUtils.lerp(7.6, mobile ? 3.4 : 2.5, dive);
+    const camY = THREE.MathUtils.lerp(2.2, mobile ? 6.2 : 4.9, dive) - my * 0.35;
     camera.position.set(mx * 0.5, camY, camR);
     look.set(stage.position.x * 0.55, stage.position.y + THREE.MathUtils.lerp(0.35, 0.05, dive), 0);
     camera.lookAt(look);

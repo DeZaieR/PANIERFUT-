@@ -1336,6 +1336,14 @@ main:focus { outline: none; }
 .work__bar span { margin: 0 auto; font: 400 10px/1 var(--mono); color: rgba(255, 255, 255, .45); }
 .work__page { padding: 14px; transition: transform 4.5s cubic-bezier(.45, .05, .3, 1); }
 .work__card:hover .work__page { transform: translateY(calc(-100% + 268px)); }
+/* Aperçus réels des démos : capture du haut, puis 2e capture en fondu au survol */
+.work__shots { position: absolute; inset: 30px 0 0 0; overflow: hidden; }
+.work__shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: opacity .8s var(--ease-out), transform 1.6s var(--ease-out); }
+.work__shot--b { opacity: 0; transform: scale(1.06); object-position: 0 0; }
+.work__card:hover .work__shot:not(.work__shot--b) { transform: scale(1.06); opacity: 0; }
+.work__card:hover .work__shot--b { opacity: 1; transform: scale(1); }
+@media (hover: none) { .work__shot--b { animation: shotSwap 8s ease-in-out 2s infinite; } }
+@keyframes shotSwap { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
 @media (hover: none) { .work__card.is-in .work__page { animation: workScroll 10s ease-in-out 1s infinite alternate; } }
 @keyframes workScroll { 0%, 15% { transform: translateY(0); } 85%, 100% { transform: translateY(calc(-100% + 268px)); } }
 .wp-nav { display: flex; align-items: center; justify-content: space-between; }
