@@ -7,6 +7,14 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="DYRO WEB crée des sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois." data-i18n-attr="content:meta.desc">
 <meta name="theme-color" content="#03050a">
+<link rel="alternate" hreflang="fr" href="https://dyroweb.online/">
+<link rel="alternate" hreflang="de" href="https://dyroweb.online/de/">
+<link rel="alternate" hreflang="en" href="https://dyroweb.online/en/">
+<link rel="alternate" hreflang="pt" href="https://dyroweb.online/pt/">
+<link rel="alternate" hreflang="lb" href="https://dyroweb.online/lb/">
+<link rel="alternate" hreflang="x-default" href="https://dyroweb.online/">
+<link rel="canonical" href="https://dyroweb.online/">
+<meta name="dyro:lang-paths" content="/de/ /en/ /pt/ /lb/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DYRO WEB">
 <meta property="og:title" content="Création de site web au Luxembourg | DYRO WEB">
@@ -19,27 +27,41 @@
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:locale:alternate" content="pt_PT">
+<meta property="og:locale:alternate" content="lb_LU">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="alternate" hreflang="fr" href="https://dyroweb.online/">
-<link rel="alternate" hreflang="de" href="https://dyroweb.online/?lang=de">
-<link rel="alternate" hreflang="en" href="https://dyroweb.online/?lang=en">
-<link rel="alternate" hreflang="pt" href="https://dyroweb.online/?lang=pt">
-<link rel="alternate" hreflang="lb" href="https://dyroweb.online/?lang=lb">
-<link rel="alternate" hreflang="x-default" href="https://dyroweb.online/">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=3">
 <link rel="stylesheet" href="assets/css/style.css?v=3">
+<!-- analytics:start -->
+<!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
+     1. créer le site dyroweb.online sur plausible.io ;
+     2. remplacer ce commentaire par :
+        <script defer data-domain="dyroweb.online" src="https://plausible.io/js/script.js"></script>
+        <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+     3. relancer scripts/build_pages.py puis scripts/build_langs.py ;
+     4. ajouter Plausible dans la politique de confidentialité. -->
+<!-- analytics:end -->
 <script>
   (function () {
-    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'], lang = null;
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'];
+    var page = r.getAttribute('lang') || 'fr', q = null, s = null, lang;
     r.classList.add('js', 'is-loading');
-    try { var q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; if (codes.indexOf(q) > -1) lang = q; } catch (e) {}
-    if (!lang) { try { var s = localStorage.getItem('dyro-lang'); if (codes.indexOf(s) > -1) lang = s; } catch (e) {} }
+    try { q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; } catch (e) {}
+    if (codes.indexOf(q) < 0) q = null;
+    try { s = localStorage.getItem('dyro-lang'); } catch (e) {}
+    if (codes.indexOf(s) < 0) s = null;
     try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
-    if (lang && lang !== 'fr' && !window.DYRO_I18N) {
-      r.classList.add('i18n-wait');
+    try { if (sessionStorage.getItem('dyro-wipe')) { r.classList.add('wipe-in'); sessionStorage.removeItem('dyro-wipe'); } } catch (e) {}
+    var hasAlt = !!document.querySelector('link[rel="alternate"][hreflang]');
+    if (q && q !== page && hasAlt) {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + q + '"]');
+      if (alt) { r.classList.add('i18n-wait'); location.replace(new URL(alt.href).pathname + location.hash); return; }
+    }
+    lang = hasAlt ? page : (q || s || page);
+    if (lang !== 'fr' && !window.DYRO_I18N) {
+      if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
       el.src = 'assets/js/i18n.js?v=3';
       el.id = 'dyro-i18n';
@@ -540,6 +562,92 @@
     </div>
   </section>
 
+  <!-- RÉALISATIONS : concepts de démonstration, clairement signalés comme tels -->
+  <section class="section work" id="realisations" aria-labelledby="work-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal data-i18n="work.eyebrow">Réalisations</p>
+        <h2 class="section__title" id="work-title" data-split data-i18n="work.title">Ce que votre site pourrait être.</h2>
+        <p class="section__lead" data-reveal data-i18n="work.lead">Trois concepts de démonstration, conçus pour montrer notre façon de travailler. Vos projets prendront leur place ici.</p>
+      </header>
+
+      <div class="work__grid" data-stagger data-spotlight-group>
+        <article class="card work__card work--resto" data-tilt="4" data-cursor="Concept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-restaurant.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.1.h">Votre restaurant</p><span class="wp-cta" data-i18n="work.1.cta">Réserver une table</span></div>
+              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-menu">
+                <div class="wp-item"><span class="wp-line"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
+              </div>
+              <div class="wp-gallery"><i></i><i></i><i></i></div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.1.title">Restaurant</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
+            <p class="work__tags" data-i18n="work.1.tags">Réservation en ligne · FR · DE · PT</p>
+            <p class="work__note" data-i18n="work.note">Projet de démonstration, pas un client</p>
+          </div>
+        </article>
+
+        <article class="card work__card work--build" data-tilt="4" data-cursor="Concept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-renovation.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.2.h">Votre entreprise de rénovation</p><span class="wp-cta" data-i18n="cta.quote">Demander un devis</span></div>
+              <div class="wp-grid">
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+              </div>
+              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-zone"><i></i><i></i><i></i></div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.2.title">Artisan du bâtiment</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
+            <p class="work__tags" data-i18n="work.2.tags">Demande de devis · SEO local · FR · DE</p>
+            <p class="work__note" data-i18n="work.note">Projet de démonstration, pas un client</p>
+          </div>
+        </article>
+
+        <article class="card work__card work--immo" data-tilt="4" data-cursor="Concept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-agence.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-langs">FR DE EN LU</span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.3.h">Votre agence immobilière</p><span class="wp-cta" data-i18n="work.3.cta">Voir les biens</span></div>
+              <div class="wp-search"><span></span><span></span><b></b></div>
+              <div class="wp-props">
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+              </div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.3.title">Agence immobilière</h3><span class="work__badge" data-i18n="work.badge">Concept</span></div>
+            <p class="work__tags" data-i18n="work.3.tags">Annonces · FR · DE · EN · LU</p>
+            <p class="work__note" data-i18n="work.note">Projet de démonstration, pas un client</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- MÉTHODE (défilement horizontal) -->
   <section class="process" id="methode" aria-labelledby="process-title" data-process>
     <div class="process__sticky">
@@ -557,6 +665,7 @@
             <span class="step__num" data-n="01">01</span>
             <h3 data-i18n="proc.1.h">Échange découverte</h3>
             <p data-i18n="proc.1.p">Vous présentez votre activité, vos clients et vos objectifs. Nous identifions ce dont votre site a besoin, et ce dont il peut se passer.</p>
+            <a class="step__link" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20r%C3%A9server%20un%20appel%20de%2020%20minutes%20pour%20mon%20projet%20de%20site." target="_blank" rel="noopener" data-i18n-attr="href:book.href"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a>
             <span class="step__tag" data-i18n="proc.1.tag">Votre besoin, clarifié</span>
           </li>
           <li class="card step">
@@ -731,6 +840,9 @@
         </a>
         <a class="btn btn--ghost btn--xl" href="mailto:contact@dyroweb.online?subject=Projet%20de%20site%20web" data-cursor="Écrire" data-i18n-attr="href:cta.mailto;data-cursor:cta.cursor">
           <span data-i18n="cta.write">Écrire à DYRO WEB</span>
+        </a>
+        <a class="btn btn--ghost btn--xl" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20r%C3%A9server%20un%20appel%20de%2020%20minutes%20pour%20mon%20projet%20de%20site." target="_blank" rel="noopener" data-i18n-attr="href:book.href">
+          <svg class="btn__arrow btn__cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3.5" width="11" height="10" rx="2"/><path d="M2.5 7h11M5.5 2v3M10.5 2v3"/></svg><span data-i18n="book.label">Réserver un appel de 20 min</span>
         </a>
       </div>
 

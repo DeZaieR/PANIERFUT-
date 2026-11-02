@@ -6,11 +6,29 @@
   const SELF_SRC = (document.currentScript && document.currentScript.src) || '';
   const DICT_SRC = SELF_SRC ? SELF_SRC.replace(/main\.js(\?.*)?$/, 'i18n.js$1') : 'assets/js/i18n.js';
 
-  // Langue choisie explicitement : ?lang= dans l'URL, sinon choix mémorisé
-  function explicitLang() {
-    try { let q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; if (CODES.includes(q)) return q; } catch (e) { /* URL illisible */ }
-    try { const s = localStorage.getItem('dyro-lang'); if (CODES.includes(s)) return s; } catch (e) { /* stockage indisponible */ }
-    return null;
+  const PAGE_LANG = document.documentElement.getAttribute('lang') || 'fr';
+  const HAS_ALT = !!document.querySelector('link[rel="alternate"][hreflang]');
+  const urlLang = () => {
+    try { let q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; return CODES.includes(q) ? q : null; } catch (e) { return null; }
+  };
+  const storedLang = () => {
+    try { const s = localStorage.getItem('dyro-lang'); return CODES.includes(s) ? s : null; } catch (e) { return null; }
+  };
+  // Les pages qui ont une adresse par langue (/de/, /en/…) sont toujours dans leur langue.
+  // Les autres (pages légales, 404) suivent ?lang= ou le dernier choix du visiteur.
+  function resolveLang() {
+    if (HAS_ALT) return PAGE_LANG;
+    return urlLang() || storedLang() || PAGE_LANG;
+  }
+  // Le visiteur a-t-il déjà choisi une langue ? (sinon on peut lui en suggérer une)
+  const hasChoice = () => !!(urlLang() || storedLang());
+  // Le site publié a une adresse par langue (/de/, /en/…) ; absent dans l'aperçu
+  const LANG_PATHS = !!document.querySelector('meta[name="dyro:lang-paths"]');
+  // Adresse de la page dans une autre langue (balises hreflang), même domaine
+  function altPath(code) {
+    const l = document.querySelector(`link[rel="alternate"][hreflang="${code}"]`);
+    if (!l) return null;
+    try { return new URL(l.href).pathname; } catch (e) { return null; }
   }
 
   function run() {
@@ -168,6 +186,10 @@
     const marquees = [];
     const scrubs = [];
     const langListeners = [];
+    // Mesure d'audience : n'envoie rien tant que Plausible n'est pas installé (voir scripts/partials/analytics.html)
+    const track = (name, props) => {
+      try { if (typeof window.plausible === 'function') window.plausible(name, props ? { props } : undefined); } catch (e) { /* ignoré */ }
+    };
     const attrPairs = (el) => el.dataset.i18nAttr.split(';')
       .map((pair) => { const i = pair.indexOf(':'); return [pair.slice(0, i).trim(), pair.slice(i + 1).trim()]; })
       .filter(([a, k]) => a && k);
@@ -198,9 +220,25 @@
     // Langue affichée : ?lang= dans l'URL ou choix mémorisé, sinon français.
     // La langue du navigateur ne change jamais le contenu (Google lit la page en français) :
     // elle sert seulement à proposer une autre langue (voir langHint plus bas).
-    const startLang = explicitLang() || 'fr';
-    if (startLang !== 'fr' && dict()[startLang]) { curLang = startLang; setTexts(); }
+    const startLang = resolveLang();
+    curLang = startLang;
+    if (startLang !== PAGE_LANG && dict()[startLang]) setTexts();
     root.classList.remove('i18n-wait');
+    if (root.classList.contains('wipe-in')) setTimeout(() => root.classList.remove('wipe-in'), 1100);
+
+    // Pages sans version par langue (légales, 404) : liens « accueil » et « devis » vers la langue du visiteur
+    function localizeLinks() {
+      if (!LANG_PATHS || HAS_ALT) return;
+      const prefix = curLang === 'fr' ? '/' : `/${curLang}/`;
+      $$('a[href]').forEach((a) => {
+        if (!a.dataset.hrefOrig) a.dataset.hrefOrig = a.getAttribute('href');
+        const m = a.dataset.hrefOrig.match(/^(?:\.\/|\/)(#.*)?$|^\/?(devis\.html.*)$/);
+        if (!m) return;
+        a.setAttribute('href', prefix + (m[2] || m[1] || ''));
+      });
+    }
+    localizeLinks();
+    langListeners.push(localizeLinks);
 
     $$('[data-split-hero]').forEach(splitWords);
     $$('[data-split]').forEach(splitWords);
@@ -1028,6 +1066,21 @@
     function switchLang(code) {
       setLangMenu(false);
       if (!LANG_CODES.includes(code) || code === curLang || switching) return;
+      track('Langue', { langue: code });
+      const target = altPath(code);
+      if (target && target !== location.pathname) {
+        try { localStorage.setItem('dyro-lang', code); } catch (e) { /* stockage indisponible */ }
+        if (reduce || !wipe) { location.href = target + location.hash; return; }
+        try { sessionStorage.setItem('dyro-wipe', code); } catch (e) { /* stockage indisponible */ }
+        switching = true;
+        $('[data-wipe-code]', wipe).textContent = LANG_LABELS[code];
+        $('[data-wipe-name]', wipe).textContent = LANG_NAMES[code];
+        wipe.classList.remove('is-run');
+        void wipe.offsetWidth;
+        wipe.classList.add('is-run');
+        setTimeout(() => { location.href = target + location.hash; }, 640);
+        return;
+      }
       if (code !== 'fr' && !window.DYRO_I18N) { ensureDict().then(() => { if (window.DYRO_I18N) switchLang(code); }); return; }
       if (reduce || !wipe) { applyLang(code); return; }
       switching = true;
@@ -1063,7 +1116,7 @@
 
     // Suggestion de langue : si le navigateur est en DE, EN, PT ou LB et qu'aucun choix n'a été fait
     (function langHint() {
-      if (explicitLang()) return;
+      if (hasChoice()) return;
       try { if (localStorage.getItem('dyro-hint') === '0') return; } catch (e) { /* stockage indisponible */ }
       const HINTS = {
         de: ['Diese Seite gibt es auch auf Deutsch.', 'Auf Deutsch ansehen', 'Schließen'],
@@ -1075,7 +1128,7 @@
       let target = null;
       for (const l of prefs) {
         const c = String(l).slice(0, 2).toLowerCase();
-        if (c === 'fr') return;
+        if (c === curLang) return;
         if (HINTS[c]) { target = c; break; }
       }
       if (!target) return;
@@ -1105,6 +1158,16 @@
     updatePrices();
     if (curLang !== 'fr' && LANGS[curLang] && mockH) setLang(curLang);
 
+    // Clics importants : WhatsApp, réservation d'appel, téléphone, email
+    d.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a) return;
+      const h = a.getAttribute('href');
+      if (h.includes('wa.me')) track(a.matches('[data-i18n-attr*="book.href"]') ? 'Réserver un appel' : 'WhatsApp');
+      else if (h.startsWith('tel:')) track('Appel');
+      else if (h.startsWith('mailto:')) track('Email');
+    });
+
     // Petite API pour les scripts propres à une page (formulaire de devis)
     window.DYRO = {
       tr,
@@ -1112,6 +1175,7 @@
       locale: () => LOCALES[curLang],
       onLang: (fn) => langListeners.push(fn),
       reveal: (el) => revealIO.observe(el),
+      track,
       // Textes français par défaut pour les clés absentes du HTML de la page
       addDefaults: (o) => Object.keys(o).forEach((k) => { if (!(k in FR)) FR[k] = o[k]; }),
     };
@@ -1122,8 +1186,8 @@
 
   // Une autre langue que le français est demandée : le script de l'en-tête charge le dictionnaire,
   // on attend qu'il soit prêt (3 s au maximum) pour éviter un flash de texte français.
-  const wanted = explicitLang();
-  if (wanted && wanted !== 'fr' && !window.DYRO_I18N) {
+  const wanted = resolveLang();
+  if (wanted !== 'fr' && !window.DYRO_I18N) {
     let started = false;
     const go = () => { if (!started) { started = true; run(); } };
     const tag = document.getElementById('dyro-i18n');

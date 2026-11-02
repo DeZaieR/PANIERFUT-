@@ -6,6 +6,7 @@
 <title>Politique de confidentialité · DYRO WEB</title>
 <meta name="description" content="Politique de confidentialité de DYRO WEB : données collectées, finalités, durées de conservation et vos droits (RGPD).">
 <meta name="theme-color" content="#03050a">
+<meta name="dyro:lang-paths" content="/de/ /en/ /pt/ /lb/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DYRO WEB">
 <meta property="og:title" content="Politique de confidentialité · DYRO WEB">
@@ -20,15 +21,34 @@
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=3">
 <link rel="stylesheet" href="assets/css/style.css?v=3">
+<!-- analytics:start -->
+<!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
+     1. créer le site dyroweb.online sur plausible.io ;
+     2. remplacer ce commentaire par :
+        <script defer data-domain="dyroweb.online" src="https://plausible.io/js/script.js"></script>
+        <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+     3. relancer scripts/build_pages.py puis scripts/build_langs.py ;
+     4. ajouter Plausible dans la politique de confidentialité. -->
+<!-- analytics:end -->
 <script>
   (function () {
-    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'], lang = null;
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'];
+    var page = r.getAttribute('lang') || 'fr', q = null, s = null, lang;
     r.classList.add('js', 'is-loading');
-    try { var q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; if (codes.indexOf(q) > -1) lang = q; } catch (e) {}
-    if (!lang) { try { var s = localStorage.getItem('dyro-lang'); if (codes.indexOf(s) > -1) lang = s; } catch (e) {} }
+    try { q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; } catch (e) {}
+    if (codes.indexOf(q) < 0) q = null;
+    try { s = localStorage.getItem('dyro-lang'); } catch (e) {}
+    if (codes.indexOf(s) < 0) s = null;
     try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
-    if (lang && lang !== 'fr' && !window.DYRO_I18N) {
-      r.classList.add('i18n-wait');
+    try { if (sessionStorage.getItem('dyro-wipe')) { r.classList.add('wipe-in'); sessionStorage.removeItem('dyro-wipe'); } } catch (e) {}
+    var hasAlt = !!document.querySelector('link[rel="alternate"][hreflang]');
+    if (q && q !== page && hasAlt) {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + q + '"]');
+      if (alt) { r.classList.add('i18n-wait'); location.replace(new URL(alt.href).pathname + location.hash); return; }
+    }
+    lang = hasAlt ? page : (q || s || page);
+    if (lang !== 'fr' && !window.DYRO_I18N) {
+      if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
       el.src = 'assets/js/i18n.js?v=3';
       el.id = 'dyro-i18n';
@@ -177,14 +197,14 @@
           <ul>
             <li><strong>Formulaire de devis :</strong> nom, entreprise, email, téléphone et informations sur votre projet (type de site, langues, fonctionnalités, délai, adresse du site actuel, message).</li>
             <li><strong>Échanges par email, téléphone ou WhatsApp :</strong> les informations que vous choisissez de nous communiquer.</li>
-            <li><strong>Données techniques :</strong> l’hébergeur enregistre des journaux de connexion (adresse IP, date et heure, pages demandées, navigateur) pour assurer la sécurité et le bon fonctionnement du site.</li>
+            <li><strong>Données techniques :</strong> l’hébergeur enregistre des journaux de connexion (adresse IP, date et heure, pages demandées, navigateur) pour assurer la sécurité et le bon fonctionnement du site. Pour limiter les abus du formulaire, votre adresse IP est aussi conservée sous forme d’empreinte non réversible pendant 24 heures au plus.</li>
             <li><strong>Préférences dans votre navigateur :</strong> la langue choisie et la fermeture du bandeau sont enregistrées dans le stockage local de votre navigateur. Ces informations restent sur votre appareil et ne nous sont pas transmises.</li>
           </ul>
         </section>
         <section id="finalites" data-reveal>
           <h2><span class="num">03</span>Finalités et bases légales</h2>
           <ul>
-            <li><strong>Répondre à votre demande et établir un devis :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
+            <li><strong>Répondre à votre demande, vous envoyer un email de confirmation et établir un devis :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
             <li><strong>Exécuter le contrat et facturer :</strong> exécution du contrat (article 6.1.b) et respect de nos obligations légales comptables (article 6.1.c).</li>
             <li><strong>Assurer la sécurité du site :</strong> intérêt légitime (article 6.1.f).</li>
           </ul>

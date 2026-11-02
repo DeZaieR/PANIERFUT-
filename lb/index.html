@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="lb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="meta.title">Websäit-Kreatioun zu Lëtzebuerg | DYRO WEB</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="DYRO WEB mécht Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch." data-i18n-attr="content:meta.desc">
+<meta name="theme-color" content="#03050a">
+<link rel="alternate" hreflang="fr" href="https://dyroweb.online/">
+<link rel="alternate" hreflang="de" href="https://dyroweb.online/de/">
+<link rel="alternate" hreflang="en" href="https://dyroweb.online/en/">
+<link rel="alternate" hreflang="pt" href="https://dyroweb.online/pt/">
+<link rel="alternate" hreflang="lb" href="https://dyroweb.online/lb/">
+<link rel="alternate" hreflang="x-default" href="https://dyroweb.online/">
+<link rel="canonical" href="https://dyroweb.online/lb/">
+<meta name="dyro:lang-paths" content="/de/ /en/ /pt/ /lb/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DYRO WEB">
+<meta property="og:title" content="Websäit-Kreatioun zu Lëtzebuerg | DYRO WEB">
+<meta property="og:description" content="DYRO WEB mécht Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch.">
+<meta property="og:url" content="https://dyroweb.online/lb/">
+<meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="lb_LU">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css?v=3">
+<link rel="stylesheet" href="/assets/css/style.css?v=3">
+<!-- analytics:start -->
+<!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
+     1. créer le site dyroweb.online sur plausible.io ;
+     2. remplacer ce commentaire par :
+        <script defer data-domain="dyroweb.online" src="https://plausible.io/js/script.js"></script>
+        <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+     3. relancer scripts/build_pages.py puis scripts/build_langs.py ;
+     4. ajouter Plausible dans la politique de confidentialité. -->
+<!-- analytics:end -->
+<script>
+  (function () {
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'];
+    var page = r.getAttribute('lang') || 'fr', q = null, s = null, lang;
+    r.classList.add('js', 'is-loading');
+    try { q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; } catch (e) {}
+    if (codes.indexOf(q) < 0) q = null;
+    try { s = localStorage.getItem('dyro-lang'); } catch (e) {}
+    if (codes.indexOf(s) < 0) s = null;
+    try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
+    try { if (sessionStorage.getItem('dyro-wipe')) { r.classList.add('wipe-in'); sessionStorage.removeItem('dyro-wipe'); } } catch (e) {}
+    var hasAlt = !!document.querySelector('link[rel="alternate"][hreflang]');
+    if (q && q !== page && hasAlt) {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + q + '"]');
+      if (alt) { r.classList.add('i18n-wait'); location.replace(new URL(alt.href).pathname + location.hash); return; }
+    }
+    lang = hasAlt ? page : (q || s || page);
+    if (lang !== 'fr' && !window.DYRO_I18N) {
+      if (lang !== page) r.classList.add('i18n-wait');
+      var el = document.createElement('script');
+      el.src = '/assets/js/i18n.js?v=3';
+      el.id = 'dyro-i18n';
+      document.head.appendChild(el);
+      setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
+    }
+    setTimeout(function () {
+      if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
+    }, 4000);
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "DYRO WEB",
+  "url": "https://dyroweb.online/",
+  "logo": "https://dyroweb.online/assets/img/apple-touch-icon.png",
+  "image": "https://dyroweb.online/assets/img/og-image.jpg",
+  "description": "Création de sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.",
+  "email": "contact@dyroweb.online",
+  "telephone": "+352 691 349 632",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "LU"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Luxembourg"
+    },
+    {
+      "@type": "Place",
+      "name": "Grande Région"
+    }
+  ],
+  "priceRange": "€€",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "contact@dyroweb.online",
+    "telephone": "+352 691 349 632",
+    "availableLanguage": [
+      "French",
+      "German",
+      "English",
+      "Portuguese",
+      "Luxembourgish"
+    ]
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "name": "Landing page",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 890,
+        "maxPrice": 1290,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Site vitrine Pro",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 1890,
+        "maxPrice": 2900,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Premium multilingue",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 3500,
+        "maxPrice": 6000,
+        "valueAddedTaxIncluded": false
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "E-commerce",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "minPrice": 4500,
+        "valueAddedTaxIncluded": false
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top" data-i18n="skip">Op den Inhalt sprangen</a>
+
+<!-- Préchargement -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__stage">
+    <svg class="loader__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" pathLength="1"/></svg>
+    <img class="loader__mark" src="/assets/img/dyro-mark-320.webp" alt="" width="320" height="185">
+  </div>
+  <div class="loader__meta">
+    <span>Create Beyond Limits</span>
+    <span class="loader__count"><span data-load-count>000</span></span>
+  </div>
+</div>
+
+<!-- Curseur personnalisé (souris uniquement) -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><div class="cursor__circle"><span class="cursor__label"></span></div></div>
+</div>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Transition de changement de langue -->
+<div class="lang-wipe" data-lang-wipe aria-hidden="true">
+  <div class="lang-wipe__panel"></div>
+  <div class="lang-wipe__label"><span class="lang-wipe__code" data-wipe-code>FR</span><span class="lang-wipe__name" data-wipe-name>Français</span></div>
+</div>
+
+<!-- Bandeau -->
+<div class="banner" data-banner>
+  <div class="container banner__inner">
+    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span><span data-i18n="banner.text">Websäiten a 5 Sproochen fir Lëtzebuerg: FR · DE · EN · PT · LU.</span> <a href="/lb/devis.html" class="banner__link"><span data-i18n="banner.link">Offer ufroen</span> <span aria-hidden="true">→</span></a></p>
+    <button class="banner__close" type="button" aria-label="Banner zoumaachen" data-i18n-attr="aria-label:banner.close" data-banner-close>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- En-tête -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a href="#top" class="brand" aria-label="DYRO WEB, zréck no uewen" data-i18n-attr="aria-label:brand.aria">
+      <img src="/assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+      <img src="/assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
+    </a>
+
+    <nav class="nav" aria-label="Haaptnavigatioun" data-i18n-attr="aria-label:nav.aria">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="#services" class="nav__link" data-roll data-i18n="nav.services">Servicer</a>
+      <a href="#pourquoi" class="nav__link" data-roll data-i18n="nav.why">Firwat mir</a>
+      <a href="#methode" class="nav__link" data-roll data-i18n="nav.method">Method</a>
+      <a href="#offres" class="nav__link" data-roll data-i18n="nav.offers">Präisser</a>
+      <a href="#faq" class="nav__link" data-roll data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="header__cta">
+      <div class="lang" data-lang-switch>
+        <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Sprooch wielen" data-i18n-attr="aria-label:lang.aria">
+          <svg class="lang__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          <span class="lang__cur" data-lang-current>FR</span>
+          <svg class="lang__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg>
+        </button>
+        <div class="lang__menu" id="lang-menu">
+          <button type="button" class="lang__opt" data-set-lang="fr" lang="fr" aria-current="true" style="--i:0"><span class="lang__code">FR</span><span class="lang__name">Français</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="de" lang="de" aria-current="false" style="--i:1"><span class="lang__code">DE</span><span class="lang__name">Deutsch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="en" lang="en" aria-current="false" style="--i:2"><span class="lang__code">EN</span><span class="lang__name">English</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="pt" lang="pt" aria-current="false" style="--i:3"><span class="lang__code">PT</span><span class="lang__name">Português</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="lb" lang="lb" aria-current="false" style="--i:4"><span class="lang__code">LU</span><span class="lang__name">Lëtzebuergesch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+        </div>
+      </div>
+      <a href="tel:+352691349632" class="btn btn--ghost btn--sm header__phone">+352 691 349 632</a>
+      <a href="/lb/devis.html" class="btn btn--sm header__quote" data-magnetic="0.25">
+        <span data-i18n="cta.quote">Offer ufroen</span>
+        <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="menu" id="menu" hidden>
+  <nav class="container menu__inner" aria-label="Mobilt Menü" data-i18n-attr="aria-label:menu.aria">
+    <a href="#services" class="menu__link" style="--i:0" data-i18n="nav.services">Servicer</a>
+    <a href="#pourquoi" class="menu__link" style="--i:1" data-i18n="nav.why">Firwat mir</a>
+    <a href="#methode" class="menu__link" style="--i:2" data-i18n="nav.method">Method</a>
+    <a href="#offres" class="menu__link" style="--i:3" data-i18n="nav.offers">Präisser</a>
+    <a href="#faq" class="menu__link" style="--i:4" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" class="menu__link" style="--i:5" data-i18n="nav.contact">Kontakt</a>
+    <div class="menu__langs" role="group" aria-label="Sprooch" data-i18n-attr="aria-label:lang.label" style="--i:6">
+      <button type="button" data-set-lang="fr" lang="fr" aria-current="true">FR</button>
+      <button type="button" data-set-lang="de" lang="de" aria-current="false">DE</button>
+      <button type="button" data-set-lang="en" lang="en" aria-current="false">EN</button>
+      <button type="button" data-set-lang="pt" lang="pt" aria-current="false">PT</button>
+      <button type="button" data-set-lang="lb" lang="lb" aria-current="false">LU</button>
+    </div>
+    <div class="menu__foot" style="--i:7">
+      <a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a>
+      <a href="tel:+352691349632">+352 691 349 632</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top" tabindex="-1">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__aurora"></div>
+      <div class="hero__aurora hero__aurora--2"></div>
+      <div class="hero__ringwrap" data-hero-ring>
+        <div class="ring"><div class="ring__comet"><i></i></div></div>
+      </div>
+      <canvas class="hero__streaks" data-streaks></canvas>
+    </div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="pill" data-intro style="--d:0"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.pill">Webagence · Lëtzebuerg</span></p>
+
+        <h1 class="hero__title" id="hero-title" data-split-hero data-i18n="hero.title">Websäiten, déi Iech <span class="nowrap"><span class="hl hl--swoosh">Clienten<svg class="swoosh" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="swg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#0060ed"/><stop offset=".55" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs><path d="M2 22 C 80 21, 190 14, 298 2 C 205 15, 110 24, 6 26 Z" fill="url(#swg)"/></svg></span></span> bréngen.</h1>
+
+        <p class="hero__lead" data-intro style="--d:6" data-i18n="hero.lead">Firmewebsäiten, Landing Pages an Online-Butteker fir Betriber zu Lëtzebuerg an an der Groussregioun. Hei am Land konzipéiert, entwéckelt a betreit, op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch.</p>
+
+        <div class="hero__actions" data-intro style="--d:7" data-hero-actions>
+          <a href="/lb/devis.html" class="btn btn--chrome btn--lg" data-magnetic>
+            <span data-i18n="cta.quote">Offer ufroen</span>
+            <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#offres" class="btn btn--ghost btn--lg" data-i18n="hero.offers">Präisser kucken</a>
+        </div>
+
+        <ul class="hero__facts" data-intro style="--d:8">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f1">Websäiten a 5 Sproochen</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f2">2 Korrekturronnen inklusiv</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg><span data-i18n="hero.f3">D'Websäit gehéiert Iech</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual" data-intro style="--d:3" aria-label="Animéiert Virschau vun enger Websäit am Opbau" data-i18n-attr="aria-label:hero.visual.aria">
+        <div class="scene" data-scene>
+
+          <div class="mock" data-mock>
+            <div class="mock__bar">
+              <span class="mock__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="mock__url"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="7" width="9" height="6.5" rx="1.5"/><path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7"/></svg><span data-mock-url>votre-entreprise.lu</span></span>
+            </div>
+            <div class="mock__body">
+              <div class="mock__nav bld" style="--d:0">
+                <span class="sk sk--logo"></span>
+                <span class="mock__navlinks"><span class="sk sk--xs"></span><span class="sk sk--xs"></span><span class="sk sk--xs"></span></span>
+                <span class="sk sk--btn"></span>
+              </div>
+              <div class="mock__hero">
+                <div class="mock__copy">
+                  <span class="sk sk--kicker bld" style="--d:1"></span>
+                  <p class="mock__h bld" style="--d:2" data-mock-h>Votre activité, enfin visible en ligne.</p>
+                  <span class="sk sk--line bld" style="--d:3"></span>
+                  <span class="sk sk--line sk--short bld" style="--d:3"></span>
+                  <span class="mock__cta bld" style="--d:4" data-mock-cta>Prendre rendez-vous</span>
+                </div>
+                <div class="mock__img bld" style="--d:3"><span class="mock__orb"></span><span class="mock__slash"></span></div>
+              </div>
+              <div class="mock__cards">
+                <div class="mcard bld" style="--d:5"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="mcard bld" style="--d:6"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="mcard bld" style="--d:7"><span class="mcard__ic"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+              </div>
+            </div>
+            <svg class="fcursor" data-fcursor viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 7.5-6.2 1.6L10 18.5z"/></svg>
+          </div>
+
+          <div class="code" aria-hidden="true">
+            <div class="code__bar"><span class="code__tab is-active">index.html</span><span class="code__tab">style.css</span></div>
+            <pre class="code__pre"><code data-typing></code><span class="caret"></span></pre>
+          </div>
+
+          <div class="langchip" role="group" aria-label="Sprooch vun der Virschau" data-i18n-attr="aria-label:hero.chip.aria">
+            <span class="langchip__pill" aria-hidden="true"></span>
+            <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+            <button type="button" data-lang="de" aria-pressed="false">DE</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+            <button type="button" data-lang="lb" aria-pressed="false">LU</button>
+          </div>
+
+          <div class="toast" data-toast aria-hidden="true">
+            <span class="toast__ic"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7"/></svg></span>
+            <span class="toast__txt"><strong data-toast-t>Nouvelle demande reçue</strong><span data-toast-s>via le formulaire de contact</span></span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <a href="#services" class="hero__scroll" data-intro style="--d:9"><span class="hero__scrollline" aria-hidden="true"></span><span data-i18n="hero.scroll">Scrollen</span></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee" aria-label="Eis Servicer" data-i18n-attr="aria-label:marquee.aria">
+    <div class="marquee__row marquee__row--a" data-marquee="1">
+      <div class="marquee__track">
+        <span data-i18n="mq.a1">Firmewebsäiten</span><i class="slash"></i>
+        <span class="o" data-i18n="mq.a2">Landing Pages</span><i class="slash"></i>
+        <span data-i18n="mq.a3">Online-Butteker</span><i class="slash"></i>
+        <span class="o" data-i18n="mq.a4">Lokale SEO</span><i class="slash"></i>
+        <span data-i18n="mq.a5">FR · DE · EN · PT · LU</span><i class="slash"></i>
+        <span class="o" data-i18n="mq.a6">Ënnerhalt</span><i class="slash"></i>
+      </div>
+    </div>
+    <div class="marquee__row marquee__row--b" data-marquee="-1">
+      <div class="marquee__track">
+        <span data-i18n="mq.b1">Design op Mooss</span><i class="dot"></i>
+        <span data-i18n="mq.b2">Handy-optiméiert</span><i class="dot"></i>
+        <span data-i18n="mq.b3">Online-Reservatioun</span><i class="dot"></i>
+        <span data-i18n="mq.b4">Erweidert Formulairen</span><i class="dot"></i>
+        <span data-i18n="mq.b5">Hosting</span><i class="dot"></i>
+        <span data-i18n="mq.b6">Google-Firmeprofil</span><i class="dot"></i>
+        <span data-i18n="mq.b7">Backups</span><i class="dot"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal data-i18n="svc.eyebrow">Servicer</p>
+        <h2 class="section__title" id="services-title" data-split data-i18n="svc.title">Wat mir fir Iech bauen</h2>
+        <p class="section__lead" data-reveal data-i18n="svc.lead">Vun der Websäit mat enger eenzeger Säit bis zum Online-Buttek fänkt all Projet mat der selwechter Fro un: Wat bréngt Är Clienten dozou, den Telefon ze huelen?</p>
+      </header>
+
+      <div class="services__grid" data-stagger data-spotlight-group>
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" pathLength="1"/><path d="M3 8h18" pathLength="1"/><circle cx="12" cy="14.5" r="3.5" pathLength="1"/><circle cx="12" cy="14.5" r=".8" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.1.h">Landing Page</h3>
+          <p data-i18n="svc.1.p">Eng Säit, een Zil: Ufroe kréien. Fir en neit Ugebot, e Service oder eng Reklammekampagne ze lancéieren.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.1.tag">One-Page</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Landing Page kucken" data-i18n-attr="aria-label:svc.1.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5" pathLength="1"/><path d="M2.5 8.5h19M9 8.5V20" pathLength="1"/><path d="M12 12h6M12 15h4" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.2.h">Firmewebsäit</h3>
+          <p data-i18n="svc.2.p">5 bis 7 Säiten op Franséisch an Däitsch, fir Äre Betrib virzestellen an Är Clienten z'iwwerzeegen. Englesch, Portugisesch oder Lëtzebuergesch als Optioun.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.2.tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Firmewebsäit kucken" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" pathLength="1"/><path d="M3 12h18" pathLength="1"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.3.h">Méisproocheg Websäit</h3>
+          <p data-i18n="svc.3.p">Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch. All Besucher liest Är Websäit a senger Sprooch, a Google indexéiert se an all eenzelner.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.3.tag">5 Sproochen</span><a href="#offres" class="svc__go" aria-label="Präis fir Premium méisproocheg kucken" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" pathLength="1"/><path d="M9 10V7a3 3 0 0 1 6 0v3" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.4.h">Online-Buttek</h3>
+          <p data-i18n="svc.4.p">E séieren Online-Buttek, deen am Alldag einfach ze geréieren ass: Katalog, Online-Bezuelung, Suivi vun de Bestellungen.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.4.tag">Ab 4.500 € ouni TVA</span><a href="#offres" class="svc__go" aria-label="Präis fir den Online-Buttek kucken" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" pathLength="1"/><path d="M15.5 15.5 21 21" pathLength="1"/><path d="M10.5 13.6s-2.6-2.2-2.6-4a2.6 2.6 0 0 1 5.2 0c0 1.8-2.6 4-2.6 4z" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.5.h">Lokale SEO</h3>
+          <p data-i18n="svc.5.p">Struktur, Tags a Google-Profil, fir datt Dir erschéngt, wann een an Ärer Géigend no Ärem Beruff sicht.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.5.tag">Google</span><a href="#pourquoi" class="svc__go" aria-label="Méi iwwer lokale SEO" data-i18n-attr="aria-label:svc.5.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+
+        <article class="card svc" data-tilt="5">
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z" pathLength="1"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6" pathLength="1"/></svg></div>
+          <h3 data-i18n="svc.6.h">Ënnerhalt &amp; Hosting</h3>
+          <p data-i18n="svc.6.p">Updates, Backups an Iwwerwaachung. Är Websäit bleift séier, sécher an online, ouni datt Dir Iech drëm këmmere musst.</p>
+          <div class="svc__foot"><span class="tag" data-i18n="svc.6.tag">Ab 49 € / Mount</span><a href="#offres" class="svc__go" aria-label="Ënnerhaltsformule kucken" data-i18n-attr="aria-label:svc.6.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTE (texte révélé au scroll) -->
+  <section class="statement" aria-label="Eis Approche" data-i18n-attr="aria-label:stmt.aria">
+    <div class="container">
+      <p class="statement__text" data-scrub data-i18n="stmt.text">Eng schéi Websäit geet net duer. Är muss <em>séier</em> lueden, d'<em>Sprooch</em> vun Äre Clienten schwätzen an hinnen e kloere Grond ginn, Iech <em>unzeruffen</em>.</p>
+    </div>
+  </section>
+
+  <!-- POURQUOI (bento) -->
+  <section class="section why" id="pourquoi" aria-labelledby="why-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal data-i18n="why.eyebrow">Firwat DYRO WEB</p>
+        <h2 class="section__title" id="why-title" data-split data-i18n="why.title">Séier, siichtbar an Ären Eegentum.</h2>
+      </header>
+
+      <div class="bento" data-stagger data-spotlight-group>
+
+        <article class="card bento__item b-speed">
+          <div class="b-speed__viz" aria-hidden="true">
+            <svg class="gauge" viewBox="0 0 220 124">
+              <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#0060ed"/><stop offset=".6" stop-color="#0076ff"/><stop offset="1" stop-color="#01f7ff"/></linearGradient></defs>
+              <path class="gauge__track" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
+              <path class="gauge__val" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
+            </svg>
+            <div class="gauge__num"><span data-count-to="90">0</span><sup>+</sup></div>
+            <div class="gauge__cap" data-i18n="why.speed.cap">Zil PageSpeed mobil</div>
+          </div>
+          <div class="bento__txt">
+            <h3 data-i18n="why.speed.h">Standardméisseg séier</h3>
+            <p data-i18n="why.speed.p">Eng lues Websäit verléiert hir Besucher, ier se eng Zeil gelies hunn. Mir hunn 90+ um Handy als Zil, direkt vum Launch un.</p>
+            <ul class="mini-list">
+              <li data-i18n="why.speed.l1">Kompriméiert, passend skaléiert Biller</li>
+              <li data-i18n="why.speed.l2">Liichte Code ouni onnéideg Plugins</li>
+              <li data-i18n="why.speed.l3">Verzögert Luede vu Medien</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card bento__item b-mobile">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="phone__feed">
+                <div class="pf-nav"><span class="sk sk--logo"></span><span class="pf-burger"></span></div>
+                <div class="pf-h" data-i18n="phone.h">Äre Betrib, endlech siichtbar.</div>
+                <span class="sk sk--line"></span><span class="sk sk--line sk--short"></span>
+                <span class="pf-cta" data-i18n="phone.cta">Uruffen</span>
+                <div class="pf-img"></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-img pf-img--2"></div>
+                <div class="pf-card"><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+                <div class="pf-h" data-i18n="phone.h">Äre Betrib, endlech siichtbar.</div>
+                <span class="sk sk--line"></span><span class="sk sk--line sk--short"></span>
+                <span class="pf-cta" data-i18n="phone.cta">Uruffen</span>
+              </div>
+            </div>
+          </div>
+          <div class="bento__txt">
+            <h3 data-i18n="why.mobile.h">Fir den Handy geduecht</h3>
+            <p data-i18n="why.mobile.p">Déi meescht vun Äre Besucher kommen iwwer den Handy. All Säit gëtt fir d'éischt fir den Daum gestalt an duerno fir grouss Bildschiermer ugepasst.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-lang">
+          <div class="langdemo" aria-hidden="true" data-langdemo>
+            <div class="langdemo__pills"><span class="is-on">FR</span><span>DE</span><span>EN</span><span>PT</span><span>LU</span></div>
+            <div class="langdemo__h" data-langdemo-h>Bienvenue</div>
+            <div class="langdemo__p" data-langdemo-p>Découvrez nos services</div>
+          </div>
+          <div class="bento__txt">
+            <h3 data-i18n="why.lang.h">Fënnef Sproochen, eng Websäit</h3>
+            <p data-i18n="why.lang.p">Zu Lëtzebuerg liesen Är Clienten op Franséisch, Däitsch, Englesch, Portugisesch oder Lëtzebuergesch. Är Websäit och.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-seo">
+          <div class="serp" aria-hidden="true" data-serp>
+            <div class="serp__bar"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span data-serp-q></span><i class="serp__caret"></i></div>
+            <div class="serp__res serp__res--hit"><span class="serp__url">votre-entreprise.lu</span><span class="serp__title" data-i18n="why.seo.result">Äre Betrib · Installateur zu Lëtzebuerg</span><span class="sk sk--line"></span></div>
+            <div class="serp__res"><span class="sk sk--xs"></span><span class="sk sk--line"></span><span class="sk sk--line sk--short"></span></div>
+          </div>
+          <div class="bento__txt">
+            <h3 data-i18n="why.seo.h">An Ärer Géigend fonnt</h3>
+            <p data-i18n="why.seo.p">Lokal Auszeechnung, Säite pro Regioun an e kohärent Google-Profil, fir datt een Iech fënnt.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-own">
+          <ul class="own" aria-hidden="true">
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="why.own.l1">Quellcode</span></li>
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="why.own.l2">Inhalter a Biller</span></li>
+            <li><span class="own__chk"><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="why.own.l3">Administrateur-Zougang</span></li>
+          </ul>
+          <div class="bento__txt">
+            <h3 data-i18n="why.own.h">D'Websäit gehéiert Iech</h3>
+            <p data-i18n="why.own.p">Mam Bezuele vum Rescht gëtt Iech alles iwwerdroen. Dir kënnt de Prestataire wiesselen, wéini Dir wëllt.</p>
+          </div>
+        </article>
+
+        <article class="card bento__item b-care">
+          <div class="pulseviz" aria-hidden="true">
+            <svg viewBox="0 0 400 80" preserveAspectRatio="none">
+              <path class="pulseviz__base" d="M0 44 H120 L136 44 L146 18 L160 66 L172 30 L182 44 H260 L274 44 L282 30 L292 56 L300 44 H400"/>
+              <path class="pulseviz__run" d="M0 44 H120 L136 44 L146 18 L160 66 L172 30 L182 44 H260 L274 44 L282 30 L292 56 L300 44 H400" pathLength="1"/>
+            </svg>
+            <div class="pulseviz__tags"><span><i></i><b data-i18n="why.care.t1">Online</b></span><span data-i18n="why.care.t2">Updates</span><span data-i18n="why.care.t3">Backups</span><span data-i18n="why.care.t4">Iwwerwaachung</span></div>
+          </div>
+          <div class="bento__txt">
+            <h3 data-i18n="why.care.h">Suivi nom Launch</h3>
+            <p data-i18n="why.care.p">Dräi Formule fir Ënnerhalt an Hosting: 49, 99 oder 199 € ouni TVA pro Mount. Dir këmmert Iech ëm Är Clienten, mir eis ëm d'Websäit.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS : concepts de démonstration, clairement signalés comme tels -->
+  <section class="section work" id="realisations" aria-labelledby="work-title">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow" data-reveal data-i18n="work.eyebrow">Referenzen</p>
+        <h2 class="section__title" id="work-title" data-split data-i18n="work.title">Esou kéint Är Websäit ausgesinn.</h2>
+        <p class="section__lead" data-reveal data-i18n="work.lead">Dräi Demo-Konzepter, déi weisen, wéi mir schaffen. Är Projeten huelen hei hir Plaz an.</p>
+      </header>
+
+      <div class="work__grid" data-stagger data-spotlight-group>
+        <article class="card work__card work--resto" data-tilt="4" data-cursor="Konzept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-restaurant.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.1.h">Äre Restaurant</p><span class="wp-cta" data-i18n="work.1.cta">Dësch reservéieren</span></div>
+              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-menu">
+                <div class="wp-item"><span class="wp-line"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line"></span><b></b></div>
+                <div class="wp-item"><span class="wp-line wp-line--s"></span><b></b></div>
+              </div>
+              <div class="wp-gallery"><i></i><i></i><i></i></div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.1.title">Restaurant</h3><span class="work__badge" data-i18n="work.badge">Konzept</span></div>
+            <p class="work__tags" data-i18n="work.1.tags">Online-Reservatioun · FR · DE · PT</p>
+            <p class="work__note" data-i18n="work.note">Demo-Projet, kee Client</p>
+          </div>
+        </article>
+
+        <article class="card work__card work--build" data-tilt="4" data-cursor="Konzept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-renovation.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-links"><i></i><i></i><i></i></span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.2.h">Äre Renovatiounsbetrib</p><span class="wp-cta" data-i18n="cta.quote">Offer ufroen</span></div>
+              <div class="wp-grid">
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+                <div class="wp-tile"><i></i><span class="wp-line"></span><span class="wp-line wp-line--s"></span></div>
+              </div>
+              <div class="wp-section"><span class="wp-line wp-line--accent"></span><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-zone"><i></i><i></i><i></i></div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.2.title">Handwierksbetrib</h3><span class="work__badge" data-i18n="work.badge">Konzept</span></div>
+            <p class="work__tags" data-i18n="work.2.tags">Offer-Ufroen · Lokale SEO · FR · DE</p>
+            <p class="work__note" data-i18n="work.note">Demo-Projet, kee Client</p>
+          </div>
+        </article>
+
+        <article class="card work__card work--immo" data-tilt="4" data-cursor="Konzept" data-i18n-attr="data-cursor:work.badge">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>votre-agence.lu</span></div>
+            <div class="work__page">
+              <div class="wp-nav"><span class="wp-logo"></span><span class="wp-langs">FR DE EN LU</span></div>
+              <div class="wp-hero"><p class="wp-h" data-i18n="work.3.h">Är Immobilienagence</p><span class="wp-cta" data-i18n="work.3.cta">Objeten ukucken</span></div>
+              <div class="wp-search"><span></span><span></span><b></b></div>
+              <div class="wp-props">
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+                <div class="wp-prop"><span class="ph"></span><span class="tx"><span class="wp-line"></span><span class="wp-line wp-line--accent"></span></span></div>
+              </div>
+              <div class="wp-section"><span class="wp-line "></span><span class="wp-line "></span><span class="wp-line wp-line--s"></span></div>
+              <div class="wp-foot"></div>
+            </div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3 data-i18n="work.3.title">Immobilienagence</h3><span class="work__badge" data-i18n="work.badge">Konzept</span></div>
+            <p class="work__tags" data-i18n="work.3.tags">Annoncen · FR · DE · EN · LU</p>
+            <p class="work__note" data-i18n="work.note">Demo-Projet, kee Client</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTHODE (défilement horizontal) -->
+  <section class="process" id="methode" aria-labelledby="process-title" data-process>
+    <div class="process__sticky">
+      <div class="container process__head">
+        <div>
+          <p class="eyebrow" data-reveal data-i18n="proc.eyebrow">Method</p>
+          <h2 class="section__title" id="process-title" data-split data-i18n="proc.title">Véier Etappen, een Uspriechpartner.</h2>
+        </div>
+        <div class="process__bar" aria-hidden="true"><i data-process-bar></i></div>
+      </div>
+
+      <div class="process__viewport">
+        <ol class="process__track" data-process-track>
+          <li class="card step">
+            <span class="step__num" data-n="01">01</span>
+            <h3 data-i18n="proc.1.h">Éischt Gespréich</h3>
+            <p data-i18n="proc.1.p">Dir stellt Äre Betrib, Är Clienten an Är Ziler vir. Mir klären, wat Är Websäit brauch an op wat se verzichte kann.</p>
+            <a class="step__link" href="https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20en%20Uruff%20vun%2020%20Minutten%20iwwer%20m%C3%A4i%20Webs%C3%A4it-Projet." target="_blank" rel="noopener" data-i18n-attr="href:book.href"><span data-i18n="book.label">20-Minutten-Uruff reservéieren</span> <span aria-hidden="true">→</span></a>
+            <span class="step__tag" data-i18n="proc.1.tag">Äre Besoin, gekläert</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="02">02</span>
+            <h3 data-i18n="proc.2.h">Kloer Offer</h3>
+            <p data-i18n="proc.2.p">Eng Offer mat dräi Optiounen, Präisser ouni TVA an engem detailléierten Ëmfang. Bei Projeten iwwer 1.000 € ouni TVA start en Acompte vu 40 % d'Aarbecht.</p>
+            <span class="step__tag" data-i18n="proc.2.tag">3 Optiounen, keng Onkloerheeten</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="03">03</span>
+            <h3 data-i18n="proc.3.h">Design &amp; Entwécklung</h3>
+            <p data-i18n="proc.3.p">Entworf, Ëmsetzung, Inhalter an Äre Sproochen, Optimiséierung vu Vitess an SEO. Zwou Korrekturronnen sinn abegraff.</p>
+            <span class="step__tag" data-i18n="proc.3.tag">2 Korrekturronnen</span>
+          </li>
+          <li class="card step">
+            <span class="step__num" data-n="04">04</span>
+            <h3 data-i18n="proc.4.h">Launch &amp; Suivi</h3>
+            <p data-i18n="proc.4.p">Verëffentlechung, Aféierung an, wann Dir wëllt, Ënnerhalt. D'Websäit gehéiert Iech, soubal de Rescht bezuelt ass.</p>
+            <span class="step__tag" data-i18n="proc.4.tag">D'Websäit gehéiert Iech</span>
+          </li>
+          <li class="step step--end">
+            <p class="step__endtxt" data-i18n="proc.end">Äre Projet fänkt mat engem Message un.</p>
+            <a href="/lb/devis.html" class="btn btn--ghost btn--lg">
+              <span data-i18n="proc.endbtn">Etapp 01 starten</span>
+              <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section class="section pricing" id="offres" aria-labelledby="pricing-title">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal data-i18n="price.eyebrow">Präisser</p>
+        <h2 class="section__title" id="pricing-title" data-split data-i18n="price.title">Kloer Präisser, ouni TVA ugewisen.</h2>
+        <p class="section__lead" data-reveal data-i18n="price.lead">Dräi Päck fir Är nei Websäit. D'Offer leet de genauen Ëmfang virum Start fest.</p>
+      </header>
+
+      <div class="pricing__grid" data-stagger data-spotlight-group>
+        <article class="card price">
+          <header>
+            <h3 data-i18n="price.1.h">Landing Page</h3>
+            <p class="price__for" data-i18n="price.1.for">Fir en Ugebot oder eng Kampagne ze lancéieren.</p>
+          </header>
+          <p class="price__amount"><span class="price__from" data-i18n="price.from">ab</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="890">890</span><span class="price__cur" data-i18n="price.cur">€ ouni TVA</span></p>
+          <p class="price__range" data-i18n="price.1.range">890 bis 1.290 € ouni TVA, jee no Ëmfang</p>
+          <ul class="price__list">
+            <li data-i18n="price.1.l1">Eng Säit, een Zil</li>
+            <li data-i18n="price.l.form">Kontaktformulaire</li>
+            <li data-i18n="price.1.l3">Handy-optiméiert</li>
+            <li data-i18n="price.1.l4">SEO-Basis</li>
+            <li data-i18n="price.l.rev">2 Korrekturronnen</li>
+          </ul>
+          <a href="/lb/devis.html#landing" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Offer ufroen</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="card price price--featured">
+          <span class="price__glow" aria-hidden="true"></span>
+          <span class="badge" data-i18n="price.badge">Recommandéiert</span>
+          <header>
+            <h3 data-i18n="price.2.h">Firmewebsäit Pro</h3>
+            <p class="price__for" data-i18n="price.2.for">Fir Äre Betrib virzestellen a Vertrauen opzebauen.</p>
+          </header>
+          <p class="price__amount"><span class="price__from" data-i18n="price.from">ab</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="1890">1 890</span><span class="price__cur" data-i18n="price.cur">€ ouni TVA</span></p>
+          <p class="price__range" data-i18n="price.2.range">1.890 bis 2.900 € ouni TVA, jee no Ëmfang</p>
+          <ul class="price__list">
+            <li data-i18n="price.2.l1">5 bis 7 Säiten</li>
+            <li data-i18n="price.2.l2">Franséisch an Däitsch</li>
+            <li data-i18n="price.2.lx">Aner Sproochen als Optioun</li>
+            <li data-i18n="price.2.l3">Design op Mooss</li>
+            <li data-i18n="price.2.l4">SEO fir all Säit</li>
+            <li data-i18n="price.l.form">Kontaktformulaire</li>
+            <li data-i18n="price.l.rev">2 Korrekturronnen</li>
+          </ul>
+          <a href="/lb/devis.html#pro" class="btn btn--chrome price__btn" data-magnetic="0.2"><span data-i18n="cta.quote">Offer ufroen</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+
+        <article class="card price">
+          <header>
+            <h3 data-i18n="price.3.h">Premium méisproocheg</h3>
+            <p class="price__for" data-i18n="price.3.for">Fir de ganze Lëtzebuerger Maart.</p>
+          </header>
+          <p class="price__amount"><span class="price__from" data-i18n="price.from">ab</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3500">3 500</span><span class="price__cur" data-i18n="price.cur">€ ouni TVA</span></p>
+          <p class="price__range" data-i18n="price.3.range">3.500 bis 6.000 € ouni TVA, jee no Ëmfang</p>
+          <ul class="price__list">
+            <li data-i18n="price.3.l1">Bis zu 5 Sproochen: FR, DE, EN, PT, LU</li>
+            <li data-i18n="price.3.l2">Lokale SEO</li>
+            <li data-i18n="price.3.l3">Online-Reservatioun</li>
+            <li data-i18n="price.3.l4">Erweidert Formulairen</li>
+            <li data-i18n="price.l.rev">2 Korrekturronnen</li>
+          </ul>
+          <a href="/lb/devis.html#premium" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Offer ufroen</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </article>
+      </div>
+
+      <div class="pricing__extra" data-stagger>
+        <div class="extra">
+          <span class="extra__label" data-i18n="price.x1.label">Online-Buttek</span>
+          <span class="extra__val" data-i18n="price.x1.val">ab 4.500 € ouni TVA</span>
+          <span class="extra__note" data-i18n="price.x1.note">Online-Buttek, op Ufro</span>
+        </div>
+        <div class="extra">
+          <span class="extra__label" data-i18n="price.x2.label">Ënnerhalt &amp; Hosting</span>
+          <span class="extra__val" data-i18n="price.x2.val">49 · 99 · 199 € ouni TVA / Mount</span>
+          <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · 12 Méint Laafzäit</span>
+        </div>
+      </div>
+
+      <p class="pricing__note" data-reveal data-i18n="price.note">Präisser ouni TVA, plus 17 % Lëtzebuerger TVA. Acompte vu 40 % bei der Ënnerschrëft fir all Projet iwwer 1.000 € ouni TVA, de Rescht bei der Liwwerung. Domain, Lizenzen a Bilddatenbanke ginn apart verrechent.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow" data-reveal>FAQ</p>
+        <h2 class="section__title" id="faq-title" data-split data-i18n="faq.title">Heefeg Froen</h2>
+      </header>
+
+      <div class="faq__list" data-stagger>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">Wéi laang dauert et, fir meng Websäit ze maachen?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Dat hänkt vun der Zuel vun de Säiten, de Sproochen an de Funktiounen of. De Plang gëtt virum Start Schrëtt fir Schrëtt an der Offer festgeluecht.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Gehéiert d'Websäit wierklech mir?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p data-i18n="faq.a2">Jo. No der kompletter Bezuelung gëtt Iech d'Websäit iwwerdroen: Code, Inhalter an Administrateur-Zougang. Dir sidd un keen obligatoreschen Abonnement gebonnen.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span data-i18n="faq.q3">A wéi enge Sprooche maacht Dir Websäiten?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">Op Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch. D'Firmewebsäit Pro gëtt op Franséisch an Däitsch geliwwert, aner Sprooche sinn optional. De Premium-Pak deckt bis zu fënnef Sproochen of.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span data-i18n="faq.q4">Wéi leeft d'Bezuelung of?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Bei Projeten iwwer 1.000 € ouni TVA gëtt bei der Ënnerschrëft en Acompte vu 40 % gefrot. De Rescht gëtt bei der Liwwerung bezuelt, bannent 15 Deeg.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span data-i18n="faq.q5">Wéivill Korrekture sinn abegraff?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p data-i18n="faq.a5">All Projet enthält zwou Korrekturronnen. Weider Ännerunge ginn am Viraus berechent.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">An nom Launch?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Mir bidden dräi Formule fir Ënnerhalt an Hosting un, vun 49 bis 199 € ouni TVA pro Mount mat 12 Méint Laafzäit, fir datt Är Websäit aktuell, geséchert an online bleift.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="cta" id="contact" aria-labelledby="cta-title" data-cta>
+    <div class="cta__glow" aria-hidden="true"></div>
+    <div class="cta__stage" aria-hidden="true" data-cta-stage>
+      <div class="cta__ringwrap"><div class="ring ring--big"><div class="ring__comet"><i></i></div></div></div>
+      <div class="cta__markwrap" data-cta-mark>
+        <img src="/assets/img/dyro-mark-480.webp" alt="" class="cta__mark" width="480" height="278" loading="lazy" decoding="async">
+        <span class="cta__sheen"></span>
+      </div>
+    </div>
+
+    <div class="container cta__inner">
+      <p class="eyebrow eyebrow--center" data-reveal data-i18n="cta.eyebrow">Kontakt</p>
+      <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien! Loosst eis iwwer Äre Projet schwätzen.</h2>
+      <p class="cta__lead" data-reveal data-i18n="cta.lead">Beschreift Äre Betrib an dat, wat Dir vun Ärer Websäit erwaart. Dir kritt eng kloer Offer mat dräi Optiounen a Präisser ouni TVA.</p>
+      <div class="cta__actions" data-reveal>
+        <a class="btn btn--chrome btn--xl" href="/lb/devis.html" data-magnetic>
+          <span data-i18n="cta.quote">Offer ufroen</span>
+          <svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--xl" href="mailto:contact@dyroweb.online?subject=Webs%C3%A4it-Projet" data-cursor="Schreiwen" data-i18n-attr="href:cta.mailto;data-cursor:cta.cursor">
+          <span data-i18n="cta.write">DYRO WEB schreiwen</span>
+        </a>
+        <a class="btn btn--ghost btn--xl" href="https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20en%20Uruff%20vun%2020%20Minutten%20iwwer%20m%C3%A4i%20Webs%C3%A4it-Projet." target="_blank" rel="noopener" data-i18n-attr="href:book.href">
+          <svg class="btn__arrow btn__cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3.5" width="11" height="10" rx="2"/><path d="M2.5 7h11M5.5 2v3M10.5 2v3"/></svg><span data-i18n="book.label">20-Minutten-Uruff reservéieren</span>
+        </a>
+      </div>
+
+      <div class="contact" data-stagger>
+        <div class="contact__card">
+          <span class="contact__label" data-i18n="contact.email">E-Mail</span>
+          <a class="contact__val" href="mailto:contact@dyroweb.online">contact@dyroweb.online</a>
+          <button class="copy" type="button" data-copy="contact@dyroweb.online" data-i18n="copy">Kopéieren</button>
+        </div>
+        <div class="contact__card">
+          <span class="contact__label" data-i18n="contact.phone">Telefon</span>
+          <a class="contact__val" href="tel:+352691349632">+352 691 349 632</a>
+          <div class="contact__actions">
+            <button class="copy" type="button" data-copy="+352 691 349 632" data-i18n="copy">Kopéieren</button>
+            <a class="copy copy--wa" href="https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20eng%20Webs%C3%A4it." target="_blank" rel="noopener" data-i18n-attr="href:wa.href">WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact__card">
+          <span class="contact__label" data-i18n="contact.based">Sëtz zu</span>
+          <span class="contact__val" data-i18n="contact.country">Lëtzebuerg</span>
+          <span class="contact__sub" data-i18n="contact.sub">Clienten zu Lëtzebuerg an an der Groussregioun</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="mbar" aria-label="Séier Aktiounen" data-i18n-attr="aria-label:bar.aria">
+  <a class="mbar__btn mbar__btn--quote" href="/lb/devis.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-i18n="bar.quote">Offer</span></a>
+  <a class="mbar__btn mbar__btn--wa" href="https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20eng%20Webs%C3%A4it." target="_blank" rel="noopener" data-i18n-attr="href:wa.href"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.3-.2z"/></svg><span>WhatsApp</span></a>
+  <a class="mbar__btn" href="tel:+352691349632"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i18n="bar.call">Uruffen</span></a>
+</nav>
+
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--lg" aria-label="DYRO WEB, zréck no uewen" data-i18n-attr="aria-label:brand.aria">
+        <img src="/assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+        <img src="/assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
+      </a>
+      <p data-i18n="foot.desc">Websäite fir Betriber zu Lëtzebuerg an an der Groussregioun.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Plang vum Site" data-i18n-attr="aria-label:foot.navaria">
+      <span class="footer__h" data-i18n="foot.navh">Navigatioun</span>
+      <a href="#services" data-roll data-i18n="nav.services">Servicer</a>
+      <a href="#methode" data-roll data-i18n="nav.method">Method</a>
+      <a href="#offres" data-roll data-i18n="nav.offers">Präisser</a>
+      <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
+      <a href="/lb/devis.html" data-roll data-i18n="cta.quote">Offer ufroen</a>
+    </nav>
+    <div class="footer__nav">
+      <span class="footer__h" data-i18n="foot.contacth">Kontakt</span>
+      <a href="mailto:contact@dyroweb.online" data-roll>contact@dyroweb.online</a>
+      <a href="tel:+352691349632" data-roll>+352 691 349 632</a>
+      <a href="https://dyroweb.online" data-roll>dyroweb.online</a>
+    </div>
+  </div>
+
+  <div class="giant" data-giant aria-hidden="true">
+    <span class="giant__base">Beyond Limits</span>
+    <span class="giant__fill">Beyond Limits</span>
+  </div>
+
+  <div class="container footer__bottom">
+    <span data-i18n="foot.copy">© 2026 DYRO WEB · Dyro Studios · Lëtzebuerg</span>
+    <nav class="footer__legal" aria-label="Legal Informatiounen" data-i18n-attr="aria-label:legal.eyebrow">
+      <a href="/mentions-legales.html" data-i18n="foot.legal">Impressum</a>
+      <a href="/confidentialite.html" data-i18n="foot.privacy">Dateschutz</a>
+      <a href="/cgv.html" data-i18n="foot.terms">AGB</a>
+    </nav>
+    <a href="#top" class="footer__top-link"><span data-i18n="foot.top">Zréck no uewen</span> <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js?v=3" defer></script>
+</body>
+</html>

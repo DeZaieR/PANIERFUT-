@@ -1,0 +1,30 @@
+<script>
+  (function () {
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'];
+    var page = r.getAttribute('lang') || 'fr', q = null, s = null, lang;
+    r.classList.add('js', 'is-loading');
+    try { q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; } catch (e) {}
+    if (codes.indexOf(q) < 0) q = null;
+    try { s = localStorage.getItem('dyro-lang'); } catch (e) {}
+    if (codes.indexOf(s) < 0) s = null;
+    try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
+    try { if (sessionStorage.getItem('dyro-wipe')) { r.classList.add('wipe-in'); sessionStorage.removeItem('dyro-wipe'); } } catch (e) {}
+    var hasAlt = !!document.querySelector('link[rel="alternate"][hreflang]');
+    if (q && q !== page && hasAlt) {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + q + '"]');
+      if (alt) { r.classList.add('i18n-wait'); location.replace(new URL(alt.href).pathname + location.hash); return; }
+    }
+    lang = hasAlt ? page : (q || s || page);
+    if (lang !== 'fr' && !window.DYRO_I18N) {
+      if (lang !== page) r.classList.add('i18n-wait');
+      var el = document.createElement('script');
+      el.src = '__ASSETS__js/i18n.js?v=__V__';
+      el.id = 'dyro-i18n';
+      document.head.appendChild(el);
+      setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
+    }
+    setTimeout(function () {
+      if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
+    }, 4000);
+  })();
+</script>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="dv.doctitle">Pedir orçamento · DYRO WEB</title>
+<meta name="description" content="Quatro perguntas e um intervalo de preço indicativo. Depois recebe uma proposta clara, com três opções.">
+<meta name="theme-color" content="#03050a">
+<link rel="alternate" hreflang="fr" href="https://dyroweb.online/devis.html">
+<link rel="alternate" hreflang="de" href="https://dyroweb.online/de/devis.html">
+<link rel="alternate" hreflang="en" href="https://dyroweb.online/en/devis.html">
+<link rel="alternate" hreflang="pt" href="https://dyroweb.online/pt/devis.html">
+<link rel="alternate" hreflang="lb" href="https://dyroweb.online/lb/devis.html">
+<link rel="alternate" hreflang="x-default" href="https://dyroweb.online/devis.html">
+<link rel="canonical" href="https://dyroweb.online/pt/devis.html">
+<meta name="dyro:lang-paths" content="/de/ /en/ /pt/ /lb/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DYRO WEB">
+<meta property="og:title" content="Pedir orçamento · DYRO WEB">
+<meta property="og:description" content="Quatro perguntas e um intervalo de preço indicativo. Depois recebe uma proposta clara, com três opções.">
+<meta property="og:url" content="https://dyroweb.online/pt/devis.html">
+<meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="lb_LU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css?v=3">
+<link rel="stylesheet" href="/assets/css/style.css?v=3">
+<!-- analytics:start -->
+<!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
+     1. créer le site dyroweb.online sur plausible.io ;
+     2. remplacer ce commentaire par :
+        <script defer data-domain="dyroweb.online" src="https://plausible.io/js/script.js"></script>
+        <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+     3. relancer scripts/build_pages.py puis scripts/build_langs.py ;
+     4. ajouter Plausible dans la politique de confidentialité. -->
+<!-- analytics:end -->
+<script>
+  (function () {
+    var r = document.documentElement, codes = ['fr', 'de', 'en', 'pt', 'lb'];
+    var page = r.getAttribute('lang') || 'fr', q = null, s = null, lang;
+    r.classList.add('js', 'is-loading');
+    try { q = new URLSearchParams(location.search).get('lang'); if (q === 'lu') q = 'lb'; } catch (e) {}
+    if (codes.indexOf(q) < 0) q = null;
+    try { s = localStorage.getItem('dyro-lang'); } catch (e) {}
+    if (codes.indexOf(s) < 0) s = null;
+    try { if (sessionStorage.getItem('dyro-intro')) r.classList.add('no-loader'); } catch (e) {}
+    try { if (sessionStorage.getItem('dyro-wipe')) { r.classList.add('wipe-in'); sessionStorage.removeItem('dyro-wipe'); } } catch (e) {}
+    var hasAlt = !!document.querySelector('link[rel="alternate"][hreflang]');
+    if (q && q !== page && hasAlt) {
+      var alt = document.querySelector('link[rel="alternate"][hreflang="' + q + '"]');
+      if (alt) { r.classList.add('i18n-wait'); location.replace(new URL(alt.href).pathname + location.hash); return; }
+    }
+    lang = hasAlt ? page : (q || s || page);
+    if (lang !== 'fr' && !window.DYRO_I18N) {
+      if (lang !== page) r.classList.add('i18n-wait');
+      var el = document.createElement('script');
+      el.src = '/assets/js/i18n.js?v=3';
+      el.id = 'dyro-i18n';
+      document.head.appendChild(el);
+      setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
+    }
+    setTimeout(function () {
+      if (!r.classList.contains('is-ready')) { r.classList.remove('is-loading'); r.classList.add('is-ready'); }
+    }, 4000);
+  })();
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top" data-i18n="skip">Saltar para o conteúdo</a>
+<!-- Curseur personnalisé (souris uniquement) -->
+<div class="cursor" aria-hidden="true">
+  <div class="cursor__dot"></div>
+  <div class="cursor__ring"><div class="cursor__circle"><span class="cursor__label"></span></div></div>
+</div>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Transition de changement de langue -->
+<div class="lang-wipe" data-lang-wipe aria-hidden="true">
+  <div class="lang-wipe__panel"></div>
+  <div class="lang-wipe__label"><span class="lang-wipe__code" data-wipe-code>FR</span><span class="lang-wipe__name" data-wipe-name>Français</span></div>
+</div>
+
+<!-- Bandeau -->
+<div class="banner" data-banner>
+  <div class="container banner__inner">
+    <p class="banner__text"><span class="banner__dot" aria-hidden="true"></span><span data-i18n="banner.text">Sites em 5 línguas para o Luxemburgo: FR · DE · EN · PT · LU.</span> <a href="/pt/devis.html" class="banner__link"><span data-i18n="banner.link">Pedir orçamento</span> <span aria-hidden="true">→</span></a></p>
+    <button class="banner__close" type="button" aria-label="Fechar aviso" data-i18n-attr="aria-label:banner.close" data-banner-close>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- En-tête -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a href="/pt/" class="brand" aria-label="DYRO WEB, voltar ao topo" data-i18n-attr="aria-label:brand.aria">
+      <img src="/assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+      <img src="/assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.aria">
+      <span class="nav__pill" aria-hidden="true"></span>
+      <a href="/pt/#services" class="nav__link" data-roll data-i18n="nav.services">Serviços</a>
+      <a href="/pt/#pourquoi" class="nav__link" data-roll data-i18n="nav.why">Porquê nós</a>
+      <a href="/pt/#methode" class="nav__link" data-roll data-i18n="nav.method">Método</a>
+      <a href="/pt/#offres" class="nav__link" data-roll data-i18n="nav.offers">Preços</a>
+      <a href="/pt/#faq" class="nav__link" data-roll data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="header__cta">
+      <div class="lang" data-lang-switch>
+        <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="Mudar de idioma" data-i18n-attr="aria-label:lang.aria">
+          <svg class="lang__globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          <span class="lang__cur" data-lang-current>FR</span>
+          <svg class="lang__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg>
+        </button>
+        <div class="lang__menu" id="lang-menu">
+          <button type="button" class="lang__opt" data-set-lang="fr" lang="fr" aria-current="true" style="--i:0"><span class="lang__code">FR</span><span class="lang__name">Français</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="de" lang="de" aria-current="false" style="--i:1"><span class="lang__code">DE</span><span class="lang__name">Deutsch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="en" lang="en" aria-current="false" style="--i:2"><span class="lang__code">EN</span><span class="lang__name">English</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="pt" lang="pt" aria-current="false" style="--i:3"><span class="lang__code">PT</span><span class="lang__name">Português</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+          <button type="button" class="lang__opt" data-set-lang="lb" lang="lb" aria-current="false" style="--i:4"><span class="lang__code">LU</span><span class="lang__name">Lëtzebuergesch</span><svg class="lang__check" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7"/></svg></button>
+        </div>
+      </div>
+      <a href="tel:+352691349632" class="btn btn--ghost btn--sm header__phone">+352 691 349 632</a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="menu" id="menu" hidden>
+  <nav class="container menu__inner" aria-label="Menu móvel" data-i18n-attr="aria-label:menu.aria">
+    <a href="/pt/#services" class="menu__link" style="--i:0" data-i18n="nav.services">Serviços</a>
+    <a href="/pt/#pourquoi" class="menu__link" style="--i:1" data-i18n="nav.why">Porquê nós</a>
+    <a href="/pt/#methode" class="menu__link" style="--i:2" data-i18n="nav.method">Método</a>
+    <a href="/pt/#offres" class="menu__link" style="--i:3" data-i18n="nav.offers">Preços</a>
+    <a href="/pt/#faq" class="menu__link" style="--i:4" data-i18n="nav.faq">FAQ</a>
+    <a href="/pt/#contact" class="menu__link" style="--i:5" data-i18n="nav.contact">Contacto</a>
+    <div class="menu__langs" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label" style="--i:6">
+      <button type="button" data-set-lang="fr" lang="fr" aria-current="true">FR</button>
+      <button type="button" data-set-lang="de" lang="de" aria-current="false">DE</button>
+      <button type="button" data-set-lang="en" lang="en" aria-current="false">EN</button>
+      <button type="button" data-set-lang="pt" lang="pt" aria-current="false">PT</button>
+      <button type="button" data-set-lang="lb" lang="lb" aria-current="false">LU</button>
+    </div>
+    <div class="menu__foot" style="--i:7">
+      <a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a>
+      <a href="tel:+352691349632">+352 691 349 632</a>
+    </div>
+  </nav>
+</div>
+
+<main id="top" tabindex="-1">
+  <section class="page-hero">
+    <div class="page-hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="page-hero__glow"></div>
+      <div class="page-hero__ring"><div class="ring"><div class="ring__comet"><i></i></div></div></div>
+    </div>
+    <div class="container">
+      <p class="eyebrow intro" style="--d:0" data-i18n="dv.eyebrow">Pedido de orçamento</p>
+      <h1 class="page-hero__title intro" style="--d:1" data-i18n="dv.title">O seu projeto em 2 minutos.</h1>
+      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatro perguntas e um intervalo de preço indicativo. Depois recebe uma proposta clara, com três opções.</p>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="container quote__grid">
+      <form class="quote__form" data-quote novalidate>
+        <ol class="steps">
+          <li data-step-ind="1"><button type="button"><span class="steps__n">01</span><span data-i18n="dv.s1">Projeto</span></button></li>
+          <li data-step-ind="2"><button type="button"><span class="steps__n">02</span><span data-i18n="dv.s2">Línguas</span></button></li>
+          <li data-step-ind="3"><button type="button"><span class="steps__n">03</span><span data-i18n="dv.s3">Opções</span></button></li>
+          <li data-step-ind="4"><button type="button"><span class="steps__n">04</span><span data-i18n="dv.s4">Contactos</span></button></li>
+        </ol>
+
+        <fieldset class="step-panel" data-step="1">
+          <legend class="q-title" tabindex="-1" data-i18n="dv.q1">De que tipo de site precisa?</legend>
+          <div class="choice-grid" data-spotlight-group>
+              <label class="choice card">
+                <input type="radio" name="type" value="landing">
+                <span class="choice__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+                <span class="choice__name" data-i18n="price.1.h">Landing page</span>
+                <span class="choice__desc" data-i18n="price.1.for">Para lançar uma oferta ou campanha.</span>
+                <span class="choice__price" data-i18n="price.1.range">890 a 1290 € + IVA, consoante o âmbito</span>
+              </label>
+              <label class="choice card">
+                <input type="radio" name="type" value="pro">
+                <span class="choice__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+                <span class="choice__name" data-i18n="price.2.h">Site institucional Pro</span>
+                <span class="choice__desc" data-i18n="price.2.for">Para apresentar a sua atividade e transmitir confiança.</span>
+                <span class="choice__price" data-i18n="price.2.range">1890 a 2900 € + IVA, consoante o âmbito</span>
+              </label>
+              <label class="choice card">
+                <input type="radio" name="type" value="premium">
+                <span class="choice__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+                <span class="choice__name" data-i18n="price.3.h">Premium multilingue</span>
+                <span class="choice__desc" data-i18n="price.3.for">Para chegar a todo o mercado luxemburguês.</span>
+                <span class="choice__price" data-i18n="price.3.range">3500 a 6000 € + IVA, consoante o âmbito</span>
+              </label>
+              <label class="choice card">
+                <input type="radio" name="type" value="ecommerce">
+                <span class="choice__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+                <span class="choice__name" data-i18n="price.x1.label">Loja online</span>
+                <span class="choice__desc" data-i18n="price.x1.note">Loja online, sob orçamento</span>
+                <span class="choice__price" data-i18n="price.x1.val">desde 4500 € + IVA</span>
+              </label>
+              <label class="choice card">
+                <input type="radio" name="type" value="unsure">
+                <span class="choice__check"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+                <span class="choice__name" data-i18n="dv.unsure">Ainda não sei</span>
+                <span class="choice__desc" data-i18n="dv.unsure.d">Aconselhamos o pacote mais adequado.</span>
+                
+              </label>
+          </div>
+          <p class="field-error" data-error="type" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset class="step-panel" data-step="2" hidden>
+          <legend class="q-title" tabindex="-1" data-i18n="dv.q2">Em que línguas?</legend>
+          <div class="pills">
+            <label class="pill-check" lang="fr"><input type="checkbox" name="langs" value="fr" checked><span class="pill-check__code">FR</span>Français</label>
+            <label class="pill-check" lang="de"><input type="checkbox" name="langs" value="de"><span class="pill-check__code">DE</span>Deutsch</label>
+            <label class="pill-check" lang="en"><input type="checkbox" name="langs" value="en"><span class="pill-check__code">EN</span>English</label>
+            <label class="pill-check" lang="pt"><input type="checkbox" name="langs" value="pt"><span class="pill-check__code">PT</span>Português</label>
+            <label class="pill-check" lang="lb"><input type="checkbox" name="langs" value="lb"><span class="pill-check__code">LU</span>Lëtzebuergesch</label>
+          </div>
+          <p class="q-hint" data-i18n="dv.q2.hint">O Site institucional Pro inclui francês e alemão. O Premium cobre até cinco línguas. As outras línguas são orçamentadas à parte.</p>
+          <p class="field-error" data-error="langs" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset class="step-panel" data-step="3" hidden>
+          <legend class="q-title" tabindex="-1" data-i18n="dv.q3">Funcionalidades pretendidas</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="features" value="form"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="price.l.form">Formulário de contacto</span></label>
+            <label class="check"><input type="checkbox" name="features" value="booking"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="price.3.l3">Reservas online</span></label>
+            <label class="check"><input type="checkbox" name="features" value="adv"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="price.3.l4">Formulários avançados</span></label>
+            <label class="check"><input type="checkbox" name="features" value="pay"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="dv.f.pay">Pagamento online</span></label>
+            <label class="check"><input type="checkbox" name="features" value="seo"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="price.3.l2">SEO local</span></label>
+            <label class="check"><input type="checkbox" name="features" value="blog"><span class="check__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span><span data-i18n="dv.f.blog">Blogue ou notícias</span></label>
+          </div>
+          <p class="q-sub" data-i18n="dv.q3b">Manutenção e alojamento</p>
+          <div class="chips" role="radiogroup" aria-label="Manutenção e alojamento" data-i18n-attr="aria-label:dv.q3b">
+            <label class="chip"><input type="radio" name="maint" value="none" checked><span data-i18n="dv.m.none">Por agora não</span></label>
+            <label class="chip"><input type="radio" name="maint" value="ess"><span data-i18n="dv.m.ess">Essentiel · 49 € + IVA / mês</span></label>
+            <label class="chip"><input type="radio" name="maint" value="pro"><span data-i18n="dv.m.pro">Pro · 99 € + IVA / mês</span></label>
+            <label class="chip"><input type="radio" name="maint" value="gro"><span data-i18n="dv.m.gro">Croissance · 199 € + IVA / mês</span></label>
+          </div>
+          <p class="q-sub" data-i18n="dv.q3c">Prazo pretendido</p>
+          <div class="chips" role="radiogroup" aria-label="Prazo pretendido" data-i18n-attr="aria-label:dv.q3c">
+            <label class="chip"><input type="radio" name="deadline" value="asap"><span data-i18n="dv.d.asap">O mais rápido possível</span></label>
+            <label class="chip"><input type="radio" name="deadline" value="soon"><span data-i18n="dv.d.soon">Dentro de 1 a 2 meses</span></label>
+            <label class="chip"><input type="radio" name="deadline" value="later"><span data-i18n="dv.d.later">Daqui a 3 meses ou mais</span></label>
+            <label class="chip"><input type="radio" name="deadline" value="none"><span data-i18n="dv.d.none">Sem data fixa</span></label>
+          </div>
+          <div class="field field--site">
+            <label for="q-site"><span data-i18n="dv.site">Endereço do seu site atual</span> <span class="opt">(<span data-i18n="dv.optional">opcional</span>)</span></label>
+            <input id="q-site" name="site" type="url" inputmode="url" autocomplete="url" placeholder="https://">
+          </div>
+        </fieldset>
+
+        <fieldset class="step-panel" data-step="4" hidden>
+          <legend class="q-title" tabindex="-1" data-i18n="dv.q4">Os seus contactos</legend>
+          <div class="fields">
+            <div class="field">
+              <label for="q-name" data-i18n="dv.name">Nome completo</label>
+              <input id="q-name" name="name" type="text" autocomplete="name" required>
+              <p class="field-error" data-error="name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="q-company"><span data-i18n="dv.company">Empresa</span> <span class="opt">(<span data-i18n="dv.optional">opcional</span>)</span></label>
+              <input id="q-company" name="company" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="q-email" data-i18n="dv.email">Email</label>
+              <input id="q-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              <p class="field-error" data-error="email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="q-phone"><span data-i18n="dv.phone">Telefone</span> <span class="opt">(<span data-i18n="dv.optional">opcional</span>)</span></label>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="field field--full">
+              <label for="q-message" data-i18n="dv.msg">A sua atividade e a sua necessidade</label>
+              <textarea id="q-message" name="message" rows="5" placeholder="Ex.: restaurante em Esch-sur-Alzette, queremos um site com reservas online." data-i18n-attr="placeholder:dv.msg.ph"></textarea>
+            </div>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" id="q-consent">
+            <span class="consent__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+            <span data-i18n="dv.consent">Aceito que os meus dados sejam utilizados para tratar o meu pedido, de acordo com a <a href="/confidentialite.html">política de privacidade</a>.</span>
+          </label>
+          <p class="field-error" data-error="consent" aria-live="polite"></p>
+          <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        </fieldset>
+
+        <div class="quote__nav">
+          <button type="button" class="btn btn--ghost" data-prev hidden><svg class="btn__arrow btn__arrow--back" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg><span data-i18n="dv.prev">Voltar</span></button>
+          <button type="button" class="btn btn--chrome" data-next data-magnetic="0.2"><span data-i18n="dv.next">Continuar</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <button type="submit" class="btn btn--chrome" data-submit hidden data-magnetic="0.2"><span data-i18n="dv.send">Enviar pedido</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+        </div>
+
+        <div class="quote__done" data-done hidden>
+          <div class="done-mark" aria-hidden="true"><div class="ring"><div class="ring__comet"><i></i></div></div><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></div>
+          <h2 data-i18n="dv.ok.title">Obrigado, o seu pedido foi enviado.</h2>
+          <p data-i18n="dv.ok.text">Voltamos a contactá-lo com uma proposta clara, com três opções.</p>
+          <a href="/pt/" class="btn btn--ghost"><span data-i18n="dv.home">Voltar à página inicial</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+
+        <div class="quote__done" data-fallback hidden>
+          <div class="done-mark" aria-hidden="true"><div class="ring"><div class="ring__comet"><i></i></div></div><svg viewBox="0 0 16 16"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></div>
+          <h2 data-i18n="dv.fb.title">Último passo: envie o seu pedido por email.</h2>
+          <p data-i18n="dv.fb.text">O seu email abre com o pedido já escrito. Se nada acontecer, copie o texto abaixo e envie-o para contact@dyroweb.online.</p>
+          <textarea class="fb-text" data-fb-text readonly aria-label="Votre demande"></textarea>
+          <div class="fb-actions">
+            <button type="button" class="btn btn--ghost" data-fb-copy data-i18n="copy">Copiar</button>
+            <a class="btn btn--chrome" data-fb-mail href="mailto:contact@dyroweb.online"><span data-i18n="dv.fb.mail">Abrir o meu email</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          </div>
+        </div>
+      </form>
+
+      <aside class="summary" aria-live="polite">
+        <div class="summary__ring" aria-hidden="true"><div class="ring"><div class="ring__comet"><i></i></div></div></div>
+        <p class="summary__h" data-i18n="dv.sum.title">A sua estimativa</p>
+        <p class="summary__label" data-i18n="dv.sum.range">Intervalo indicativo</p>
+        <p class="summary__range" data-sum-range>—</p>
+        <p class="summary__sub" data-sum-sub>Choisissez un type de projet pour voir la fourchette.</p>
+        <dl class="summary__rows">
+          <dt data-i18n="dv.s1">Projeto</dt><dd data-sum-type>—</dd>
+          <dt data-i18n="dv.s2">Línguas</dt><dd data-sum-langs>FR</dd>
+          <dt data-i18n="dv.s3">Opções</dt><dd data-sum-feat>—</dd>
+          <dt data-i18n="dv.sum.monthly">Manutenção</dt><dd data-sum-maint>—</dd>
+        </dl>
+        <p class="summary__extra" data-sum-extra hidden></p>
+        <p class="summary__note" data-i18n="dv.sum.note">Intervalo indicativo segundo a nossa tabela, sem IVA. O orçamento define o preço exato.</p>
+        <p class="summary__book"><span data-i18n="book.alt">Prefere falar diretamente?</span><br><a href="https://wa.me/352691349632?text=Ol%C3%A1%20DYRO%20WEB%2C%20gostaria%20de%20marcar%20uma%20chamada%20de%2020%20minutos%20sobre%20o%20meu%20projeto%20de%20site." target="_blank" rel="noopener" data-i18n-attr="href:book.href"><span data-i18n="book.label">Marcar uma chamada de 20 min</span> <span aria-hidden="true">→</span></a></p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <a href="/pt/" class="brand brand--lg" aria-label="DYRO WEB, voltar ao topo" data-i18n-attr="aria-label:brand.aria">
+        <img src="/assets/img/dyro-mark-160.webp" alt="" class="brand__mark" width="160" height="93">
+        <img src="/assets/img/dyro-wordmark-260.webp" alt="" class="brand__word" width="260" height="30">
+      </a>
+      <p data-i18n="foot.desc">Criação de sites para empresas do Luxemburgo e da Grande Região.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Mapa do site" data-i18n-attr="aria-label:foot.navaria">
+      <span class="footer__h" data-i18n="foot.navh">Navegação</span>
+      <a href="/pt/#services" data-roll data-i18n="nav.services">Serviços</a>
+      <a href="/pt/#methode" data-roll data-i18n="nav.method">Método</a>
+      <a href="/pt/#offres" data-roll data-i18n="nav.offers">Preços</a>
+      <a href="/pt/#faq" data-roll data-i18n="nav.faq">FAQ</a>
+      <a href="/pt/devis.html" data-roll data-i18n="cta.quote">Pedir orçamento</a>
+    </nav>
+    <div class="footer__nav">
+      <span class="footer__h" data-i18n="foot.contacth">Contacto</span>
+      <a href="mailto:contact@dyroweb.online" data-roll>contact@dyroweb.online</a>
+      <a href="tel:+352691349632" data-roll>+352 691 349 632</a>
+      <a href="https://dyroweb.online" data-roll>dyroweb.online</a>
+    </div>
+  </div>
+
+  <div class="giant" data-giant aria-hidden="true">
+    <span class="giant__base">Beyond Limits</span>
+    <span class="giant__fill">Beyond Limits</span>
+  </div>
+
+  <div class="container footer__bottom">
+    <span data-i18n="foot.copy">© 2026 DYRO WEB · Dyro Studios · Luxemburgo</span>
+    <nav class="footer__legal" aria-label="Informações legais" data-i18n-attr="aria-label:legal.eyebrow">
+      <a href="/mentions-legales.html" data-i18n="foot.legal">Aviso legal</a>
+      <a href="/confidentialite.html" data-i18n="foot.privacy">Privacidade</a>
+      <a href="/cgv.html" data-i18n="foot.terms">Condições gerais</a>
+    </nav>
+    <a href="#top" class="footer__top-link"><span data-i18n="foot.top">Voltar ao topo</span> <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js?v=3" defer></script>
+<script src="/assets/js/devis.js?v=3" defer></script>
+</body>
+</html>

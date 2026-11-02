@@ -5,6 +5,10 @@
 (() => {
   'use strict';
 
+  // Adresse du script d'envoi, calculée depuis ce fichier (fonctionne aussi depuis /de/devis.html)
+  const SELF = (document.currentScript && document.currentScript.src) || '';
+  const ENDPOINT_URL = SELF ? new URL('../../api/devis.php', SELF).href : 'api/devis.php';
+
   function init() {
     const D = window.DYRO;
     const form = document.querySelector('[data-quote]');
@@ -30,7 +34,7 @@
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const plain = (s) => String(s).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;| /g, ' ').trim();
     const TO = 'contact@dyroweb.online';
-    const ENDPOINT = 'api/devis.php';
+    const ENDPOINT = ENDPOINT_URL;
     const startedAt = Date.now();
 
     // Grille de prix (HT) — identique à la section Offres
@@ -315,6 +319,7 @@
       } catch (err) { sent = false; }
       btnSend.classList.remove('is-loading');
       if (label) label.textContent = plain(tr('dv.send'));
+      if (D.track) D.track(sent ? 'Devis envoyé' : 'Devis préparé par email', { formule: s.type || 'inconnue' });
       if (sent) finish(donePanel); else fallback(s, text);
     });
 
