@@ -102,8 +102,8 @@ function init() {
   const loader = new THREE.TextureLoader();
   const tex = (url) => { const t = loader.load(url); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; };
   const tFull = tex('img/plate-full.webp?v=1');
-  const tEmpty = tex('img/plate-empty.webp?v=1');
-  const tH = loader.load('img/plate-height.webp?v=1');
+  const tEmpty = tex('img/plate-empty.webp?v=2');
+  const tH = loader.load('img/plate-height.webp?v=2');
   const plateMat = new THREE.ShaderMaterial({
     toneMapped: false,
     uniforms: { tFull: { value: tFull }, tEmpty: { value: tEmpty }, tH: { value: tH }, uFill: { value: 0 }, uTime: { value: 0 } },
