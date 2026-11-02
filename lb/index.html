@@ -32,8 +32,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=3">
-<link rel="stylesheet" href="/assets/css/style.css?v=3">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=4">
+<link rel="stylesheet" href="/assets/css/style.css?v=4">
 <!-- analytics:start -->
 <!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
      1. créer le site dyroweb.online sur plausible.io ;
@@ -63,7 +63,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=3';
+      el.src = '/assets/js/i18n.js?v=4';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -400,45 +400,51 @@
 
       <div class="services__grid" data-stagger data-spotlight-group>
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" pathLength="1"/><path d="M3 8h18" pathLength="1"/><circle cx="12" cy="14.5" r="3.5" pathLength="1"/><circle cx="12" cy="14.5" r=".8" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">01</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3" width="19" height="14.5" rx="2.5" pathLength="1"/><path d="M2.5 7h19" pathLength="1"/><rect class="f" x="6.5" y="10" width="9" height="3.8" rx="1.9" pathLength="1"/><path class="f" d="M15.2 14.6l1.7 6.4 1.4-2.5 2.6 2.4 1.1-1.1-2.4-2.6 2.5-1.4z" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.1.h">Landing Page</h3>
           <p data-i18n="svc.1.p">Eng Säit, een Zil: Ufroe kréien. Fir en neit Ugebot, e Service oder eng Reklammekampagne ze lancéieren.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.1.tag">One-Page</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Landing Page kucken" data-i18n-attr="aria-label:svc.1.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.1.tag">One-Page</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Landing Page kucken" data-i18n-attr="aria-label:svc.1.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5" pathLength="1"/><path d="M2.5 8.5h19M9 8.5V20" pathLength="1"/><path d="M12 12h6M12 15h4" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">02</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 10.5V20.5h16.4V10.5" pathLength="1"/><path class="f" d="M3.2 3.5h17.6l1.7 5a2.45 2.45 0 0 1-4.9 0 2.45 2.45 0 0 1-4.9 0h-.4a2.45 2.45 0 0 1-4.9 0 2.45 2.45 0 0 1-4.9 0z" pathLength="1"/><path d="M10 20.5v-5.5h4v5.5" pathLength="1"/><path d="M2 20.5h20" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.2.h">Firmewebsäit</h3>
           <p data-i18n="svc.2.p">5 bis 7 Säiten op Franséisch an Däitsch, fir Äre Betrib virzestellen an Är Clienten z'iwwerzeegen. Englesch, Portugisesch oder Lëtzebuergesch als Optioun.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.2.tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Firmewebsäit kucken" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.2.tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Präis fir d&#x27;Firmewebsäit kucken" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" pathLength="1"/><path d="M3 12h18" pathLength="1"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">03</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M2.5 5.5A2.5 2.5 0 0 1 5 3h7.5A2.5 2.5 0 0 1 15 5.5v4a2.5 2.5 0 0 1-2.5 2.5H8l-3.5 3v-3.1A2.5 2.5 0 0 1 2.5 9.5z" pathLength="1"/><path d="M6 9.6 8.75 4.9l2.75 4.7M7 8h3.5" pathLength="1"/><path d="M17.5 8.5h1.5A2.5 2.5 0 0 1 21.5 11v4.5a2.5 2.5 0 0 1-2 2.45V21l-3.6-3H13a2.5 2.5 0 0 1-2.5-2.5v-.5" pathLength="1"/><path d="M14 13.5h4.5M14 15.8h3" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.3.h">Méisproocheg Websäit</h3>
           <p data-i18n="svc.3.p">Franséisch, Däitsch, Englesch, Portugisesch a Lëtzebuergesch. All Besucher liest Är Websäit a senger Sprooch, a Google indexéiert se an all eenzelner.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.3.tag">5 Sproochen</span><a href="#offres" class="svc__go" aria-label="Präis fir Premium méisproocheg kucken" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.3.tag">5 Sproochen</span><a href="#offres" class="svc__go" aria-label="Präis fir Premium méisproocheg kucken" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" pathLength="1"/><path d="M9 10V7a3 3 0 0 1 6 0v3" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">04</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.5h2.8l2.5 11.6a1.8 1.8 0 0 0 1.8 1.4h8.6a1.8 1.8 0 0 0 1.7-1.3L21.5 7.5H5.7" pathLength="1"/><path class="f" d="M5.7 7.5h15.8l-1.6 6.4a1.8 1.8 0 0 1-1.7 1.3H7.3z" pathLength="1"/><circle cx="9.5" cy="20.2" r="1.5" pathLength="1"/><circle cx="17.5" cy="20.2" r="1.5" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.4.h">Online-Buttek</h3>
           <p data-i18n="svc.4.p">E séieren Online-Buttek, deen am Alldag einfach ze geréieren ass: Katalog, Online-Bezuelung, Suivi vun de Bestellungen.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.4.tag">Ab 4.500 € ouni TVA</span><a href="#offres" class="svc__go" aria-label="Präis fir den Online-Buttek kucken" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.4.tag">Ab 4.500 € ouni TVA</span><a href="#offres" class="svc__go" aria-label="Präis fir den Online-Buttek kucken" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" pathLength="1"/><path d="M15.5 15.5 21 21" pathLength="1"/><path d="M10.5 13.6s-2.6-2.2-2.6-4a2.6 2.6 0 0 1 5.2 0c0 1.8-2.6 4-2.6 4z" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">05</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M12 22s-7-6-7-11.8a7 7 0 0 1 14 0C19 16 12 22 12 22z" pathLength="1"/><path d="M8.6 12.3l2.2-2.2 1.6 1.6 3-3" pathLength="1"/><path d="M13.4 8.7h2v2" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.5.h">Lokale SEO</h3>
           <p data-i18n="svc.5.p">Struktur, Tags a Google-Profil, fir datt Dir erschéngt, wann een an Ärer Géigend no Ärem Beruff sicht.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.5.tag">Google</span><a href="#pourquoi" class="svc__go" aria-label="Méi iwwer lokale SEO" data-i18n-attr="aria-label:svc.5.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.5.tag">Google</span><a href="#pourquoi" class="svc__go" aria-label="Méi iwwer lokale SEO" data-i18n-attr="aria-label:svc.5.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
-          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z" pathLength="1"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6" pathLength="1"/></svg></div>
+          <span class="svc__num" aria-hidden="true">06</span>
+          <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M12 2.5l8 3.2v5.8c0 4.9-3.4 8.8-8 10-4.6-1.2-8-5.1-8-10V5.7z" pathLength="1"/><path d="M6.5 12.5h2.4l1.4-3 2.4 6 1.6-3h3.2" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.6.h">Ënnerhalt &amp; Hosting</h3>
           <p data-i18n="svc.6.p">Updates, Backups an Iwwerwaachung. Är Websäit bleift séier, sécher an online, ouni datt Dir Iech drëm këmmere musst.</p>
-          <div class="svc__foot"><span class="tag" data-i18n="svc.6.tag">Ab 49 € / Mount</span><a href="#offres" class="svc__go" aria-label="Ënnerhaltsformule kucken" data-i18n-attr="aria-label:svc.6.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.6.tag">Ab 49 € / Mount</span><a href="#offres" class="svc__go" aria-label="Ënnerhaltsformule kucken" data-i18n-attr="aria-label:svc.6.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
       </div>
     </div>
@@ -917,6 +923,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=3" defer></script>
+<script src="/assets/js/main.js?v=4" defer></script>
 </body>
 </html>

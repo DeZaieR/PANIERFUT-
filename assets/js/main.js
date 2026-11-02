@@ -429,6 +429,7 @@
         cur.classList.toggle('is-native', !!field);
         if (field) { cur.classList.remove('is-hover', 'is-label'); return; }
         const t = e.target.closest('[data-cursor], a, button');
+        cur.classList.toggle('is-card', !t && !!e.target.closest('.card'));
         if (!t) { cur.classList.remove('is-hover', 'is-label'); return; }
         const lab = t.getAttribute('data-cursor');
         label.textContent = lab || '';
@@ -445,19 +446,27 @@
       });
 
       // Boutons aimantés
-      $$('[data-magnetic]').forEach((el) => {
-        const s = parseFloat(el.dataset.magnetic) || 0.35;
+      // Tous les boutons sont aimantés (plus discrètement que ceux marqués data-magnetic)
+      $$('[data-magnetic], .btn, .svc__go').forEach((el) => {
+        const s = parseFloat(el.dataset.magnetic) || (el.hasAttribute('data-magnetic') ? 0.35 : 0.18);
         let r = null;
         el.addEventListener('pointerenter', () => { r = el.getBoundingClientRect(); });
         el.addEventListener('pointermove', (e) => {
           if (!r) r = el.getBoundingClientRect();
           el.style.setProperty('--tx', ((e.clientX - (r.left + r.width / 2)) * s).toFixed(1) + 'px');
           el.style.setProperty('--ty', ((e.clientY - (r.top + r.height / 2)) * s).toFixed(1) + 'px');
+          el.style.setProperty('--bx', (e.clientX - r.left).toFixed(0) + 'px');
+          el.style.setProperty('--by', (e.clientY - r.top).toFixed(0) + 'px');
         });
         el.addEventListener('pointerleave', () => { r = null; el.style.setProperty('--tx', '0px'); el.style.setProperty('--ty', '0px'); });
       });
 
-      // Inclinaison 3D des cartes
+      // Inclinaison 3D des cartes (offres, atouts, étapes et contacts : plus légère)
+      $$('.price, .bento__item, .step, .contact__card').forEach((el) => {
+        if (el.hasAttribute('data-tilt')) return;
+        el.classList.add('tilt-auto');
+        el.dataset.tilt = el.classList.contains('bento__item') ? '2.5' : '4';
+      });
       $$('[data-tilt]').forEach((el) => {
         const max = parseFloat(el.dataset.tilt) || 6;
         el.addEventListener('pointermove', (e) => {
@@ -470,6 +479,17 @@
         el.addEventListener('pointerleave', () => { el.style.setProperty('--ry', '0deg'); el.style.setProperty('--rx', '0deg'); });
       });
     }
+
+    // Projecteur individuel pour les cartes hors grille
+    if (fine) $$('.card').forEach((c) => {
+      if (c.closest('[data-spotlight-group]')) return;
+      c.classList.add('has-spot');
+      c.addEventListener('pointermove', (e) => {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left).toFixed(0) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top).toFixed(0) + 'px');
+      });
+    });
 
     // Projecteur partagé : la lumière suit la souris sur toutes les cartes d'une grille
     $$('[data-spotlight-group]').forEach((g) => {
