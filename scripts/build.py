@@ -66,16 +66,25 @@ def collect_fr(texts):
     return fr
 
 
+def typo(t, lang):
+    """Espaces insécables : « 39 € », et en français avant : ; ? ! » et après «."""
+    t = re.sub(r'(\d) (€|%)', '\\1\u00a0\\2', t)
+    if lang == 'fr':
+        t = re.sub(r' ([:;?!»])', '\u00a0\\1', t)
+        t = t.replace('« ', '«\u00a0')
+    return t
+
+
 def render(text, lang, slug, langs, dicts, missing):
     def tr(m):
         k, fr = m.group(1), m.group(2).strip()
         if lang == 'fr':
-            return fr
+            return typo(fr, 'fr')
         v = dicts[lang].get(k)
         if v is None:
             missing.setdefault(lang, set()).add(k)
             return fr
-        return v
+        return typo(v, lang)
 
     text = KEY_RE.sub(tr, text)
     text = URL_RE.sub(lambda m: prefix(lang) + (m.group(1) or ''), text)

@@ -159,7 +159,7 @@ $rows = [
 ];
 $body = '';
 foreach ($rows as $k => $v) {
-    $body .= str_pad($k, 12) . ': ' . $v . "\n";
+    $body .= $k . str_repeat(' ', max(1, 12 - (function_exists('mb_strlen') ? mb_strlen($k) : strlen($k)))) . ': ' . $v . "\n";
 }
 $body .= "\nProjet :\n" . $message . "\n\n---\n";
 $body .= 'Langue du site : ' . strtoupper($lang) . "\n";

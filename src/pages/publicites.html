@@ -47,7 +47,7 @@
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">Essential</h3>
           <p class="plan__for">{{auto.p1.f::Une première vidéo, percutante.}}</p>
-          <p class="plan__price"><span data-count="149">149</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <p class="plan__price">{{cur.pre::}}<span data-count="149">149</span>{{cur.post::&nbsp;€}} <small>{{auto.unit::HT / vidéo}}</small></p>
           <ul class="plan__list"><li>{{auto.p1.l1::10 à 15 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p1.l3::1 format au choix}}</li><li>{{auto.l.adj::1 série de retouches}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=auto-essential">{{cta.quote::Demander un devis}}</a>
         </article>
@@ -55,14 +55,14 @@
           <span class="plan__badge">{{auto.best::Le plus cinématique}}</span>
           <h3 class="plan__name">Cinematic</h3>
           <p class="plan__for">{{auto.p2.f::Une ambiance cinéma, plus immersive.}}</p>
-          <p class="plan__price"><span data-count="249">249</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <p class="plan__price">{{cur.pre::}}<span data-count="249">249</span>{{cur.post::&nbsp;€}} <small>{{auto.unit::HT / vidéo}}</small></p>
           <ul class="plan__list"><li>{{auto.p2.l1::20 à 30 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p2.l3::Formats vertical et horizontal}}</li><li>{{auto.l.adj::1 série de retouches}}</li></ul>
           <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=auto-cinematic" data-magnetic>{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">Premium</h3>
           <p class="plan__for">{{auto.p3.f::Le format le plus abouti, sur mesure.}}</p>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="449">449</span>&nbsp;€ <small>{{auto.unit::HT / vidéo}}</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="449">449</span>{{cur.post::&nbsp;€}} <small>{{auto.unit::HT / vidéo}}</small></p>
           <ul class="plan__list"><li>{{auto.p3.l1::30 à 60 secondes}}</li><li>{{auto.l.car::1 véhicule}}</li><li>{{auto.p3.l3::Tous formats de diffusion}}</li><li>{{auto.p3.l4::Retouches confirmées au devis}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=auto-premium">{{cta.quote::Demander un devis}}</a>
         </article>
@@ -119,32 +119,32 @@
       <div class="plans plans--5" data-stagger>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o1.n::Publicité UGC IA ou produit}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="249">249</span>&nbsp;€ <small>HT</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="249">249</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-ugc-produit">{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o2.n::Commerces & agences}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="349">349</span>&nbsp;€ <small>HT</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="349">349</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o2.l1::Commerce, restaurant, hôtel ou agence}}</li><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-commerces-agences">{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan plan--best" data-reveal data-spot>
           <span class="plan__badge">{{price.best::Le plus complet}}</span>
           <h3 class="plan__name">{{brand.o3.n::Cinématique premium}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="599">599</span>&nbsp;€ <small>HT</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="599">599</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o3.l1::20 à 40 secondes}}</li><li>{{brand.o3.l2::Direction cinématique premium}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
           <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=pub-cinematique-premium" data-magnetic>{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o4.n::Film publicitaire sur mesure}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="990">990</span>&nbsp;€ <small>HT</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="990">990</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o4.l1::45 à 90 secondes}}</li><li>{{brand.o4.l2::Scénario et storytelling sur mesure}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-film-sur-mesure">{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o5.n::Pack de 3 vidéos courtes}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small><span data-count="599">599</span>&nbsp;€ <small>HT</small></p>
+          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="599">599</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o5.l1::3 vidéos de 10 à 20 secondes}}</li><li>{{brand.o5.l2::Cohérence visuelle entre les vidéos}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.o5.l4::Format vertical 9:16}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-pack-3-videos">{{cta.quote::Demander un devis}}</a>
         </article>
