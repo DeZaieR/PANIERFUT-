@@ -192,6 +192,7 @@ $headers  = [
     'From: ' . $fromName . ' <' . $FROM . '>',
     'Reply-To: ' . $email,
     'MIME-Version: 1.0',
+    'Auto-Submitted: auto-generated', // indispensable : sans lui, le filtre de la messagerie classe la notification en indésirables
 ];
 
 if ($photo && $photoLink === '') { // repli : pièce jointe si l'enregistrement a échoué
