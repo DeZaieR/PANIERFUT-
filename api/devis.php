@@ -250,60 +250,30 @@ function send_confirmation(string $to, string $lang, array $data, string $from, 
         $rows[] = [$t['l_deadline'], $t['deadlines'][$deadline]];
     }
 
-    $c = '#0062d6';
-    $F = 'font-family:Arial,Helvetica,sans-serif;';
-    $rowsHtml = '';
-    foreach ($rows as $k => [$label, $value]) {
-        $line = $k < count($rows) - 1 ? 'border-bottom:1px solid #d9e6f7;' : '';
-        $rowsHtml .= '<tr><td style="' . $F . 'padding:9px 0;font-size:14px;color:#6b6b6b;vertical-align:top;width:38%;' . $line . '">' . $label . '</td>'
-            . '<td style="' . $F . 'padding:9px 0 9px 10px;font-size:15px;color:#1a1a1a;' . $line . '">' . $value . '</td></tr>';
-    }
-    $stepsHtml = '';
-    foreach ($t['steps'] as $n => $s) {
-        $stepsHtml .= '<tr><td width="34" valign="top" style="padding:6px 0"><span style="' . $F . 'display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:' . $c . ';color:#ffffff;font-size:13px;font-weight:bold;text-align:center">' . ($n + 1) . '</span></td>'
-            . '<td style="' . $F . 'padding:7px 0;font-size:15px;color:#1a1a1a;line-height:1.5">' . $s . '</td></tr>';
-    }
-    $html = '<div style="' . $F . 'font-size:15px;line-height:1.6;color:#1a1a1a;max-width:600px">'
-        . '<p style="margin:0 0 14px">' . $t['hello'] . '</p>'
-        . '<p style="margin:0 0 20px">' . $t['intro'] . '</p>'
-        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['recap'] . '</p>'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f2f7fe;border:1px solid #d9e6f7;border-radius:10px;margin:0 0 22px"><tr><td style="padding:6px 18px">'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' . $rowsHtml . '</table></td></tr></table>'
-        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['next'] . '</p>'
-        . '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px">' . $stepsHtml . '</table>'
-        . '<p style="margin:0 0 18px">' . $t['add'] . '</p>'
-        . '<p style="margin:0 0 18px">' . $t['call'] . ' <a href="https://wa.me/352691349632" style="color:' . $c . ';white-space:nowrap">+352 691 349 632</a></p>'
-        . '<p style="margin:0 0 4px">' . $t['regards'] . '</p>'
-        . '<p style="margin:0 0 4px"><strong>' . $t['team'] . '</strong></p>'
-        . '<p style="margin:0;font-size:14px;color:#555">' . $t['tagline'] . '<br><a href="mailto:contact@dyroweb.online" style="color:' . $c . '">contact@dyroweb.online</a> · <span style="white-space:nowrap">+352 691 349 632</span> · <a href="https://dyroweb.online" style="color:' . $c . '">dyroweb.online</a></p>'
-        . '<hr style="border:0;border-top:1px solid #dddddd;margin:22px 0 12px">'
-        . '<p style="margin:0;font-size:13px;color:#777">' . $t['footer'] . '</p></div>';
-
     $plain = static fn(string $s) => html_entity_decode(strip_tags(str_replace('<br>', ' – ', $s)), ENT_QUOTES, 'UTF-8');
     $sep = $lang === 'fr' ? ' : ' : ': ';
-    $text = $t['hello'] . "\n\n" . $plain($t['intro']) . "\n\n" . $t['recap'] . "\n";
+    $rule = str_repeat('─', 28);
+    $text = $t['hello'] . "\n\n" . $plain($t['intro']) . "\n\n" . $t['recap'] . "\n" . $rule . "\n";
     foreach ($rows as [$label, $value]) {
         $text .= '- ' . $label . $sep . $plain($value) . "\n";
     }
-    $text .= "\n" . $t['next'] . "\n";
+    $text .= "\n" . $t['next'] . "\n" . $rule . "\n";
     foreach ($t['steps'] as $n => $s) {
         $text .= ($n + 1) . '. ' . $s . "\n";
     }
     $text .= "\n" . $plain($t['add']) . "\n" . $t['call'] . " +352 691 349 632\n\n" . $t['regards'] . "\n" . $t['team'] . "\n" . $t['tagline']
         . "\ncontact@dyroweb.online · +352 691 349 632 · dyroweb.online\n\n—\n" . $t['footer'] . "\n";
 
-    $b = 'alt-' . bin2hex(random_bytes(10));
-    $body = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
-        . quoted_printable_encode(str_replace("\n", "\r\n", $text)) . "\r\n"
-        . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
-        . quoted_printable_encode($html) . "\r\n--$b--";
+    // Texte simple : c'est le format que les filtres anti-spam laissent passer en boîte de réception
     $headers = [
         'From: =?UTF-8?B?' . base64_encode('DYRO WEB') . '?= <' . $from . '>',
         'Reply-To: ' . $replyTo,
         'MIME-Version: 1.0',
-        'Content-Type: multipart/alternative; boundary="' . $b . '"',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
         'Auto-Submitted: auto-replied',
     ];
+    $body = $text;
     send_mail($to, '=?UTF-8?B?' . base64_encode($t['subject']) . '?=', $body, $headers, $from);
 }
 
