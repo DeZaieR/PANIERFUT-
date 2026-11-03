@@ -139,15 +139,55 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') { set(false); btn.focus(); } });
   }
 
-  /* Comparateur avant / après */
+  /* Comparateur avant / après
+     Glisser (souris ou doigt) n'importe où sur l'image : la ligne suit exactement le pointeur.
+     Un geste vertical fait défiler la page sans bouger le curseur ; un simple toucher place la ligne.
+     Le champ « range » caché sert au clavier et aux lecteurs d'écran. */
   function slider(box) {
     if (!box || box._ba) return box && box._ba;
     const range = $('.ba__range', box);
-    let touched = false;
-    const set = v => { box.style.setProperty('--pos', v + '%'); range.value = v; };
-    range.addEventListener('input', () => { touched = true; box.classList.remove('is-intro'); set(+range.value); });
-    range.addEventListener('pointerdown', () => box.classList.add('is-drag'));
-    addEventListener('pointerup', () => box.classList.remove('is-drag'));
+    let touched = false, target = 50, raf = 0;
+    let pid = null, active = false, decided = false, x0 = 0, y0 = 0, rect = null;
+    const apply = () => {
+      raf = 0;
+      box.style.setProperty('--pos', target.toFixed(2) + '%');
+      range.value = target;
+      range.setAttribute('aria-valuetext', Math.round(target) + ' %');
+    };
+    const set = v => { target = clamp(v, 0, 100); if (!raf) raf = requestAnimationFrame(apply); };
+    const at = x => ((x - rect.left) / rect.width) * 100;
+    const stopIntro = () => { touched = true; box.classList.remove('is-intro'); };
+    const grab = () => { decided = true; box.classList.add('is-drag'); try { box.setPointerCapture(pid); } catch (_) {} };
+    const release = () => { active = false; decided = false; pid = null; box.classList.remove('is-drag'); };
+
+    box.addEventListener('pointerdown', e => {
+      if (e.button > 0 || pid !== null) return;
+      stopIntro();
+      pid = e.pointerId; active = true; decided = false; x0 = e.clientX; y0 = e.clientY;
+      rect = box.getBoundingClientRect();
+      if (e.pointerType === 'mouse') { e.preventDefault(); grab(); set(at(e.clientX)); }
+    });
+    box.addEventListener('pointermove', e => {
+      if (!active || e.pointerId !== pid) return;
+      if (!decided) {
+        const dx = Math.abs(e.clientX - x0), dy = Math.abs(e.clientY - y0);
+        if (dx < 5 && dy < 5) return;
+        if (dy > dx) { release(); return; } // geste vertical : la page défile
+        grab();
+      }
+      set(at(e.clientX));
+    });
+    box.addEventListener('pointerup', e => {
+      if (e.pointerId !== pid) return;
+      if (active && !decided) set(at(e.clientX)); // simple toucher : la ligne vient sous le doigt
+      release();
+    });
+    box.addEventListener('pointercancel', e => { if (e.pointerId === pid) release(); });
+    box.addEventListener('lostpointercapture', e => { if (e.target === box && e.pointerId === pid) release(); });
+    box.addEventListener('dragstart', e => e.preventDefault());
+    range.addEventListener('input', () => { stopIntro(); set(+range.value); });
+    range.addEventListener('focus', stopIntro);
+
     const intro = () => {
       if (reduce || touched) return;
       box.classList.add('is-intro');
@@ -159,8 +199,8 @@
         let i = 0; while (i < keys.length - 1 && t > keys[i + 1][0]) i++;
         if (i >= keys.length - 1) { set(50); box.classList.remove('is-intro'); return; }
         const [ta, va] = keys[i], [tb, vb] = keys[i + 1];
-        const k = clamp((t - ta) / (tb - ta), 0, 1), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
-        set(va + (vb - va) * e);
+        const k = clamp((t - ta) / (tb - ta), 0, 1), ease = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+        set(va + (vb - va) * ease);
         requestAnimationFrame(step);
       };
       requestAnimationFrame(step);

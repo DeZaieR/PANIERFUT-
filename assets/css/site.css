@@ -199,9 +199,9 @@ main:focus { outline: none; }
 .ba__note { font-size: .9375rem; color: var(--muted); }
 
 /* Comparateur avant / après */
-.ba { --pos: 50%; position: relative; aspect-ratio: 4 / 5; border-radius: var(--r-lg); overflow: hidden; background: var(--card); border: 1px solid var(--line); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .9), 0 0 0 1px rgba(201, 169, 106, .06); user-select: none; -webkit-user-select: none; touch-action: pan-y; }
-.ba__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .45s, transform 1.2s var(--ease); }
-.ba__before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba { --pos: 50%; position: relative; aspect-ratio: 4 / 5; border-radius: var(--r-lg); overflow: hidden; background: var(--card); border: 1px solid var(--line); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .9), 0 0 0 1px rgba(201, 169, 106, .06); user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; touch-action: pan-y; cursor: ew-resize; }
+.ba__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; transition: opacity .45s, transform 1.2s var(--ease); }
+.ba__before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); pointer-events: none; }
 .ba.is-swapping .ba__img { opacity: 0; transform: scale(1.03); }
 .ba__line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: linear-gradient(180deg, transparent, var(--gold2) 12%, var(--gold2) 88%, transparent); pointer-events: none; }
 .ba__handle { position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; background: rgba(8, 9, 11, .72); backdrop-filter: blur(6px); border: 1px solid var(--gold2); display: grid; place-items: center; box-shadow: 0 0 0 6px rgba(201, 169, 106, .14); transition: transform .3s var(--ease), box-shadow .3s; }
@@ -212,9 +212,7 @@ main:focus { outline: none; }
 .ba__tag { position: absolute; top: 16px; padding: 7px 12px; border-radius: 999px; background: rgba(8, 9, 11, .72); backdrop-filter: blur(6px); font: 600 .875rem/1 var(--f-disp); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); pointer-events: none; transition: opacity .3s; }
 .ba__tag--b { left: 16px; }
 .ba__tag--a { right: 16px; color: var(--gold2); }
-.ba__range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none; background: transparent; touch-action: pan-y; }
-.ba__range::-webkit-slider-thumb { -webkit-appearance: none; width: 64px; height: 100vh; cursor: ew-resize; }
-.ba__range::-moz-range-thumb { width: 64px; height: 100vh; border: 0; cursor: ew-resize; }
+.ba__range { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; margin: 0; opacity: 0; pointer-events: none; }
 .ba__range:focus-visible ~ .ba__line .ba__handle, .ba:has(.ba__range:focus-visible) .ba__handle { outline: 2px solid var(--gold2); outline-offset: 4px; }
 
 .rooms { display: flex; gap: 8px; margin-top: 16px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; -webkit-mask: linear-gradient(90deg, #000 88%, transparent); mask: linear-gradient(90deg, #000 88%, transparent); }
