@@ -130,88 +130,181 @@ if ($sent) {
 reply($sent ? 200 : 500, ['ok' => (bool) $sent]);
 
 /**
- * Email de confirmation au prospect, dans la langue du site.
- * Textes fixes uniquement (aucun texte saisi par le visiteur n'est recopié) :
- * le formulaire ne peut pas servir à envoyer des messages à un tiers.
+ * Confirmation au prospect, dans la langue du site : récapitulatif de ses choix et prochaines étapes.
+ * Seules des valeurs issues des listes du formulaire sont reprises (jamais le texte libre saisi) :
+ * le formulaire ne peut pas servir à écrire un message arbitraire à un tiers.
  */
 function send_confirmation(string $to, string $lang, array $data, string $from, string $replyTo): void
 {
     $T = [
         'fr' => [
-            'subject' => 'Votre demande de devis – DYRO WEB', 'hello' => 'Bonjour,',
-            'thanks' => "Merci pour votre demande. Nous l'avons bien reçue et revenons vers vous avec une proposition claire, en trois options.",
-            'recap' => 'Récapitulatif', 'type' => 'Projet', 'langs' => 'Langues', 'deadline' => 'Délai souhaité',
-            'reply' => 'Pour toute question, répondez simplement à cet email ou appelez le +352 691 349 632.',
-            'footer' => "Vous recevez ce message car votre adresse a été saisie dans le formulaire de devis de dyroweb.online. Si ce n'est pas vous, ignorez-le.",
+            'subject' => 'Votre demande de devis est bien reçue – DYRO WEB', 'hello' => 'Bonjour,',
+            'intro' => 'Merci, votre demande de devis a bien été reçue. Nous vous envoyons <strong>sous 1 jour ouvré</strong> une proposition claire en trois options, prix hors TVA.',
+            'recap' => 'VOTRE DEMANDE', 'l_type' => 'Projet', 'l_range' => 'Fourchette indicative', 'l_langs' => 'Langues', 'l_feat' => 'Fonctionnalités', 'l_maint' => 'Maintenance', 'l_deadline' => 'Délai souhaité',
+            'range_note' => 'selon le périmètre, options en sus',
             'types' => ['landing' => 'Landing page', 'pro' => 'Site vitrine Pro', 'premium' => 'Premium multilingue', 'ecommerce' => 'E-commerce', 'unsure' => 'À définir ensemble'],
-            'deadlines' => ['asap' => 'Dès que possible', 'soon' => "D'ici 1 à 2 mois", 'later' => 'Dans 3 mois ou plus', 'none' => 'Pas de date fixe'],
+            'ranges' => ['landing' => '890 à 1 290 € HT', 'pro' => '1 890 à 2 900 € HT', 'premium' => '3 500 à 6 000 € HT', 'ecommerce' => 'dès 4 500 € HT'],
+            'features' => ['form' => 'Formulaire de contact', 'booking' => 'Réservation en ligne', 'adv' => 'Formulaires avancés', 'pay' => 'Paiement en ligne', 'seo' => 'SEO local', 'blog' => 'Blog ou actualités'],
+            'maint' => ['none' => 'Pas pour l’instant', 'ess' => 'Essentiel · 49 € HT / mois', 'pro' => 'Pro · 99 € HT / mois', 'gro' => 'Croissance · 199 € HT / mois'],
+            'deadlines' => ['asap' => 'Dès que possible', 'soon' => 'D’ici 1 à 2 mois', 'later' => 'Dans 3 mois ou plus', 'none' => 'Pas de date fixe'],
+            'next' => 'LES PROCHAINES ÉTAPES',
+            'steps' => ['Nous étudions votre projet et, si besoin, votre site actuel.', 'Vous recevez une proposition en trois options, prix HT, sous 1 jour ouvré.', 'Après votre accord : planning étape par étape et démarrage (acompte de 40 % pour les projets de plus de 1 000 € HT).'],
+            'add' => 'Pour aller plus vite, <strong>répondez simplement à cet email</strong> avec votre logo, vos textes, des photos ou des sites que vous aimez.',
+            'call' => 'Vous préférez en parler ? Réservez un appel de 20 minutes ou écrivez-nous sur WhatsApp :',
+            'regards' => 'Bien cordialement,', 'team' => 'L’équipe DYRO WEB', 'tagline' => 'Création de sites web au Luxembourg',
+            'footer' => 'Vous recevez ce message car votre adresse a été saisie dans le formulaire de devis de dyroweb.online. Si ce n’est pas vous, ignorez-le.',
         ],
         'de' => [
-            'subject' => 'Ihre Angebotsanfrage – DYRO WEB', 'hello' => 'Guten Tag,',
-            'thanks' => 'Vielen Dank für Ihre Anfrage. Wir haben sie erhalten und melden uns mit einem klaren Angebot mit drei Optionen.',
-            'recap' => 'Zusammenfassung', 'type' => 'Projekt', 'langs' => 'Sprachen', 'deadline' => 'Gewünschter Zeitrahmen',
-            'reply' => 'Bei Fragen antworten Sie einfach auf diese E-Mail oder rufen Sie +352 691 349 632 an.',
-            'footer' => 'Sie erhalten diese Nachricht, weil Ihre Adresse im Angebotsformular von dyroweb.online eingegeben wurde. Falls Sie das nicht waren, ignorieren Sie sie bitte.',
+            'subject' => 'Ihre Angebotsanfrage ist eingegangen – DYRO WEB', 'hello' => 'Guten Tag,',
+            'intro' => 'Vielen Dank, Ihre Angebotsanfrage ist eingegangen. Sie erhalten <strong>innerhalb eines Werktages</strong> ein klares Angebot mit drei Optionen, Preise netto.',
+            'recap' => 'IHRE ANFRAGE', 'l_type' => 'Projekt', 'l_range' => 'Richtpreis', 'l_langs' => 'Sprachen', 'l_feat' => 'Funktionen', 'l_maint' => 'Wartung', 'l_deadline' => 'Zeitrahmen',
+            'range_note' => 'je nach Umfang, Optionen zusätzlich',
             'types' => ['landing' => 'Landingpage', 'pro' => 'Firmenwebsite Pro', 'premium' => 'Premium mehrsprachig', 'ecommerce' => 'Onlineshop', 'unsure' => 'Gemeinsam festzulegen'],
+            'ranges' => ['landing' => '890 bis 1.290 € netto', 'pro' => '1.890 bis 2.900 € netto', 'premium' => '3.500 bis 6.000 € netto', 'ecommerce' => 'ab 4.500 € netto'],
+            'features' => ['form' => 'Kontaktformular', 'booking' => 'Online-Buchung', 'adv' => 'Erweiterte Formulare', 'pay' => 'Online-Zahlung', 'seo' => 'Lokales SEO', 'blog' => 'Blog oder News'],
+            'maint' => ['none' => 'Vorerst nicht', 'ess' => 'Essentiel · 49 € netto / Monat', 'pro' => 'Pro · 99 € netto / Monat', 'gro' => 'Croissance · 199 € netto / Monat'],
             'deadlines' => ['asap' => 'So bald wie möglich', 'soon' => 'In 1 bis 2 Monaten', 'later' => 'In 3 Monaten oder später', 'none' => 'Kein festes Datum'],
+            'next' => 'DIE NÄCHSTEN SCHRITTE',
+            'steps' => ['Wir prüfen Ihr Projekt und, falls vorhanden, Ihre aktuelle Website.', 'Sie erhalten innerhalb eines Werktages ein Angebot mit drei Optionen, Preise netto.', 'Nach Ihrer Zustimmung: Zeitplan Schritt für Schritt und Start (40 % Anzahlung bei Projekten über 1.000 € netto).'],
+            'add' => 'Schneller geht es, wenn Sie <strong>einfach auf diese E-Mail antworten</strong> – mit Ihrem Logo, Ihren Texten, Fotos oder Websites, die Ihnen gefallen.',
+            'call' => 'Lieber persönlich? Buchen Sie ein 20-minütiges Gespräch oder schreiben Sie uns auf WhatsApp:',
+            'regards' => 'Mit freundlichen Grüßen', 'team' => 'Ihr DYRO WEB Team', 'tagline' => 'Websites für Unternehmen in Luxemburg',
+            'footer' => 'Sie erhalten diese Nachricht, weil Ihre Adresse im Angebotsformular von dyroweb.online eingegeben wurde. Falls Sie das nicht waren, ignorieren Sie sie bitte.',
         ],
         'en' => [
-            'subject' => 'Your quote request – DYRO WEB', 'hello' => 'Hello,',
-            'thanks' => "Thank you for your request. We've received it and will get back to you with a clear proposal with three options.",
-            'recap' => 'Summary', 'type' => 'Project', 'langs' => 'Languages', 'deadline' => 'Preferred timeline',
-            'reply' => 'If you have any questions, simply reply to this email or call +352 691 349 632.',
-            'footer' => "You're receiving this message because your address was entered in the quote form on dyroweb.online. If this wasn't you, please ignore it.",
+            'subject' => 'We have received your quote request – DYRO WEB', 'hello' => 'Hello,',
+            'intro' => 'Thank you, we have received your quote request. You will receive a clear proposal with three options, prices excl. VAT, <strong>within one business day</strong>.',
+            'recap' => 'YOUR REQUEST', 'l_type' => 'Project', 'l_range' => 'Indicative range', 'l_langs' => 'Languages', 'l_feat' => 'Features', 'l_maint' => 'Maintenance', 'l_deadline' => 'Timeline',
+            'range_note' => 'depending on scope, options extra',
             'types' => ['landing' => 'Landing page', 'pro' => 'Business website Pro', 'premium' => 'Premium multilingual', 'ecommerce' => 'E-commerce', 'unsure' => 'To be defined together'],
+            'ranges' => ['landing' => '€890 to €1,290 excl. VAT', 'pro' => '€1,890 to €2,900 excl. VAT', 'premium' => '€3,500 to €6,000 excl. VAT', 'ecommerce' => 'from €4,500 excl. VAT'],
+            'features' => ['form' => 'Contact form', 'booking' => 'Online booking', 'adv' => 'Advanced forms', 'pay' => 'Online payment', 'seo' => 'Local SEO', 'blog' => 'Blog or news'],
+            'maint' => ['none' => 'Not for now', 'ess' => 'Essentiel · €49 excl. VAT / month', 'pro' => 'Pro · €99 excl. VAT / month', 'gro' => 'Croissance · €199 excl. VAT / month'],
             'deadlines' => ['asap' => 'As soon as possible', 'soon' => 'Within 1 to 2 months', 'later' => 'In 3 months or more', 'none' => 'No fixed date'],
+            'next' => 'NEXT STEPS',
+            'steps' => ['We study your project and, if relevant, your current website.', 'You receive a proposal with three options, prices excl. VAT, within one business day.', 'Once you approve: a step-by-step schedule and kick-off (40% deposit for projects over €1,000 excl. VAT).'],
+            'add' => 'To speed things up, <strong>simply reply to this email</strong> with your logo, texts, photos or websites you like.',
+            'call' => 'Prefer to talk? Book a 20-minute call or message us on WhatsApp:',
+            'regards' => 'Kind regards,', 'team' => 'The DYRO WEB team', 'tagline' => 'Websites for businesses in Luxembourg',
+            'footer' => 'You are receiving this message because your address was entered in the quote form on dyroweb.online. If this wasn’t you, please ignore it.',
         ],
         'pt' => [
-            'subject' => 'O seu pedido de orçamento – DYRO WEB', 'hello' => 'Olá,',
-            'thanks' => 'Obrigado pelo seu pedido. Recebemo-lo e voltaremos a contactá-lo com uma proposta clara, com três opções.',
-            'recap' => 'Resumo', 'type' => 'Projeto', 'langs' => 'Línguas', 'deadline' => 'Prazo pretendido',
-            'reply' => 'Para qualquer questão, basta responder a este email ou ligar para +352 691 349 632.',
-            'footer' => 'Recebe esta mensagem porque o seu endereço foi introduzido no formulário de orçamento de dyroweb.online. Se não foi você, ignore-a.',
+            'subject' => 'Recebemos o seu pedido de orçamento – DYRO WEB', 'hello' => 'Olá,',
+            'intro' => 'Obrigado, recebemos o seu pedido de orçamento. Vai receber <strong>no prazo de um dia útil</strong> uma proposta clara com três opções, preços sem IVA.',
+            'recap' => 'O SEU PEDIDO', 'l_type' => 'Projeto', 'l_range' => 'Intervalo indicativo', 'l_langs' => 'Línguas', 'l_feat' => 'Funcionalidades', 'l_maint' => 'Manutenção', 'l_deadline' => 'Prazo',
+            'range_note' => 'conforme o âmbito, opções à parte',
             'types' => ['landing' => 'Landing page', 'pro' => 'Site institucional Pro', 'premium' => 'Premium multilingue', 'ecommerce' => 'Loja online', 'unsure' => 'A definir em conjunto'],
+            'ranges' => ['landing' => '890 a 1 290 € + IVA', 'pro' => '1 890 a 2 900 € + IVA', 'premium' => '3 500 a 6 000 € + IVA', 'ecommerce' => 'a partir de 4 500 € + IVA'],
+            'features' => ['form' => 'Formulário de contacto', 'booking' => 'Reservas online', 'adv' => 'Formulários avançados', 'pay' => 'Pagamento online', 'seo' => 'SEO local', 'blog' => 'Blogue ou notícias'],
+            'maint' => ['none' => 'Por agora não', 'ess' => 'Essentiel · 49 € + IVA / mês', 'pro' => 'Pro · 99 € + IVA / mês', 'gro' => 'Croissance · 199 € + IVA / mês'],
             'deadlines' => ['asap' => 'O mais rápido possível', 'soon' => 'Dentro de 1 a 2 meses', 'later' => 'Daqui a 3 meses ou mais', 'none' => 'Sem data fixa'],
+            'next' => 'OS PRÓXIMOS PASSOS',
+            'steps' => ['Analisamos o seu projeto e, se existir, o seu site atual.', 'Recebe uma proposta com três opções, preços sem IVA, no prazo de um dia útil.', 'Após o seu acordo: planeamento passo a passo e arranque (sinal de 40 % para projetos acima de 1 000 € + IVA).'],
+            'add' => 'Para avançar mais depressa, <strong>basta responder a este email</strong> com o seu logótipo, textos, fotografias ou sites de que gosta.',
+            'call' => 'Prefere falar connosco? Marque uma chamada de 20 minutos ou escreva-nos no WhatsApp:',
+            'regards' => 'Com os melhores cumprimentos,', 'team' => 'A equipa DYRO WEB', 'tagline' => 'Criação de sites no Luxemburgo',
+            'footer' => 'Recebe esta mensagem porque o seu endereço foi introduzido no formulário de orçamento de dyroweb.online. Se não foi você, ignore-a.',
         ],
         'lb' => [
-            'subject' => 'Är Offer-Ufro – DYRO WEB', 'hello' => 'Moien,',
-            'thanks' => 'Merci fir Är Ufro. Mir hunn se kritt a mellen eis mat enger kloerer Offer mat dräi Optiounen.',
-            'recap' => 'Resumé', 'type' => 'Projet', 'langs' => 'Sproochen', 'deadline' => 'Gewënschten Délai',
-            'reply' => 'Bei Froen äntwert einfach op dës E-Mail oder rufft op +352 691 349 632 un.',
-            'footer' => 'Dir kritt dëse Message, well Är Adress am Offer-Formulaire vun dyroweb.online agi gouf. Wann Dir dat net wart, ignoréiert en w.e.g.',
+            'subject' => 'Är Offer-Ufro ass ukomm – DYRO WEB', 'hello' => 'Moien,',
+            'intro' => 'Merci, Är Offer-Ufro ass gutt ukomm. Dir kritt <strong>bannent engem Aarbechtsdag</strong> eng kloer Offer mat dräi Optiounen, Präisser ouni TVA.',
+            'recap' => 'ÄR UFRO', 'l_type' => 'Projet', 'l_range' => 'Richtpräis', 'l_langs' => 'Sproochen', 'l_feat' => 'Funktiounen', 'l_maint' => 'Maintenance', 'l_deadline' => 'Délai',
+            'range_note' => 'jee no Ëmfang, Optiounen extra',
             'types' => ['landing' => 'Landing Page', 'pro' => 'Firmewebsäit Pro', 'premium' => 'Premium méisproocheg', 'ecommerce' => 'Online-Buttek', 'unsure' => 'Zesumme festzeleeën'],
+            'ranges' => ['landing' => '890 bis 1.290 € ouni TVA', 'pro' => '1.890 bis 2.900 € ouni TVA', 'premium' => '3.500 bis 6.000 € ouni TVA', 'ecommerce' => 'ab 4.500 € ouni TVA'],
+            'features' => ['form' => 'Kontaktformulaire', 'booking' => 'Online-Reservatioun', 'adv' => 'Erweidert Formulairen', 'pay' => 'Online-Bezuelung', 'seo' => 'Lokale SEO', 'blog' => 'Blog oder News'],
+            'maint' => ['none' => 'Fir de Moment net', 'ess' => 'Essentiel · 49 € ouni TVA / Mount', 'pro' => 'Pro · 99 € ouni TVA / Mount', 'gro' => 'Croissance · 199 € ouni TVA / Mount'],
             'deadlines' => ['asap' => 'Esou séier wéi méiglech', 'soon' => 'An 1 bis 2 Méint', 'later' => 'An 3 Méint oder méi spéit', 'none' => 'Keen fixen Datum'],
+            'next' => 'DÉI NÄCHST SCHRËTT',
+            'steps' => ['Mir kucken Äre Projet an, wann et se gëtt, Är aktuell Websäit.', 'Dir kritt bannent engem Aarbechtsdag eng Offer mat dräi Optiounen, Präisser ouni TVA.', 'No Ärem Accord: Zäitplang Schrëtt fir Schrëtt a Start (40 % Acompte fir Projeten iwwer 1.000 € ouni TVA).'],
+            'add' => 'Fir méi séier virunzekommen, <strong>äntwert einfach op dës E-Mail</strong> mat Ärem Logo, Ären Texter, Fotoen oder Websäiten, déi Iech gefalen.',
+            'call' => 'Léiwer schwätzen? Reservéiert en Uruff vun 20 Minutten oder schreift eis op WhatsApp:',
+            'regards' => 'Mat beschte Gréiss,', 'team' => 'Den DYRO WEB Team', 'tagline' => 'Websäite fir Betriber zu Lëtzebuerg',
+            'footer' => 'Dir kritt dëse Message, well Är Adress am Offer-Formulaire vun dyroweb.online agi gouf. Wann Dir dat net wart, ignoréiert en w.e.g.',
         ],
     ];
     $t = $T[$lang] ?? $T['fr'];
-    $sep = ($lang === 'fr' || !isset($T[$lang])) ? ' : ' : ': '; // espace avant « : » en français seulement
     $codes = ['fr' => 'FR', 'de' => 'DE', 'en' => 'EN', 'pt' => 'PT', 'lb' => 'LU'];
+    $pick = static fn($v) => is_string($v) ? $v : '';
+    $type = $pick($data['type'] ?? null);
+    $type = isset($t['types'][$type]) ? $type : 'unsure';
+    $langs = array_values(array_unique(array_filter(is_array($data['langs'] ?? null) ? $data['langs'] : [], static fn($l) => is_string($l) && isset($codes[$l]))));
+    $feats = array_values(array_unique(array_filter(is_array($data['features'] ?? null) ? $data['features'] : [], static fn($f) => is_string($f) && isset($t['features'][$f]))));
+    $maint = $pick($data['maint'] ?? null);
+    $deadline = $pick($data['deadline'] ?? null);
 
-    $type = is_string($data['type'] ?? null) ? $data['type'] : '';
-    $langs = array_values(array_filter(is_array($data['langs'] ?? null) ? $data['langs'] : [], static fn($l) => is_string($l) && isset($codes[$l])));
-    $deadline = is_string($data['deadline'] ?? null) ? $data['deadline'] : '';
-
-    $lines = [$t['hello'], '', $t['thanks'], '', rtrim($t['recap'] . $sep)];
-    if (isset($t['types'][$type])) {
-        $lines[] = '– ' . $t['type'] . $sep . $t['types'][$type];
+    $rows = [[$t['l_type'], '<strong>' . $t['types'][$type] . '</strong>']];
+    if (isset($t['ranges'][$type])) {
+        $rows[] = [$t['l_range'], '<span style="font-family:Georgia,\'Times New Roman\',serif;font-size:19px;font-weight:bold;color:#0062d6">' . $t['ranges'][$type] . '</span><br><span style="font-size:13px;color:#6b6b6b">' . $t['range_note'] . '</span>'];
     }
     if ($langs) {
-        $lines[] = '– ' . $t['langs'] . $sep . implode(', ', array_map(static fn($l) => $codes[$l], $langs));
+        $rows[] = [$t['l_langs'], implode(' · ', array_map(static fn($l) => $codes[$l], $langs))];
+    }
+    if ($feats) {
+        $rows[] = [$t['l_feat'], implode(', ', array_map(static fn($f) => $t['features'][$f], $feats))];
+    }
+    if (isset($t['maint'][$maint]) && $maint !== 'none') {
+        $rows[] = [$t['l_maint'], $t['maint'][$maint]];
     }
     if (isset($t['deadlines'][$deadline])) {
-        $lines[] = '– ' . $t['deadline'] . $sep . $t['deadlines'][$deadline];
+        $rows[] = [$t['l_deadline'], $t['deadlines'][$deadline]];
     }
-    array_push($lines, '', $t['reply'], '', 'DYRO WEB', 'https://dyroweb.online', '', '—', $t['footer']);
 
+    $c = '#0062d6';
+    $F = 'font-family:Arial,Helvetica,sans-serif;';
+    $rowsHtml = '';
+    foreach ($rows as $k => [$label, $value]) {
+        $line = $k < count($rows) - 1 ? 'border-bottom:1px solid #d9e6f7;' : '';
+        $rowsHtml .= '<tr><td style="' . $F . 'padding:9px 0;font-size:14px;color:#6b6b6b;vertical-align:top;width:38%;' . $line . '">' . $label . '</td>'
+            . '<td style="' . $F . 'padding:9px 0 9px 10px;font-size:15px;color:#1a1a1a;' . $line . '">' . $value . '</td></tr>';
+    }
+    $stepsHtml = '';
+    foreach ($t['steps'] as $n => $s) {
+        $stepsHtml .= '<tr><td width="34" valign="top" style="padding:6px 0"><span style="' . $F . 'display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:' . $c . ';color:#ffffff;font-size:13px;font-weight:bold;text-align:center">' . ($n + 1) . '</span></td>'
+            . '<td style="' . $F . 'padding:7px 0;font-size:15px;color:#1a1a1a;line-height:1.5">' . $s . '</td></tr>';
+    }
+    $html = '<div style="' . $F . 'font-size:15px;line-height:1.6;color:#1a1a1a;max-width:600px">'
+        . '<p style="margin:0 0 14px">' . $t['hello'] . '</p>'
+        . '<p style="margin:0 0 20px">' . $t['intro'] . '</p>'
+        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['recap'] . '</p>'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f2f7fe;border:1px solid #d9e6f7;border-radius:10px;margin:0 0 22px"><tr><td style="padding:6px 18px">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">' . $rowsHtml . '</table></td></tr></table>'
+        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['next'] . '</p>'
+        . '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px">' . $stepsHtml . '</table>'
+        . '<p style="margin:0 0 18px">' . $t['add'] . '</p>'
+        . '<p style="margin:0 0 18px">' . $t['call'] . ' <a href="https://wa.me/352691349632" style="color:' . $c . ';white-space:nowrap">+352 691 349 632</a></p>'
+        . '<p style="margin:0 0 4px">' . $t['regards'] . '</p>'
+        . '<p style="margin:0 0 4px"><strong>' . $t['team'] . '</strong></p>'
+        . '<p style="margin:0;font-size:14px;color:#555">' . $t['tagline'] . '<br><a href="mailto:contact@dyroweb.online" style="color:' . $c . '">contact@dyroweb.online</a> · <span style="white-space:nowrap">+352 691 349 632</span> · <a href="https://dyroweb.online" style="color:' . $c . '">dyroweb.online</a></p>'
+        . '<hr style="border:0;border-top:1px solid #dddddd;margin:22px 0 12px">'
+        . '<p style="margin:0;font-size:13px;color:#777">' . $t['footer'] . '</p></div>';
+
+    $plain = static fn(string $s) => html_entity_decode(strip_tags(str_replace('<br>', ' – ', $s)), ENT_QUOTES, 'UTF-8');
+    $sep = $lang === 'fr' ? ' : ' : ': ';
+    $text = $t['hello'] . "\n\n" . $plain($t['intro']) . "\n\n" . $t['recap'] . "\n";
+    foreach ($rows as [$label, $value]) {
+        $text .= '- ' . $label . $sep . $plain($value) . "\n";
+    }
+    $text .= "\n" . $t['next'] . "\n";
+    foreach ($t['steps'] as $n => $s) {
+        $text .= ($n + 1) . '. ' . $s . "\n";
+    }
+    $text .= "\n" . $plain($t['add']) . "\n" . $t['call'] . " +352 691 349 632\n\n" . $t['regards'] . "\n" . $t['team'] . "\n" . $t['tagline']
+        . "\ncontact@dyroweb.online · +352 691 349 632 · dyroweb.online\n\n—\n" . $t['footer'] . "\n";
+
+    $b = 'alt-' . bin2hex(random_bytes(10));
+    $body = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
+        . quoted_printable_encode(str_replace("\n", "\r\n", $text)) . "\r\n"
+        . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
+        . quoted_printable_encode($html) . "\r\n--$b--";
     $headers = [
         'From: =?UTF-8?B?' . base64_encode('DYRO WEB') . '?= <' . $from . '>',
         'Reply-To: ' . $replyTo,
         'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
-        'Content-Transfer-Encoding: 8bit',
+        'Content-Type: multipart/alternative; boundary="' . $b . '"',
         'Auto-Submitted: auto-replied',
     ];
-    send_mail($to, '=?UTF-8?B?' . base64_encode($t['subject']) . '?=', implode("\n", $lines), $headers, $from);
+    send_mail($to, '=?UTF-8?B?' . base64_encode($t['subject']) . '?=', $body, $headers, $from);
 }
 
 /**
