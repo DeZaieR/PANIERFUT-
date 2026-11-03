@@ -136,7 +136,7 @@ if (rate_limited()) {
 }
 
 date_default_timezone_set('Europe/Luxembourg');
-$TYPES = ['essai' => 'Essai gratuit', 'devis' => 'Devis', 'partenariat' => 'Partenariat agence', 'pub' => 'Publicité IA'];
+$TYPES = ['essai' => 'Essai photo', 'devis' => 'Devis', 'partenariat' => 'Partenariat agence', 'pub' => 'Publicité IA']; // « gratuit » évité : mot qui fait classer en indésirables
 $OFFERS = [
     'a-la-carte' => 'À la carte — 39 € HT / photo', 'pack-essentiel' => 'Pack Essentiel — 149 € HT', 'pack-signature' => 'Pack Signature — 249 € HT',
     'agence-partenaire' => 'Agence partenaire — 499 € HT / mois', 'renovation-virtuelle' => 'Rénovation virtuelle — sur devis',
