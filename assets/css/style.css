@@ -1450,3 +1450,9 @@ main:focus { outline: none; }
 .social__btn:hover, .social__btn:focus-visible { transform: translateY(-3px); border-color: transparent; color: #fff; }
 .social__btn:hover::before, .social__btn:focus-visible::before { transform: scale(1); }
 .social__btn:hover svg { transform: rotate(-8deg) scale(1.08); }
+.sister { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; margin-top: 18px; padding: 10px 16px; border: 1px solid var(--line-2); border-radius: 14px; transition: border-color .3s, background-color .3s, transform .4s var(--ease-out); }
+.sister__k { font-size: 14px; color: var(--steel); }
+.sister__v { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; letter-spacing: .08em; color: var(--chrome); }
+.sister__v svg { width: 16px; height: 16px; fill: none; stroke: var(--arc); stroke-width: 2; transition: transform .35s var(--ease-out); }
+.sister:hover { border-color: var(--volt); background: rgba(0, 118, 255, .08); transform: translateY(-2px); }
+.sister:hover .sister__v svg { transform: translateX(4px); }
