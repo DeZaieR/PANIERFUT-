@@ -332,46 +332,13 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
     $steps = $t['steps'][$type] ?? $t['steps']['devis'];
     $needPhoto = !$hasPhoto && !$hasLink && in_array($type, ['devis', 'essai'], true);
 
-    // HTML (tableaux + styles en ligne : compatible avec les messageries)
-    $c = '#8c6d2f';
-    $F = 'font-family:Arial,Helvetica,sans-serif;';
-    $row = static fn(string $k, string $v, bool $last = false) =>
-        '<tr><td style="' . $F . 'padding:9px 0;font-size:14px;color:#6b6b6b;vertical-align:top;width:38%;' . ($last ? '' : 'border-bottom:1px solid #eadfc8;') . '">' . $k . '</td>'
-        . '<td style="' . $F . 'padding:9px 0 9px 10px;font-size:15px;color:#1a1a1a;' . ($last ? '' : 'border-bottom:1px solid #eadfc8;') . '">' . $v . '</td></tr>';
-    $offerHtml = '<strong>' . $offerName . '</strong>'
-        . ($offerPrice !== '' ? '<br><span style="font-family:Georgia,\'Times New Roman\',serif;font-size:19px;font-weight:bold;color:' . $c . '">' . $offerPrice . '</span>' : '')
-        . ($offerDetail !== '' ? '<br><span style="font-size:13px;color:#6b6b6b">' . $offerDetail . '</span>' : '');
-    $stepsHtml = '';
-    foreach ($steps as $n => $s) {
-        $stepsHtml .= '<tr><td width="34" valign="top" style="padding:6px 0"><span style="' . $F . 'display:inline-block;width:24px;height:24px;line-height:24px;border-radius:12px;background:' . $c . ';color:#ffffff;font-size:13px;font-weight:bold;text-align:center">' . ($n + 1) . '</span></td>'
-            . '<td style="' . $F . 'padding:7px 0;font-size:15px;color:#1a1a1a;line-height:1.5">' . $s . '</td></tr>';
-    }
-    $html = '<div style="' . $F . 'font-size:15px;line-height:1.6;color:#1a1a1a;max-width:600px">'
-        . '<p style="margin:0 0 14px">' . $t['hello'] . '</p>'
-        . '<p style="margin:0 0 20px">' . $t['intro'] . '</p>'
-        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['recap'] . '</p>'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#faf6ee;border:1px solid #eadfc8;border-radius:10px;margin:0 0 22px"><tr><td style="padding:6px 18px">'
-        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">'
-        . $row($t['r_type'], '<strong>' . ($t['types'][$type] ?? $t['types']['devis']) . '</strong>')
-        . $row($t['r_offer'], $offerHtml)
-        . $row($t['r_photo'], $photo, true)
-        . '</table></td></tr></table>'
-        . '<p style="margin:0 0 6px;font-size:13px;font-weight:bold;letter-spacing:1px;color:' . $c . '">' . $t['next'] . '</p>'
-        . '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px">' . $stepsHtml . '</table>'
-        . '<p style="margin:0 0 18px' . ($needPhoto ? ';padding:12px 16px;background:#fff8e6;border-left:3px solid ' . $c : '') . '">' . ($needPhoto ? $t['add_photo'] : $t['add']) . '</p>'
-        . '<p style="margin:0 0 18px">' . $t['urgent'] . ' <a href="https://wa.me/352691349632" style="color:' . $c . ';white-space:nowrap">+352 691 349 632</a></p>'
-        . '<p style="margin:0 0 4px">' . $t['regards'] . '</p>'
-        . '<p style="margin:0 0 4px"><strong>' . $t['team'] . '</strong></p>'
-        . '<p style="margin:0;font-size:14px;color:#555">' . $t['tagline'] . '<br><a href="mailto:contact@dyrostudios.com" style="color:' . $c . '">contact@dyrostudios.com</a> · <span style="white-space:nowrap">+352 691 349 632</span> · <a href="https://dyrostudios.com" style="color:' . $c . '">dyrostudios.com</a></p>'
-        . '<hr style="border:0;border-top:1px solid #dddddd;margin:22px 0 12px">'
-        . '<p style="margin:0;font-size:13px;color:#777">' . $t['footer'] . '</p></div>';
-
     // Version texte (même contenu)
     $plain = static fn(string $s) => html_entity_decode(strip_tags($s), ENT_QUOTES, 'UTF-8');
-    $text = $t['hello'] . "\n\n" . $plain($t['intro']) . "\n\n" . $plain($t['recap']) . "\n"
+    $rule = str_repeat('─', 28);
+    $text = $t['hello'] . "\n\n" . $plain($t['intro']) . "\n\n" . $plain($t['recap']) . "\n" . $rule . "\n"
         . '- ' . $t['r_type'] . ' : ' . ($t['types'][$type] ?? $t['types']['devis']) . "\n"
         . '- ' . $t['r_offer'] . ' : ' . $offerName . ($offerPrice !== '' ? ' – ' . $offerPrice : '') . ($offerDetail !== '' ? ' (' . $offerDetail . ')' : '') . "\n"
-        . '- ' . $t['r_photo'] . ' : ' . $photo . "\n\n" . $t['next'] . "\n";
+        . '- ' . $t['r_photo'] . ' : ' . $photo . "\n\n" . $t['next'] . "\n" . $rule . "\n";
     foreach ($steps as $n => $s) {
         $text .= ($n + 1) . '. ' . $s . "\n";
     }
@@ -381,18 +348,16 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
         $text = str_replace(' : ', ': ', $text);
     }
 
-    $b = 'alt-' . bin2hex(random_bytes(10));
-    $body = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
-        . quoted_printable_encode(str_replace("\n", "\r\n", $text)) . "\r\n"
-        . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n"
-        . quoted_printable_encode($html) . "\r\n--$b--";
+    // Texte simple : c'est le format que les filtres anti-spam laissent passer en boîte de réception
     $headers = [
         'From: =?UTF-8?B?' . base64_encode('DYRO STUDIOS') . '?= <' . $from . '>',
         'Reply-To: ' . $replyTo,
         'MIME-Version: 1.0',
-        'Content-Type: multipart/alternative; boundary="' . $b . '"',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
         'Auto-Submitted: auto-replied',
     ];
+    $body = $text;
     send_mail($to, '=?UTF-8?B?' . base64_encode($t['subject']) . '?=', $body, $headers, $from);
 }
 
