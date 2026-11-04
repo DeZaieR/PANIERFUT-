@@ -125,7 +125,7 @@ def legal_page(fname, title, desc, sections, updated=UPDATED):
 ''' + page_footer(fname, ['main.js'])
     open(ROOT + fname, 'w').write(html)
 
-ADDR = TODO('à compléter : adresse du lieu d’exploitation') + ', Luxembourg'
+ADDR = 'Luxembourg (adresse complète publiée à l’issue de l’immatriculation)'
 
 legal_page('mentions-legales.html', 'Mentions légales',
   'Mentions légales du site DYRO WEB : éditeur, hébergement, propriété intellectuelle.', [
@@ -137,12 +137,12 @@ legal_page('mentions-legales.html', 'Mentions légales',
             <dt>Email</dt><dd><a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a></dd>
             <dt>Téléphone</dt><dd><a href="tel:+352691349632">+352 691 349 632</a></dd>
             <dt>Site web</dt><dd><a href="https://dyroweb.online">dyroweb.online</a></dd>
-            <dt>N° RCS</dt><dd>{TODO('à compléter')}</dd>
-            <dt>Autorisation d’établissement</dt><dd>{TODO('à compléter')}</dd>
-            <dt>N° TVA</dt><dd>{TODO('à compléter : LU…')}</dd>
+            <dt>N° RCS</dt><dd>Immatriculation en cours</dd>
+            <dt>Autorisation d’établissement</dt><dd>Demande en cours</dd>
+            <dt>N° TVA</dt><dd>Immatriculation en cours</dd>
           </dl>'''),
   ('publication', 'Directeur de la publication', '          <p>Dany Martins Freitas.</p>'),
-  ('hebergement', 'Hébergement', f'''          <p>Le site est hébergé par Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre (<a href="https://www.hostinger.com" rel="noopener">hostinger.com</a>). {TODO('à confirmer selon votre hébergeur')}</p>'''),
+  ('hebergement', 'Hébergement', f'''          <p>Le site est hébergé par Hostinger International Ltd, 61 Lordou Vironos Street, 6023 Larnaca, Chypre (<a href="https://www.hostinger.com" rel="noopener">hostinger.com</a>).</p>'''),
   ('propriete', 'Propriété intellectuelle', '''          <p>L’ensemble des éléments du site (textes, logo DYRO WEB, éléments graphiques, animations et code) est la propriété de Dyro Studios, sauf mention contraire.</p>
           <p>Toute reproduction, représentation ou adaptation, totale ou partielle, sans autorisation écrite préalable est interdite.</p>'''),
   ('responsabilite', 'Responsabilité', '''          <p>Les informations publiées sur ce site sont fournies à titre indicatif et peuvent évoluer. Les prix affichés sont indicatifs et exprimés hors TVA : seul le devis accepté fait foi.</p>
@@ -170,7 +170,7 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
           </ul>
           <p>Vos données ne sont jamais vendues ni utilisées pour de la publicité ciblée.</p>'''),
   ('conservation', 'Durées de conservation', f'''          <ul>
-            <li><strong>Demande de devis sans suite :</strong> 3 ans après le dernier contact. {TODO('durée à valider')}</li>
+            <li><strong>Demande de devis sans suite :</strong> 3 ans après le dernier contact.</li>
             <li><strong>Clients :</strong> pendant toute la relation contractuelle, puis 10 ans pour les pièces comptables, conformément à l’article 16 du Code de commerce.</li>
             <li><strong>Journaux techniques :</strong> durée limitée fixée par l’hébergeur.</li>
             <li><strong>Statistiques de visite :</strong> 25 mois, sous forme anonyme.</li>
@@ -192,7 +192,7 @@ legal_page('cgv.html', 'Conditions générales de vente',
   'Conditions générales de vente et de prestation de DYRO WEB : devis, prix, paiement, propriété du site, maintenance.', [
   ('champ', 'Champ d’application', '''          <p>Les présentes conditions générales s’appliquent à toutes les prestations de DYRO WEB, marque de Dyro Studios (Dany Martins Freitas, entreprise individuelle) : création de sites web, landing pages et boutiques en ligne, référencement, maintenance et hébergement.</p>
           <p>Elles complètent le devis. En cas de contradiction, les conditions particulières du devis prévalent.</p>'''),
-  ('devis', 'Devis et commande', f'''          <p>Chaque projet fait l’objet d’un devis gratuit et détaillé, présenté en trois options lorsque c’est pertinent. Le devis est valable {TODO('30 jours, à valider')} à compter de sa date d’émission.</p>
+  ('devis', 'Devis et commande', f'''          <p>Chaque projet fait l’objet d’un devis gratuit et détaillé, présenté en trois options lorsque c’est pertinent. Le devis est valable 30 jours à compter de sa date d’émission.</p>
           <p>La commande est ferme dès la signature du devis par le client et, le cas échéant, le paiement de l’acompte.</p>'''),
   ('prix', 'Prix', '''          <p>Les prix sont exprimés en euros et hors taxes. La TVA luxembourgeoise (17 % au taux normal) est ajoutée selon la réglementation applicable.</p>
           <p>Les frais de tiers (nom de domaine, licences, extensions payantes, banques d’images) ne sont pas inclus et sont facturés en supplément, sauf mention contraire dans le devis.</p>'''),
@@ -202,7 +202,7 @@ legal_page('cgv.html', 'Conditions générales de vente',
   ('obligations', 'Déroulement du projet et obligations du client', '''          <p>Le client fournit les contenus nécessaires (textes, images, logo, accès techniques) dans les délais convenus et garantit disposer des droits sur ces éléments.</p>
           <p>Tout retard dans la fourniture des contenus ou des validations décale d’autant le planning.</p>'''),
   ('corrections', 'Corrections, livraison et validation', f'''          <p>Deux tours de corrections sont inclus dans chaque projet. Les demandes supplémentaires ou hors périmètre font l’objet d’un devis complémentaire.</p>
-          <p>À la livraison, le client dispose de {TODO('15 jours, à valider')} pour signaler toute anomalie. Passé ce délai, la livraison est réputée acceptée.</p>'''),
+          <p>À la livraison, le client dispose de 15 jours pour signaler toute anomalie. Passé ce délai, la livraison est réputée acceptée.</p>'''),
   ('delais', 'Délais', '          <p>Les délais sont indiqués dans le devis à titre prévisionnel. Ils courent à compter de la réception de l’acompte et des contenus nécessaires.</p>'),
   ('propriete', 'Propriété intellectuelle et transfert du site', '''          <p>Le site, son code et les contenus créés par DYRO WEB sont transférés au client, avec les accès administrateur, dès le paiement complet du prix. Jusqu’à ce paiement, ils restent la propriété de Dyro Studios.</p>
           <p>Les composants tiers (logiciels libres, extensions, polices, images sous licence) restent soumis à leurs propres licences.</p>
