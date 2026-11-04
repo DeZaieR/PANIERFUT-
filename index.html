@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="assets/css/style.css?v=11">
+<link rel="stylesheet" href="assets/css/style.css?v=12">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=11';
+      el.src = 'assets/js/i18n.js?v=12';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -633,7 +633,7 @@
             <span class="step__num" data-n="01">01</span>
             <h3 data-i18n="proc.1.h">Échange découverte</h3>
             <p data-i18n="proc.1.p">Vous présentez votre activité, vos clients et vos objectifs. Nous identifions ce dont votre site a besoin, et ce dont il peut se passer.</p>
-            <a class="step__link" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20r%C3%A9server%20un%20appel%20de%2020%20minutes%20pour%20mon%20projet%20de%20site." target="_blank" rel="noopener" data-i18n-attr="href:book.href" data-ev="book"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a>
+            <a class="step__link" href="https://cal.com/dyroweb/appel-web" data-cal="dyroweb/appel-web" target="_blank" rel="noopener" data-ev="book"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a>
             <span class="step__tag" data-i18n="proc.1.tag">Votre besoin, clarifié</span>
           </li>
           <li class="card step">
@@ -809,7 +809,7 @@
         <a class="btn btn--ghost btn--xl" href="mailto:contact@dyroweb.online?subject=Projet%20de%20site%20web" data-cursor="Écrire" data-i18n-attr="href:cta.mailto;data-cursor:cta.cursor">
           <span data-i18n="cta.write">Écrire à DYRO WEB</span>
         </a>
-        <a class="btn btn--ghost btn--xl" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20r%C3%A9server%20un%20appel%20de%2020%20minutes%20pour%20mon%20projet%20de%20site." target="_blank" rel="noopener" data-i18n-attr="href:book.href" data-ev="book">
+        <a class="btn btn--ghost btn--xl" href="https://cal.com/dyroweb/appel-web" data-cal="dyroweb/appel-web" target="_blank" rel="noopener" data-ev="book">
           <svg class="btn__arrow btn__cal" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="3.5" width="11" height="10" rx="2"/><path d="M2.5 7h11M5.5 2v3M10.5 2v3"/></svg><span data-i18n="book.label">Réserver un appel de 20 min</span>
         </a>
       </div>
@@ -909,6 +909,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=11" defer></script>
+<script src="assets/js/main.js?v=12" defer></script>
 </body>
 </html>

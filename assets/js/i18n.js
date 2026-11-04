@@ -290,7 +290,6 @@ window.DYRO_I18N = {
   "work.3.cta": "Objekte ansehen",
   "book.label": "20-Min.-Gespräch buchen",
   "book.alt": "Lieber direkt sprechen?",
-  "book.href": "https://wa.me/352691349632?text=Hallo%20DYRO%20WEB%2C%20ich%20m%C3%B6chte%20ein%2020-min%C3%BCtiges%20Gespr%C3%A4ch%20zu%20meinem%20Website-Projekt%20vereinbaren.",
   "foot.sister.k": "Home Staging und KI-Werbung?",
   "foot.sister.href": "https://dyrostudios.com/de/"
  },
@@ -580,7 +579,6 @@ window.DYRO_I18N = {
   "work.3.cta": "View properties",
   "book.label": "Book a 20-min call",
   "book.alt": "Prefer to talk it through?",
-  "book.href": "https://wa.me/352691349632?text=Hello%20DYRO%20WEB%2C%20I%27d%20like%20to%20book%20a%2020-minute%20call%20about%20my%20website%20project.",
   "foot.sister.k": "Home staging and AI ads?",
   "foot.sister.href": "https://dyrostudios.com/en/"
  },
@@ -870,7 +868,6 @@ window.DYRO_I18N = {
   "work.3.cta": "Ver imóveis",
   "book.label": "Marcar uma chamada de 20 min",
   "book.alt": "Prefere falar diretamente?",
-  "book.href": "https://wa.me/352691349632?text=Ol%C3%A1%20DYRO%20WEB%2C%20gostaria%20de%20marcar%20uma%20chamada%20de%2020%20minutos%20sobre%20o%20meu%20projeto%20de%20site.",
   "foot.sister.k": "Home staging e anúncios com IA?",
   "foot.sister.href": "https://dyrostudios.com/"
  },
@@ -1160,7 +1157,6 @@ window.DYRO_I18N = {
   "work.3.cta": "Objeten ukucken",
   "book.label": "20-Minutten-Uruff reservéieren",
   "book.alt": "Léiwer direkt schwätzen?",
-  "book.href": "https://wa.me/352691349632?text=Moien%20DYRO%20WEB%2C%20ech%20h%C3%A4tt%20g%C3%A4r%20en%20Uruff%20vun%2020%20Minutten%20iwwer%20m%C3%A4i%20Webs%C3%A4it-Projet.",
   "foot.sister.k": "Home Staging a KI-Reklammen?",
   "foot.sister.href": "https://dyrostudios.com/de/"
  }

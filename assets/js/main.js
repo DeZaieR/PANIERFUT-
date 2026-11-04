@@ -1273,3 +1273,45 @@
     if (n) track(n, a.dataset.evm || '');
   }, { capture: true, passive: true });
 })();
+
+/* Réservation d'un appel (Cal.com) : le calendrier s'ouvre dans le site et ne se charge qu'au clic,
+   donc rien n'est envoyé à Cal.com tant que le visiteur ne le demande pas. Liens : <a href="https://cal.com/…" data-cal="utilisateur/type">. */
+(() => {
+  'use strict';
+  const ORIGIN = 'https://app.cal.com';
+  const BRAND = '#0076ff';
+  let started = false;
+  const boot = () => {
+    if (started) return;
+    started = true;
+    (function (C, A, L) {
+      const p = (a, ar) => a.q.push(ar);
+      const d = C.document;
+      C.Cal = C.Cal || function () {
+        const cal = C.Cal; const ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {}; cal.q = cal.q || [];
+          const s = d.createElement('script'); s.src = A; s.async = true; s.onerror = () => { cal.failed = true; };
+          d.head.appendChild(s); cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); }; const ns = ar[1]; api.q = api.q || [];
+          if (typeof ns === 'string') { cal.ns[ns] = cal.ns[ns] || api; p(cal.ns[ns], ar); p(cal, ['initNamespace', ns]); } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, ORIGIN + '/embed/embed.js', 'init');
+    window.Cal('init', 'dyro', { origin: ORIGIN });
+    window.Cal.ns.dyro('ui', { theme: 'dark', cssVarsPerTheme: { dark: { 'cal-brand': BRAND } }, hideEventTypeDetails: false, layout: 'month_view' });
+  };
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[data-cal]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (window.Cal && window.Cal.failed) return; // calendrier bloqué : le lien ouvre la page Cal.com
+    e.preventDefault();
+    boot();
+    window.Cal.ns.dyro('modal', { calLink: a.dataset.cal, config: { layout: 'month_view', theme: 'dark' } });
+    setTimeout(() => { if (window.Cal.failed) window.location.href = a.href; }, 2500);
+  });
+})();

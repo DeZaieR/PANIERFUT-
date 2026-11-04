@@ -22,10 +22,10 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '11'
+V = '12'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
-BOOK = re.search(r'href="([^"]+)" target="_blank" rel="noopener" data-i18n-attr="href:book.href"', idx).group(1)
+BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
 SKIP = '<a class="skip" href="#top" data-i18n="skip">Aller au contenu</a>\n'
 footer = footer.replace('<a href="./" class="footer__top-link">', '<a href="#top" class="footer__top-link">')
 assert 'href="#top" class="footer__top-link"' in footer
@@ -159,12 +159,16 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Formulaire de devis :</strong> nom, entreprise, email, téléphone et informations sur votre projet (type de site, langues, fonctionnalités, délai, adresse du site actuel, message).</li>
             <li><strong>Échanges par email, téléphone ou WhatsApp :</strong> les informations que vous choisissez de nous communiquer.</li>
             <li><strong>Données techniques :</strong> l’hébergeur enregistre des journaux de connexion (adresse IP, date et heure, pages demandées, navigateur) pour assurer la sécurité et le bon fonctionnement du site. Pour limiter les abus du formulaire, votre adresse IP est aussi conservée sous forme d’empreinte non réversible pendant 24 heures au plus.</li>
+            <li><strong>Réservation d’un appel :</strong> nom, email, entreprise, téléphone (facultatif), description du projet, créneau choisi et votre choix concernant l’enregistrement. La réservation passe par Cal.com ; le calendrier ne se charge qu’au moment où vous cliquez sur « Réserver un appel ».</li>
+            <li><strong>Enregistrement des appels :</strong> seulement si vous l’acceptez au moment de réserver (nous vous le rappelons au début de l’appel), l’appel en visio est enregistré et transcrit pour préparer votre proposition. Vous pouvez choisir un appel sans enregistrement, sans aucune conséquence.</li>
             <li><strong>Mesure d’audience :</strong> pages consultées, site d’origine (par exemple Google ou Instagram), type d’appareil (largeur d’écran), langue de la page, pays et clics sur nos boutons de contact. Votre adresse IP n’est pas enregistrée : au moment de la visite, elle sert seulement à déterminer le pays et à calculer une empreinte qui change chaque jour. Il est impossible de vous identifier ou de relier vos visites d’un jour à l’autre.</li>
             <li><strong>Préférences dans votre navigateur :</strong> la langue choisie et la fermeture du bandeau sont enregistrées dans le stockage local de votre navigateur. Ces informations restent sur votre appareil et ne nous sont pas transmises.</li>
           </ul>'''),
   ('finalites', 'Finalités et bases légales', '''          <ul>
             <li><strong>Répondre à votre demande, vous envoyer un email de confirmation et établir un devis :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
             <li><strong>Exécuter le contrat et facturer :</strong> exécution du contrat (article 6.1.b) et respect de nos obligations légales comptables (article 6.1.c).</li>
+            <li><strong>Organiser l’appel que vous réservez :</strong> mesures précontractuelles prises à votre demande (article 6.1.b).</li>
+            <li><strong>Enregistrer et transcrire l’appel :</strong> votre consentement (article 6.1.a), que vous pouvez retirer à tout moment, y compris pendant l’appel.</li>
             <li><strong>Assurer la sécurité du site :</strong> intérêt légitime (article 6.1.f).</li>
             <li><strong>Mesurer la fréquentation du site et l’efficacité de nos contenus</strong>, sous forme de statistiques anonymes : intérêt légitime (article 6.1.f).</li>
           </ul>
@@ -173,11 +177,12 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Demande de devis sans suite :</strong> 3 ans après le dernier contact.</li>
             <li><strong>Clients :</strong> pendant toute la relation contractuelle, puis 10 ans pour les pièces comptables, conformément à l’article 16 du Code de commerce.</li>
             <li><strong>Journaux techniques :</strong> durée limitée fixée par l’hébergeur.</li>
+            <li><strong>Enregistrements et transcriptions d’appels :</strong> 12 mois au plus, puis supprimés, ou plus tôt sur simple demande.</li>
             <li><strong>Statistiques de visite :</strong> 25 mois, sous forme anonyme.</li>
           </ul>'''),
-  ('destinataires', 'Destinataires', '''          <p>Vos données sont traitées uniquement par DYRO WEB. Nos prestataires techniques (hébergement du site et messagerie) y ont accès dans la stricte mesure nécessaire à leur mission, sur nos instructions et sous obligation de confidentialité.</p>
+  ('destinataires', 'Destinataires', '''          <p>Vos données sont traitées uniquement par DYRO WEB. Nos prestataires techniques y ont accès dans la stricte mesure nécessaire à leur mission, sur nos instructions et sous obligation de confidentialité : Hostinger (hébergement du site et messagerie), Cal.com (réservation des appels), Google (agenda et visio Google Meet) et Wispr Flow (enregistrement et transcription des appels, seulement si vous l’acceptez).</p>
           <p>Aucune donnée n’est transmise à des tiers à des fins commerciales.</p>'''),
-  ('transferts', 'Transferts hors de l’Union européenne', '''          <p>Nous n’organisons aucun transfert de vos données hors de l’Union européenne. Si vous choisissez de nous écrire via WhatsApp, ce service édité par Meta traite vos échanges selon sa propre politique de confidentialité, y compris éventuellement hors de l’Union européenne.</p>
+  ('transferts', 'Transferts hors de l’Union européenne', '''          <p>Cal.com, Google et Wispr Flow peuvent traiter vos données aux États-Unis lorsque vous réservez un appel. Ces transferts sont encadrés par le cadre de protection des données UE–États-Unis ou par les clauses contractuelles types de la Commission européenne, selon le prestataire. Les formulaires, les emails et la mesure d’audience restent dans l’Union européenne. Si vous choisissez de nous écrire via WhatsApp, ce service édité par Meta traite vos échanges selon sa propre politique de confidentialité, y compris éventuellement hors de l’Union européenne.</p>
           <p>Les polices de caractères sont hébergées sur notre propre serveur : le site n’effectue aucune requête vers Google Fonts. La mesure d’audience est réalisée par notre propre outil, sur notre serveur : aucune donnée n’est transmise à un tiers.</p>'''),
   ('cookies', 'Cookies et mesure d’audience', '''          <p>Ce site n’utilise aucun cookie, publicitaire ou autre. Seules les préférences décrites plus haut (langue et bandeau) sont stockées localement dans votre navigateur. Elles servent uniquement au fonctionnement que vous demandez et ne nécessitent donc pas de consentement.</p>
           <p>Nous mesurons la fréquentation avec notre propre outil, hébergé sur notre serveur : il ne dépose rien sur votre appareil, n’enregistre pas votre adresse IP et ne transmet aucune donnée à un tiers. Le pays est déterminé sur notre serveur grâce à la base DB-IP Lite (licence CC BY 4.0), sans appel à un service extérieur.</p>
@@ -396,7 +401,7 @@ devis = head('Demande de devis · DYRO WEB',
         </dl>
         <p class="summary__extra" data-sum-extra hidden></p>
         <p class="summary__note" data-i18n="dv.sum.note">Fourchette indicative selon notre grille, hors TVA. Le devis fixe le prix exact.</p>
-        <p class="summary__book"><span data-i18n="book.alt">Vous préférez en parler ?</span><br><a href="{BOOK}" target="_blank" rel="noopener" data-i18n-attr="href:book.href"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a></p>
+        <p class="summary__book"><span data-i18n="book.alt">Vous préférez en parler ?</span><br><a href="{BOOK}" data-cal="{BOOK.split('cal.com/', 1)[1]}" target="_blank" rel="noopener" data-ev="book"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a></p>
       </aside>
     </div>
   </section>
