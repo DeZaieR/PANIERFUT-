@@ -20,7 +20,7 @@ const STATS_DIR = __DIR__ . '/stats-data';
 const STATS_KEEP_MONTHS = 25;
 const STATS_BOTS = '/bot|crawl|spider|slurp|preview|headless|lighthouse|pagespeed|pingdom|uptime|monitor|curl|wget|python|java\/|go-http|httpclient|okhttp|axios|node-fetch|facebookexternalhit|whatsapp|telegram|discord|skype|embedly|quora|vkshare|semrush|ahrefs|mj12|dataforseo|bytespider|gptbot|claude|perplexity|ccbot/i';
 /** Événements acceptés depuis le navigateur ou les formulaires. */
-const STATS_EVENTS = ['form', 'book', 'whatsapp', 'tel', 'email', 'mailto_quote', 'instagram', 'linkedin', 'sister', 'lang'];
+const STATS_EVENTS = ['form', 'book', 'whatsapp', 'tel', 'email', 'mailto_quote', 'instagram', 'linkedin', 'sister', 'lang', 'quote_bar'];
 /** Événements qui comptent comme une prise de contact (conversion). */
 const STATS_CONV = ['form', 'book', 'whatsapp', 'tel', 'email', 'mailto_quote'];
 

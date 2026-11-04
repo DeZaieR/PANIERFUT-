@@ -11,8 +11,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=10">
-<link rel="stylesheet" href="/assets/css/style.css?v=10">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=11">
+<link rel="stylesheet" href="/assets/css/style.css?v=11">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -37,7 +37,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=10';
+      el.src = '/assets/js/i18n.js?v=11';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -163,9 +163,9 @@
 </main>
 
 <nav class="mbar" aria-label="Actions rapides" data-i18n-attr="aria-label:bar.aria">
-  <a class="mbar__btn mbar__btn--quote" href="/devis.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-i18n="bar.quote">Devis</span></a>
-  <a class="mbar__btn mbar__btn--wa" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20un%20site%20web." target="_blank" rel="noopener" data-i18n-attr="href:wa.href"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.3-.2z"/></svg><span>WhatsApp</span></a>
-  <a class="mbar__btn" href="tel:+352691349632"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-i18n="bar.call">Appeler</span></a>
+  <a class="mbar__btn mbar__btn--quote" href="/devis.html" data-ev="quote_bar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><span data-i18n="bar.free48">Devis gratuit sous 48 h</span><svg class="mbar__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <a class="mbar__btn mbar__btn--wa mbar__btn--ico" href="https://wa.me/352691349632?text=Bonjour%20DYRO%20WEB%2C%20je%20souhaite%20un%20site%20web." target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-attr="href:wa.href"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.3-.2z"/></svg></a>
+  <a class="mbar__btn mbar__btn--ico mbar__btn--tel" href="tel:+352691349632" aria-label="Appeler" data-i18n-attr="aria-label:bar.call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
 </nav>
 
 <footer class="footer">
@@ -218,6 +218,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=10" defer></script>
+<script src="/assets/js/main.js?v=11" defer></script>
 </body>
 </html>
