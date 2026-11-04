@@ -103,7 +103,6 @@
       st.hdr.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY + 4);
       if (y < lastY - 4 || y < 400) st.hdr.classList.remove('is-hidden');
     }
-    if (st.mbar) st.mbar.classList.toggle('is-on', y > innerHeight * 0.6 && y < h - 300);
     if (st.steps) {
       const r = st.steps.getBoundingClientRect();
       const p = clamp((innerHeight * 0.75 - r.top) / (r.height + innerHeight * 0.2), 0, 1);

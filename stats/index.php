@@ -160,7 +160,7 @@ function country_label(string $cc): string
 const EVENT_LABELS = [
     'form' => 'Formulaires envoyés', 'book' => 'Réservations d’appel', 'whatsapp' => 'Clics WhatsApp', 'tel' => 'Clics téléphone',
     'email' => 'Clics email', 'mailto_quote' => 'Devis préparés par email', 'instagram' => 'Clics Instagram', 'linkedin' => 'Clics LinkedIn',
-    'sister' => 'Vers l’autre marque', 'lang' => 'Changements de langue',
+    'sister' => 'Vers l’autre marque', 'lang' => 'Changements de langue', 'quote_bar' => 'Clics « Devis gratuit 48 h »',
 ];
 const FORM_LABELS = [
     'essai' => 'Essai photo (Studios)', 'devis' => 'Devis (Studios)', 'partenariat' => 'Partenariat agence (Studios)', 'pub' => 'Publicité IA (Studios)',

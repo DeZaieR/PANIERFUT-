@@ -413,8 +413,21 @@ main:focus { outline: none; }
 .sister:hover { border-color: var(--gold); background: var(--goldA); transform: translateY(-2px); }
 .sister:hover .sister__v svg { transform: translateX(4px); }
 
-/* Barre mobile */
-.mbar { display: none; }
+/* Barre du bas, toujours visible : devis gratuit sous 48 h */
+.mbar { position: fixed; z-index: 90; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: flex; gap: 6px; padding: 6px; border-radius: 22px; background: rgba(16, 19, 24, .92); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--line2); box-shadow: 0 18px 40px -12px #000; }
+.mbar a { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 16px; color: var(--ink); }
+.mbar a svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.mbar__main { padding: 0 24px; background: var(--gold); color: #111 !important; font-family: var(--f-disp); font-size: 1.1875rem; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; box-shadow: 0 10px 30px -10px rgba(232, 208, 154, .7); transition: background-color .3s, box-shadow .3s; }
+.mbar__main:hover { background: var(--gold2); box-shadow: 0 14px 40px -10px rgba(232, 208, 154, .9); }
+.mbar__main .mbar__go { transition: transform .35s var(--ease); }
+.mbar__main:hover .mbar__go { transform: translateX(4px); }
+.mbar__ico { width: 56px; flex: none; border: 1px solid var(--line2); transition: border-color .3s, color .3s; }
+.mbar__ico:hover { border-color: var(--gold); color: var(--gold2); }
+.mbar__tel { display: none !important; }
+body { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+/* Sur la page du formulaire, la barre ferait doublon et masquerait le bouton d’envoi */
+body:has(form#devis) .mbar { display: none; }
+body:has(form#devis) { padding-bottom: 0; }
 
 /* Pages intérieures */
 .phero { padding: calc(var(--hdr) + clamp(40px, 7vw, 90px)) 0 clamp(40px, 6vw, 70px); position: relative; overflow: hidden; }
@@ -596,12 +609,13 @@ main:focus { outline: none; }
   .faq__a p { padding-right: 0; }
   .prose dl { grid-template-columns: 1fr; gap: 2px; }
   .prose dd { margin-bottom: 10px; }
-  .mbar { position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 90; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 6px; padding: 6px; border-radius: 20px; background: rgba(16, 19, 24, .92); backdrop-filter: blur(14px); border: 1px solid var(--line2); box-shadow: 0 18px 40px -12px #000; transform: translateY(140%); transition: transform .5s var(--ease); }
-  .mbar.is-on { transform: none; }
-  .mbar a { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 50px; border-radius: 14px; font-weight: 700; font-size: .9375rem; color: var(--ink); }
-  .mbar a svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .mbar__main { background: var(--gold); color: #111 !important; }
-  body { padding-bottom: 84px; }
+  .mbar { left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); transform: none; display: grid; grid-template-columns: minmax(0, 1fr) 52px 52px; border-radius: 20px; }
+  .mbar a { min-height: 54px; border-radius: 14px; }
+  .mbar__main { padding: 0 10px; gap: 8px; font-size: clamp(.98rem, 4.4vw, 1.125rem); white-space: normal; text-align: center; line-height: 1.15; }
+  .mbar__main .mbar__go { display: none; }
+  .mbar__ico { width: auto; }
+  .mbar__tel { display: flex !important; }
+  .menu-open .mbar { visibility: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
