@@ -214,6 +214,9 @@ $sent = send_mail($TO, $subject, $mail, $headers, $FROM);
 
 if ($sent) {
     send_confirmation($email, $lang, $type, isset($OFFERS[$offre]) ? $offre : '', $photo !== null, $lien !== '', $FROM, $TO);
+    // Mesure d'audience : une demande envoyée (anonyme, voir _stats.php)
+    require_once __DIR__ . '/_stats.php';
+    stats_log(['t' => 'ev', 'n' => 'form', 'm' => $type, 'p' => ($lang === 'fr' ? '' : "/$lang") . '/contact/']);
 }
 reply($sent ? 200 : 500, ['ok' => (bool) $sent]);
 

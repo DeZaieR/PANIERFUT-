@@ -439,3 +439,56 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+
+/* Mesure d'audience maison, sans cookies (voir api/_stats.php).
+   Pour ne pas compter ses propres visites : ouvrir une fois le site avec ?notrack=1 (?notrack=0 pour annuler). */
+(() => {
+  'use strict';
+  const off = () => { window.dyroTrack = () => {}; };
+  try {
+    if (/[?&]notrack=1\b/.test(location.search)) localStorage.setItem('dyro_notrack', '1');
+    if (/[?&]notrack=0\b/.test(location.search)) localStorage.removeItem('dyro_notrack');
+    if (localStorage.getItem('dyro_notrack')) return off();
+  } catch (e) { /* stockage indisponible : on mesure quand même */ }
+  if (navigator.webdriver || (location.protocol !== 'https:' && location.hostname !== 'localhost')) return off();
+
+  const send = (o) => {
+    o.p = location.pathname;
+    const body = JSON.stringify(o);
+    try { if (navigator.sendBeacon && navigator.sendBeacon('/api/v.php', body)) return; } catch (e) { /* repli */ }
+    try { fetch('/api/v.php', { method: 'POST', body, keepalive: true, credentials: 'omit' }); } catch (e) { /* ignoré */ }
+  };
+  const track = window.dyroTrack = (n, m) => send({ t: 'ev', n, m: m ? String(m) : '' });
+
+  const pageview = () => {
+    const u = new URLSearchParams(location.search);
+    send({
+      t: 'pv',
+      r: document.referrer,
+      w: screen.width || innerWidth,
+      l: (document.documentElement.lang || '').slice(0, 2),
+      us: u.get('utm_source') || u.get('ref') || '',
+      um: u.get('utm_medium') || '',
+      uc: u.get('utm_campaign') || '',
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(pageview, 0));
+  else setTimeout(pageview, 0);
+
+  // Clics qui comptent : prise de contact, réseaux, autre marque
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    const h = a.href || '';
+    let n = a.dataset.ev || '';
+    if (!n) {
+      if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h)) n = 'whatsapp';
+      else if (h.startsWith('tel:')) n = 'tel';
+      else if (h.startsWith('mailto:')) n = 'email';
+      else if (/instagram\.com\//.test(h)) n = 'instagram';
+      else if (/linkedin\.com\//.test(h)) n = 'linkedin';
+      else if (/^https:\/\/(www\.)?(dyroweb\.online|dyrostudios\.com)/.test(h) && a.hostname !== location.hostname) n = 'sister';
+    }
+    if (n) track(n, a.dataset.evm || '');
+  }, { capture: true, passive: true });
+})();

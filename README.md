@@ -32,3 +32,14 @@ Site statique (HTML/CSS/JS sans dépendance) en français, allemand et anglais, 
 ## Hébergement
 - Production : https://dyrostudios.com (déploiement automatique de la branche `claude/dyro-studios-site`).
 - Test : https://teal-barracuda-408224.hostingersite.com (même branche, même déploiement automatique).
+
+
+## Mesure d’audience (maison, sans cookies)
+
+- Navigateur : petit script en bas de `assets/js/site.js` (Dyro Studios) et `assets/js/main.js` (DYRO WEB) → `api/v.php`.
+- Formulaires : enregistrés côté serveur après envoi réussi (`api/contact.php`, `api/devis.php`).
+- Moteur commun : `api/_stats.php` (identique sur les deux sites). Données : `api/stats-data/AAAA-MM.jsonl`, interdites au public, gardées 25 mois. Aucune IP stockée (empreinte salée qui change chaque jour).
+- Pays : base locale `api/geo/*.bin` (DB-IP Lite, CC BY 4.0). Mise à jour facultative (1 à 2 fois par an) : télécharger `https://download.db-ip.com/free/dbip-country-lite-AAAA-MM.csv.gz` puis `python3 -I scripts/build_geo.py fichier.csv.gz`, et copier `api/geo/` sur l’autre site.
+- Tableau de bord des deux sites : https://dyrostudios.com/stats/ (mot de passe). DYRO WEB est lu via `api/stats.php` (requête signée).
+- Config privée `api/.stats.php` (hors Git, déposée sur chaque serveur) : `secret` (clé partagée, identique sur les deux sites) et `pass` (hachage du mot de passe).
+- Ne pas compter ses propres visites : ouvrir une fois `/?notrack=1` sur chaque appareil (`/?notrack=0` pour annuler).

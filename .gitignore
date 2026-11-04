@@ -4,3 +4,8 @@ src/i18n/_fr.json
 api/.smtp.php
 api/uploads/*
 !api/uploads/.htaccess
+
+# Mesure d’audience (voir api/_stats.php)
+api/.stats.php
+api/stats-data/*
+!api/stats-data/.htaccess

@@ -69,6 +69,6 @@ AddType font/woff2 .woff2
 <IfModule mod_alias.c>
   RedirectMatch 404 ^/(\.git|scripts|src)(/|$)
 </IfModule>
-<FilesMatch "^(README\.md|\.gitignore|\.htaccess|\.user\.ini|\.smtp\.php)$">
+<FilesMatch "^(README\.md|\.gitignore|\.htaccess|\.user\.ini|\.smtp\.php|\.stats\.php|_stats\.php)$">
   Require all denied
 </FilesMatch>
