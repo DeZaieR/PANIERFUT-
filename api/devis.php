@@ -125,6 +125,10 @@ $sent = send_mail($TO, $encodedSubject, $body, $headers, $FROM);
 
 if ($sent) {
     send_confirmation($email, $lang, $data, $FROM, $TO);
+    // Mesure d'audience : un devis envoyé (anonyme, voir _stats.php)
+    require_once __DIR__ . '/_stats.php';
+    $formule = preg_replace('/[^a-z0-9_-]/', '', strtolower((string) (is_scalar($data['type'] ?? null) ? $data['type'] : '')));
+    stats_log(['t' => 'ev', 'n' => 'form', 'm' => $formule !== '' ? $formule : 'devis', 'p' => (in_array($lang, ['de', 'en', 'pt', 'lb'], true) ? "/$lang" : '') . '/devis.html']);
 }
 
 reply($sent ? 200 : 500, ['ok' => (bool) $sent]);

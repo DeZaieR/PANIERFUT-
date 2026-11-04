@@ -186,9 +186,12 @@
     const marquees = [];
     const scrubs = [];
     const langListeners = [];
-    // Mesure d'audience : n'envoie rien tant que Plausible n'est pas installé (voir scripts/partials/analytics.html)
+    // Mesure d'audience maison (bas de ce fichier) : les clics sont comptés automatiquement
+    // et les devis envoyés côté serveur ; ici, seulement le changement de langue et le devis par email.
+    const TRACKED = { Langue: ['lang', 'langue'], 'Devis préparé par email': ['mailto_quote', 'formule'] };
     const track = (name, props) => {
-      try { if (typeof window.plausible === 'function') window.plausible(name, props ? { props } : undefined); } catch (e) { /* ignoré */ }
+      const t = TRACKED[name];
+      try { if (t && typeof window.dyroTrack === 'function') window.dyroTrack(t[0], (props || {})[t[1]] || ''); } catch (e) { /* ignoré */ }
     };
     const attrPairs = (el) => el.dataset.i18nAttr.split(';')
       .map((pair) => { const i = pair.indexOf(':'); return [pair.slice(0, i).trim(), pair.slice(i + 1).trim()]; })
@@ -1178,16 +1181,6 @@
     updatePrices();
     if (curLang !== 'fr' && LANGS[curLang] && mockH) setLang(curLang);
 
-    // Clics importants : WhatsApp, réservation d'appel, téléphone, email
-    d.addEventListener('click', (e) => {
-      const a = e.target.closest('a[href]');
-      if (!a) return;
-      const h = a.getAttribute('href');
-      if (h.includes('wa.me')) track(a.matches('[data-i18n-attr*="book.href"]') ? 'Réserver un appel' : 'WhatsApp');
-      else if (h.startsWith('tel:')) track('Appel');
-      else if (h.startsWith('mailto:')) track('Email');
-    });
-
     // Petite API pour les scripts propres à une page (formulaire de devis)
     window.DYRO = {
       tr,
@@ -1226,4 +1219,57 @@
   } else {
     run();
   }
+})();
+
+/* Mesure d'audience maison, sans cookies (voir api/_stats.php).
+   Pour ne pas compter ses propres visites : ouvrir une fois le site avec ?notrack=1 (?notrack=0 pour annuler). */
+(() => {
+  'use strict';
+  const off = () => { window.dyroTrack = () => {}; };
+  try {
+    if (/[?&]notrack=1\b/.test(location.search)) localStorage.setItem('dyro_notrack', '1');
+    if (/[?&]notrack=0\b/.test(location.search)) localStorage.removeItem('dyro_notrack');
+    if (localStorage.getItem('dyro_notrack')) return off();
+  } catch (e) { /* stockage indisponible : on mesure quand même */ }
+  if (navigator.webdriver || (location.protocol !== 'https:' && location.hostname !== 'localhost')) return off();
+
+  const send = (o) => {
+    o.p = location.pathname;
+    const body = JSON.stringify(o);
+    try { if (navigator.sendBeacon && navigator.sendBeacon('/api/v.php', body)) return; } catch (e) { /* repli */ }
+    try { fetch('/api/v.php', { method: 'POST', body, keepalive: true, credentials: 'omit' }); } catch (e) { /* ignoré */ }
+  };
+  const track = window.dyroTrack = (n, m) => send({ t: 'ev', n, m: m ? String(m) : '' });
+
+  const pageview = () => {
+    const u = new URLSearchParams(location.search);
+    send({
+      t: 'pv',
+      r: document.referrer,
+      w: screen.width || innerWidth,
+      l: (document.documentElement.lang || '').slice(0, 2),
+      us: u.get('utm_source') || u.get('ref') || '',
+      um: u.get('utm_medium') || '',
+      uc: u.get('utm_campaign') || '',
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(pageview, 0));
+  else setTimeout(pageview, 0);
+
+  // Clics qui comptent : prise de contact, réseaux, autre marque
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    const h = a.href || '';
+    let n = a.dataset.ev || '';
+    if (!n) {
+      if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(h)) n = 'whatsapp';
+      else if (h.startsWith('tel:')) n = 'tel';
+      else if (h.startsWith('mailto:')) n = 'email';
+      else if (/instagram\.com\//.test(h)) n = 'instagram';
+      else if (/linkedin\.com\//.test(h)) n = 'linkedin';
+      else if (/^https:\/\/(www\.)?(dyroweb\.online|dyrostudios\.com)/.test(h) && a.hostname !== location.hostname) n = 'sister';
+    }
+    if (n) track(n, a.dataset.evm || '');
+  }, { capture: true, passive: true });
 })();

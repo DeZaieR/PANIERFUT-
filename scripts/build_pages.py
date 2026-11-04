@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '9'
+V = '10'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="([^"]+)" target="_blank" rel="noopener" data-i18n-attr="href:book.href"', idx).group(1)
@@ -95,7 +95,7 @@ def page_hero(eyebrow_html, title_html, extra_html=''):
 UPDATED = 'Dernière mise à jour : 1er novembre 2026'
 TODO = lambda t: f'<mark class="todo">[{t}]</mark>'
 
-def legal_page(fname, title, desc, sections):
+def legal_page(fname, title, desc, sections, updated=UPDATED):
     toc = '\n'.join(f'        <a href="#{sid}">{label}</a>' for sid, label, _ in sections)
     body = ''
     for i, (sid, label, html) in enumerate(sections, 1):
@@ -107,7 +107,7 @@ def legal_page(fname, title, desc, sections):
     hero = page_hero(
         '<p class="eyebrow intro" style="--d:0" data-i18n="legal.eyebrow">Informations légales</p>',
         f'<h1 class="page-hero__title intro" style="--d:1">{title}</h1>',
-        f'      <p class="page-hero__meta intro" style="--d:2">{UPDATED}</p>\n      <p class="legal__notice intro" style="--d:3" data-i18n="legal.notice">Page disponible en français uniquement.</p>')
+        f'      <p class="page-hero__meta intro" style="--d:2">{updated}</p>\n      <p class="legal__notice intro" style="--d:3" data-i18n="legal.notice">Page disponible en français uniquement.</p>')
     canon = f'<link rel="canonical" href="https://dyroweb.online/{fname}">\n'
     html = head(f'{title} · DYRO WEB', desc, canon, url=fname) + shared + f'''<main id="top" tabindex="-1">
 {hero}
@@ -159,29 +159,34 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Formulaire de devis :</strong> nom, entreprise, email, téléphone et informations sur votre projet (type de site, langues, fonctionnalités, délai, adresse du site actuel, message).</li>
             <li><strong>Échanges par email, téléphone ou WhatsApp :</strong> les informations que vous choisissez de nous communiquer.</li>
             <li><strong>Données techniques :</strong> l’hébergeur enregistre des journaux de connexion (adresse IP, date et heure, pages demandées, navigateur) pour assurer la sécurité et le bon fonctionnement du site. Pour limiter les abus du formulaire, votre adresse IP est aussi conservée sous forme d’empreinte non réversible pendant 24 heures au plus.</li>
+            <li><strong>Mesure d’audience :</strong> pages consultées, site d’origine (par exemple Google ou Instagram), type d’appareil (largeur d’écran), langue de la page, pays et clics sur nos boutons de contact. Votre adresse IP n’est pas enregistrée : au moment de la visite, elle sert seulement à déterminer le pays et à calculer une empreinte qui change chaque jour. Il est impossible de vous identifier ou de relier vos visites d’un jour à l’autre.</li>
             <li><strong>Préférences dans votre navigateur :</strong> la langue choisie et la fermeture du bandeau sont enregistrées dans le stockage local de votre navigateur. Ces informations restent sur votre appareil et ne nous sont pas transmises.</li>
           </ul>'''),
   ('finalites', 'Finalités et bases légales', '''          <ul>
             <li><strong>Répondre à votre demande, vous envoyer un email de confirmation et établir un devis :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
             <li><strong>Exécuter le contrat et facturer :</strong> exécution du contrat (article 6.1.b) et respect de nos obligations légales comptables (article 6.1.c).</li>
             <li><strong>Assurer la sécurité du site :</strong> intérêt légitime (article 6.1.f).</li>
+            <li><strong>Mesurer la fréquentation du site et l’efficacité de nos contenus</strong>, sous forme de statistiques anonymes : intérêt légitime (article 6.1.f).</li>
           </ul>
           <p>Vos données ne sont jamais vendues ni utilisées pour de la publicité ciblée.</p>'''),
   ('conservation', 'Durées de conservation', f'''          <ul>
             <li><strong>Demande de devis sans suite :</strong> 3 ans après le dernier contact. {TODO('durée à valider')}</li>
             <li><strong>Clients :</strong> pendant toute la relation contractuelle, puis 10 ans pour les pièces comptables, conformément à l’article 16 du Code de commerce.</li>
             <li><strong>Journaux techniques :</strong> durée limitée fixée par l’hébergeur.</li>
+            <li><strong>Statistiques de visite :</strong> 25 mois, sous forme anonyme.</li>
           </ul>'''),
   ('destinataires', 'Destinataires', '''          <p>Vos données sont traitées uniquement par DYRO WEB. Nos prestataires techniques (hébergement du site et messagerie) y ont accès dans la stricte mesure nécessaire à leur mission, sur nos instructions et sous obligation de confidentialité.</p>
           <p>Aucune donnée n’est transmise à des tiers à des fins commerciales.</p>'''),
   ('transferts', 'Transferts hors de l’Union européenne', '''          <p>Nous n’organisons aucun transfert de vos données hors de l’Union européenne. Si vous choisissez de nous écrire via WhatsApp, ce service édité par Meta traite vos échanges selon sa propre politique de confidentialité, y compris éventuellement hors de l’Union européenne.</p>
-          <p>Les polices de caractères sont hébergées sur notre propre serveur : le site n’effectue aucune requête vers Google Fonts et n’utilise aucun outil de mesure d’audience.</p>'''),
-  ('cookies', 'Cookies', '''          <p>Ce site n’utilise aucun cookie publicitaire ni de mesure d’audience. Seules les préférences décrites plus haut (langue et bandeau) sont stockées localement dans votre navigateur. Elles servent uniquement au fonctionnement que vous demandez et ne nécessitent donc pas de consentement.</p>'''),
+          <p>Les polices de caractères sont hébergées sur notre propre serveur : le site n’effectue aucune requête vers Google Fonts. La mesure d’audience est réalisée par notre propre outil, sur notre serveur : aucune donnée n’est transmise à un tiers.</p>'''),
+  ('cookies', 'Cookies et mesure d’audience', '''          <p>Ce site n’utilise aucun cookie, publicitaire ou autre. Seules les préférences décrites plus haut (langue et bandeau) sont stockées localement dans votre navigateur. Elles servent uniquement au fonctionnement que vous demandez et ne nécessitent donc pas de consentement.</p>
+          <p>Nous mesurons la fréquentation avec notre propre outil, hébergé sur notre serveur : il ne dépose rien sur votre appareil, n’enregistre pas votre adresse IP et ne transmet aucune donnée à un tiers. Le pays est déterminé sur notre serveur grâce à la base DB-IP Lite (licence CC BY 4.0), sans appel à un service extérieur.</p>
+          <p>Vous pouvez vous opposer à cette mesure à tout moment : <a href="/?notrack=1">désactiver la mesure d’audience sur cet appareil</a>. Ce choix est enregistré dans votre navigateur ; pour l’annuler, ouvrez <a href="/?notrack=0">ce lien</a>.</p>'''),
   ('droits', 'Vos droits', '''          <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation, d’opposition et de portabilité de vos données. Vous pouvez retirer votre consentement à tout moment.</p>
           <p>Pour exercer vos droits, écrivez à <a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a>. Nous répondons dans un délai d’un mois.</p>'''),
   ('reclamation', 'Réclamation', '''          <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission nationale pour la protection des données (CNPD), 15, boulevard du Jazz, L-4370 Belvaux (<a href="https://cnpd.public.lu" rel="noopener">cnpd.public.lu</a>).</p>'''),
   ('modifications', 'Modifications', '          <p>Cette politique peut être mise à jour. La date de dernière mise à jour figure en haut de la page.</p>'),
-])
+], updated='Dernière mise à jour : 4 novembre 2026')
 
 legal_page('cgv.html', 'Conditions générales de vente',
   'Conditions générales de vente et de prestation de DYRO WEB : devis, prix, paiement, propriété du site, maintenance.', [
