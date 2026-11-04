@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=8">
+<link rel="stylesheet" href="/assets/css/style.css?v=9">
 <!-- analytics:start -->
 <!-- Mesure d'audience sans cookies (désactivée). Pour l'activer avec Plausible :
      1. créer le site dyroweb.online sur plausible.io ;
@@ -63,7 +63,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=8';
+      el.src = '/assets/js/i18n.js?v=9';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -79,7 +79,7 @@
   "@type": "ProfessionalService",
   "name": "DYRO WEB",
   "url": "https://dyroweb.online/",
-  "sameAs": ["https://www.instagram.com/dyroweb/"],
+  "sameAs": ["https://www.instagram.com/dyroweb/", "https://www.linkedin.com/showcase/dyro-web/"],
   "logo": "https://dyroweb.online/assets/img/apple-touch-icon.png",
   "image": "https://dyroweb.online/assets/img/og-image.jpg",
   "description": "Création de sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.",
@@ -859,6 +859,7 @@
       <p data-i18n="foot.desc">Criação de sites para empresas do Luxemburgo e da Grande Região.</p>
       <div class="social" role="group" aria-label="Instagram, WhatsApp, email">
         <a class="social__btn social__btn--ig" href="https://www.instagram.com/dyroweb/" target="_blank" rel="noopener" aria-label="Instagram @dyroweb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" class="dot"/></svg></a>
+        <a class="social__btn social__btn--li" href="https://www.linkedin.com/showcase/dyro-web/" target="_blank" rel="noopener" aria-label="LinkedIn DYRO WEB"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V16M8 7.7v.01M11.5 16v-5.5M11.5 12.8c0-1.4.9-2.4 2.3-2.4 1.4 0 2.2.9 2.2 2.6V16"/></svg></a>
         <a class="social__btn" href="https://wa.me/352691349632" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9.5 9.5c.3 1.8 2.2 3.8 4.4 4.4l1.1-1.1 2 1-.6 1.6c-3.7.2-7.6-3.6-7.6-7.4l1.6-.6 1 2z"/></svg></a>
         <a class="social__btn" href="mailto:contact@dyroweb.online" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
       </div>
@@ -878,6 +879,7 @@
       <a href="tel:+352691349632" data-roll>+352 691 349 632</a>
       <a href="https://wa.me/352691349632" target="_blank" rel="noopener" data-roll>WhatsApp</a>
       <a href="https://www.instagram.com/dyroweb/" target="_blank" rel="noopener" data-roll>Instagram @dyroweb</a>
+      <a href="https://www.linkedin.com/showcase/dyro-web/" target="_blank" rel="noopener" data-roll>LinkedIn</a>
     </div>
   </div>
 
