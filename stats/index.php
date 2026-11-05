@@ -49,6 +49,14 @@ if (!$authed && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     $error = 'Mot de passe incorrect.';
 }
 
+/* ---------------- Rapport à la demande ---------------- */
+
+$notice = '';
+if ($authed && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && ($_POST['action'] ?? '') === 'report') {
+    require_once __DIR__ . '/../api/_report.php';
+    $notice = report_send(date('Y-m-d')) ? 'Rapport des 7 derniers jours envoyé sur contact@dyrostudios.com.' : 'L’envoi du rapport a échoué. Réessaie dans un instant.';
+}
+
 /* ---------------- Données ---------------- */
 
 $days = (int)($_GET['p'] ?? 30);
@@ -309,6 +317,11 @@ th { color: var(--muted); font-size: 12px; }
 .empty { color: var(--muted); font-size: 14px; margin: 0; }
 .note { font-size: 12.5px; color: var(--muted); }
 .foot { margin-top: 18px; font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; }
+.report-form { margin-top: 18px; display: grid; gap: 6px; justify-items: start; }
+.report-form button { font: 600 14px "Space Grotesk", sans-serif; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); cursor: pointer; }
+.report-form button:hover { border-color: var(--gold); }
+.report-form span { font-size: 13.5px; color: var(--up); }
+.report-form small { font-size: 12.5px; color: var(--muted); }
 .login { max-width: 360px; margin: 18vh auto 0; }
 .login p { color: var(--muted); }
 .login input { width: 100%; font: inherit; font-size: 16px; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--line2); background: var(--card); color: var(--ink); margin: 14px 0 10px; }
@@ -395,6 +408,12 @@ th { color: var(--muted); font-size: 12px; }
   <p class="note">Visites sans aucun clic ni deuxième page : <?= $nf($d['bounce']) ?> (<?= str_replace('.', ',', (string)$pct($d['bounce'], $d['visits'])) ?> %). Une même personne revenue un autre jour compte comme une nouvelle visite.</p>
   <?php endif; ?>
 
+  <form method="post" action="" class="report-form">
+    <input type="hidden" name="action" value="report">
+    <button type="submit">M’envoyer le rapport des 7 derniers jours</button>
+    <?php if ($notice): ?><span role="status"><?= $h($notice) ?></span><?php endif; ?>
+    <small>Il part aussi tout seul chaque lundi matin (semaine écoulée), sur contact@dyrostudios.com.</small>
+  </form>
   <div class="foot">
     <span>Pour ne pas compter vos propres visites, ouvrez une fois sur chaque appareil : <a href="https://dyrostudios.com/?notrack=1">dyrostudios.com/?notrack=1</a> et <a href="https://dyroweb.online/?notrack=1">dyroweb.online/?notrack=1</a>.</span>
     <span>Mesure anonyme, sans cookies ni adresse IP enregistrée. Pays : <a href="https://db-ip.com" rel="noopener">IP Geolocation by DB-IP</a>.</span>
