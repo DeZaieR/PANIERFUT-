@@ -230,20 +230,20 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
     $L = [
         'fr' => [
             'subject' => 'Votre demande est bien reçue – DYRO STUDIOS', 'hello' => 'Bonjour,',
-            'intro' => 'Merci, votre demande a bien été reçue. Nous vous répondons personnellement <strong>sous 1 jour ouvré</strong>.',
+            'intro' => 'Merci, votre demande a bien été reçue. Nous vous répondons personnellement <strong>sous 48 h</strong>.',
             'recap' => 'VOTRE DEMANDE', 'r_type' => 'Demande', 'r_offer' => 'Offre choisie', 'r_photo' => 'Photo',
             'photo_yes' => 'Photo reçue', 'link_yes' => 'Lien de téléchargement reçu', 'photo_both' => 'Photo et lien reçus', 'photo_no' => 'Aucune photo pour l’instant',
             'undecided' => 'À définir ensemble',
             'next' => 'LES PROCHAINES ÉTAPES',
             'steps' => [
-                'devis' => ['Nous vérifions vos photos : netteté, lumière, cadrage.', 'Vous recevez votre devis par email, sous 1 jour ouvré.', 'Après votre accord, vos visuels HD sont livrés en 2 à 3 jours ouvrés.'],
+                'devis' => ['Nous vérifions vos photos : netteté, lumière, cadrage.', 'Vous recevez votre devis par email, sous 48 h.', 'Après votre accord, vos visuels HD sont livrés en 2 à 3 jours ouvrés.'],
                 'essai' => ['Nous vérifions que votre photo se prête à l’essai.', 'Nous réalisons votre photo d’essai, offerte et sans engagement.', 'Vous la recevez par email, avec nos conseils pour la suite.'],
                 'partenariat' => ['Nous étudions votre activité et vos volumes.', 'Nous vous proposons un échange pour définir le rythme et les conditions.', 'Vous recevez une proposition claire, sans engagement.'],
-                'pub' => ['Nous étudions votre produit et votre objectif.', 'Vous recevez un concept et un devis clair, sous 1 jour ouvré.', 'Après votre accord, nous produisons et vous validez chaque plan avant livraison.'],
+                'pub' => ['Nous étudions votre produit et votre objectif.', 'Vous recevez un concept et un devis clair, sous 48 h.', 'Après votre accord, nous produisons et vous validez chaque plan avant livraison.'],
             ],
             'add_photo' => 'Pensez à nous envoyer vos photos : <strong>répondez simplement à cet email</strong> en les joignant, ou avec un lien de téléchargement.',
             'add' => 'Une précision ou une autre photo ? <strong>Répondez simplement à cet email.</strong>',
-            'urgent' => 'Une urgence ? WhatsApp ou téléphone :', 'regards' => 'Bien cordialement,', 'team' => 'L’équipe DYRO STUDIOS',
+            'call' => 'Envie d’en parler ? Réservez un appel de 20 min :', 'urgent' => 'Une urgence ? WhatsApp ou téléphone :', 'regards' => 'Bien cordialement,', 'team' => 'L’équipe DYRO STUDIOS',
             'tagline' => 'Home staging et rénovation virtuels, publicités par IA',
             'footer' => 'Vous recevez ce message car votre adresse a été saisie dans le formulaire de dyrostudios.com. Si ce n’est pas vous, ignorez-le.',
             'types' => ['essai' => 'Essai gratuit', 'devis' => 'Devis', 'partenariat' => 'Partenariat agence', 'pub' => 'Publicité IA'],
@@ -251,20 +251,20 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
         ],
         'de' => [
             'subject' => 'Ihre Anfrage ist eingegangen – DYRO STUDIOS', 'hello' => 'Guten Tag,',
-            'intro' => 'Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir antworten Ihnen persönlich <strong>innerhalb eines Werktages</strong>.',
+            'intro' => 'Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir antworten Ihnen persönlich <strong>innerhalb von 48 Stunden</strong>.',
             'recap' => 'IHRE ANFRAGE', 'r_type' => 'Anfrage', 'r_offer' => 'Gewähltes Angebot', 'r_photo' => 'Foto',
             'photo_yes' => 'Foto erhalten', 'link_yes' => 'Download-Link erhalten', 'photo_both' => 'Foto und Link erhalten', 'photo_no' => 'Noch kein Foto',
             'undecided' => 'Gemeinsam festzulegen',
             'next' => 'DIE NÄCHSTEN SCHRITTE',
             'steps' => [
-                'devis' => ['Wir prüfen Ihre Fotos: Schärfe, Licht, Bildausschnitt.', 'Sie erhalten Ihr Angebot per E-Mail, innerhalb eines Werktages.', 'Nach Ihrer Zustimmung liefern wir Ihre HD-Bilder in 2 bis 3 Werktagen.'],
+                'devis' => ['Wir prüfen Ihre Fotos: Schärfe, Licht, Bildausschnitt.', 'Sie erhalten Ihr Angebot per E-Mail, innerhalb von 48 Stunden.', 'Nach Ihrer Zustimmung liefern wir Ihre HD-Bilder in 2 bis 3 Werktagen.'],
                 'essai' => ['Wir prüfen, ob sich Ihr Foto für den Test eignet.', 'Wir erstellen Ihr Testfoto – kostenlos und unverbindlich.', 'Sie erhalten es per E-Mail, mit unseren Empfehlungen.'],
                 'partenariat' => ['Wir sehen uns Ihre Tätigkeit und Ihre Mengen an.', 'Wir schlagen Ihnen ein Gespräch vor, um Rhythmus und Konditionen festzulegen.', 'Sie erhalten ein klares, unverbindliches Angebot.'],
-                'pub' => ['Wir prüfen Ihr Produkt und Ihr Ziel.', 'Sie erhalten ein Konzept und ein klares Angebot, innerhalb eines Werktages.', 'Nach Ihrer Zustimmung produzieren wir, und Sie geben jede Einstellung vor der Lieferung frei.'],
+                'pub' => ['Wir prüfen Ihr Produkt und Ihr Ziel.', 'Sie erhalten ein Konzept und ein klares Angebot, innerhalb von 48 Stunden.', 'Nach Ihrer Zustimmung produzieren wir, und Sie geben jede Einstellung vor der Lieferung frei.'],
             ],
             'add_photo' => 'Denken Sie an Ihre Fotos: <strong>Antworten Sie einfach auf diese E-Mail</strong> mit den Fotos im Anhang oder einem Download-Link.',
             'add' => 'Eine Ergänzung oder ein weiteres Foto? <strong>Antworten Sie einfach auf diese E-Mail.</strong>',
-            'urgent' => 'Dringend? WhatsApp oder Telefon:', 'regards' => 'Mit freundlichen Grüßen', 'team' => 'Ihr DYRO STUDIOS Team',
+            'call' => 'Lieber persönlich? Buchen Sie ein 20-Minuten-Gespräch:', 'urgent' => 'Dringend? WhatsApp oder Telefon:', 'regards' => 'Mit freundlichen Grüßen', 'team' => 'Ihr DYRO STUDIOS Team',
             'tagline' => 'Virtuelles Home Staging und virtuelle Renovierung, KI-Werbung',
             'footer' => 'Sie erhalten diese Nachricht, weil Ihre Adresse im Formular auf dyrostudios.com eingegeben wurde. Falls Sie das nicht waren, ignorieren Sie sie bitte.',
             'types' => ['essai' => 'Gratistest', 'devis' => 'Angebot', 'partenariat' => 'Agentur-Partnerschaft', 'pub' => 'KI-Werbung'],
@@ -272,20 +272,20 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
         ],
         'en' => [
             'subject' => 'We have received your request – DYRO STUDIOS', 'hello' => 'Hello,',
-            'intro' => 'Thank you, we have received your request. We will reply personally <strong>within one business day</strong>.',
+            'intro' => 'Thank you, we have received your request. We will reply personally <strong>within 48 hours</strong>.',
             'recap' => 'YOUR REQUEST', 'r_type' => 'Request', 'r_offer' => 'Selected offer', 'r_photo' => 'Photo',
             'photo_yes' => 'Photo received', 'link_yes' => 'Download link received', 'photo_both' => 'Photo and link received', 'photo_no' => 'No photo yet',
             'undecided' => 'To be defined together',
             'next' => 'NEXT STEPS',
             'steps' => [
-                'devis' => ['We check your photos: sharpness, light, framing.', 'You receive your quote by email within one business day.', 'Once you approve, your HD images are delivered in 2 to 3 business days.'],
+                'devis' => ['We check your photos: sharpness, light, framing.', 'You receive your quote by email within 48 hours.', 'Once you approve, your HD images are delivered in 2 to 3 business days.'],
                 'essai' => ['We check that your photo is suitable for the trial.', 'We create your trial photo, free and with no commitment.', 'You receive it by email, with our advice for next steps.'],
                 'partenariat' => ['We look at your business and your volumes.', 'We suggest a call to agree on pace and terms.', 'You receive a clear proposal, with no commitment.'],
-                'pub' => ['We study your product and your goal.', 'You receive a concept and a clear quote within one business day.', 'Once you approve, we produce and you approve every shot before delivery.'],
+                'pub' => ['We study your product and your goal.', 'You receive a concept and a clear quote within 48 hours.', 'Once you approve, we produce and you approve every shot before delivery.'],
             ],
             'add_photo' => 'Remember to send your photos: <strong>simply reply to this email</strong> with them attached, or with a download link.',
             'add' => 'Anything to add, or another photo? <strong>Simply reply to this email.</strong>',
-            'urgent' => 'Urgent? WhatsApp or phone:', 'regards' => 'Kind regards,', 'team' => 'The DYRO STUDIOS team',
+            'call' => 'Prefer to talk? Book a 20-minute call:', 'urgent' => 'Urgent? WhatsApp or phone:', 'regards' => 'Kind regards,', 'team' => 'The DYRO STUDIOS team',
             'tagline' => 'Virtual home staging and renovation, AI ads',
             'footer' => 'You are receiving this message because your address was entered in the form on dyrostudios.com. If this wasn’t you, please ignore it.',
             'types' => ['essai' => 'Free trial', 'devis' => 'Quote', 'partenariat' => 'Agency partnership', 'pub' => 'AI ad'],
@@ -345,7 +345,7 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
     foreach ($steps as $n => $s) {
         $text .= ($n + 1) . '. ' . $s . "\n";
     }
-    $text .= "\n" . $plain($needPhoto ? $t['add_photo'] : $t['add']) . "\n" . $t['urgent'] . " +352 691 349 632\n\n"
+    $text .= "\n" . $plain($needPhoto ? $t['add_photo'] : $t['add']) . "\n" . $t['call'] . " https://cal.com/dyroweb/appel-studios\n" . $t['urgent'] . " +352 691 349 632\n\n"
         . $t['regards'] . "\n" . $t['team'] . "\n" . $t['tagline'] . "\ncontact@dyrostudios.com · +352 691 349 632 · dyrostudios.com\n\n—\n" . $t['footer'] . "\n";
     if ($lang !== 'fr') {
         $text = str_replace(' : ', ': ', $text);

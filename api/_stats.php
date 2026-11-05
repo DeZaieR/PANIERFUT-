@@ -139,7 +139,7 @@ function stats_source(string $ref, string $utm): string
         $map = ['ig' => 'Instagram', 'instagram' => 'Instagram', 'linkedin' => 'LinkedIn', 'li' => 'LinkedIn',
             'gbp' => 'Fiche Google', 'gmb' => 'Fiche Google', 'google_business' => 'Fiche Google',
             'facebook' => 'Facebook', 'fb' => 'Facebook', 'whatsapp' => 'WhatsApp', 'wa' => 'WhatsApp',
-            'qr' => 'QR code', 'email' => 'Email', 'newsletter' => 'Email', 'signature' => 'Signature email',
+            'qr' => 'QR code', 'email' => 'Email', 'newsletter' => 'Email', 'signature' => 'Signature email', 'autoreply' => 'Réponse automatique', 'confirmation' => 'Email de confirmation',
             'google' => 'Google', 'tiktok' => 'TikTok'];
         return $map[$u] ?? ucfirst($u);
     }
