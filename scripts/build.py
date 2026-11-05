@@ -30,6 +30,7 @@ PAGES = [
     ('publicites.html', 'publicites/', LANGS),
     ('mentions-legales.html', 'mentions-legales/', ['fr']),
     ('confidentialite.html', 'confidentialite/', ['fr']),
+    ('cgv.html', 'cgv/', ['fr']),
 ]
 
 KEY_RE = re.compile(r'\{\{([a-z0-9][a-z0-9_.\-]*)::(.*?)\}\}', re.S)
