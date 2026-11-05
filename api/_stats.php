@@ -185,9 +185,9 @@ function stats_device(int $w): string
  * de même durée (pour les évolutions). Toutes les valeurs sont additionnables,
  * ce qui permet de fusionner deux sites.
  */
-function stats_aggregate(int $days): array
+function stats_aggregate(int $days, ?string $end = null): array
 {
-    $today = new DateTimeImmutable('today');
+    $today = $end !== null && preg_match('/^\d{4}-\d{2}-\d{2}$/', $end) ? new DateTimeImmutable($end) : new DateTimeImmutable('today');
     $start = $today->modify('-' . ($days - 1) . ' days')->format('Y-m-d');
     $prevStart = $today->modify('-' . (2 * $days - 1) . ' days')->format('Y-m-d');
 
@@ -292,4 +292,43 @@ function stats_aggregate(int $days): array
         'events' => $events,
         'forms' => $forms,
     ];
+}
+
+/* ------------------------------------------------------------------------
+   Rapport hebdomadaire : déclenché par la première visite après lundi 8 h
+   (sur l'un ou l'autre site), envoyé une seule fois par semaine par dyrostudios.com.
+   ------------------------------------------------------------------------ */
+function stats_report_tick(): void
+{
+    try {
+        $now = new DateTimeImmutable('now');
+        if ((int)$now->format('N') === 1 && (int)$now->format('G') < 8) return;
+        $week = $now->format('o-W');
+        $host = preg_replace(['/^www\./', '/:\d+$/'], '', strtolower((string)($_SERVER['HTTP_HOST'] ?? '')));
+        $lock = STATS_DIR . "/report-tick-$week";
+        if (is_file($lock)) return;
+        $fp = @fopen($lock, 'x');
+        if (!$fp) return;
+        fwrite($fp, (string)time());
+        fclose($fp);
+        foreach (glob(STATS_DIR . '/report-tick-*') ?: [] as $f) if (basename($f) !== "report-tick-$week") @unlink($f);
+        // La réponse part tout de suite au visiteur ; le rapport se prépare ensuite
+        if (function_exists('fastcgi_finish_request')) fastcgi_finish_request();
+        elseif (function_exists('litespeed_finish_request')) litespeed_finish_request();
+        if ($host === 'dyrostudios.com' && is_file(__DIR__ . '/_report.php')) {
+            require_once __DIR__ . '/_report.php';
+            report_send_weekly();
+            return;
+        }
+        $cfg = stats_cfg();
+        if (!$cfg) return;
+        $ts = time();
+        $url = 'https://dyrostudios.com/api/report.php?ts=' . $ts . '&sig=' . hash_hmac('sha256', 'report|' . $ts, (string)$cfg['secret']);
+        $c = curl_init($url);
+        curl_setopt_array($c, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 25, CURLOPT_USERAGENT => 'DyroStats/1.0']);
+        curl_exec($c);
+        curl_close($c);
+    } catch (Throwable $t) {
+        // silencieux
+    }
 }

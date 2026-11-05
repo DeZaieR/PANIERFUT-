@@ -66,3 +66,4 @@ if ($t === 'pv') {
 
 stats_log($e);
 http_response_code(204);
+stats_report_tick();
