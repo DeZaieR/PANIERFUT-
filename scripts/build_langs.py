@@ -17,11 +17,11 @@ ROOT = os.path.normpath(os.path.join(HERE, '..'))
 SITE = 'https://dyroweb.online/'
 LANGS = ['de', 'en', 'pt', 'lb']
 ALL = ['fr'] + LANGS
-PAGES = ['index.html', 'devis.html']
+PAGES = ['index.html', 'devis.html', 'audit.html']
 LEGAL = ['mentions-legales.html', 'confidentialite.html', 'cgv.html']
 OG_LOCALE = {'fr': 'fr_FR', 'de': 'de_DE', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
-TITLE_KEY = {'index.html': 'meta.title', 'devis.html': 'dv.doctitle'}
-TODAY = '2026-11-02'
+TITLE_KEY = {'index.html': 'meta.title', 'devis.html': 'dv.doctitle', 'audit.html': 'au.doctitle'}
+TODAY = '2026-11-05'
 
 src = open(os.path.join(ROOT, 'assets/js/i18n.js'), encoding='utf-8').read()
 DICT = json.loads(src.split('window.DYRO_I18N = ', 1)[1].rstrip().rstrip(';'))
@@ -116,6 +116,7 @@ def relink(html, lang):
     html = html.replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/')
     html = html.replace("el.src = 'assets/", "el.src = '/assets/")
     html = re.sub(r'href="devis\.html', f'href="/{lang}/devis.html', html)
+    html = re.sub(r'href="audit\.html', f'href="/{lang}/audit.html', html)
     html = re.sub(r'href="\./', f'href="/{lang}/', html)
     for page in LEGAL:
         html = html.replace(f'href="{page}', f'href="/{page}')
@@ -126,10 +127,10 @@ def og_texts(html, page, lang):
     title = DICT[lang].get(TITLE_KEY[page])
     if title:
         html = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{htmllib.escape(title, quote=True)}">', html)
-    desc = DICT[lang].get('meta.desc') if page == 'index.html' else DICT[lang].get('dv.lead')
+    desc = DICT[lang].get('meta.desc') if page == 'index.html' else DICT[lang].get('au.lead' if page == 'audit.html' else 'dv.lead')
     if desc:
         html = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{htmllib.escape(desc, quote=True)}">', html)
-        if page == 'devis.html':
+        if page in ('devis.html', 'audit.html'):
             html = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{htmllib.escape(desc, quote=True)}">', html)
     return html
 
@@ -152,7 +153,7 @@ def main():
 
     # sitemap.xml
     xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-    for page, prio in [('index.html', '1.0'), ('devis.html', '0.8')]:
+    for page, prio in [('index.html', '1.0'), ('devis.html', '0.8'), ('audit.html', '0.7')]:
         alts = ''.join(f'    <xhtml:link rel="alternate" hreflang="{l}" href="{url(l, page)}"/>\n' for l in ALL)
         alts += f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url("fr", page)}"/>\n'
         for lang in ALL:

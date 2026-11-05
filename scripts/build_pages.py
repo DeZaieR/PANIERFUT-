@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '13'
+V = '14'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -159,6 +159,7 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Formulaire de devis :</strong> nom, entreprise, email, téléphone et informations sur votre projet (type de site, langues, fonctionnalités, délai, adresse du site actuel, message).</li>
             <li><strong>Échanges par email, téléphone ou WhatsApp :</strong> les informations que vous choisissez de nous communiquer.</li>
             <li><strong>Données techniques :</strong> l’hébergeur enregistre des journaux de connexion (adresse IP, date et heure, pages demandées, navigateur) pour assurer la sécurité et le bon fonctionnement du site. Pour limiter les abus du formulaire, votre adresse IP est aussi conservée sous forme d’empreinte non réversible pendant 24 heures au plus.</li>
+            <li><strong>Audit gratuit de site :</strong> l’adresse du site à analyser, utilisée seulement le temps de l’analyse. Si vous demandez le rapport détaillé : nom, entreprise, email, téléphone (facultatif) et résultats de l’audit.</li>
             <li><strong>Réservation d’un appel :</strong> nom, email, entreprise, téléphone (facultatif), description du projet, créneau choisi et votre choix concernant l’enregistrement. La réservation passe par Cal.com ; le calendrier ne se charge qu’au moment où vous cliquez sur « Réserver un appel ».</li>
             <li><strong>Enregistrement des appels :</strong> seulement si vous l’acceptez au moment de réserver (nous vous le rappelons au début de l’appel), l’appel en visio est enregistré et transcrit pour préparer votre proposition. Vous pouvez choisir un appel sans enregistrement, sans aucune conséquence.</li>
             <li><strong>Mesure d’audience :</strong> pages consultées, site d’origine (par exemple Google ou Instagram), type d’appareil (largeur d’écran), langue de la page, pays et clics sur nos boutons de contact. Votre adresse IP n’est pas enregistrée : au moment de la visite, elle sert seulement à déterminer le pays et à calculer une empreinte qui change chaque jour. Il est impossible de vous identifier ou de relier vos visites d’un jour à l’autre.</li>
@@ -410,9 +411,74 @@ devis = head('Demande de devis · DYRO WEB',
 open(ROOT + 'devis.html', 'w').write(devis)
 print('pages ok')
 
+# ---------------------------------------------------------------- Audit gratuit
+import sys as _sys
+_sys.path.insert(0, os.path.join(HERE, 'data'))
+from audit_i18n import T as AU
+AF = AU['fr']
+au_hreflang = ''.join(f'<link rel="alternate" hreflang="{l}" href="https://dyroweb.online/{p}audit.html">\n'
+                      for l, p in [('fr', ''), ('de', 'de/'), ('en', 'en/'), ('pt', 'pt/'), ('lb', 'lb/'), ('x-default', '')])
+au_hreflang += '<link rel="canonical" href="https://dyroweb.online/audit.html">\n'
+au_hero = page_hero(
+  f'<p class="eyebrow intro" style="--d:0" data-i18n="au.eyebrow">{AF["au.eyebrow"]}</p>',
+  f'<h1 class="page-hero__title intro" style="--d:1" data-i18n="au.title">{AF["au.title"]}</h1>',
+  f'''      <p class="page-hero__lead intro" style="--d:2" data-i18n="au.lead">{AF["au.lead"]}</p>
+      <form class="audit-form intro" style="--d:3" data-audit-form novalidate>
+        <label for="au-url" class="sr-only" data-i18n="au.url">{AF["au.url"]}</label>
+        <input id="au-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="votresite.lu" data-i18n-attr="placeholder:au.ph" spellcheck="false" autocapitalize="off" required>
+        <button type="submit" class="btn btn--chrome btn--lg" data-magnetic="0.2"><span data-i18n="au.go">{AF["au.go"]}</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+      </form>
+      <p class="audit-note intro" style="--d:4" data-i18n="au.note">{AF["au.note"]}</p>
+      <p class="audit-msg" data-audit-msg role="status" aria-live="polite"></p>''')
+au_cats = ''.join(f'<li data-cat="{c}"><span class="audit-cat__k" data-i18n="au.cat.{c}">{AF["au.cat." + c]}</span><span class="audit-cat__bar"><i></i></span><span class="audit-cat__v">—</span></li>' for c in ['base', 'seo', 'mobile', 'langs', 'contact'])
+audit = head(AF['au.doctitle'], AF['au.lead'], au_hreflang, 'au.doctitle', url='audit.html') + shared + f'''<main id="top" tabindex="-1">
+{au_hero}
+  <section class="audit" data-audit hidden>
+    <div class="container audit__grid">
+      <div class="audit__res">
+        <div class="audit-score">
+          <div class="audit-score__ring" data-audit-ring><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="bg"/><circle cx="60" cy="60" r="52" class="fg" pathLength="100"/></svg><b data-audit-score>0</b><span>/ 100</span></div>
+          <div class="audit-score__txt"><p class="eyebrow" data-i18n="au.score">{AF["au.score"]}</p><p class="audit-score__url" data-audit-url></p><p class="audit-score__verdict" data-audit-verdict></p></div>
+        </div>
+        <ul class="audit-cats">{au_cats}</ul>
+        <ul class="audit-list" data-audit-list></ul>
+      </div>
+      <aside class="audit__lead">
+        <form class="audit-lead" data-audit-lead novalidate>
+          <h2 data-i18n="au.lead.title">{AF["au.lead.title"]}</h2>
+          <p data-i18n="au.lead.text">{AF["au.lead.text"]}</p>
+          <div class="fields fields--one">
+            <div class="field"><label for="al-name" data-i18n="dv.name">Nom et prénom</label><input id="al-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="al-company"><span data-i18n="dv.company">Entreprise</span> <span class="opt">(<span data-i18n="dv.optional">facultatif</span>)</span></label><input id="al-company" name="company" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="al-email" data-i18n="dv.email">Email</label><input id="al-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+            <div class="field"><label for="al-phone"><span data-i18n="dv.phone">Téléphone</span> <span class="opt">(<span data-i18n="dv.optional">facultatif</span>)</span></label><input id="al-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel"></div>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" id="al-consent">
+            <span class="consent__box"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 8.5 3 3 6-7" pathLength="1"/></svg></span>
+            <span data-i18n="dv.consent">J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</span>
+          </label>
+          <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <p class="field-error" data-audit-lead-err aria-live="polite"></p>
+          <button type="submit" class="btn btn--chrome btn--lg audit-lead__go"><span data-i18n="au.send">{AF["au.send"]}</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+          <p class="audit-lead__book"><span data-i18n="book.alt">Vous préférez en parler ?</span> <a href="{BOOK}" data-cal="{BOOK.split('cal.com/', 1)[1]}" target="_blank" rel="noopener" data-ev="book"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a></p>
+        </form>
+        <div class="audit-done" data-audit-done hidden>
+          <h2 data-i18n="au.ok.title">{AF["au.ok.title"]}</h2>
+          <p data-i18n="au.ok.text">{AF["au.ok.text"]}</p>
+          <button type="button" class="btn btn--ghost" data-audit-again><span data-i18n="au.again">{AF["au.again"]}</span></button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+''' + page_footer('', ['main.js', 'audit.js'], with_mbar=True)
+open(ROOT + 'audit.html', 'w').write(audit)
+print('audit ok')
+
 # ---------------------------------------------------------------- Page 404
 def absolute(html):
-    for a in ['assets/', 'devis.html', 'mentions-legales.html', 'confidentialite.html', 'cgv.html']:
+    for a in ['assets/', 'devis.html', 'audit.html', 'mentions-legales.html', 'confidentialite.html', 'cgv.html']:
         html = html.replace(f'href="{a}', f'href="/{a}').replace(f'src="{a}', f'src="/{a}')
     return html.replace('href="./', 'href="/')
 
