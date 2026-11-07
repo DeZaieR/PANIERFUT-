@@ -107,7 +107,7 @@ function report_build(?string $end = null): array
     $forms = ($st['events']['form'] ?? 0) + ($web['events']['form'] ?? 0);
 
     $tips = [];
-    if ($forms > 0) $tips[] = "$forms demande" . ($forms > 1 ? 's' : '') . ' reçue' . ($forms > 1 ? 's' : '') . ' : vérifie que chacune a eu sa réponse sous 48 h, comme promis sur les sites.';
+    if ($forms > 0) $tips[] = "$forms demande" . ($forms > 1 ? 's' : '') . ' reçue' . ($forms > 1 ? 's' : '') . ' : vérifie que chacune a eu une première réponse sous 24 h et son devis sous 48 h, comme promis sur DYRO WEB.';
     if ($visits >= 20 && $conv === 0) $tips[] = 'Des visites mais aucune prise de contact : teste toi-même le formulaire et le bouton de rendez-vous depuis ton téléphone.';
     if ($prevV >= 20 && $visits < $prevV * 0.7) $tips[] = 'Les visites baissent nettement : une publication Instagram ou LinkedIn cette semaine relancera le trafic.';
     if ($visits < 10) $tips[] = 'Encore peu de visites : la fiche Google et la prospection des agences sont les deux leviers les plus rapides.';
