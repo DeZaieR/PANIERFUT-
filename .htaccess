@@ -13,6 +13,10 @@ AddDefaultCharset utf-8
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^ https://dyrostudios.com%{REQUEST_URI} [L,R=301]
 
+  # Lien court de réservation : dyrostudios.com/rdv → page Cal.com.
+  # Changer de compte Cal.com = modifier cette seule ligne (302 pour ne pas figer la cible dans les navigateurs).
+  RewriteRule ^(rdv|appel)/?$ https://cal.com/dyroweb/appel-studios [R=302,L]
+
   # Une seule adresse par page : /index.html → /
   RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
   RewriteRule ^(.*/)?index\.html$ /$1 [L,R=301]

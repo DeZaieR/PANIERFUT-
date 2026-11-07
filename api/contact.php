@@ -346,7 +346,7 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
     foreach ($steps as $n => $s) {
         $text .= ($n + 1) . '. ' . $s . "\n";
     }
-    $text .= "\n" . $plain($needPhoto ? $t['add_photo'] : $t['add']) . "\n" . $t['call'] . " https://cal.com/dyroweb/appel-studios\n" . $t['urgent'] . " +352 691 349 632\n\n"
+    $text .= "\n" . $plain($needPhoto ? $t['add_photo'] : $t['add']) . "\n" . $t['call'] . " https://dyrostudios.com/rdv\n" . $t['urgent'] . " +352 691 349 632\n\n"
         . $t['regards'] . "\n" . $t['team'] . "\n" . $t['tagline'] . "\ncontact@dyrostudios.com · +352 691 349 632 · dyrostudios.com\n\n—\n" . $t['footer'] . "\n";
     if ($lang !== 'fr') {
         $text = str_replace(' : ', ': ', $text);
