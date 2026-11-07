@@ -15,6 +15,10 @@ AddDefaultCharset utf-8
   RewriteRule ^ https://dyroweb.online%{REQUEST_URI} [L,R=301]
 
   # /index.html → / (une seule adresse pour l'accueil ; ?lang= est conservé)
+  # Lien court de réservation : dyroweb.online/rdv → page Cal.com.
+  # Changer de compte Cal.com = modifier cette seule ligne (302 pour ne pas figer la cible dans les navigateurs).
+  RewriteRule ^(rdv|appel)/?$ https://cal.com/dyroweb/appel-web [R=302,L]
+
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
   RewriteRule ^index\.html$ / [L,R=301]
 </IfModule>
