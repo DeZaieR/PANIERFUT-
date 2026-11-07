@@ -20,8 +20,8 @@
 <meta property="og:description" content="Site pour agence immobilière au Luxembourg : biens mis en valeur, demandes d’estimation, 5 langues pour tous les acheteurs. Prix affichés, devis sous 48 h.">
 <meta property="og:url" content="https://dyroweb.online/site-internet/agence-immobiliere.html">
 <meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale" content="fr_LU">
+<meta property="og:locale:alternate" content="de_LU">
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:locale:alternate" content="pt_PT">
 <meta property="og:locale:alternate" content="lb_LU">
@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=15">
-<link rel="stylesheet" href="/assets/css/style.css?v=15">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=16">
+<link rel="stylesheet" href="/assets/css/style.css?v=16">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=15';
+      el.src = '/assets/js/i18n.js?v=16';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -133,7 +133,7 @@
      "name": "Combien de temps pour être en ligne ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Le planning est fixé dans le devis, étape par étape. Un site vitrine prend en général quelques semaines, selon vos contenus et vos langues."
+      "text": "Un site vitrine Pro est livré en 3 à 5 jours ouvrés après réception de vos contenus (textes, photos, logo), une landing page en 2 à 3 jours ouvrés. Le temps de vos relectures s’ajoute ; le planning exact figure dans le devis."
      }
     }
    ]
@@ -289,7 +289,7 @@
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="mq-a3" id="mq-q3"><span>Combien de temps pour être en ligne ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="mq-a3" role="region" aria-labelledby="mq-q3"><div><p>Le planning est fixé dans le devis, étape par étape. Un site vitrine prend en général quelques semaines, selon vos contenus et vos langues.</p></div></div>
+          <div class="faq__a" id="mq-a3" role="region" aria-labelledby="mq-q3"><div><p>Un site vitrine Pro est livré en 3 à 5 jours ouvrés après réception de vos contenus (textes, photos, logo), une landing page en 2 à 3 jours ouvrés. Le temps de vos relectures s’ajoute ; le planning exact figure dans le devis.</p></div></div>
         </div>
       </div>
     </div>
@@ -364,6 +364,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=15" defer></script>
+<script src="/assets/js/main.js?v=16" defer></script>
 </body>
 </html>

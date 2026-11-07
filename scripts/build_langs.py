@@ -19,7 +19,7 @@ LANGS = ['de', 'en', 'pt', 'lb']
 ALL = ['fr'] + LANGS
 PAGES = ['index.html', 'devis.html', 'audit.html']
 LEGAL = ['mentions-legales.html', 'confidentialite.html', 'cgv.html']
-OG_LOCALE = {'fr': 'fr_FR', 'de': 'de_DE', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
+OG_LOCALE = {'fr': 'fr_LU', 'de': 'de_LU', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
 TITLE_KEY = {'index.html': 'meta.title', 'devis.html': 'dv.doctitle', 'audit.html': 'au.doctitle'}
 TODAY = '2026-11-07'
 

@@ -1398,6 +1398,16 @@ body:has(.mbar) .lang-hint { bottom: calc(100px + env(safe-area-inset-bottom, 0p
 .work__badge { flex: none; padding: 6px 10px; border-radius: 999px; border: 1px dashed rgba(1, 247, 255, .5); font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--arc); }
 .work__tags { margin-top: 8px; font: 500 12px/1.5 var(--mono); color: var(--steel); }
 .work__note { margin-top: 6px; font-size: 13px; color: var(--slate); }
+.work__badge--live { border-style: solid; border-color: rgba(1, 247, 255, .55); }
+.work__badge--live::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 7px; border-radius: 50%; background: currentColor; vertical-align: 1px; box-shadow: 0 0 8px currentColor; }
+.work__desc { margin-top: 12px; font-size: 15px; line-height: 1.6; color: var(--steel); max-width: 46ch; }
+.work__card--real { grid-column: 1 / -1; }
+.work__card--real .work__shot { object-position: left top; }
+@media (min-width: 961px) {
+  .work__card--real { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: center; gap: 36px; padding: 14px 32px 14px 14px; }
+  .work__card--real .work__screen { height: 380px; }
+  .work__card--real .work__top h3 { font-size: 26px; }
+}
 .work__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 11px 16px; border-radius: 999px; font: 700 14px/1 var(--font); letter-spacing: .01em; color: var(--on-chrome); background: var(--chrome); box-shadow: 0 10px 30px -12px rgba(1, 247, 255, .5); transition: background-color .35s, color .35s, box-shadow .4s, gap .4s var(--ease-out); }
 .work__link::after { content: ""; position: absolute; inset: 0; border-radius: var(--r-card); }
 .work__link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .45s var(--ease-out); }

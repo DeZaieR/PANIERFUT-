@@ -22,7 +22,7 @@ import blog as B  # noqa: E402
 
 SITE = 'https://dyroweb.online'
 LANGS = ['fr', 'de', 'en', 'pt', 'lb']
-OG_LOCALE = {'fr': 'fr_FR', 'de': 'de_DE', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
+OG_LOCALE = {'fr': 'fr_LU', 'de': 'de_LU', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
 TODAY = '2026-11-07'
 BOOK = 'https://cal.com/dyroweb/appel-web'
 ARROW = '<svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>'

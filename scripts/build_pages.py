@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '15'
+V = '16'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -44,7 +44,7 @@ def head(title, desc, extra='', i18n_title='', url='', assets='assets/', robots=
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="https://dyroweb.online/{url}">
 <meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="fr_LU">
 <meta name="twitter:card" content="summary_large_image">
 """
     rob = f'<meta name="robots" content="{robots}">\n' if robots else ''

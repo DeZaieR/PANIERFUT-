@@ -23,8 +23,8 @@
 <meta property="og:image" content="https://dyroweb.online/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale" content="fr_LU">
+<meta property="og:locale:alternate" content="de_LU">
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:locale:alternate" content="pt_PT">
 <meta property="og:locale:alternate" content="lb_LU">
@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="assets/css/style.css?v=15">
+<link rel="stylesheet" href="assets/css/style.css?v=16">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=15';
+      el.src = 'assets/js/i18n.js?v=16';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -165,7 +165,7 @@
    "name": "Combien de temps faut-il pour créer mon site ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Cela dépend du nombre de pages, des langues et des fonctionnalités. Le planning est fixé dans le devis, étape par étape, avant de commencer."
+    "text": "Une landing page est livrée en 2 à 3 jours ouvrés, un site vitrine Pro en 3 à 5 jours ouvrés et un site Premium multilingue en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo). Le temps de vos relectures s’ajoute. Une boutique en ligne est planifiée sur devis."
    }
   },
   {
@@ -249,14 +249,14 @@
 <a class="skip" href="#top" data-i18n="skip">Aller au contenu</a>
 
 <!-- Préchargement -->
-<div class="loader" aria-hidden="true">
+<div class="loader" aria-hidden="true" data-nosnippet>
   <div class="loader__stage">
     <svg class="loader__ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="94" pathLength="1"/></svg>
     <img class="loader__mark" src="assets/img/dyro-mark-320.webp" alt="" width="320" height="185">
   </div>
   <div class="loader__meta">
     <span>Create Beyond Limits</span>
-    <span class="loader__count"><span data-load-count>000</span></span>
+    <span class="loader__count"><span data-load-count></span></span>
   </div>
 </div>
 
@@ -558,7 +558,7 @@
               <path class="gauge__track" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
               <path class="gauge__val" d="M20 112 A90 90 0 0 1 200 112" pathLength="100"/>
             </svg>
-            <div class="gauge__num"><span data-count-to="90">0</span><sup>+</sup></div>
+            <div class="gauge__num"><span data-count-to="90">90</span><sup>+</sup></div>
             <div class="gauge__cap" data-i18n="why.speed.cap">Objectif PageSpeed mobile</div>
           </div>
           <div class="bento__txt">
@@ -658,10 +658,24 @@
       <header class="section__head">
         <p class="eyebrow" data-reveal data-i18n="work.eyebrow">Réalisations</p>
         <h2 class="section__title" id="work-title" data-split data-i18n="work.title">Ce que votre site pourrait être.</h2>
-        <p class="section__lead" data-reveal data-i18n="work.lead">Trois concepts de démonstration, conçus pour montrer notre façon de travailler. Vos projets prendront leur place ici.</p>
+        <p class="section__lead" data-reveal data-i18n="work.lead">Un site réel, en ligne, et trois concepts de démonstration conçus pour montrer notre façon de travailler. Vos projets prendront leur place ici.</p>
       </header>
 
       <div class="work__grid" data-stagger data-spotlight-group>
+        <article class="card work__card work__card--real" data-tilt="2" data-cursor="Ouvrir" data-i18n-attr="data-cursor:work.cursor">
+          <div class="work__screen" aria-hidden="true">
+            <div class="work__bar"><i></i><i></i><i></i><span>dyrostudios.com</span></div>
+            <div class="work__shots"><img class="work__shot" src="assets/img/work-studios.webp" alt="Aperçu du site dyrostudios.com" width="960" height="600" loading="lazy"><img class="work__shot work__shot--b" src="assets/img/work-studios-b.webp" alt="" width="960" height="600" loading="lazy"></div>
+          </div>
+          <div class="work__meta">
+            <div class="work__top"><h3>DYRO STUDIOS</h3><span class="work__badge work__badge--live" data-i18n="work.live">En ligne</span></div>
+            <p class="work__tags" data-i18n="work.r.tags">Home staging virtuel · FR · DE · EN</p>
+            <p class="work__desc" data-i18n="work.r.desc">Le site du studio de home staging virtuel du groupe : tarifs affichés, avant / après interactif, formulaire de devis avec photo, en trois langues.</p>
+            <p class="work__note" data-i18n="work.r.note">Projet réel, conçu et maintenu par DYRO WEB</p>
+            <a class="work__link" href="https://dyrostudios.com/" target="_blank" rel="noopener"><span data-i18n="work.visit">Voir le site</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+          </div>
+        </article>
+
         <article class="card work__card work--resto" data-tilt="4" data-cursor="Ouvrir" data-i18n-attr="data-cursor:work.cursor">
           <div class="work__screen" aria-hidden="true">
             <div class="work__bar"><i></i><i></i><i></i><span>votre-restaurant.lu</span></div>
@@ -772,6 +786,7 @@
           <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="890">890</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
           <p class="price__range" data-i18n="price.1.range">890 à 1 290 € HT selon le périmètre</p>
           <ul class="price__list">
+            <li data-i18n="price.1.time"><strong>Livré en 2 à 3 jours ouvrés</strong></li>
             <li data-i18n="price.1.l1">Une page, un objectif</li>
             <li data-i18n="price.l.form">Formulaire de contact</li>
             <li data-i18n="price.1.l3">Responsive mobile</li>
@@ -791,6 +806,7 @@
           <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="1890">1 890</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
           <p class="price__range" data-i18n="price.2.range">1 890 à 2 900 € HT selon le périmètre</p>
           <ul class="price__list">
+            <li data-i18n="price.2.time"><strong>Livré en 3 à 5 jours ouvrés</strong></li>
             <li data-i18n="price.2.l1">5 à 7 pages</li>
             <li data-i18n="price.2.l2">Français et allemand</li>
             <li data-i18n="price.2.lx">Autres langues en option</li>
@@ -810,6 +826,7 @@
           <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3500">3 500</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
           <p class="price__range" data-i18n="price.3.range">3 500 à 6 000 € HT selon le périmètre</p>
           <ul class="price__list">
+            <li data-i18n="price.3.time"><strong>Livré en 1 à 2 semaines</strong></li>
             <li data-i18n="price.3.l1">Jusqu'à 5 langues : FR, DE, EN, PT, LU</li>
             <li data-i18n="price.3.l2">SEO local</li>
             <li data-i18n="price.3.l3">Réservation en ligne</li>
@@ -833,7 +850,7 @@
         </div>
       </div>
 
-      <p class="pricing__note" data-reveal data-i18n="price.note">Prix hors taxes, TVA luxembourgeoise de 17 % en sus. Acompte de 40 % à la signature pour tout projet de plus de 1 000 € HT, solde à la livraison. Nom de domaine, licences et banques d'images facturés en plus.</p>
+      <p class="pricing__note" data-reveal data-i18n="price.note">Prix hors taxes, TVA luxembourgeoise de 17 % en sus. Acompte de 40 % à la signature pour tout projet de plus de 1 000 € HT, solde à la livraison. Nom de domaine, licences et banques d'images facturés en plus. Délais de production à compter de la réception de vos contenus (textes, photos, logo) et, le cas échéant, de l’acompte ; le temps de vos relectures s’ajoute.</p>
     </div>
   </section>
 
@@ -848,7 +865,7 @@
       <div class="faq__list" data-stagger>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">Combien de temps faut-il pour créer mon site ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Cela dépend du nombre de pages, des langues et des fonctionnalités. Le planning est fixé dans le devis, étape par étape, avant de commencer.</p></div></div>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Une landing page est livrée en 2 à 3 jours ouvrés, un site vitrine Pro en 3 à 5 jours ouvrés et un site Premium multilingue en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo). Le temps de vos relectures s’ajoute. Une boutique en ligne est planifiée sur devis.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Le site m'appartient-il vraiment ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1013,6 +1030,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=15" defer></script>
+<script src="assets/js/main.js?v=16" defer></script>
 </body>
 </html>
