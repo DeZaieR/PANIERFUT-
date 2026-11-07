@@ -138,8 +138,8 @@ if (rate_limited()) {
 date_default_timezone_set('Europe/Luxembourg');
 $TYPES = ['essai' => 'Essai photo', 'devis' => 'Devis', 'partenariat' => 'Partenariat agence', 'pub' => 'Publicité IA']; // « gratuit » évité : mot qui fait classer en indésirables
 $OFFERS = [
-    'a-la-carte' => 'À la carte — 39 € HT / photo', 'pack-essentiel' => 'Pack Essentiel — 149 € HT', 'pack-signature' => 'Pack Signature — 249 € HT',
-    'agence-partenaire' => 'Agence partenaire — 499 € HT / mois', 'renovation-virtuelle' => 'Rénovation virtuelle — sur devis',
+    'a-la-carte' => 'À la carte — 39 € HT / photo', 'pack-essentiel' => 'Pack Essentiel — 149 € HT', 'pack-signature' => 'Pack Signature — 279 € HT, 10 photos',
+    'agence-partenaire' => 'Agence partenaire — 499 € HT / mois', 'express' => 'Option Express 24 h — +50 %', 'renovation-virtuelle' => 'Rénovation virtuelle — sur devis',
     'retouche-lumiere-couleurs' => 'Retouche lumière / couleurs', 'video-immobiliere' => 'Vidéo immobilière', 'carrousel-social' => 'Carrousel social',
     'auto-essential' => 'Auto — Essential 149 €', 'auto-cinematic' => 'Auto — Cinematic 249 €', 'auto-premium' => 'Auto — Premium dès 449 €', 'auto-forfait' => 'Auto — Forfait mensuel garage',
     'pub-ugc-produit' => 'Pub UGC IA / produit — dès 249 €', 'pub-commerces-agences' => 'Pub commerce / agence — dès 349 €', 'pub-cinematique-premium' => 'Pub cinématique premium — dès 599 €',
@@ -304,8 +304,9 @@ function send_confirmation(string $to, string $lang, string $type, string $offre
     $N = [
         'a-la-carte' => [['À la carte', 'À la carte', 'À la carte'], 39, 'photo_u', false, ['1 photo', '1 Foto', '1 photo']],
         'pack-essentiel' => [['Pack Essentiel', 'Paket Essentiel', 'Essentiel pack'], 149, '', false, ['5 photos', '5 Fotos', '5 photos']],
-        'pack-signature' => [['Pack Signature', 'Paket Signature', 'Signature pack'], 249, '', false, ['8 photos + 3 visuels réseaux sociaux', '8 Fotos + 3 Social-Media-Visuals', '8 photos + 3 social media visuals']],
-        'agence-partenaire' => [['Agence partenaire', 'Partneragentur', 'Partner agency'], 499, 'month', false, ['jusqu’à 20 photos par mois', 'bis zu 20 Fotos pro Monat', 'up to 20 photos per month']],
+        'pack-signature' => [['Pack Signature', 'Paket Signature', 'Signature pack'], 279, '', false, ['10 photos + 3 visuels réseaux sociaux', '10 Fotos + 3 Social-Media-Visuals', '10 photos + 3 social media visuals']],
+        'agence-partenaire' => [['Agence partenaire', 'Partneragentur', 'Partner agency'], 499, 'month', false, ['jusqu’à 20 photos par mois, report d’un mois', 'bis zu 20 Fotos pro Monat, Übertrag um einen Monat', 'up to 20 photos per month, one-month rollover']],
+        'express' => [['Option Express 24 h', 'Express-Option 24 h', 'Express option 24 h'], null, '', false, ['livraison en 24 h ouvrées, +50 % sur le devis', 'Lieferung in 24 Std. (Werktage), +50 % auf das Angebot', 'delivery within 24 business hours, +50% on the quote']],
         'renovation-virtuelle' => [['Rénovation virtuelle', 'Virtuelle Renovierung', 'Virtual renovation'], null, '', false, null],
         'retouche-lumiere-couleurs' => [['Retouche lumière / couleurs', 'Licht- / Farbretusche', 'Light / colour retouching'], 15, 'photo_u', true, null],
         'video-immobiliere' => [['Vidéo à partir de vos photos', 'Video aus Ihren Fotos', 'Video from your photos'], 99, '', true, null],

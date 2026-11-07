@@ -312,6 +312,8 @@ main:focus { outline: none; }
 @property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes spin { to { --a: 360deg; } }
 .plan__badge { position: absolute; top: -13px; left: 26px; padding: 6px 12px; border-radius: 999px; background: var(--gold); color: #111; font: 700 .875rem/1 var(--f-disp); letter-spacing: .08em; text-transform: uppercase; }
+.plan--pro { border-color: var(--gold3); }
+.plan__badge--alt { background: var(--card); color: var(--gold2); border: 1px solid var(--gold3); }
 .extras { margin-top: 28px; padding: 22px 24px; border-radius: var(--r-lg); border: 1px dashed var(--line2); }
 .extras__title { font: 600 .875rem/1.2 var(--f-disp); letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
 .extras__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
