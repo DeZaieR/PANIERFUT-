@@ -27,7 +27,8 @@
   // Adresse de la page dans une autre langue (balises hreflang), même domaine
   function altPath(code) {
     const l = document.querySelector(`link[rel="alternate"][hreflang="${code}"]`);
-    if (!l) return null;
+    // Page sans traduction (conseils en français) : on mène à l'accueil de la langue choisie
+    if (!l) return document.querySelector('meta[name="dyro:lang-fallback"]') ? (code === 'fr' ? '/' : `/${code}/`) : null;
     try { return new URL(l.href).pathname; } catch (e) { return null; }
   }
 

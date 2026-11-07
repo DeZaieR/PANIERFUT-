@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '14'
+V = '15'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -260,7 +260,7 @@ assert 'header__quote' not in devis_shared
 hero = page_hero(
   '<p class="eyebrow intro" style="--d:0" data-i18n="dv.eyebrow">Demande de devis</p>',
   '<h1 class="page-hero__title intro" style="--d:1" data-i18n="dv.title">Votre projet en 2 minutes.</h1>',
-  '      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et une fourchette de prix indicative. Vous recevez ensuite une proposition claire, en trois options.</p>')
+  '      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et une fourchette de prix indicative. Première réponse sous 24 h, puis une proposition claire sous 48 h, en trois options.</p>')
 
 devis = head('Demande de devis · DYRO WEB',
   'Demandez un devis pour votre site web : landing page, site vitrine, site multilingue ou boutique en ligne au Luxembourg. Estimation immédiate.',
@@ -478,7 +478,7 @@ print('audit ok')
 
 # ---------------------------------------------------------------- Page 404
 def absolute(html):
-    for a in ['assets/', 'devis.html', 'audit.html', 'mentions-legales.html', 'confidentialite.html', 'cgv.html']:
+    for a in ['assets/', 'devis.html', 'audit.html', 'site-internet/', 'mentions-legales.html', 'confidentialite.html', 'cgv.html']:
         html = html.replace(f'href="{a}', f'href="/{a}').replace(f'src="{a}', f'src="/{a}')
     return html.replace('href="./', 'href="/')
 

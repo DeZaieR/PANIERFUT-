@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=14">
+<link rel="stylesheet" href="/assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=14';
+      el.src = '/assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -153,6 +153,94 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json" id="ld-faq">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How long does it take to build my website?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It depends on the number of pages, languages and features. The schedule is set out step by step in the quote, before we start."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I really own the website?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Once paid in full, the site is transferred to you: code, content and admin access. You're not tied to any mandatory subscription."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which languages do you build websites in?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "French, German, English, Portuguese and Luxembourgish. The Business website Pro comes in French and German, with other languages as options. The Premium package covers up to five languages."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How does payment work?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For any project over €1,000 excl. VAT, a 40% deposit is due on signature. The balance is paid on delivery, within 15 days."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many revisions are included?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every project includes two rounds of revisions. Anything beyond that is quoted in advance."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What happens after launch?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "We offer three maintenance and hosting plans, from €49 to €199 a month excl. VAT with a 12-month commitment, to keep your site up to date, backed up and online."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why do you show your prices?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "So you know what to expect before you even contact us. Each package has a price range excl. VAT; the free quote then sets the exact price, based on your pages, languages and features."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How quickly do you reply?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "First reply within 24 hours, detailed quote within 48 hours. Prefer to talk? Book a 20-minute call."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will my website show up on Google and Google Maps?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Every website comes with the SEO basics: titles, descriptions, speed, mobile display and a sitemap sent to Google. We also help you create or improve your Google Business Profile, the listing shown on Google Maps. No one can guarantee the top spot, but a well-built website starts ahead."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you redo my current website?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. We build on what already works (texts, Google rankings, page addresses) so you don't lose visibility. To see where you stand, try our free website audit."
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -782,6 +870,22 @@
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">What happens after launch?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">We offer three maintenance and hosting plans, from €49 to €199 a month excl. VAT with a 12-month commitment, to keep your site up to date, backed up and online.</p></div></div>
         </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Why do you show your prices?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">So you know what to expect before you even contact us. Each package has a price range excl. VAT; the free quote then sets the exact price, based on your pages, languages and features.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span data-i18n="faq.q8">How quickly do you reply?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">First reply within 24 hours, detailed quote within 48 hours. Prefer to talk? Book a 20-minute call.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9"><span data-i18n="faq.q9">Will my website show up on Google and Google Maps?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">Every website comes with the SEO basics: titles, descriptions, speed, mobile display and a sitemap sent to Google. We also help you create or improve your Google Business Profile, the listing shown on Google Maps. No one can guarantee the top spot, but a well-built website starts ahead.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10"><span data-i18n="faq.q10">Can you redo my current website?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div><p data-i18n="faq.a10">Yes. We build on what already works (texts, Google rankings, page addresses) so you don't lose visibility. To see where you stand, try our <a href="/en/audit.html">free website audit</a>.</p></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -800,7 +904,7 @@
     <div class="container cta__inner">
       <p class="eyebrow eyebrow--center" data-reveal data-i18n="cta.eyebrow">Contact</p>
       <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien! Let's talk about your project.</h2>
-      <p class="cta__lead" data-reveal data-i18n="cta.lead">Tell us about your business and what you expect from your website. You'll get a clear proposal with three options, priced excl. VAT.</p>
+      <p class="cta__lead" data-reveal data-i18n="cta.lead">Tell us about your business and what you expect from your website. First reply within 24 hours, then a clear proposal within 48 hours, with three options, priced excl. VAT.</p>
       <div class="cta__actions" data-reveal>
         <a class="btn btn--chrome btn--xl" href="/en/devis.html" data-magnetic>
           <span data-i18n="cta.quote">Request a quote</span>
@@ -881,6 +985,8 @@
       <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="/en/devis.html" data-roll data-i18n="cta.quote">Request a quote</a>
       <a href="/en/audit.html" data-roll data-i18n="nav.audit">Free website audit</a>
+      <a href="/en/site-internet/" data-roll data-i18n="nav.metiers">Websites by trade</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Guides</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Contact</span>
@@ -907,6 +1013,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=14" defer></script>
+<script src="/assets/js/main.js?v=15" defer></script>
 </body>
 </html>

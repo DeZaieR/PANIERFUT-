@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=14">
-<link rel="stylesheet" href="/assets/css/style.css?v=14">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=15">
+<link rel="stylesheet" href="/assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=14';
+      el.src = '/assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -251,6 +251,8 @@
       <a href="/lb/#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="/lb/devis.html" data-roll data-i18n="cta.quote">Offer ufroen</a>
       <a href="/lb/audit.html" data-roll data-i18n="nav.audit">Gratis Check vun der Websäit</a>
+      <a href="/lb/site-internet/" data-roll data-i18n="nav.metiers">Websäite no Beruff</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Rotschléi</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Kontakt</span>
@@ -277,7 +279,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=14" defer></script>
-<script src="/assets/js/audit.js?v=14" defer></script>
+<script src="/assets/js/main.js?v=15" defer></script>
+<script src="/assets/js/audit.js?v=15" defer></script>
 </body>
 </html>

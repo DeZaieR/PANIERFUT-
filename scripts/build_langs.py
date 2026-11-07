@@ -21,7 +21,7 @@ PAGES = ['index.html', 'devis.html', 'audit.html']
 LEGAL = ['mentions-legales.html', 'confidentialite.html', 'cgv.html']
 OG_LOCALE = {'fr': 'fr_FR', 'de': 'de_DE', 'en': 'en_GB', 'pt': 'pt_PT', 'lb': 'lb_LU'}
 TITLE_KEY = {'index.html': 'meta.title', 'devis.html': 'dv.doctitle', 'audit.html': 'au.doctitle'}
-TODAY = '2026-11-05'
+TODAY = '2026-11-07'
 
 src = open(os.path.join(ROOT, 'assets/js/i18n.js'), encoding='utf-8').read()
 DICT = json.loads(src.split('window.DYRO_I18N = ', 1)[1].rstrip().rstrip(';'))
@@ -117,6 +117,7 @@ def relink(html, lang):
     html = html.replace("el.src = 'assets/", "el.src = '/assets/")
     html = re.sub(r'href="devis\.html', f'href="/{lang}/devis.html', html)
     html = re.sub(r'href="audit\.html', f'href="/{lang}/audit.html', html)
+    html = html.replace('href="site-internet/', f'href="/{lang}/site-internet/')
     html = re.sub(r'href="\./', f'href="/{lang}/', html)
     for page in LEGAL:
         html = html.replace(f'href="{page}', f'href="/{page}')

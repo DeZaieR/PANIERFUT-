@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=14">
+<link rel="stylesheet" href="/assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=14';
+      el.src = '/assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -153,6 +153,94 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json" id="ld-faq">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Quanto tempo demora a criar o meu site?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Depende do número de páginas, das línguas e das funcionalidades. O calendário é definido no orçamento, etapa a etapa, antes de começar."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "O site é mesmo meu?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sim. Após o pagamento total, o site é-lhe transferido: código, conteúdos e acesso de administrador. Não fica preso a nenhuma assinatura obrigatória."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Em que línguas fazem os sites?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Em francês, alemão, inglês, português e luxemburguês. O Site institucional Pro é entregue em francês e alemão, as outras línguas são opcionais. O Premium inclui até cinco línguas."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Como funciona o pagamento?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Para projetos acima de 1000 € + IVA, é pedido um sinal de 40 % na assinatura. O saldo é pago na entrega, a 15 dias."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Quantas correções estão incluídas?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cada projeto inclui duas rondas de correções. Alterações adicionais são orçamentadas antecipadamente."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "E depois do lançamento?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Propomos três planos de manutenção e alojamento, de 49 a 199 € + IVA por mês com fidelização de 12 meses, para manter o seu site atualizado, com cópias de segurança e online."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Porque mostram os vossos preços?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Para que saiba com o que contar antes mesmo de nos contactar. Cada oferta tem um intervalo de preço sem IVA; o orçamento grátis fixa depois o preço exato, conforme as páginas, as línguas e as funcionalidades."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Em quanto tempo respondem?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Primeira resposta em 24 horas, orçamento detalhado em 48 horas. Prefere falar? Marque uma chamada de 20 minutos."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "O meu site vai aparecer no Google e no Google Maps?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cada site é entregue com as bases do SEO: títulos, descrições, velocidade, visualização no telemóvel e um sitemap enviado ao Google. Também o ajudamos a criar ou melhorar a sua ficha Google, a que aparece no Google Maps. Ninguém pode garantir o primeiro lugar, mas um site bem feito parte com vantagem."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Podem refazer o meu site atual?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Sim. Partimos do que já funciona (textos, posições no Google, endereços das páginas) para não perder visibilidade. Para saber onde está, experimente a nossa auditoria gratuita do site."
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -782,6 +870,22 @@
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">E depois do lançamento?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Propomos três planos de manutenção e alojamento, de 49 a 199 € + IVA por mês com fidelização de 12 meses, para manter o seu site atualizado, com cópias de segurança e online.</p></div></div>
         </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Porque mostram os vossos preços?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Para que saiba com o que contar antes mesmo de nos contactar. Cada oferta tem um intervalo de preço sem IVA; o orçamento grátis fixa depois o preço exato, conforme as páginas, as línguas e as funcionalidades.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span data-i18n="faq.q8">Em quanto tempo respondem?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">Primeira resposta em 24 horas, orçamento detalhado em 48 horas. Prefere falar? Marque uma chamada de 20 minutos.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9"><span data-i18n="faq.q9">O meu site vai aparecer no Google e no Google Maps?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">Cada site é entregue com as bases do SEO: títulos, descrições, velocidade, visualização no telemóvel e um sitemap enviado ao Google. Também o ajudamos a criar ou melhorar a sua ficha Google, a que aparece no Google Maps. Ninguém pode garantir o primeiro lugar, mas um site bem feito parte com vantagem.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10"><span data-i18n="faq.q10">Podem refazer o meu site atual?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div><p data-i18n="faq.a10">Sim. Partimos do que já funciona (textos, posições no Google, endereços das páginas) para não perder visibilidade. Para saber onde está, experimente a nossa <a href="/pt/audit.html">auditoria gratuita do site</a>.</p></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -800,7 +904,7 @@
     <div class="container cta__inner">
       <p class="eyebrow eyebrow--center" data-reveal data-i18n="cta.eyebrow">Contacto</p>
       <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien! Vamos falar do seu projeto.</h2>
-      <p class="cta__lead" data-reveal data-i18n="cta.lead">Descreva a sua atividade e o que espera do seu site. Recebe uma proposta clara, com três opções e preços sem IVA.</p>
+      <p class="cta__lead" data-reveal data-i18n="cta.lead">Descreva a sua atividade e o que espera do seu site. Primeira resposta em 24 horas, depois uma proposta clara em 48 horas, com três opções e preços sem IVA.</p>
       <div class="cta__actions" data-reveal>
         <a class="btn btn--chrome btn--xl" href="/pt/devis.html" data-magnetic>
           <span data-i18n="cta.quote">Pedir orçamento</span>
@@ -881,6 +985,8 @@
       <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="/pt/devis.html" data-roll data-i18n="cta.quote">Pedir orçamento</a>
       <a href="/pt/audit.html" data-roll data-i18n="nav.audit">Auditoria gratuita do site</a>
+      <a href="/pt/site-internet/" data-roll data-i18n="nav.metiers">Sites por profissão</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Conselhos</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Contacto</span>
@@ -907,6 +1013,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=14" defer></script>
+<script src="/assets/js/main.js?v=15" defer></script>
 </body>
 </html>

@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=14">
+<link rel="stylesheet" href="/assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=14';
+      el.src = '/assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -153,6 +153,94 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json" id="ld-faq">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Wie lange dauert die Erstellung meiner Website?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Das hängt von der Anzahl der Seiten, den Sprachen und den Funktionen ab. Der Zeitplan wird vor Beginn Schritt für Schritt im Angebot festgelegt."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Gehört mir die Website wirklich?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja. Nach vollständiger Zahlung wird Ihnen die Website übertragen: Code, Inhalte und Administratorzugang. Sie sind an kein Pflichtabo gebunden."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "In welchen Sprachen erstellen Sie Websites?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Auf Französisch, Deutsch, Englisch, Portugiesisch und Luxemburgisch. Die Firmenwebsite Pro wird auf Französisch und Deutsch geliefert, weitere Sprachen sind optional. Das Premium-Paket umfasst bis zu fünf Sprachen."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie läuft die Zahlung ab?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Bei Projekten über 1.000 € netto wird bei Unterzeichnung eine Anzahlung von 40 % fällig. Der Restbetrag wird bei Lieferung mit 15 Tagen Zahlungsziel beglichen."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie viele Korrekturen sind inklusive?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Jedes Projekt enthält zwei Korrekturschleifen. Weitere Änderungen werden vorab kalkuliert."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Und nach dem Launch?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Wir bieten drei Wartungs- und Hosting-Pakete von 49 bis 199 € netto pro Monat bei 12 Monaten Laufzeit, damit Ihre Website aktuell, gesichert und online bleibt."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Warum zeigen Sie Ihre Preise?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Damit Sie wissen, woran Sie sind, bevor Sie uns kontaktieren. Jedes Paket hat eine Nettopreisspanne; das kostenlose Angebot legt dann den genauen Preis fest, je nach Seiten, Sprachen und Funktionen."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wie schnell antworten Sie?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Erste Antwort innerhalb von 24 Stunden, ausführliches Angebot innerhalb von 48 Stunden. Lieber direkt sprechen? Buchen Sie ein 20-minütiges Gespräch."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Wird meine Website bei Google und Google Maps sichtbar sein?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Jede Website wird mit den SEO-Grundlagen geliefert: Titel, Beschreibungen, Geschwindigkeit, mobile Darstellung und eine an Google gesendete Sitemap. Wir helfen Ihnen auch, Ihr Google-Unternehmensprofil zu erstellen oder zu verbessern, das auf Google Maps erscheint. Niemand kann Platz eins garantieren, aber eine gut gebaute Website startet mit einem Vorsprung."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Können Sie meine bestehende Website neu gestalten?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Ja. Wir bauen auf dem auf, was bereits funktioniert (Texte, Google-Platzierungen, Seitenadressen), damit Sie keine Sichtbarkeit verlieren. Wo Sie stehen, zeigt Ihnen unser kostenloser Website-Check."
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -782,6 +870,22 @@
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">Und nach dem Launch?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Wir bieten drei Wartungs- und Hosting-Pakete von 49 bis 199 € netto pro Monat bei 12 Monaten Laufzeit, damit Ihre Website aktuell, gesichert und online bleibt.</p></div></div>
         </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Warum zeigen Sie Ihre Preise?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Damit Sie wissen, woran Sie sind, bevor Sie uns kontaktieren. Jedes Paket hat eine Nettopreisspanne; das kostenlose Angebot legt dann den genauen Preis fest, je nach Seiten, Sprachen und Funktionen.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span data-i18n="faq.q8">Wie schnell antworten Sie?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">Erste Antwort innerhalb von 24 Stunden, ausführliches Angebot innerhalb von 48 Stunden. Lieber direkt sprechen? Buchen Sie ein 20-minütiges Gespräch.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9"><span data-i18n="faq.q9">Wird meine Website bei Google und Google Maps sichtbar sein?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">Jede Website wird mit den SEO-Grundlagen geliefert: Titel, Beschreibungen, Geschwindigkeit, mobile Darstellung und eine an Google gesendete Sitemap. Wir helfen Ihnen auch, Ihr Google-Unternehmensprofil zu erstellen oder zu verbessern, das auf Google Maps erscheint. Niemand kann Platz eins garantieren, aber eine gut gebaute Website startet mit einem Vorsprung.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10"><span data-i18n="faq.q10">Können Sie meine bestehende Website neu gestalten?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div><p data-i18n="faq.a10">Ja. Wir bauen auf dem auf, was bereits funktioniert (Texte, Google-Platzierungen, Seitenadressen), damit Sie keine Sichtbarkeit verlieren. Wo Sie stehen, zeigt Ihnen unser <a href="/de/audit.html">kostenloser Website-Check</a>.</p></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -800,7 +904,7 @@
     <div class="container cta__inner">
       <p class="eyebrow eyebrow--center" data-reveal data-i18n="cta.eyebrow">Kontakt</p>
       <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien! Sprechen wir über Ihr Projekt.</h2>
-      <p class="cta__lead" data-reveal data-i18n="cta.lead">Beschreiben Sie Ihr Unternehmen und was Sie von Ihrer Website erwarten. Sie erhalten ein klares Angebot mit drei Optionen und Nettopreisen.</p>
+      <p class="cta__lead" data-reveal data-i18n="cta.lead">Beschreiben Sie Ihr Unternehmen und was Sie von Ihrer Website erwarten. Erste Antwort innerhalb von 24 Stunden, dann ein klares Angebot innerhalb von 48 Stunden, mit drei Optionen und Nettopreisen.</p>
       <div class="cta__actions" data-reveal>
         <a class="btn btn--chrome btn--xl" href="/de/devis.html" data-magnetic>
           <span data-i18n="cta.quote">Angebot anfordern</span>
@@ -881,6 +985,8 @@
       <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="/de/devis.html" data-roll data-i18n="cta.quote">Angebot anfordern</a>
       <a href="/de/audit.html" data-roll data-i18n="nav.audit">Kostenloser Website-Check</a>
+      <a href="/de/site-internet/" data-roll data-i18n="nav.metiers">Websites nach Branche</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Ratgeber</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Kontakt</span>
@@ -907,6 +1013,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=14" defer></script>
+<script src="/assets/js/main.js?v=15" defer></script>
 </body>
 </html>

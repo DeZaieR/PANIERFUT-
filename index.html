@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="assets/css/style.css?v=14">
+<link rel="stylesheet" href="assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=14';
+      el.src = 'assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -153,6 +153,94 @@
       }
     }
   ]
+}
+</script>
+<script type="application/ld+json" id="ld-faq">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Combien de temps faut-il pour créer mon site ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cela dépend du nombre de pages, des langues et des fonctionnalités. Le planning est fixé dans le devis, étape par étape, avant de commencer."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Le site m'appartient-il vraiment ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Dès le paiement complet, le site vous est transféré : code, contenus et accès administrateur. Vous n'êtes lié à aucun abonnement obligatoire."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Dans quelles langues faites-vous les sites ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "En français, allemand, anglais, portugais et luxembourgeois. Le Site vitrine Pro est livré en français et en allemand, les autres langues s'ajoutent en option. L'offre Premium couvre jusqu'à cinq langues."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Comment se passe le paiement ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour tout projet de plus de 1 000 € HT, un acompte de 40 % est demandé à la signature. Le solde est réglé à la livraison, à 15 jours."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Combien de corrections sont incluses ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Deux tours de corrections sont inclus dans chaque projet. Au-delà, les modifications sont chiffrées à l'avance."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Et après la mise en ligne ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Trois formules de maintenance et d'hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pourquoi vos prix sont-ils affichés ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Chaque offre a une fourchette de prix hors TVA ; le devis gratuit fixe ensuite le prix exact, selon vos pages, vos langues et vos fonctions."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "En combien de temps répondez-vous ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Première réponse sous 24 h, devis détaillé sous 48 h. Vous préférez en parler ? Réservez un appel de 20 minutes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Mon site sera-t-il visible sur Google et Google Maps ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Chaque site est livré avec les bases du référencement : titres, descriptions, vitesse, affichage mobile et plan du site envoyé à Google. Nous vous aidons aussi à créer ou améliorer votre fiche Google, celle qui apparaît sur Google Maps. Personne ne peut garantir la première place, mais un site bien construit part avec une longueur d'avance."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Pouvez-vous refaire mon site actuel ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui. Nous partons de ce qui fonctionne déjà (textes, positions sur Google, adresses des pages) pour que vous ne perdiez pas votre visibilité. Pour savoir où vous en êtes, testez votre site avec notre audit gratuit."
+   }
+  }
+ ]
 }
 </script>
 </head>
@@ -782,6 +870,22 @@
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">Et après la mise en ligne ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
           <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Trois formules de maintenance et d'hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne.</p></div></div>
         </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Pourquoi vos prix sont-ils affichés ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Chaque offre a une fourchette de prix hors TVA ; le devis gratuit fixe ensuite le prix exact, selon vos pages, vos langues et vos fonctions.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span data-i18n="faq.q8">En combien de temps répondez-vous ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p data-i18n="faq.a8">Première réponse sous 24 h, devis détaillé sous 48 h. Vous préférez en parler ? Réservez un appel de 20 minutes.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9"><span data-i18n="faq.q9">Mon site sera-t-il visible sur Google et Google Maps ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p data-i18n="faq.a9">Chaque site est livré avec les bases du référencement : titres, descriptions, vitesse, affichage mobile et plan du site envoyé à Google. Nous vous aidons aussi à créer ou améliorer votre fiche Google, celle qui apparaît sur Google Maps. Personne ne peut garantir la première place, mais un site bien construit part avec une longueur d'avance.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10"><span data-i18n="faq.q10">Pouvez-vous refaire mon site actuel ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div><p data-i18n="faq.a10">Oui. Nous partons de ce qui fonctionne déjà (textes, positions sur Google, adresses des pages) pour que vous ne perdiez pas votre visibilité. Pour savoir où vous en êtes, testez votre site avec notre <a href="audit.html">audit gratuit</a>.</p></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -800,7 +904,7 @@
     <div class="container cta__inner">
       <p class="eyebrow eyebrow--center" data-reveal data-i18n="cta.eyebrow">Contact</p>
       <h2 class="cta__title" id="cta-title" data-split data-i18n="cta.title">Moien&nbsp;! Parlons de votre projet.</h2>
-      <p class="cta__lead" data-reveal data-i18n="cta.lead">Décrivez votre activité et ce que vous attendez de votre site. Vous recevez une proposition claire, en trois options, prix HT.</p>
+      <p class="cta__lead" data-reveal data-i18n="cta.lead">Décrivez votre activité et ce que vous attendez de votre site. Première réponse sous 24 h, puis une proposition claire sous 48 h, en trois options, prix HT.</p>
       <div class="cta__actions" data-reveal>
         <a class="btn btn--chrome btn--xl" href="devis.html" data-magnetic>
           <span data-i18n="cta.quote">Demander un devis</span>
@@ -881,6 +985,8 @@
       <a href="#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="devis.html" data-roll data-i18n="cta.quote">Demander un devis</a>
       <a href="audit.html" data-roll data-i18n="nav.audit">Audit gratuit de site</a>
+      <a href="site-internet/" data-roll data-i18n="nav.metiers">Sites par métier</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Conseils</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Contact</span>
@@ -907,6 +1013,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=14" defer></script>
+<script src="assets/js/main.js?v=15" defer></script>
 </body>
 </html>

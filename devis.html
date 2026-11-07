@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css?v=14">
-<link rel="stylesheet" href="assets/css/style.css?v=14">
+<link rel="stylesheet" href="assets/css/fonts.css?v=15">
+<link rel="stylesheet" href="assets/css/style.css?v=15">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=14';
+      el.src = 'assets/js/i18n.js?v=15';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -167,7 +167,7 @@
     <div class="container">
       <p class="eyebrow intro" style="--d:0" data-i18n="dv.eyebrow">Demande de devis</p>
       <h1 class="page-hero__title intro" style="--d:1" data-i18n="dv.title">Votre projet en 2 minutes.</h1>
-      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et une fourchette de prix indicative. Vous recevez ensuite une proposition claire, en trois options.</p>
+      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et une fourchette de prix indicative. Première réponse sous 24 h, puis une proposition claire sous 48 h, en trois options.</p>
     </div>
   </section>
 
@@ -369,6 +369,8 @@
       <a href="./#faq" data-roll data-i18n="nav.faq">FAQ</a>
       <a href="devis.html" data-roll data-i18n="cta.quote">Demander un devis</a>
       <a href="audit.html" data-roll data-i18n="nav.audit">Audit gratuit de site</a>
+      <a href="site-internet/" data-roll data-i18n="nav.metiers">Sites par métier</a>
+      <a href="/blog/" class="fr-only" data-roll data-i18n="nav.blog">Conseils</a>
     </nav>
     <div class="footer__nav">
       <span class="footer__h" data-i18n="foot.contacth">Contact</span>
@@ -395,7 +397,7 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=14" defer></script>
-<script src="assets/js/devis.js?v=14" defer></script>
+<script src="assets/js/main.js?v=15" defer></script>
+<script src="assets/js/devis.js?v=15" defer></script>
 </body>
 </html>
