@@ -6,3 +6,6 @@ api/.smtp.php
 api/.stats.php
 api/stats-data/*
 !api/stats-data/.htaccess
+
+# Assistant IA : clé API (voir docs/assistant-ia.md)
+api/.assistant.php
