@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '16'
+V = '17'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -202,18 +202,21 @@ legal_page('cgv.html', 'Conditions générales de vente',
           <p>La commande est ferme dès la signature du devis par le client et, le cas échéant, le paiement de l’acompte.</p>'''),
   ('prix', 'Prix', '''          <p>Les prix sont exprimés en euros et hors taxes. La TVA luxembourgeoise (17 % au taux normal) est ajoutée selon la réglementation applicable.</p>
           <p>Les frais de tiers (nom de domaine, licences, extensions payantes, banques d’images) ne sont pas inclus et sont facturés en supplément, sauf mention contraire dans le devis.</p>'''),
-  ('paiement', 'Conditions de paiement', '''          <p>Pour tout projet d’un montant supérieur à 1 000 € HT, un acompte de 40 % est facturé à la signature. Les travaux commencent à sa réception.</p>
+  ('paiement', 'Conditions de paiement', '''          <p>Un acompte de 30 % du montant du devis est facturé à la signature. Les travaux commencent à sa réception.</p>
           <p>Le solde est facturé à la livraison et payable à 15 jours date de facture.</p>
           <p>Tout retard de paiement entraîne de plein droit des intérêts de retard au taux légal en vigueur et, pour les clients professionnels, une indemnité forfaitaire de 40 € pour frais de recouvrement. Après une mise en demeure restée sans effet, DYRO WEB peut suspendre ses prestations.</p>'''),
   ('obligations', 'Déroulement du projet et obligations du client', '''          <p>Le client fournit les contenus nécessaires (textes, images, logo, accès techniques) dans les délais convenus et garantit disposer des droits sur ces éléments.</p>
           <p>Tout retard dans la fourniture des contenus ou des validations décale d’autant le planning.</p>'''),
   ('corrections', 'Corrections, livraison et validation', f'''          <p>Deux tours de corrections sont inclus dans chaque projet. Les demandes supplémentaires ou hors périmètre font l’objet d’un devis complémentaire.</p>
           <p>À la livraison, le client dispose de 15 jours pour signaler toute anomalie. Passé ce délai, la livraison est réputée acceptée.</p>'''),
-  ('delais', 'Délais', '          <p>Les délais sont indiqués dans le devis à titre prévisionnel. Ils courent à compter de la réception de l’acompte et des contenus nécessaires.</p>'),
+  ('delais', 'Délais', '          <p>Les délais sont indiqués dans le devis à titre prévisionnel. Ils courent à compter de la réception de l’acompte et des contenus nécessaires et, lorsque le client demande une aide publique, de la validation de son dossier.</p>'),
+  ('aide', 'Projets avec aide publique (SME Packages)', '''          <p>Lorsque le client sollicite une aide publique, notamment le régime SME Packages du ministère de l’Économie, le devis précise que le projet est présenté dans ce cadre. Aucun travail ne commence et aucun acompte n’est facturé avant la décision sur son dossier.</p>
+          <p>L’aide est accordée par l’administration, et non par DYRO WEB, qui ne garantit ni son obtention ni son montant. DYRO WEB fournit les devis et informations utiles au dossier ; le client reste seul responsable de sa demande.</p>
+          <p>Le client règle à DYRO WEB l’intégralité du prix et de la TVA aux échéances prévues ; l’aide lui est versée directement par l’administration. Si l’aide est refusée, le devis devient caduc sans frais pour le client, sauf s’il confirme par écrit vouloir réaliser le projet sans aide.</p>'''),
   ('propriete', 'Propriété intellectuelle et transfert du site', '''          <p>Le site, son code et les contenus créés par DYRO WEB sont transférés au client, avec les accès administrateur, dès le paiement complet du prix. Jusqu’à ce paiement, ils restent la propriété de Dyro Studios.</p>
           <p>Les composants tiers (logiciels libres, extensions, polices, images sous licence) restent soumis à leurs propres licences.</p>
           <p>Sauf refus écrit du client, DYRO WEB peut mentionner la réalisation dans ses références.</p>'''),
-  ('maintenance', 'Maintenance et hébergement', '''          <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois.</p>
+  ('maintenance', 'Maintenance et hébergement', '''          <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois. Avec le Pack Pro et le Pack Croissance, les trois premiers mois de maintenance sont offerts ; l’engagement de 12 mois débute à la fin de cette période.</p>
           <p>Le contenu de chaque formule ainsi que les conditions de renouvellement et de résiliation sont précisés dans le devis.</p>'''),
   ('responsabilite', 'Responsabilité', '''          <p>DYRO WEB est tenue à une obligation de moyens. Sa responsabilité ne peut être engagée pour des dommages indirects (perte de chiffre d’affaires, de données ou de clientèle) ni pour des interruptions dues à des tiers (hébergeur, fournisseurs, opérateurs).</p>
           <p>Pour les clients professionnels, la responsabilité de DYRO WEB est limitée au montant hors taxes de la prestation concernée.</p>'''),
@@ -260,7 +263,7 @@ assert 'header__quote' not in devis_shared
 hero = page_hero(
   '<p class="eyebrow intro" style="--d:0" data-i18n="dv.eyebrow">Demande de devis</p>',
   '<h1 class="page-hero__title intro" style="--d:1" data-i18n="dv.title">Votre projet en 2 minutes.</h1>',
-  '      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et une fourchette de prix indicative. Première réponse sous 24 h, puis une proposition claire sous 48 h, en trois options.</p>')
+  '      <p class="page-hero__lead intro" style="--d:2" data-i18n="dv.lead">Quatre questions et votre prix tout de suite. Première réponse sous 24 h, puis une proposition claire sous 48 h, en trois options.</p>')
 
 devis = head('Demande de devis · DYRO WEB',
   'Demandez un devis pour votre site web : landing page, site vitrine, site multilingue ou boutique en ligne au Luxembourg. Estimation immédiate.',
@@ -276,12 +279,14 @@ devis = head('Demande de devis · DYRO WEB',
         <fieldset class="step-panel" data-step="1">
           <legend class="q-title" tabindex="-1" data-i18n="dv.q1">Quel type de site vous faut-il ?</legend>
           <div class="choice-grid" data-spotlight-group>
-{choice('landing', 'price.1.h', 'Landing page', 'price.1.for', 'Pour lancer une offre ou une campagne.', 'price.1.range', '890 à 1 290 € HT selon le périmètre')}
-{choice('pro', 'price.2.h', 'Site vitrine Pro', 'price.2.for', 'Pour présenter votre activité et rassurer.', 'price.2.range', '1 890 à 2 900 € HT selon le périmètre')}
-{choice('premium', 'price.3.h', 'Premium multilingue', 'price.3.for', 'Pour viser tout le marché luxembourgeois.', 'price.3.range', '3 500 à 6 000 € HT selon le périmètre')}
-{choice('ecommerce', 'price.x1.label', 'E-commerce', 'price.x1.note', 'Boutique en ligne, sur devis', 'price.x1.val', 'dès 4 500 € HT')}
+{choice('landing', 'price.1.h', 'Landing page', 'price.1.for', 'Pour démarrer vite, sans dossier d’aide.', 'price.1.range', '1 290 € HT, prix fixe')}
+{choice('pro', 'price.2.h', 'Pack Pro', 'price.2.for', 'Le site complet d’une PME, éligible à l’aide de l’État.', 'price.2.range', '3 900 € HT · 1 170 € après aide*')}
+{choice('premium', 'price.3.h', 'Pack Croissance', 'price.3.for', 'Pour viser tout le Luxembourg et attirer plus de clients.', 'price.3.range', '6 900 € HT · 2 070 € après aide*')}
+{choice('ecommerce', 'price.x1.label', 'Sur mesure et e-commerce', 'pk.x1.for', 'Boutique en ligne ou outil métier, sur devis.', 'pk.x1.range', '9 900 à 25 000 € HT · 2 970 à 7 500 € après aide*')}
+{choice('ia', 'pk.ia.label', 'Assistant IA', 'pk.ia.for', 'Répond à vos clients 24 h/24 et prend les rendez-vous.', 'pk.ia.range', '4 900 € HT · 1 470 € après aide*')}
 {choice('unsure', 'dv.unsure', 'Je ne sais pas encore', 'dv.unsure.d', 'Nous vous conseillons la formule adaptée.')}
           </div>
+          <p class="q-hint" data-i18n="dv.aid.hint">* Montant restant à votre charge si votre dossier SME Packages est accepté : l’État rembourse 70 % des coûts éligibles des projets de 3 000 à 25 000 € HT.</p>
           <p class="field-error" data-error="type" aria-live="polite"></p>
         </fieldset>
 
@@ -294,7 +299,7 @@ devis = head('Demande de devis · DYRO WEB',
             {lang_pill('pt', 'PT', 'Português')}
             {lang_pill('lb', 'LU', 'Lëtzebuergesch')}
           </div>
-          <p class="q-hint" data-i18n="dv.q2.hint">Le Site vitrine Pro inclut le français et l’allemand. L’offre Premium couvre jusqu’à cinq langues. Les autres langues sont chiffrées dans le devis.</p>
+          <p class="q-hint" data-i18n="dv.q2.hint">Le Pack Pro inclut le français, l’allemand et l’anglais. Le Pack Croissance couvre jusqu’à cinq langues. Les autres langues sont chiffrées dans le devis.</p>
           <p class="field-error" data-error="langs" aria-live="polite"></p>
         </fieldset>
 
@@ -321,6 +326,12 @@ devis = head('Demande de devis · DYRO WEB',
             {chip('deadline', 'soon', 'dv.d.soon', 'D’ici 1 à 2 mois')}
             {chip('deadline', 'later', 'dv.d.later', 'Dans 3 mois ou plus')}
             {chip('deadline', 'none', 'dv.d.none', 'Pas de date fixe')}
+          </div>
+          <p class="q-sub" data-i18n="dv.q3d">Aide de l’État (SME Packages)</p>
+          <div class="chips" role="radiogroup" aria-label="Aide de l’État (SME Packages)" data-i18n-attr="aria-label:dv.q3d">
+            {chip('aid', 'yes', 'dv.a.yes', 'Oui, je veux la demander')}
+            {chip('aid', 'info', 'dv.a.info', 'J’aimerais en savoir plus')}
+            {chip('aid', 'no', 'dv.a.no', 'Non')}
           </div>
           <div class="field field--site">
             <label for="q-site"><span data-i18n="dv.site">Adresse de votre site actuel</span> <span class="opt">(<span data-i18n="dv.optional">facultatif</span>)</span></label>
@@ -391,9 +402,9 @@ devis = head('Demande de devis · DYRO WEB',
       <aside class="summary" aria-live="polite">
         <div class="summary__ring" aria-hidden="true">{RING}</div>
         <p class="summary__h" data-i18n="dv.sum.title">Votre estimation</p>
-        <p class="summary__label" data-i18n="dv.sum.range">Fourchette indicative</p>
+        <p class="summary__label" data-i18n="dv.sum.range">Votre prix</p>
         <p class="summary__range" data-sum-range>—</p>
-        <p class="summary__sub" data-sum-sub>Choisissez un type de projet pour voir la fourchette.</p>
+        <p class="summary__sub" data-sum-sub>Choisissez un type de projet pour voir le prix.</p>
         <dl class="summary__rows">
           <dt data-i18n="dv.s1">Projet</dt><dd data-sum-type>—</dd>
           <dt data-i18n="dv.s2">Langues</dt><dd data-sum-langs>FR</dd>
@@ -401,7 +412,7 @@ devis = head('Demande de devis · DYRO WEB',
           <dt data-i18n="dv.sum.monthly">Maintenance</dt><dd data-sum-maint>—</dd>
         </dl>
         <p class="summary__extra" data-sum-extra hidden></p>
-        <p class="summary__note" data-i18n="dv.sum.note">Fourchette indicative selon notre grille, hors TVA. Le devis fixe le prix exact.</p>
+        <p class="summary__note" data-i18n="dv.sum.note">Prix de notre grille, hors TVA. Le devis confirme le périmètre et chiffre les options.</p>
         <p class="summary__book"><span data-i18n="book.alt">Vous préférez en parler ?</span><br><a href="{BOOK}" data-cal="{BOOK.split('cal.com/', 1)[1]}" target="_blank" rel="noopener" data-ev="book"><span data-i18n="book.label">Réserver un appel de 20 min</span> <span aria-hidden="true">→</span></a></p>
       </aside>
     </div>

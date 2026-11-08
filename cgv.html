@@ -19,8 +19,8 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css?v=16">
-<link rel="stylesheet" href="assets/css/style.css?v=16">
+<link rel="stylesheet" href="assets/css/fonts.css?v=17">
+<link rel="stylesheet" href="assets/css/style.css?v=17">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -45,7 +45,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=16';
+      el.src = 'assets/js/i18n.js?v=17';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -177,6 +177,7 @@
         <a href="#obligations">Déroulement du projet et obligations du client</a>
         <a href="#corrections">Corrections, livraison et validation</a>
         <a href="#delais">Délais</a>
+        <a href="#aide">Projets avec aide publique (SME Packages)</a>
         <a href="#propriete">Propriété intellectuelle et transfert du site</a>
         <a href="#maintenance">Maintenance et hébergement</a>
         <a href="#responsabilite">Responsabilité</a>
@@ -202,7 +203,7 @@
         </section>
         <section id="paiement" data-reveal>
           <h2><span class="num">04</span>Conditions de paiement</h2>
-          <p>Pour tout projet d’un montant supérieur à 1 000 € HT, un acompte de 40 % est facturé à la signature. Les travaux commencent à sa réception.</p>
+          <p>Un acompte de 30 % du montant du devis est facturé à la signature. Les travaux commencent à sa réception.</p>
           <p>Le solde est facturé à la livraison et payable à 15 jours date de facture.</p>
           <p>Tout retard de paiement entraîne de plein droit des intérêts de retard au taux légal en vigueur et, pour les clients professionnels, une indemnité forfaitaire de 40 € pour frais de recouvrement. Après une mise en demeure restée sans effet, DYRO WEB peut suspendre ses prestations.</p>
         </section>
@@ -218,35 +219,41 @@
         </section>
         <section id="delais" data-reveal>
           <h2><span class="num">07</span>Délais</h2>
-          <p>Les délais sont indiqués dans le devis à titre prévisionnel. Ils courent à compter de la réception de l’acompte et des contenus nécessaires.</p>
+          <p>Les délais sont indiqués dans le devis à titre prévisionnel. Ils courent à compter de la réception de l’acompte et des contenus nécessaires et, lorsque le client demande une aide publique, de la validation de son dossier.</p>
+        </section>
+        <section id="aide" data-reveal>
+          <h2><span class="num">08</span>Projets avec aide publique (SME Packages)</h2>
+          <p>Lorsque le client sollicite une aide publique, notamment le régime SME Packages du ministère de l’Économie, le devis précise que le projet est présenté dans ce cadre. Aucun travail ne commence et aucun acompte n’est facturé avant la décision sur son dossier.</p>
+          <p>L’aide est accordée par l’administration, et non par DYRO WEB, qui ne garantit ni son obtention ni son montant. DYRO WEB fournit les devis et informations utiles au dossier ; le client reste seul responsable de sa demande.</p>
+          <p>Le client règle à DYRO WEB l’intégralité du prix et de la TVA aux échéances prévues ; l’aide lui est versée directement par l’administration. Si l’aide est refusée, le devis devient caduc sans frais pour le client, sauf s’il confirme par écrit vouloir réaliser le projet sans aide.</p>
         </section>
         <section id="propriete" data-reveal>
-          <h2><span class="num">08</span>Propriété intellectuelle et transfert du site</h2>
+          <h2><span class="num">09</span>Propriété intellectuelle et transfert du site</h2>
           <p>Le site, son code et les contenus créés par DYRO WEB sont transférés au client, avec les accès administrateur, dès le paiement complet du prix. Jusqu’à ce paiement, ils restent la propriété de Dyro Studios.</p>
           <p>Les composants tiers (logiciels libres, extensions, polices, images sous licence) restent soumis à leurs propres licences.</p>
           <p>Sauf refus écrit du client, DYRO WEB peut mentionner la réalisation dans ses références.</p>
         </section>
         <section id="maintenance" data-reveal>
-          <h2><span class="num">09</span>Maintenance et hébergement</h2>
-          <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois.</p>
+          <h2><span class="num">10</span>Maintenance et hébergement</h2>
+          <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois. Avec le Pack Pro et le Pack Croissance, les trois premiers mois de maintenance sont offerts ; l’engagement de 12 mois débute à la fin de cette période.</p>
           <p>Le contenu de chaque formule ainsi que les conditions de renouvellement et de résiliation sont précisés dans le devis.</p>
         </section>
         <section id="responsabilite" data-reveal>
-          <h2><span class="num">10</span>Responsabilité</h2>
+          <h2><span class="num">11</span>Responsabilité</h2>
           <p>DYRO WEB est tenue à une obligation de moyens. Sa responsabilité ne peut être engagée pour des dommages indirects (perte de chiffre d’affaires, de données ou de clientèle) ni pour des interruptions dues à des tiers (hébergeur, fournisseurs, opérateurs).</p>
           <p>Pour les clients professionnels, la responsabilité de DYRO WEB est limitée au montant hors taxes de la prestation concernée.</p>
         </section>
         <section id="retractation" data-reveal>
-          <h2><span class="num">11</span>Droit de rétractation (clients consommateurs)</h2>
+          <h2><span class="num">12</span>Droit de rétractation (clients consommateurs)</h2>
           <p>Le client consommateur qui conclut un contrat à distance dispose d’un délai de 14 jours pour exercer son droit de rétractation, conformément au Code de la consommation.</p>
           <p>S’il demande expressément que la prestation commence avant la fin de ce délai, il reste redevable du montant correspondant au travail déjà réalisé.</p>
         </section>
         <section id="donnees" data-reveal>
-          <h2><span class="num">12</span>Données personnelles</h2>
+          <h2><span class="num">13</span>Données personnelles</h2>
           <p>Le traitement des données personnelles est décrit dans la <a href="confidentialite.html">politique de confidentialité</a>.</p>
         </section>
         <section id="litiges" data-reveal>
-          <h2><span class="num">13</span>Droit applicable et litiges</h2>
+          <h2><span class="num">14</span>Droit applicable et litiges</h2>
           <p>Les présentes conditions sont soumises au droit luxembourgeois. Les parties recherchent d’abord une solution amiable. À défaut, les tribunaux du Grand-Duché de Luxembourg sont compétents.</p>
           <p>Le client consommateur peut également recourir gratuitement au Service national du Médiateur de la consommation (<a href="https://www.mediateurconsommation.lu" rel="noopener">mediateurconsommation.lu</a>).</p>
         </section>
@@ -312,6 +319,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=16" defer></script>
+<script src="assets/js/main.js?v=17" defer></script>
 </body>
 </html>

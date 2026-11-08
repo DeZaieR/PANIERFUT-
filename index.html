@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="assets/css/style.css?v=16">
+<link rel="stylesheet" href="assets/css/style.css?v=17">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=16';
+      el.src = 'assets/js/i18n.js?v=17';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -115,40 +115,48 @@
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "EUR",
-        "minPrice": 890,
-        "maxPrice": 1290,
+        "price": 1290,
         "valueAddedTaxIncluded": false
       }
     },
     {
       "@type": "Offer",
-      "name": "Site vitrine Pro",
+      "name": "Pack Pro",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "EUR",
-        "minPrice": 1890,
-        "maxPrice": 2900,
+        "price": 3900,
         "valueAddedTaxIncluded": false
       }
     },
     {
       "@type": "Offer",
-      "name": "Premium multilingue",
+      "name": "Pack Croissance",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "EUR",
-        "minPrice": 3500,
-        "maxPrice": 6000,
+        "price": 6900,
         "valueAddedTaxIncluded": false
       }
     },
     {
       "@type": "Offer",
-      "name": "E-commerce",
+      "name": "Sur mesure et e-commerce",
       "priceSpecification": {
         "@type": "PriceSpecification",
         "priceCurrency": "EUR",
-        "minPrice": 4500,
+        "minPrice": 9900,
+        "valueAddedTaxIncluded": false,
+        "maxPrice": 25000
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Assistant IA",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "EUR",
+        "price": 4900,
         "valueAddedTaxIncluded": false
       }
     }
@@ -165,7 +173,7 @@
    "name": "Combien de temps faut-il pour créer mon site ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Une landing page est livrée en 2 à 3 jours ouvrés, un site vitrine Pro en 3 à 5 jours ouvrés et un site Premium multilingue en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo). Le temps de vos relectures s’ajoute. Une boutique en ligne est planifiée sur devis."
+    "text": "Une landing page est livrée en 2 à 3 jours ouvrés, le Pack Pro en 3 à 5 jours ouvrés et le Pack Croissance en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo) et de l’acompte. Le temps de vos relectures s’ajoute. Avec une aide SME Packages, le projet démarre après la validation de votre dossier. Les projets sur mesure sont planifiés sur devis."
    }
   },
   {
@@ -181,7 +189,7 @@
    "name": "Dans quelles langues faites-vous les sites ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "En français, allemand, anglais, portugais et luxembourgeois. Le Site vitrine Pro est livré en français et en allemand, les autres langues s'ajoutent en option. L'offre Premium couvre jusqu'à cinq langues."
+    "text": "En français, allemand, anglais, portugais et luxembourgeois. Le Pack Pro est livré en français, allemand et anglais, les autres langues s’ajoutent en option. Le Pack Croissance couvre jusqu’à cinq langues."
    }
   },
   {
@@ -189,7 +197,15 @@
    "name": "Comment se passe le paiement ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Pour tout projet de plus de 1 000 € HT, un acompte de 40 % est demandé à la signature. Le solde est réglé à la livraison, à 15 jours."
+    "text": "Un acompte de 30 % est demandé à la signature, le solde est réglé à la livraison, à 15 jours. Avec une aide SME Packages, vous réglez la facture, puis l’État vous rembourse 70 % des coûts éligibles."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Puis-je obtenir une aide de l’État pour mon site ?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Oui, si votre entreprise est une PME établie au Luxembourg avec une autorisation d’établissement. Les SME Packages remboursent 70 % des coûts éligibles des projets de 3 000 à 25 000 € HT : c’est le cas des Packs Pro et Croissance, de l’Assistant IA et des projets sur mesure. La landing page, sous ce seuil, n’est pas éligible. Une préanalyse auprès de la House of Entrepreneurship est obligatoire et le projet ne démarre qu’après la validation de votre dossier : nous vous accompagnons à chaque étape."
    }
   },
   {
@@ -205,7 +221,7 @@
    "name": "Et après la mise en ligne ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Trois formules de maintenance et d'hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne."
+    "text": "Trois formules de maintenance et d’hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne. Avec les Packs Pro et Croissance, les 3 premiers mois sont offerts."
    }
   },
   {
@@ -213,7 +229,7 @@
    "name": "Pourquoi vos prix sont-ils affichés ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Chaque offre a une fourchette de prix hors TVA ; le devis gratuit fixe ensuite le prix exact, selon vos pages, vos langues et vos fonctions."
+    "text": "Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Les formules ont un prix fixe hors TVA ; le devis gratuit confirme le périmètre et chiffre les options et les projets sur mesure."
    }
   },
   {
@@ -495,8 +511,8 @@
           <span class="svc__num" aria-hidden="true">02</span>
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 10.5V20.5h16.4V10.5" pathLength="1"/><path class="f" d="M3.2 3.5h17.6l1.7 5a2.45 2.45 0 0 1-4.9 0 2.45 2.45 0 0 1-4.9 0h-.4a2.45 2.45 0 0 1-4.9 0 2.45 2.45 0 0 1-4.9 0z" pathLength="1"/><path d="M10 20.5v-5.5h4v5.5" pathLength="1"/><path d="M2 20.5h20" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.2.h">Site vitrine</h3>
-          <p data-i18n="svc.2.p">5 à 7 pages en français et en allemand pour présenter votre activité et rassurer vos clients. Anglais, portugais ou luxembourgeois en option.</p>
-          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.2.tag">FR + DE</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Site vitrine" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <p data-i18n="svc.2.p">5 à 7 pages en français, allemand et anglais pour présenter votre activité et rassurer vos clients. Portugais ou luxembourgeois en option.</p>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.2.tag">FR + DE + EN</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Site vitrine" data-i18n-attr="aria-label:svc.2.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
@@ -504,7 +520,7 @@
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M2.5 5.5A2.5 2.5 0 0 1 5 3h7.5A2.5 2.5 0 0 1 15 5.5v4a2.5 2.5 0 0 1-2.5 2.5H8l-3.5 3v-3.1A2.5 2.5 0 0 1 2.5 9.5z" pathLength="1"/><path d="M6 9.6 8.75 4.9l2.75 4.7M7 8h3.5" pathLength="1"/><path d="M17.5 8.5h1.5A2.5 2.5 0 0 1 21.5 11v4.5a2.5 2.5 0 0 1-2 2.45V21l-3.6-3H13a2.5 2.5 0 0 1-2.5-2.5v-.5" pathLength="1"/><path d="M14 13.5h4.5M14 15.8h3" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.3.h">Site multilingue</h3>
           <p data-i18n="svc.3.p">Français, allemand, anglais, portugais et luxembourgeois. Chaque visiteur lit votre site dans sa langue, et Google le référence dans chacune.</p>
-          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.3.tag">5 langues</span><a href="#offres" class="svc__go" aria-label="Voir l'offre Premium multilingue" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.3.tag">5 langues</span><a href="#offres" class="svc__go" aria-label="Voir le Pack Croissance" data-i18n-attr="aria-label:svc.3.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
@@ -512,7 +528,7 @@
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.5h2.8l2.5 11.6a1.8 1.8 0 0 0 1.8 1.4h8.6a1.8 1.8 0 0 0 1.7-1.3L21.5 7.5H5.7" pathLength="1"/><path class="f" d="M5.7 7.5h15.8l-1.6 6.4a1.8 1.8 0 0 1-1.7 1.3H7.3z" pathLength="1"/><circle cx="9.5" cy="20.2" r="1.5" pathLength="1"/><circle cx="17.5" cy="20.2" r="1.5" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.4.h">E-commerce</h3>
           <p data-i18n="svc.4.p">Une boutique en ligne rapide et simple à gérer au quotidien : catalogue, paiement en ligne, suivi des commandes.</p>
-          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.4.tag">Dès 4 500 € HT</span><a href="#offres" class="svc__go" aria-label="Voir l'offre E-commerce" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.4.tag">Dès 9 900 € HT</span><a href="#offres" class="svc__go" aria-label="Voir l'offre E-commerce" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
@@ -741,7 +757,7 @@
           <li class="card step">
             <span class="step__num" data-n="02">02</span>
             <h3 data-i18n="proc.2.h">Proposition claire</h3>
-            <p data-i18n="proc.2.p">Un devis en trois options, prix HT, périmètre détaillé. Pour les projets de plus de 1 000 € HT, un acompte de 40 % lance le travail.</p>
+            <p data-i18n="proc.2.p">Un devis en trois options, prix HT, périmètre détaillé. Un acompte de 30 % lance le travail ; avec l’aide SME Packages, nous démarrons dès la validation de votre dossier.</p>
             <span class="step__tag" data-i18n="proc.2.tag">3 options, zéro flou</span>
           </li>
           <li class="card step">
@@ -774,17 +790,17 @@
       <header class="section__head section__head--center">
         <p class="eyebrow" data-reveal data-i18n="price.eyebrow">Offres</p>
         <h2 class="section__title" id="pricing-title" data-split data-i18n="price.title">Des prix clairs, affichés hors taxes.</h2>
-        <p class="section__lead" data-reveal data-i18n="price.lead">Trois formules de création. Le devis fixe le périmètre exact avant tout démarrage.</p>
+        <p class="section__lead" data-reveal data-i18n="pk.lead">Prix fixes. Les Packs Pro et Croissance sont pensés pour l’aide SME Packages : l’État peut vous rembourser 70 % du projet.</p>
       </header>
 
       <div class="pricing__grid" data-stagger data-spotlight-group>
         <article class="card price">
           <header>
             <h3 data-i18n="price.1.h">Landing page</h3>
-            <p class="price__for" data-i18n="price.1.for">Pour lancer une offre ou une campagne.</p>
+            <p class="price__for" data-i18n="price.1.for">Pour démarrer vite, sans dossier d’aide.</p>
           </header>
-          <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="890">890</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
-          <p class="price__range" data-i18n="price.1.range">890 à 1 290 € HT selon le périmètre</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="1290">1 290</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
+          <p class="price__net price__net--none" data-i18n="pk.1.net">Sous 3 000 € HT : pas d’aide, démarrage immédiat</p>
           <ul class="price__list">
             <li data-i18n="price.1.time"><strong>Livré en 2 à 3 jours ouvrés</strong></li>
             <li data-i18n="price.1.l1">Une page, un objectif</li>
@@ -800,57 +816,82 @@
           <span class="price__glow" aria-hidden="true"></span>
           <span class="badge" data-i18n="price.badge">Recommandé</span>
           <header>
-            <h3 data-i18n="price.2.h">Site vitrine Pro</h3>
-            <p class="price__for" data-i18n="price.2.for">Pour présenter votre activité et rassurer.</p>
+            <h3 data-i18n="price.2.h">Pack Pro</h3>
+            <p class="price__for" data-i18n="price.2.for">Le site complet d’une PME, éligible à l’aide de l’État.</p>
           </header>
-          <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="1890">1 890</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
-          <p class="price__range" data-i18n="price.2.range">1 890 à 2 900 € HT selon le périmètre</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3900">3 900</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
+          <p class="price__net" data-i18n="pk.2.net"><strong>1 170 € HT</strong> après aide*</p>
           <ul class="price__list">
             <li data-i18n="price.2.time"><strong>Livré en 3 à 5 jours ouvrés</strong></li>
-            <li data-i18n="price.2.l1">5 à 7 pages</li>
-            <li data-i18n="price.2.l2">Français et allemand</li>
-            <li data-i18n="price.2.lx">Autres langues en option</li>
-            <li data-i18n="price.2.l3">Design sur mesure</li>
-            <li data-i18n="price.2.l4">Référencement des pages</li>
+            <li data-i18n="pk.2.l1">5 à 7 pages, design sur mesure</li>
+            <li data-i18n="pk.2.l2">Français, allemand et anglais</li>
+            <li data-i18n="pk.2.l3">SEO local et fiche Google</li>
+            <li data-i18n="pk.2.l4">Prise de rendez-vous en ligne</li>
             <li data-i18n="price.l.form">Formulaire de contact</li>
             <li data-i18n="price.l.rev">2 tours de corrections</li>
+            <li data-i18n="pk.l.aid">Dossier d’aide préparé avec vous</li>
+            <li data-i18n="pk.l.gift">3 mois de maintenance offerts</li>
           </ul>
           <a href="devis.html#pro" class="btn btn--chrome price__btn" data-magnetic="0.2"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
 
         <article class="card price">
           <header>
-            <h3 data-i18n="price.3.h">Premium multilingue</h3>
-            <p class="price__for" data-i18n="price.3.for">Pour viser tout le marché luxembourgeois.</p>
+            <h3 data-i18n="price.3.h">Pack Croissance</h3>
+            <p class="price__for" data-i18n="price.3.for">Pour viser tout le Luxembourg et attirer plus de clients.</p>
           </header>
-          <p class="price__amount"><span class="price__from" data-i18n="price.from">dès</span><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3500">3 500</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
-          <p class="price__range" data-i18n="price.3.range">3 500 à 6 000 € HT selon le périmètre</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="6900">6 900</span><span class="price__cur" data-i18n="price.cur">€ HT</span></p>
+          <p class="price__net" data-i18n="pk.3.net"><strong>2 070 € HT</strong> après aide*</p>
           <ul class="price__list">
             <li data-i18n="price.3.time"><strong>Livré en 1 à 2 semaines</strong></li>
             <li data-i18n="price.3.l1">Jusqu'à 5 langues : FR, DE, EN, PT, LU</li>
-            <li data-i18n="price.3.l2">SEO local</li>
-            <li data-i18n="price.3.l3">Réservation en ligne</li>
-            <li data-i18n="price.3.l4">Formulaires avancés</li>
+            <li data-i18n="pk.3.l2">SEO local avancé : pages par ville et par service</li>
+            <li data-i18n="pk.3.l3">Réservation ou rendez-vous en ligne</li>
+            <li data-i18n="pk.3.l4">Collecte d’avis Google automatisée</li>
+            <li data-i18n="pk.3.l5">Visuels créés par IA avec Dyro Studios</li>
+            <li data-i18n="pk.3.l6">Campagne de lancement sur les réseaux sociaux</li>
             <li data-i18n="price.l.rev">2 tours de corrections</li>
+            <li data-i18n="pk.l.aid">Dossier d’aide préparé avec vous</li>
+            <li data-i18n="pk.l.gift">3 mois de maintenance offerts</li>
           </ul>
           <a href="devis.html#premium" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Demander un devis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </article>
       </div>
 
-      <div class="pricing__extra" data-stagger>
-        <div class="extra">
-          <span class="extra__label" data-i18n="price.x1.label">E-commerce</span>
-          <span class="extra__val" data-i18n="price.x1.val">dès 4 500 € HT</span>
-          <span class="extra__note" data-i18n="price.x1.note">Boutique en ligne, sur devis</span>
-        </div>
+      <div class="pricing__extra pricing__extra--3" data-stagger>
+        <a class="extra" href="devis.html#ecommerce">
+          <span class="extra__label" data-i18n="price.x1.label">Sur mesure et e-commerce</span>
+          <span class="extra__val" data-i18n="price.x1.val">9 900 à 25 000 € HT</span>
+          <span class="extra__note" data-i18n="price.x1.note">2 970 à 7 500 € HT après aide* · boutique, outils métier</span>
+        </a>
+        <a class="extra" href="devis.html#ia">
+          <span class="extra__label" data-i18n="pk.ia.label">Assistant IA</span>
+          <span class="extra__val" data-i18n="pk.ia.val">4 900 € HT</span>
+          <span class="extra__note" data-i18n="pk.ia.note">1 470 € HT après aide* · répond à vos clients 24 h/24 sur votre site et WhatsApp, prend les rendez-vous · abonnement mensuel au devis</span>
+        </a>
         <div class="extra">
           <span class="extra__label" data-i18n="price.x2.label">Maintenance &amp; hébergement</span>
           <span class="extra__val" data-i18n="price.x2.val">49 · 99 · 199 € HT / mois</span>
-          <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · engagement 12 mois</span>
+          <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · engagement 12 mois · 3 mois offerts avec les Packs</span>
         </div>
       </div>
 
-      <p class="pricing__note" data-reveal data-i18n="price.note">Prix hors taxes, TVA luxembourgeoise de 17 % en sus. Acompte de 40 % à la signature pour tout projet de plus de 1 000 € HT, solde à la livraison. Nom de domaine, licences et banques d'images facturés en plus. Délais de production à compter de la réception de vos contenus (textes, photos, logo) et, le cas échéant, de l’acompte ; le temps de vos relectures s’ajoute.</p>
+      <div class="aid" id="aide" data-reveal>
+        <div class="aid__head">
+          <p class="eyebrow" data-i18n="aid.eyebrow">SME Packages</p>
+          <h3 class="aid__title" data-i18n="aid.title">Jusqu’à 70 % remboursés par l’État</h3>
+          <p class="aid__lead" data-i18n="aid.lead">Le ministère de l’Économie rembourse 70 % des coûts éligibles d’un projet digital ou IA de 3 000 à 25 000 € HT aux PME établies au Luxembourg.</p>
+        </div>
+        <ol class="aid__steps">
+          <li><strong data-i18n="aid.s1.h">Préanalyse</strong><span data-i18n="aid.s1.p">Un échange obligatoire avec la House of Entrepreneurship, ou la Chambre des Métiers pour les artisans. Nous vous aidons à le préparer.</span></li>
+          <li><strong data-i18n="aid.s2.h">Devis et demande</strong><span data-i18n="aid.s2.p">Nous établissons le devis et vous accompagnons pour la demande d’aide.</span></li>
+          <li><strong data-i18n="aid.s3.h">Réalisation</strong><span data-i18n="aid.s3.p">Le projet démarre après la validation de votre dossier, jamais avant : un projet déjà commencé n’est plus éligible.</span></li>
+          <li><strong data-i18n="aid.s4.h">Remboursement</strong><span data-i18n="aid.s4.p">Vous réglez la facture, puis l’État vous verse 70 % des coûts éligibles.</span></li>
+        </ol>
+        <p class="aid__fine" data-i18n="aid.fine">* Montant restant à votre charge si votre dossier est accepté. L’aide est accordée par le ministère de l’Économie, pas par DYRO WEB : elle n’est pas garantie. Vous avancez le prix total et la TVA, puis vous êtes remboursé. Si l’aide est refusée, le devis est annulé sans frais. <a href="https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html" target="_blank" rel="noopener">Conditions sur Guichet.lu</a></p>
+      </div>
+
+      <p class="pricing__note" data-reveal data-i18n="price.note">Prix hors taxes, TVA luxembourgeoise de 17 % en sus. Acompte de 30 % à la signature, solde à la livraison. Nom de domaine, licences et banques d'images facturés en plus. Délais de production à compter de la réception de vos contenus (textes, photos, logo) et de l’acompte ; le temps de vos relectures s’ajoute.</p>
     </div>
   </section>
 
@@ -865,7 +906,7 @@
       <div class="faq__list" data-stagger>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">Combien de temps faut-il pour créer mon site ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Une landing page est livrée en 2 à 3 jours ouvrés, un site vitrine Pro en 3 à 5 jours ouvrés et un site Premium multilingue en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo). Le temps de vos relectures s’ajoute. Une boutique en ligne est planifiée sur devis.</p></div></div>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Une landing page est livrée en 2 à 3 jours ouvrés, le Pack Pro en 3 à 5 jours ouvrés et le Pack Croissance en 1 à 2 semaines, à compter de la réception de vos contenus (textes, photos, logo) et de l’acompte. Le temps de vos relectures s’ajoute. Avec une aide SME Packages, le projet démarre après la validation de votre dossier. Les projets sur mesure sont planifiés sur devis.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Le site m'appartient-il vraiment ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -873,11 +914,15 @@
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span data-i18n="faq.q3">Dans quelles langues faites-vous les sites ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">En français, allemand, anglais, portugais et luxembourgeois. Le Site vitrine Pro est livré en français et en allemand, les autres langues s'ajoutent en option. L'offre Premium couvre jusqu'à cinq langues.</p></div></div>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p data-i18n="faq.a3">En français, allemand, anglais, portugais et luxembourgeois. Le Pack Pro est livré en français, allemand et anglais, les autres langues s’ajoutent en option. Le Pack Croissance couvre jusqu’à cinq langues.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span data-i18n="faq.q4">Comment se passe le paiement ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Pour tout projet de plus de 1 000 € HT, un acompte de 40 % est demandé à la signature. Le solde est réglé à la livraison, à 15 jours.</p></div></div>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Un acompte de 30 % est demandé à la signature, le solde est réglé à la livraison, à 15 jours. Avec une aide SME Packages, vous réglez la facture, puis l’État vous rembourse 70 % des coûts éligibles.</p></div></div>
+        </div>
+        <div class="faq__item">
+          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a11" id="faq-q11"><span data-i18n="faq.q11">Puis-je obtenir une aide de l’État pour mon site ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
+          <div class="faq__a" id="faq-a11" role="region" aria-labelledby="faq-q11"><div><p data-i18n="faq.a11">Oui, si votre entreprise est une PME établie au Luxembourg avec une autorisation d’établissement. Les SME Packages remboursent 70 % des coûts éligibles des projets de 3 000 à 25 000 € HT : c’est le cas des Packs Pro et Croissance, de l’Assistant IA et des projets sur mesure. La landing page, sous ce seuil, n’est pas éligible. Une préanalyse auprès de la House of Entrepreneurship est obligatoire et le projet ne démarre qu’après la validation de votre dossier : nous vous accompagnons à chaque étape.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span data-i18n="faq.q5">Combien de corrections sont incluses ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -885,11 +930,11 @@
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">Et après la mise en ligne ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Trois formules de maintenance et d'hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne.</p></div></div>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Trois formules de maintenance et d’hébergement sont proposées, de 49 à 199 € HT par mois avec un engagement de 12 mois, pour garder votre site à jour, sauvegardé et en ligne. Avec les Packs Pro et Croissance, les 3 premiers mois sont offerts.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Pourquoi vos prix sont-ils affichés ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Chaque offre a une fourchette de prix hors TVA ; le devis gratuit fixe ensuite le prix exact, selon vos pages, vos langues et vos fonctions.</p></div></div>
+          <div class="faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p data-i18n="faq.a7">Pour que vous sachiez à quoi vous attendre avant même de nous contacter. Les formules ont un prix fixe hors TVA ; le devis gratuit confirme le périmètre et chiffre les options et les projets sur mesure.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8"><span data-i18n="faq.q8">En combien de temps répondez-vous ?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1030,6 +1075,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=16" defer></script>
+<script src="assets/js/main.js?v=17" defer></script>
 </body>
 </html>

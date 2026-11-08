@@ -26,9 +26,14 @@
       'dv.err.email': 'Indiquez une adresse email valide.',
       'dv.err.consent': 'Cochez la case pour que nous puissions traiter votre demande.',
       'dv.subject': 'Demande de devis',
-      'dv.sum.empty': 'Choisissez un type de projet pour voir la fourchette.',
+      'dv.sum.empty': 'Choisissez un type de projet pour voir le prix.',
       'dv.sum.unsure': 'Nous vous conseillerons la formule adaptée à votre activité.',
       'dv.sum.extra': 'Langues supplémentaires : chiffrées dans le devis.',
+      'dv.sum.aid': 'Soit {n} après aide SME Packages, si votre dossier est accepté.',
+      'dv.q3d': "Aide de l'État (SME Packages)",
+      'dv.a.yes': 'Oui, je veux la demander',
+      'dv.a.info': "J'aimerais en savoir plus",
+      'dv.a.no': 'Non',
       'dv.sending': 'Envoi…',
     });
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -37,14 +42,19 @@
     const ENDPOINT = ENDPOINT_URL;
     const startedAt = Date.now();
 
-    // Grille de prix (HT) — identique à la section Offres
+    // Grille de prix (HT) — identique à la section Offres.
+    // max === min : prix fixe. aid : éligible SME Packages (70 % remboursés, projet de 3 000 à 25 000 € HT).
+    const AID_RATE = 0.7;
+    const ALL = ['fr', 'de', 'en', 'pt', 'lb'];
     const PLANS = {
-      landing: { min: 890, max: 1290, name: 'price.1.h', incl: ['fr'] },
-      pro: { min: 1890, max: 2900, name: 'price.2.h', incl: ['fr', 'de'] },
-      premium: { min: 3500, max: 6000, name: 'price.3.h', incl: ['fr', 'de', 'en', 'pt', 'lb'] },
-      ecommerce: { min: 4500, max: null, name: 'price.x1.label', incl: ['fr'] },
+      landing: { min: 1290, max: 1290, name: 'price.1.h', incl: ['fr'] },
+      pro: { min: 3900, max: 3900, aid: true, name: 'price.2.h', incl: ['fr', 'de', 'en'] },
+      premium: { min: 6900, max: 6900, aid: true, name: 'price.3.h', incl: ALL },
+      ecommerce: { min: 9900, max: 25000, aid: true, name: 'price.x1.label', incl: ['fr', 'de', 'en'] },
+      ia: { min: 4900, max: 4900, aid: true, name: 'pk.ia.label', incl: ALL },
       unsure: { name: 'dv.unsure' },
     };
+    const AID = { yes: 'dv.a.yes', info: 'dv.a.info', no: 'dv.a.no' };
     const LANG_LABEL = { fr: 'FR', de: 'DE', en: 'EN', pt: 'PT', lb: 'LU' };
     const FEATURES = { form: 'price.l.form', booking: 'price.3.l3', adv: 'price.3.l4', pay: 'dv.f.pay', seo: 'price.3.l2', blog: 'dv.f.blog' };
     const MAINT = { none: 'dv.m.none', ess: 'dv.m.ess', pro: 'dv.m.pro', gro: 'dv.m.gro' };
@@ -81,6 +91,7 @@
         features: fd.getAll('features').map(String),
         maint: val('maint') || 'none',
         deadline: val('deadline'),
+        aid: val('aid'),
         site: val('site'),
         name: val('name'),
         company: val('company'),
@@ -93,11 +104,15 @@
     };
 
     /* ---------- Estimation ---------- */
-    const fmt = (n) => new Intl.NumberFormat(D.locale()).format(Math.round(n));
+    const fmt = (n) => new Intl.NumberFormat(D.locale()).format(Math.round(n)).replace(/\u202f/g, '\u00a0');
     const money = (n) => `${plain(tr('price.pre'))}${fmt(n)}`;
-    const rangeText = (min, max) => (max == null
-      ? `${plain(tr('price.from'))} ${money(min)} ${plain(tr('price.cur'))}`
-      : `${money(min)} – ${money(max)} ${plain(tr('price.cur'))}`);
+    const rangeText = (min, max) => {
+      if (max == null) return `${plain(tr('price.from'))} ${money(min)} ${plain(tr('price.cur'))}`;
+      if (Math.round(max) === Math.round(min)) return `${money(min)} ${plain(tr('price.cur'))}`;
+      return `${money(min)} – ${money(max)} ${plain(tr('price.cur'))}`;
+    };
+    const netText = (plan) => rangeText(plan.min * (1 - AID_RATE), plan.max == null ? null : plan.max * (1 - AID_RATE));
+    const aidLine = (plan) => plain(tr('dv.sum.aid')).replace('{n}', netText(plan));
 
     const sumRange = $('[data-sum-range]');
     const sumSub = $('[data-sum-sub]');
@@ -145,7 +160,7 @@
         sumRange.textContent = '—';
         sumSub.textContent = plain(tr('dv.sum.unsure'));
       } else {
-        sumSub.textContent = '';
+        sumSub.textContent = plan.aid && s.aid !== 'no' ? aidLine(plan) : '';
         tweenRange(plan);
       }
       sumType.textContent = plan ? plain(tr(plan.name)) : '—';
@@ -253,6 +268,7 @@
         `${plain(tr('dv.s1'))} : ${plan ? plain(tr(plan.name)) : '—'}`,
       ];
       if (plan && plan.min) lines.push(`${plain(tr('dv.sum.range'))} : ${rangeText(plan.min, plan.max)}`);
+      if (plan && plan.aid) lines.push(`${plain(tr('dv.q3d'))} : ${s.aid ? plain(tr(AID[s.aid])) : '—'}`, aidLine(plan));
       lines.push(
         `${plain(tr('dv.s2'))} : ${s.langs.map((l) => LANG_LABEL[l] || l).join(', ') || '—'}`,
         `${plain(tr('dv.q3'))} : ${s.features.map((f) => plain(tr(FEATURES[f]))).join(', ') || '—'}`,

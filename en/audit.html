@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=16">
-<link rel="stylesheet" href="/assets/css/style.css?v=16">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=17">
+<link rel="stylesheet" href="/assets/css/style.css?v=17">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=16';
+      el.src = '/assets/js/i18n.js?v=17';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -279,7 +279,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=16" defer></script>
-<script src="/assets/js/audit.js?v=16" defer></script>
+<script src="/assets/js/main.js?v=17" defer></script>
+<script src="/assets/js/audit.js?v=17" defer></script>
 </body>
 </html>

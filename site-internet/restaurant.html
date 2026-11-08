@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=16">
-<link rel="stylesheet" href="/assets/css/style.css?v=16">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=17">
+<link rel="stylesheet" href="/assets/css/style.css?v=17">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=16';
+      el.src = '/assets/js/i18n.js?v=17';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -270,7 +270,7 @@
       <h2 class="tsec__h" data-reveal>Ce que comprend votre site</h2>
       <div class="tfeat">
         <ul class="checks" data-reveal><li>Carte et menu du jour lisibles sur mobile</li><li>Réservation en ligne ou lien vers votre outil</li><li>Horaires, accès et parking clairs</li><li>Galerie photos rapide à charger</li><li>Commande à emporter ou livraison, si vous la proposez</li><li>FR et DE, plus EN et PT en option pour les touristes et les frontaliers</li></ul>
-        <aside class="card advice" data-reveal><p class="eyebrow">Notre conseil</p><p>La Landing page (890 à 1 290 € HT) suffit souvent ; le Site vitrine Pro (1 890 à 2 900 € HT) si vous avez plusieurs salles, des événements ou un service traiteur.</p><p class="advice__note">Prix hors TVA. Le devis gratuit fixe le prix exact. Première réponse sous 24 h, devis sous 48 h.</p></aside>
+        <aside class="card advice" data-reveal><p class="eyebrow">Notre conseil</p><p>Le Pack Pro (3 900 € HT, soit 1 170 € HT si l’aide SME Packages est accordée), avec réservation en ligne et votre carte en trois langues, ou la Landing page (1 290 € HT) si une seule page suffit.</p><p class="advice__note">Prix hors TVA. Le devis gratuit fixe le prix exact. Première réponse sous 24 h, devis sous 48 h.</p></aside>
       </div>
     </div>
   </section>
@@ -364,6 +364,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=16" defer></script>
+<script src="/assets/js/main.js?v=17" defer></script>
 </body>
 </html>
