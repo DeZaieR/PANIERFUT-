@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '21'
+V = '22'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -163,8 +163,16 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Réservation d’un appel :</strong> nom, email, entreprise, téléphone (facultatif), description du projet, créneau choisi et votre choix concernant l’enregistrement. La réservation passe par Cal.com ; le calendrier ne se charge qu’au moment où vous cliquez sur « Réserver un appel ».</li>
             <li><strong>Enregistrement des appels :</strong> seulement si vous l’acceptez au moment de réserver (nous vous le rappelons au début de l’appel), l’appel en visio est enregistré et transcrit pour préparer votre proposition. Vous pouvez choisir un appel sans enregistrement, sans aucune conséquence.</li>
             <li><strong>Mesure d’audience :</strong> pages consultées, site d’origine (par exemple Google ou Instagram), type d’appareil (largeur d’écran), langue de la page, pays et clics sur nos boutons de contact. Votre adresse IP n’est pas enregistrée : au moment de la visite, elle sert seulement à déterminer le pays et à calculer une empreinte qui change chaque jour. Il est impossible de vous identifier ou de relier vos visites d’un jour à l’autre.</li>
-            <li><strong>Préférences dans votre navigateur :</strong> la langue choisie et la fermeture du bandeau sont enregistrées dans le stockage local de votre navigateur. Ces informations restent sur votre appareil et ne nous sont pas transmises.</li>
+            <li><strong>Préférences dans votre navigateur :</strong> la langue choisie et la fermeture du bandeau sont enregistrées dans le stockage local de votre navigateur. La conversation avec l’assistant IA est gardée dans le stockage de l’onglet et s’efface à sa fermeture. Ces informations restent sur votre appareil.</li>
           </ul>'''),
+  ('assistant', 'Assistant IA', '''          <p>Le site propose un assistant conversationnel fondé sur l’intelligence artificielle. Il vous indique clairement qu’il s’agit d’une IA. Il répond à vos questions sur nos offres et peut, si vous le souhaitez, transmettre votre demande à DYRO WEB.</p>
+          <ul>
+            <li><strong>Données traitées :</strong> les messages que vous écrivez, la langue et la page consultées. Pour générer chaque réponse, ces messages sont envoyés à notre prestataire Anthropic (modèle d’IA Claude). Nous n’enregistrons pas les conversations sur notre serveur.</li>
+            <li><strong>Si vous acceptez d’être recontacté :</strong> l’assistant nous transmet par email votre nom, vos coordonnées, le résumé de votre besoin et la conversation. Ces données sont alors traitées comme une demande de devis.</li>
+            <li><strong>Limite anti-abus :</strong> votre adresse IP n’est conservée que sous forme d’empreinte non réversible, 24 heures au plus.</li>
+            <li><strong>Base légale :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD) et, pour la limite anti-abus, notre intérêt légitime à protéger le service (article 6.1.f).</li>
+          </ul>
+          <p>Ne communiquez pas d’informations sensibles (santé, données bancaires, mots de passe) à l’assistant. Ses réponses sont générées automatiquement et peuvent contenir des erreurs : seul le devis accepté fait foi.</p>'''),
   ('finalites', 'Finalités et bases légales', '''          <ul>
             <li><strong>Répondre à votre demande, vous envoyer un email de confirmation et établir un devis :</strong> mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).</li>
             <li><strong>Exécuter le contrat et facturer :</strong> exécution du contrat (article 6.1.b) et respect de nos obligations légales comptables (article 6.1.c).</li>
@@ -179,11 +187,12 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
             <li><strong>Clients :</strong> pendant toute la relation contractuelle, puis 10 ans pour les pièces comptables, conformément à l’article 16 du Code de commerce.</li>
             <li><strong>Journaux techniques :</strong> durée limitée fixée par l’hébergeur.</li>
             <li><strong>Enregistrements et transcriptions d’appels :</strong> 12 mois au plus, puis supprimés, ou plus tôt sur simple demande.</li>
+            <li><strong>Conversations avec l’assistant IA :</strong> non enregistrées par nous ; si vous demandez à être recontacté, conservées comme une demande de devis. Le prestataire Anthropic les conserve au plus pour la durée prévue par ses conditions applicables aux entreprises.</li>
             <li><strong>Statistiques de visite :</strong> 25 mois, sous forme anonyme.</li>
           </ul>'''),
-  ('destinataires', 'Destinataires', '''          <p>Vos données sont traitées uniquement par DYRO WEB. Nos prestataires techniques y ont accès dans la stricte mesure nécessaire à leur mission, sur nos instructions et sous obligation de confidentialité : Hostinger (hébergement du site et messagerie), Cal.com (réservation des appels), Google (agenda et visio Google Meet) et Wispr Flow (enregistrement et transcription des appels, seulement si vous l’acceptez).</p>
+  ('destinataires', 'Destinataires', '''          <p>Vos données sont traitées uniquement par DYRO WEB. Nos prestataires techniques y ont accès dans la stricte mesure nécessaire à leur mission, sur nos instructions et sous obligation de confidentialité : Hostinger (hébergement du site et messagerie), Anthropic (génération des réponses de l’assistant IA), Cal.com (réservation des appels), Google (agenda et visio Google Meet) et Wispr Flow (enregistrement et transcription des appels, seulement si vous l’acceptez).</p>
           <p>Aucune donnée n’est transmise à des tiers à des fins commerciales.</p>'''),
-  ('transferts', 'Transferts hors de l’Union européenne', '''          <p>Cal.com, Google et Wispr Flow peuvent traiter vos données aux États-Unis lorsque vous réservez un appel. Ces transferts sont encadrés par le cadre de protection des données UE–États-Unis ou par les clauses contractuelles types de la Commission européenne, selon le prestataire. Les formulaires, les emails et la mesure d’audience restent dans l’Union européenne. Si vous choisissez de nous écrire via WhatsApp, ce service édité par Meta traite vos échanges selon sa propre politique de confidentialité, y compris éventuellement hors de l’Union européenne.</p>
+  ('transferts', 'Transferts hors de l’Union européenne', '''          <p>Anthropic traite les messages écrits à l’assistant IA aux États-Unis. Cal.com, Google et Wispr Flow peuvent traiter vos données aux États-Unis lorsque vous réservez un appel. Ces transferts sont encadrés par le cadre de protection des données UE–États-Unis ou par les clauses contractuelles types de la Commission européenne, selon le prestataire. Les formulaires, les emails et la mesure d’audience restent dans l’Union européenne. Si vous choisissez de nous écrire via WhatsApp, ce service édité par Meta traite vos échanges selon sa propre politique de confidentialité, y compris éventuellement hors de l’Union européenne.</p>
           <p>Les polices de caractères sont hébergées sur notre propre serveur : le site n’effectue aucune requête vers Google Fonts. La mesure d’audience est réalisée par notre propre outil, sur notre serveur : aucune donnée n’est transmise à un tiers.</p>'''),
   ('cookies', 'Cookies et mesure d’audience', '''          <p>Ce site n’utilise aucun cookie, publicitaire ou autre. Seules les préférences décrites plus haut (langue et bandeau) sont stockées localement dans votre navigateur. Elles servent uniquement au fonctionnement que vous demandez et ne nécessitent donc pas de consentement.</p>
           <p>Nous mesurons la fréquentation avec notre propre outil, hébergé sur notre serveur : il ne dépose rien sur votre appareil, n’enregistre pas votre adresse IP et ne transmet aucune donnée à un tiers. Le pays est déterminé sur notre serveur grâce à la base DB-IP Lite (licence CC BY 4.0), sans appel à un service extérieur.</p>
@@ -192,7 +201,7 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
           <p>Pour exercer vos droits, écrivez à <a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a>. Nous répondons dans un délai d’un mois.</p>'''),
   ('reclamation', 'Réclamation', '''          <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission nationale pour la protection des données (CNPD), 15, boulevard du Jazz, L-4370 Belvaux (<a href="https://cnpd.public.lu" rel="noopener">cnpd.public.lu</a>).</p>'''),
   ('modifications', 'Modifications', '          <p>Cette politique peut être mise à jour. La date de dernière mise à jour figure en haut de la page.</p>'),
-], updated='Dernière mise à jour : 4 novembre 2026')
+], updated='Dernière mise à jour : 12 novembre 2026')
 
 legal_page('cgv.html', 'Conditions générales de vente',
   'Conditions générales de vente et de prestation de DYRO WEB : devis, prix, paiement, propriété du site, maintenance.', [

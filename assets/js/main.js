@@ -1195,6 +1195,29 @@
     };
     d.dispatchEvent(new CustomEvent('dyro:ready'));
 
+    // Assistant IA : le bouton n'apparaît que si le serveur a une clé configurée ; le script se charge au premier clic
+    (() => {
+      const btns = $$('[data-assistant]');
+      if (!btns.length) return;
+      const src = SELF_SRC ? SELF_SRC.replace(/main\.js(\?.*)?$/, 'assistant.js$1') : '/assets/js/assistant.js';
+      let loading = null;
+      const load = () => loading || (loading = new Promise((ok, ko) => {
+        const sc = d.createElement('script');
+        sc.src = src;
+        sc.onload = ok;
+        sc.onerror = () => { loading = null; ko(); };
+        d.head.appendChild(sc);
+      }));
+      const check = () => fetch('/api/assistant.php?status', { credentials: 'omit' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((j) => { if (j && j.on) btns.forEach((b) => { b.hidden = false; }); })
+        .catch(() => { /* assistant désactivé */ });
+      if ('requestIdleCallback' in window) requestIdleCallback(check, { timeout: 2500 }); else setTimeout(check, 1200);
+      btns.forEach((b) => b.addEventListener('click', () => {
+        load().then(() => { if (window.DyroAssistant) window.DyroAssistant.toggle(b); }).catch(() => { /* réseau */ });
+      }));
+    })();
+
     requestAnimationFrame(frame);
   }
 
