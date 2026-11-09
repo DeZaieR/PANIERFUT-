@@ -125,7 +125,7 @@ def legal_page(fname, title, desc, sections, updated=UPDATED):
 ''' + page_footer(fname, ['main.js'])
     open(ROOT + fname, 'w').write(html)
 
-ADDR = 'Luxembourg (adresse complète publiée à l’issue de l’immatriculation)'
+ADDR = '26A, rue des Sports, L-9558 Wiltz, Luxembourg'
 
 legal_page('mentions-legales.html', 'Mentions légales',
   'Mentions légales du site DYRO WEB : éditeur, hébergement, propriété intellectuelle.', [
@@ -137,8 +137,8 @@ legal_page('mentions-legales.html', 'Mentions légales',
             <dt>Email</dt><dd><a href="mailto:contact@dyroweb.online">contact@dyroweb.online</a></dd>
             <dt>Téléphone</dt><dd><a href="tel:+352691349632">+352 691 349 632</a></dd>
             <dt>Site web</dt><dd><a href="https://dyroweb.online">dyroweb.online</a></dd>
-            <dt>N° RCS</dt><dd>Immatriculation en cours</dd>
-            <dt>Autorisation d’établissement</dt><dd>Demande en cours</dd>
+            <dt>N° RCS</dt><dd>A47735 (Registre de commerce et des sociétés de Luxembourg)</dd>
+            <dt>Autorisation d’établissement</dt><dd>N° 10201636/0, délivrée le 23 octobre 2026 par le ministère de l’Économie</dd>
             <dt>N° TVA</dt><dd>Immatriculation en cours</dd>
           </dl>'''),
   ('publication', 'Directeur de la publication', '          <p>Dany Martins Freitas.</p>'),
@@ -196,7 +196,7 @@ legal_page('confidentialite.html', 'Politique de confidentialité',
 
 legal_page('cgv.html', 'Conditions générales de vente',
   'Conditions générales de vente et de prestation de DYRO WEB : devis, prix, paiement, propriété du site, maintenance.', [
-  ('champ', 'Champ d’application', '''          <p>Les présentes conditions générales s’appliquent à toutes les prestations de DYRO WEB, marque de Dyro Studios (Dany Martins Freitas, entreprise individuelle) : création de sites web, landing pages et boutiques en ligne, référencement, maintenance et hébergement.</p>
+  ('champ', 'Champ d’application', '''          <p>Les présentes conditions générales s’appliquent à toutes les prestations de DYRO WEB, marque de Dyro Studios (Dany Martins Freitas, entreprise individuelle, 26A, rue des Sports, L-9558 Wiltz, RCS Luxembourg A47735, autorisation d’établissement n° 10201636/0) : création de sites web, landing pages et boutiques en ligne, référencement, maintenance et hébergement.</p>
           <p>Elles complètent le devis. En cas de contradiction, les conditions particulières du devis prévalent.</p>'''),
   ('devis', 'Devis et commande', f'''          <p>Chaque projet fait l’objet d’un devis gratuit et détaillé, présenté en trois options lorsque c’est pertinent. Le devis est valable 30 jours à compter de sa date d’émission.</p>
           <p>La commande est ferme dès la signature du devis par le client et, le cas échéant, le paiement de l’acompte.</p>'''),
