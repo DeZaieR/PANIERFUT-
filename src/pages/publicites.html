@@ -115,45 +115,34 @@
         <li data-reveal><b>1:1</b><div><strong>{{brand.f3.t::Réseaux sociaux}}</strong><span>{{brand.f3::Carré, pour les fils d’actualité.}}</span></div></li>
       </ul>
 
-      <div class="subhead" data-reveal><h3>{{brand.p.title::Cinq offres, à partir de}}</h3><p>{{brand.p.lead::Tarifs indicatifs HT, selon la complexité et les retouches. Le devis confirme le prix.}}</p></div>
-      <div class="plans plans--5" data-stagger>
+      <div class="subhead" data-reveal><h3>{{brand.p.title::Trois offres, à partir de}}</h3><p>{{brand.p.lead::Tarifs indicatifs HT, selon la complexité et les retouches. Le devis confirme le prix.}}</p></div>
+      <div class="plans plans--3" data-stagger>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o1.n::Publicité UGC IA ou produit}}</h3>
+          <p class="plan__for">{{brand.o1.f::Pour présenter un produit simplement.}}</p>
           <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="249">249</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-ugc-produit">{{cta.quote::Demander un devis}}</a>
         </article>
-        <article class="plan" data-reveal data-spot>
-          <h3 class="plan__name">{{brand.o2.n::Commerces & agences}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="349">349</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
-          <ul class="plan__list"><li>{{brand.o2.l1::Commerce, restaurant, hôtel ou agence}}</li><li>{{brand.l.d1::15 à 30 secondes}}</li><li>{{brand.l.voice::Voix off et musique}}</li><li>{{brand.l.fmt::1 format de livraison}}</li></ul>
-          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-commerces-agences">{{cta.quote::Demander un devis}}</a>
-        </article>
         <article class="plan plan--best" data-reveal data-spot>
           <span class="plan__badge">{{price.best::Le plus complet}}</span>
           <h3 class="plan__name">{{brand.o3.n::Cinématique premium}}</h3>
+          <p class="plan__for">{{brand.o3.f::Une ambiance cinéma pour votre marque.}}</p>
           <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="599">599</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o3.l1::20 à 40 secondes}}</li><li>{{brand.o3.l2::Direction cinématique premium}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
           <a class="btn btn--gold" href="{{@url contact/}}?type=pub&amp;offre=pub-cinematique-premium" data-magnetic>{{cta.quote::Demander un devis}}</a>
         </article>
         <article class="plan" data-reveal data-spot>
           <h3 class="plan__name">{{brand.o4.n::Film publicitaire sur mesure}}</h3>
+          <p class="plan__for">{{brand.o4.f::Un vrai récit, écrit pour vous.}}</p>
           <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="990">990</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
           <ul class="plan__list"><li>{{brand.o4.l1::45 à 90 secondes}}</li><li>{{brand.o4.l2::Scénario et storytelling sur mesure}}</li><li>{{brand.l.vfx::Effets visuels IA et étalonnage}}</li><li>{{brand.l.voice::Voix off et musique}}</li></ul>
           <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-film-sur-mesure">{{cta.quote::Demander un devis}}</a>
         </article>
-        <article class="plan" data-reveal data-spot>
-          <h3 class="plan__name">{{brand.o5.n::Pack de 3 vidéos courtes}}</h3>
-          <p class="plan__price"><small class="from">{{price.from::dès}}</small>{{cur.pre::}}<span data-count="599">599</span>{{cur.post::&nbsp;€}} <small>HT</small></p>
-          <ul class="plan__list"><li>{{brand.o5.l1::3 vidéos de 10 à 20 secondes}}</li><li>{{brand.o5.l2::Cohérence visuelle entre les vidéos}}</li><li>{{brand.l.edit::Montage et étalonnage}}</li><li>{{brand.o5.l4::Format vertical 9:16}}</li></ul>
-          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub&amp;offre=pub-pack-3-videos">{{cta.quote::Demander un devis}}</a>
-        </article>
-        <article class="plan plan--custom" data-reveal data-spot>
-          <h3 class="plan__name">{{brand.o6.n::Une idée différente ?}}</h3>
-          <p class="plan__for">{{brand.o6.p::Décrivez votre produit, votre activité ou votre concept : nous l’étudions et vous proposons un devis clair.}}</p>
-          <div style="flex:1"></div>
-          <a class="btn btn--ghost" href="{{@url contact/}}?type=pub">{{brand.o6.cta::Décrire mon projet}}</a>
-        </article>
+      </div>
+      <div class="band" data-reveal>
+        <div><h3>{{brand.o6.n::Une idée différente ?}}</h3><p>{{brand.o6.p::Décrivez votre produit, votre activité ou votre concept : nous l’étudions et vous proposons un devis clair.}}</p></div>
+        <a class="btn btn--gold" href="{{@url contact/}}?type=pub" data-magnetic>{{brand.o6.cta::Décrire mon projet}}</a>
       </div>
       <p class="fine center" data-reveal style="margin-top:22px">{{brand.fine::Aucune promesse de performance ou de résultat garanti. Les avatars UGC sont générés par IA et ne sont pas de vrais clients.}}</p>
     </div>
