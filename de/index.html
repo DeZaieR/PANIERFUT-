@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=20">
+<link rel="stylesheet" href="/assets/css/style.css?v=21">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=20';
+      el.src = '/assets/js/i18n.js?v=21';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -176,7 +176,7 @@
    "name": "Wie lange dauert die Erstellung meiner Website?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant."
+    "text": "Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro ab 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant."
    }
   },
   {
@@ -815,7 +815,7 @@
           </header>
           <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="2490">2 490</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
           <ul class="price__list">
-            <li data-i18n="price.2.time"><strong>Lieferung in 3 bis 5 Werktagen</strong></li>
+            <li data-i18n="price.2.time"><strong>Lieferung ab 5 Werktagen</strong></li>
             <li data-i18n="pk.2.l1">5 bis 7 Seiten, individuelles Design</li>
             <li data-i18n="pk.2.l2">Französisch, Deutsch und Englisch</li>
             <li data-i18n="pk.2.l3">Lokales SEO und Google-Unternehmensprofil</li>
@@ -840,7 +840,7 @@
             <li data-i18n="pk.3.l3">Online-Reservierung oder -Terminbuchung</li>
             <li data-i18n="pk.3.l4">Automatisierte Sammlung von Google-Bewertungen</li>
             <li data-i18n="pk.3.l5">KI-Visuals von Dyro Studios</li>
-            <li data-i18n="pk.3.l6">Launch-Kampagne in den sozialen Netzwerken</li>
+            <li data-i18n="pk.3.l6">Launch: 3 Posts und 1 Reel (ohne Werbebudget)</li>
             <li data-i18n="price.l.rev">2 Korrekturschleifen</li>
             <li data-i18n="pk.l.gift">3 Monate Wartung gratis</li>
           </ul>
@@ -881,7 +881,7 @@
       <div class="faq__list" data-stagger>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">Wie lange dauert die Erstellung meiner Website?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant.</p></div></div>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro ab 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Gehört mir die Website wirklich?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1046,6 +1046,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=20" defer></script>
+<script src="/assets/js/main.js?v=21" defer></script>
 </body>
 </html>

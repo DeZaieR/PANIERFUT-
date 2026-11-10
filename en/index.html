@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=20">
+<link rel="stylesheet" href="/assets/css/style.css?v=21">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=20';
+      el.src = '/assets/js/i18n.js?v=21';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -176,7 +176,7 @@
    "name": "How long does it take to build my website?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "A landing page is delivered in 2 to 3 business days, the Pack Pro in 3 to 5 business days and the Pack Croissance in 1 to 2 weeks, from receipt of your content (text, photos, logo) and the deposit. Your review time comes on top. Custom projects are scheduled in the quote."
+    "text": "A landing page is delivered in 2 to 3 business days, the Pack Pro from 5 business days and the Pack Croissance in 1 to 2 weeks, from receipt of your content (text, photos, logo) and the deposit. Your review time comes on top. Custom projects are scheduled in the quote."
    }
   },
   {
@@ -815,7 +815,7 @@
           </header>
           <p class="price__amount"><span class="price__pre" data-i18n="price.pre">€</span><span class="price__n" data-count-to="2490">2 490</span><span class="price__cur" data-i18n="price.cur">excl. VAT</span></p>
           <ul class="price__list">
-            <li data-i18n="price.2.time"><strong>Delivered in 3 to 5 business days</strong></li>
+            <li data-i18n="price.2.time"><strong>Delivered from 5 business days</strong></li>
             <li data-i18n="pk.2.l1">5 to 7 pages, custom design</li>
             <li data-i18n="pk.2.l2">French, German and English</li>
             <li data-i18n="pk.2.l3">Local SEO and Google Business Profile</li>
@@ -840,7 +840,7 @@
             <li data-i18n="pk.3.l3">Online booking or appointments</li>
             <li data-i18n="pk.3.l4">Automated Google review collection</li>
             <li data-i18n="pk.3.l5">AI visuals by Dyro Studios</li>
-            <li data-i18n="pk.3.l6">Social media launch campaign</li>
+            <li data-i18n="pk.3.l6">Launch: 3 posts and 1 Reel (ad budget not included)</li>
             <li data-i18n="price.l.rev">2 rounds of revisions</li>
             <li data-i18n="pk.l.gift">3 months of maintenance free</li>
           </ul>
@@ -881,7 +881,7 @@
       <div class="faq__list" data-stagger>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">How long does it take to build my website?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">A landing page is delivered in 2 to 3 business days, the Pack Pro in 3 to 5 business days and the Pack Croissance in 1 to 2 weeks, from receipt of your content (text, photos, logo) and the deposit. Your review time comes on top. Custom projects are scheduled in the quote.</p></div></div>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">A landing page is delivered in 2 to 3 business days, the Pack Pro from 5 business days and the Pack Croissance in 1 to 2 weeks, from receipt of your content (text, photos, logo) and the deposit. Your review time comes on top. Custom projects are scheduled in the quote.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Do I really own the website?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1046,6 +1046,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=20" defer></script>
+<script src="/assets/js/main.js?v=21" defer></script>
 </body>
 </html>

@@ -54,7 +54,7 @@ P['fr'] = {
   'extra': 'Vos pièces vides se présentent mal en photo ? Notre marque sœur DYRO STUDIOS les meuble virtuellement, dès 39 € HT la photo.',
   'faq': [('Pouvez-vous afficher mes annonces des portails sur mon site ?', 'Oui, selon votre logiciel : import automatique quand il le permet, sinon lien direct vers vos annonces. Nous choisissons la solution la plus simple pendant le devis.'),
           ('Combien de langues faut-il pour une agence ?', 'Au minimum le français et l’allemand. L’anglais et le portugais ouvrent l’accès aux expatriés et à la communauté portugaise, très présente sur le marché.'),
-          ('Combien de temps pour être en ligne ?', 'Un site vitrine Pro est livré en 3 à 5 jours ouvrés après réception de vos contenus (textes, photos, logo), une landing page en 2 à 3 jours ouvrés. Le temps de vos relectures s’ajoute ; le planning exact figure dans le devis.')]},
+          ('Combien de temps pour être en ligne ?', 'Le Pack Pro est livré à partir de 5 jours ouvrés après réception de vos contenus (textes, photos, logo), une landing page en 2 à 3 jours ouvrés. Le temps de vos relectures s’ajoute ; le planning exact figure dans le devis.')]},
  'artisan': {
   'name': 'artisan', 'card': 'Réalisations avant / après, zone d’intervention et demandes de devis avec photos.',
   'title': 'Site internet pour artisan et entreprise du bâtiment au Luxembourg · DYRO WEB',
@@ -132,7 +132,7 @@ P['de'] = {
   'extra': 'Leere Räume wirken auf Fotos schlecht? Unsere Schwestermarke DYRO STUDIOS richtet sie virtuell ein, ab 39 € netto pro Foto.',
   'faq': [('Können Sie meine Portal-Inserate auf meiner Website anzeigen?', 'Ja, je nach Ihrer Software: automatischer Import, wenn möglich, sonst ein direkter Link zu Ihren Inseraten. Wir wählen im Angebot die einfachste Lösung.'),
           ('Wie viele Sprachen braucht eine Agentur?', 'Mindestens Französisch und Deutsch. Englisch und Portugiesisch öffnen den Zugang zu Expats und zur portugiesischen Gemeinschaft, die auf dem Markt sehr präsent ist.'),
-          ('Wie lange dauert es bis zum Start?', 'Eine Firmenwebsite Pro liefern wir in 3 bis 5 Werktagen nach Eingang Ihrer Inhalte (Texte, Fotos, Logo), eine Landingpage in 2 bis 3 Werktagen. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu; der genaue Zeitplan steht im Angebot.')]},
+          ('Wie lange dauert es bis zum Start?', 'Das Pack Pro liefern wir ab 5 Werktagen nach Eingang Ihrer Inhalte (Texte, Fotos, Logo), eine Landingpage in 2 bis 3 Werktagen. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu; der genaue Zeitplan steht im Angebot.')]},
  'artisan': {
   'name': 'Handwerker', 'card': 'Referenzen vorher / nachher, Einsatzgebiet und Angebotsanfragen mit Fotos.',
   'title': 'Website für Handwerker und Baufirmen in Luxemburg · DYRO WEB',
@@ -210,7 +210,7 @@ P['en'] = {
   'extra': 'Empty rooms look poor in photos? Our sister brand DYRO STUDIOS stages them virtually, from €39 excl. VAT per photo.',
   'faq': [('Can you show my portal listings on my website?', 'Yes, depending on your software: automatic import when possible, otherwise a direct link to your listings. We pick the simplest option in the quote.'),
           ('How many languages does an agency need?', 'At least French and German. English and Portuguese open the door to expats and to the Portuguese community, very present on the market.'),
-          ('How long until the site is live?', 'A Business website Pro is delivered in 3 to 5 business days after we receive your content (text, photos, logo), a landing page in 2 to 3 business days. Your review time comes on top; the exact schedule is in the quote.')]},
+          ('How long until the site is live?', 'The Pack Pro is delivered from 5 business days after we receive your content (text, photos, logo), a landing page in 2 to 3 business days. Your review time comes on top; the exact schedule is in the quote.')]},
  'artisan': {
   'name': 'tradesperson', 'card': 'Before / after work, service area and quote requests with photos.',
   'title': 'Website for tradespeople and builders in Luxembourg · DYRO WEB',
@@ -288,7 +288,7 @@ P['pt'] = {
   'extra': 'As divisões vazias ficam mal nas fotos? A nossa marca irmã DYRO STUDIOS mobila-as virtualmente, a partir de 39 € + IVA por foto.',
   'faq': [('Podem mostrar os meus anúncios dos portais no meu site?', 'Sim, conforme o seu software: importação automática quando possível, caso contrário uma ligação direta aos seus anúncios. Escolhemos a solução mais simples no orçamento.'),
           ('Quantas línguas precisa uma agência?', 'No mínimo francês e alemão. O inglês e o português abrem a porta aos expatriados e à comunidade portuguesa, muito presente no mercado.'),
-          ('Quanto tempo até estar online?', 'Um Site institucional Pro é entregue em 3 a 5 dias úteis após a receção dos seus conteúdos (textos, fotos, logótipo), uma landing page em 2 a 3 dias úteis. O tempo das suas revisões acresce; o calendário exato consta do orçamento.')]},
+          ('Quanto tempo até estar online?', 'O Pack Pro é entregue a partir de 5 dias úteis após a receção dos seus conteúdos (textos, fotos, logótipo), uma landing page em 2 a 3 dias úteis. O tempo das suas revisões acresce; o calendário exato consta do orçamento.')]},
  'artisan': {
   'name': 'artesão', 'card': 'Trabalhos antes / depois, zona de intervenção e pedidos de orçamento com fotos.',
   'title': 'Site para artesãos e empresas de construção no Luxemburgo · DYRO WEB',
@@ -366,7 +366,7 @@ P['lb'] = {
   'extra': 'Eidel Raim gesinn op Fotoe schlecht aus? Eis Schwëstermark DYRO STUDIOS riicht se virtuell an, vun 39 € ouni TVA de Foto un.',
   'faq': [('Kënnt Dir meng Annoncë vun de Portaler op menger Websäit weisen?', 'Jo, jee no Ärer Software: automateschen Import, wann et méiglech ass, soss en direkte Link op Är Annoncen. Mir wielen am Offer déi einfachst Léisung.'),
           ('Wéi vill Sprooche brauch eng Agence?', 'Mindestens Franséisch an Däitsch. Englesch a Portugisesch maachen d’Dier op fir Expats a fir déi portugisesch Communautéit, déi um Marché ganz präsent ass.'),
-          ('Wéi laang dauert et bis zum Start?', 'Eng Firmewebsäit Pro gëtt an 3 bis 5 Aarbechtsdeeg no dem Erhalt vun Ären Inhalter (Texter, Fotoen, Logo) geliwwert, eng Landing Page an 2 bis 3 Aarbechtsdeeg. D’Zäit fir Är Relecture kënnt derbäi; de genaue Plang steet an der Offer.')]},
+          ('Wéi laang dauert et bis zum Start?', 'De Pack Pro gëtt ab 5 Aarbechtsdeeg no dem Erhalt vun Ären Inhalter (Texter, Fotoen, Logo) geliwwert, eng Landing Page an 2 bis 3 Aarbechtsdeeg. D’Zäit fir Är Relecture kënnt derbäi; de genaue Plang steet an der Offer.')]},
  'artisan': {
   'name': 'Handwierker', 'card': 'Referenze virdrun / duerno, Asazgebitt an Offerufroe mat Fotoen.',
   'title': 'Websäit fir Handwierker a Baufirmen zu Lëtzebuerg · DYRO WEB',
