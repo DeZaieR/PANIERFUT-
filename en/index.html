@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=19">
+<link rel="stylesheet" href="/assets/css/style.css?v=20">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=19';
+      el.src = '/assets/js/i18n.js?v=20';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -216,7 +216,7 @@
    "name": "What happens after launch?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "We offer three maintenance and hosting plans, from €49 to €199 a month excl. VAT with a 12-month commitment, to keep your site up to date, backed up and online. With the Pack Pro and Pack Croissance, the first 3 months are free."
+    "text": "Three plans, with a 12-month term. All include hosting, technical and security updates, backups, monitoring and fixing outages. Essentiel (€49 excl. VAT / month) adds 30 minutes of changes per month: text, photos, opening hours. Pro (€99 excl. VAT / month) raises that to 2 hours and adds tracking of your Google positions. Croissance (€199 excl. VAT / month) gives 5 hours a month, Google tracking and a new page or article every quarter. With the Pack Pro and Pack Croissance, the first 3 months are free."
    }
   },
   {
@@ -538,7 +538,7 @@
           <span class="svc__num" aria-hidden="true">06</span>
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M12 2.5l8 3.2v5.8c0 4.9-3.4 8.8-8 10-4.6-1.2-8-5.1-8-10V5.7z" pathLength="1"/><path d="M6.5 12.5h2.4l1.4-3 2.4 6 1.6-3h3.2" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.6.h">Maintenance &amp; hosting</h3>
-          <p data-i18n="svc.6.p">Updates, backups and monitoring. Your site stays fast, secure and online without you having to think about it.</p>
+          <p data-i18n="svc.6.p">Updates, backups, monitoring and time for changes every month. Your website stays fast, secure and up to date, without you having to think about it.</p>
           <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.6.tag">From €49 / month</span><a href="#offres" class="svc__go" aria-label="See maintenance plans" data-i18n-attr="aria-label:svc.6.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
       </div>
@@ -655,7 +655,7 @@
           </div>
           <div class="bento__txt">
             <h3 data-i18n="why.care.h">Support after launch</h3>
-            <p data-i18n="why.care.p">Three maintenance and hosting plans: €49, €99 or €199 a month excl. VAT. You look after your customers, we look after the site.</p>
+            <p data-i18n="why.care.p">Three maintenance and hosting plans: €49, €99 or €199 excl. VAT per month, with 30 minutes to 5 hours of changes included. You look after your customers, we look after the website.</p>
           </div>
         </article>
 
@@ -862,7 +862,7 @@
         <div class="extra">
           <span class="extra__label" data-i18n="price.x2.label">Maintenance &amp; hosting</span>
           <span class="extra__val" data-i18n="price.x2.val">€49 · €99 · €199 excl. VAT / month</span>
-          <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · 12-month term · 3 months free with the Packs</span>
+          <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · 30 min to 5 h of changes per month · 12-month term · 3 months free with the Packs</span>
         </div>
       </div>
 
@@ -901,7 +901,7 @@
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span data-i18n="faq.q6">What happens after launch?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">We offer three maintenance and hosting plans, from €49 to €199 a month excl. VAT with a 12-month commitment, to keep your site up to date, backed up and online. With the Pack Pro and Pack Croissance, the first 3 months are free.</p></div></div>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p data-i18n="faq.a6">Three plans, with a 12-month term. All include hosting, technical and security updates, backups, monitoring and fixing outages. Essentiel (€49 excl. VAT / month) adds 30 minutes of changes per month: text, photos, opening hours. Pro (€99 excl. VAT / month) raises that to 2 hours and adds tracking of your Google positions. Croissance (€199 excl. VAT / month) gives 5 hours a month, Google tracking and a new page or article every quarter. With the Pack Pro and Pack Croissance, the first 3 months are free.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span data-i18n="faq.q7">Why do you show your prices?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1046,6 +1046,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=19" defer></script>
+<script src="/assets/js/main.js?v=20" defer></script>
 </body>
 </html>

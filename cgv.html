@@ -19,8 +19,8 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css?v=19">
-<link rel="stylesheet" href="assets/css/style.css?v=19">
+<link rel="stylesheet" href="assets/css/fonts.css?v=20">
+<link rel="stylesheet" href="assets/css/style.css?v=20">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -45,7 +45,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = 'assets/js/i18n.js?v=19';
+      el.src = 'assets/js/i18n.js?v=20';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -236,6 +236,7 @@
         <section id="maintenance" data-reveal>
           <h2><span class="num">10</span>Maintenance et hébergement</h2>
           <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois. Avec le Pack Pro et le Pack Croissance, les trois premiers mois de maintenance sont offerts ; l’engagement de 12 mois débute à la fin de cette période.</p>
+          <p>Les trois formules comprennent l’hébergement, les mises à jour techniques et de sécurité, les sauvegardes, la surveillance du site et la correction des pannes. Elles incluent un temps de modifications par mois : 30 minutes pour Essentiel, 2 heures pour Pro, 5 heures pour Croissance. Les formules Pro et Croissance comprennent le suivi des positions sur Google, et la formule Croissance une nouvelle page ou un article par trimestre. Le temps non utilisé n’est pas reporté d’un mois sur l’autre ; au-delà, les travaux sont chiffrés au devis.</p>
           <p>Le contenu de chaque formule ainsi que les conditions de renouvellement et de résiliation sont précisés dans le devis.</p>
         </section>
         <section id="responsabilite" data-reveal>
@@ -319,6 +320,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=19" defer></script>
+<script src="assets/js/main.js?v=20" defer></script>
 </body>
 </html>

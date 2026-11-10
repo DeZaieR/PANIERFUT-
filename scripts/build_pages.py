@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '19'
+V = '20'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -217,6 +217,7 @@ legal_page('cgv.html', 'Conditions générales de vente',
           <p>Les composants tiers (logiciels libres, extensions, polices, images sous licence) restent soumis à leurs propres licences.</p>
           <p>Sauf refus écrit du client, DYRO WEB peut mentionner la réalisation dans ses références.</p>'''),
   ('maintenance', 'Maintenance et hébergement', '''          <p>Trois formules sont proposées : Essentiel, Pro et Croissance, à 49, 99 et 199 € HT par mois, avec un engagement de 12 mois. Avec le Pack Pro et le Pack Croissance, les trois premiers mois de maintenance sont offerts ; l’engagement de 12 mois débute à la fin de cette période.</p>
+          <p>Les trois formules comprennent l’hébergement, les mises à jour techniques et de sécurité, les sauvegardes, la surveillance du site et la correction des pannes. Elles incluent un temps de modifications par mois : 30 minutes pour Essentiel, 2 heures pour Pro, 5 heures pour Croissance. Les formules Pro et Croissance comprennent le suivi des positions sur Google, et la formule Croissance une nouvelle page ou un article par trimestre. Le temps non utilisé n’est pas reporté d’un mois sur l’autre ; au-delà, les travaux sont chiffrés au devis.</p>
           <p>Le contenu de chaque formule ainsi que les conditions de renouvellement et de résiliation sont précisés dans le devis.</p>'''),
   ('responsabilite', 'Responsabilité', '''          <p>DYRO WEB est tenue à une obligation de moyens. Sa responsabilité ne peut être engagée pour des dommages indirects (perte de chiffre d’affaires, de données ou de clientèle) ni pour des interruptions dues à des tiers (hébergeur, fournisseurs, opérateurs).</p>
           <p>Pour les clients professionnels, la responsabilité de DYRO WEB est limitée au montant hors taxes de la prestation concernée.</p>'''),
