@@ -116,6 +116,9 @@ def render(text, lang, slug, langs, dicts, missing):
     return text
 
 
+NOINDEX = {'mentions-legales/', 'cgv/', 'confidentialite/'}
+
+
 def build():
     dicts = load_dicts()
     texts = [(p, include((SRC / 'pages' / p).read_text('utf-8'))) for p, _, _ in PAGES]
@@ -134,6 +137,8 @@ def build():
     # plan du site
     rows = []
     for slug, lang, langs in urls:
+        if slug in NOINDEX:  # pages légales : utiles aux visiteurs, sans intérêt dans Google
+            continue
         alt = ''.join(f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{SITE}{prefix(l)}{slug}"/>' for l in langs) if len(langs) > 1 else ''
         rows.append(f'  <url>\n    <loc>{SITE}{prefix(lang)}{slug}</loc>{alt}\n  </url>')
     (ROOT / 'sitemap.xml').write_text(
