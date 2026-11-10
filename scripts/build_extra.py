@@ -233,6 +233,11 @@ def build_metiers():
                 SITEMAP.append((slug, alts, '0.6'))
 
         # Page d'accueil des métiers
+        hm = M.HUB_MORE[lang]
+        why = ''.join(f'<p>{esc(t)}</p>' for t in hm['why'])
+        base = ''.join(f'<li>{esc(t)}</li>' for t in hm['base'])
+        reco = ''.join(f'''        <article class="card advice hubreco" data-reveal style="--i:{i}"><h3><a href="{hub}{s}.html">{esc(cap(P[s]['name']))}</a></h3><p>{esc(P[s]['advice'])}</p></article>
+''' for i, s in enumerate(M.SLUGS))
         cards = ''.join(f'''        <a class="card tcard" href="{hub}{s}.html" data-reveal style="--i:{i}"><h2>{esc(cap(P[s]['name']))}</h2><p>{esc(P[s]['card'])}</p><span class="tcard__go">{esc(u['more'])} →</span></a>
 ''' for i, s in enumerate(M.SLUGS))
         main = '<main id="top" tabindex="-1">\n' + hero(
@@ -242,6 +247,30 @@ def build_metiers():
       <div class="tgrid" data-spotlight-group>
 {cards}      </div>
       <p class="tnote" data-reveal>{esc(u['hub_other'])} <a class="banner__link" href="{pre(lang)}devis.html">{esc(u['cta_quote'])} →</a></p>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>{esc(hm['why_h'])}</h2>
+      <div class="prose hubprose" data-reveal>{why}</div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>{esc(hm['base_h'])}</h2>
+      <ul class="checks hubchecks" data-reveal>{base}</ul>
+      <h2 class="tsec__h" data-reveal style="margin-top:56px;font-size:clamp(20px,2vw,26px)">{esc(hm['price_h'])}</h2>
+      <p class="tnote" data-reveal style="margin-top:14px">{esc(hm['price'])} <a class="banner__link" href="{pre(lang)}#offres">{esc(hm['price_link'])} →</a></p>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>{esc(hm['reco_h'])}</h2>
+      <div class="tgrid hubgrid" data-spotlight-group>
+{reco}      </div>
     </div>
   </section>
 
@@ -300,15 +329,43 @@ def build_blog():
         write(path.lstrip('/'), set_head(head0, 'fr', p['title'], p['desc'], path, {'fr': path}, ld, og_type='article', fallback=True) + main + tail)
         SITEMAP.append(('blog:' + p['slug'], None, '0.5'))
 
-    cards = ''.join(f'''        <a class="card tcard" href="/blog/{p['slug']}.html" data-reveal style="--i:{i}"><span class="tcard__meta">{esc(meta(p))}</span><h2>{esc(p['h1'])}</h2><p>{esc(p['card'])}</p><span class="tcard__go">Lire l’article →</span></a>
+    def sommaire(p):  # titres de section de l'article, pour donner un aperçu réel du contenu
+        heads = [re.sub(r'<[^>]+>', '', x).strip() for x in re.findall(r'<h2[^>]*>(.*?)</h2>', p['body'], re.S)]
+        return ''.join(f'<li>{esc(typo(x))}</li>' for x in heads[:5])
+    cards = ''.join(f'''        <a class="card tcard" href="/blog/{p['slug']}.html" data-reveal style="--i:{i}"><span class="tcard__meta">{esc(meta(p))}</span><h2>{esc(p['h1'])}</h2><p>{esc(p['card'])}</p><ul class="tcard__toc">{sommaire(p)}</ul><span class="tcard__go">Lire l’article →</span></a>
 ''' for i, p in enumerate(B.POSTS))
     h = B.HUB
+    intro = ''.join(f'<p>{esc(typo(t))}</p>' for t in h['intro'])
+    PF = M.P['fr']
+    trades = ''.join(f'''        <a class="card tcard" href="/site-internet/{s}.html" data-reveal style="--i:{i}"><h3>{esc(cap(PF[s]['name']))}</h3><p>{esc(PF[s]['card'])}</p><span class="tcard__go">Voir la page →</span></a>
+''' for i, s in enumerate(M.SLUGS))
     main = '<main id="top" tabindex="-1">\n' + hero([('DYRO WEB', '/'), ('Conseils', None)], h['eyebrow'], h['h1'], h['lead'], actions('fr'), '', 'fr') + f'''
   <section class="tsec">
     <div class="container">
-      <div class="tgrid" data-spotlight-group>
+      <div class="prose hubprose" data-reveal>{intro}</div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>{esc(h['posts_h'])}</h2>
+      <div class="tgrid" style="margin-top:26px" data-spotlight-group>
 {cards}      </div>
     </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>{esc(h['trades_h'])}</h2>
+      <p class="tnote" data-reveal style="margin-top:14px">{esc(typo(h['trades']))}</p>
+      <div class="tgrid" style="margin-top:26px" data-spotlight-group>
+{trades}      </div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+{cta_card('fr')}    </div>
   </section>
 </main>'''
     ld = {'@context': 'https://schema.org', '@graph': [

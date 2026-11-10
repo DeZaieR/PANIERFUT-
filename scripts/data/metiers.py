@@ -428,3 +428,65 @@ P['lb'] = {
           ('Wien setzt d’Produiten derbäi?', 'Dir, mat enger einfacher Interface, oder mir, mat der Maintenance.'),
           ('Sinn d’Bezuelunge sécher?', 'Jo, iwwer unerkannt Bezuelléisungen; d’Suen ginn direkt op Äre Kont.')]},
 }
+
+
+# Contenu complémentaire de la page d'accueil des métiers (site-internet/), ajouté le 10/11/2026 :
+# Google jugeait la page trop pauvre (« Explorée, actuellement non indexée »).
+# Les prix doivent rester identiques à la section Offres de l'accueil.
+HUB_MORE = {
+ 'fr': {
+  'why_h': 'Pourquoi un site pensé pour votre métier ?',
+  'why': ['Un visiteur décide en quelques secondes s’il reste sur votre site. Il cherche d’abord la réponse à sa question : la carte et les horaires d’un restaurant, les réalisations et la zone d’intervention d’un artisan, les biens et l’estimation d’une agence. Un site générique l’oblige à chercher ; un site pensé pour votre métier lui répond tout de suite.',
+          'C’est aussi ce que Google met en avant : des pages qui répondent précisément aux recherches de vos clients, dans leur langue. Au Luxembourg, un même client peut chercher en français, en allemand ou en anglais. Chaque page métier explique ce que vos clients attendent, ce que comprend votre site et la formule que nous recommandons.'],
+  'base_h': 'Ce que comprend chaque site DYRO WEB',
+  'base': ['Design sur mesure, adapté au mobile', 'Formulaire de contact ou prise de rendez-vous en ligne', 'Bases du référencement : titres, descriptions, vitesse, plan du site envoyé à Google', 'Aide pour votre fiche Google (Google Maps)', 'Français, allemand et anglais avec le Pack Pro, jusqu’à 5 langues avec le Pack Croissance', '2 tours de corrections inclus', 'Mise en ligne en 2 jours à 2 semaines selon la formule', 'Le site vous appartient une fois réglé : code, contenus et accès'],
+  'price_h': 'Combien coûte un site pour votre métier ?',
+  'price': 'Prix fixes, hors TVA : Landing page 990 €, Pack Pro 2 490 € (recommandé pour la plupart des métiers), Pack Croissance 4 490 €. Boutique en ligne et outils sur mesure dès 5 900 €. Le devis gratuit confirme le périmètre sous 48 h.',
+  'price_link': 'Voir le détail des offres',
+  'reco_h': 'Notre conseil, métier par métier',
+ },
+ 'de': {
+  'why_h': 'Warum eine Website, die zu Ihrer Branche passt?',
+  'why': ['Ein Besucher entscheidet in wenigen Sekunden, ob er auf Ihrer Website bleibt. Er sucht zuerst die Antwort auf seine Frage: Speisekarte und Öffnungszeiten eines Restaurants, Referenzen und Einsatzgebiet eines Handwerkers, Objekte und Bewertung einer Agentur. Eine allgemeine Website lässt ihn suchen; eine Website für Ihre Branche antwortet sofort.',
+          'Genau das bevorzugt auch Google: Seiten, die genau auf die Suchen Ihrer Kunden antworten, in deren Sprache. In Luxemburg sucht derselbe Kunde vielleicht auf Französisch, Deutsch oder Englisch. Jede Branchenseite erklärt, was Ihre Kunden erwarten, was Ihre Website enthält und welches Paket wir empfehlen.'],
+  'base_h': 'Was jede DYRO-WEB-Website enthält',
+  'base': ['Individuelles Design, für Mobilgeräte optimiert', 'Kontaktformular oder Online-Terminbuchung', 'Grundlagen der Suchmaschinenoptimierung: Titel, Beschreibungen, Geschwindigkeit, an Google gesendete Sitemap', 'Hilfe für Ihr Google-Unternehmensprofil (Google Maps)', 'Französisch, Deutsch und Englisch mit dem Pack Pro, bis zu 5 Sprachen mit dem Pack Croissance', '2 Korrekturrunden inklusive', 'Online in 2 Tagen bis 2 Wochen, je nach Paket', 'Die Website gehört Ihnen nach vollständiger Zahlung: Code, Inhalte und Zugänge'],
+  'price_h': 'Was kostet eine Website für Ihre Branche?',
+  'price': 'Festpreise, netto: Landingpage 990 €, Pack Pro 2.490 € (für die meisten Branchen empfohlen), Pack Croissance 4.490 €. Onlineshop und individuelle Tools ab 5.900 €. Das kostenlose Angebot bestätigt den Umfang innerhalb von 48 Stunden.',
+  'price_link': 'Alle Angebote ansehen',
+  'reco_h': 'Unsere Empfehlung, Branche für Branche',
+ },
+ 'en': {
+  'why_h': 'Why a website built for your trade?',
+  'why': ['A visitor decides in a few seconds whether to stay on your website. They look first for the answer to their question: a restaurant’s menu and opening hours, a tradesperson’s past work and service area, an agency’s listings and valuations. A generic website makes them search; a website built for your trade answers straight away.',
+          'It is also what Google favours: pages that answer your customers’ searches precisely, in their language. In Luxembourg, the same customer may search in French, German or English. Each trade page explains what your customers expect, what your website includes and which package we recommend.'],
+  'base_h': 'What every DYRO WEB website includes',
+  'base': ['Custom design, built for mobile', 'Contact form or online booking', 'SEO basics: titles, descriptions, speed, sitemap sent to Google', 'Help with your Google Business Profile (Google Maps)', 'French, German and English with the Pack Pro, up to 5 languages with the Pack Croissance', '2 rounds of revisions included', 'Online in 2 days to 2 weeks depending on the package', 'The website is yours once paid in full: code, content and access'],
+  'price_h': 'How much does a website for your trade cost?',
+  'price': 'Fixed prices, excluding VAT: Landing page €990, Pack Pro €2,490 (recommended for most trades), Pack Croissance €4,490. Online shops and custom tools from €5,900. The free quote confirms the scope within 48 hours.',
+  'price_link': 'See all packages',
+  'reco_h': 'Our advice, trade by trade',
+ },
+ 'pt': {
+  'why_h': 'Porquê um site pensado para a sua profissão?',
+  'why': ['Um visitante decide em poucos segundos se fica no seu site. Procura primeiro a resposta à sua pergunta: a ementa e o horário de um restaurante, os trabalhos e a zona de intervenção de um artesão, os imóveis e a avaliação de uma agência. Um site genérico obriga-o a procurar; um site pensado para a sua profissão responde de imediato.',
+          'É também o que o Google valoriza: páginas que respondem com precisão às pesquisas dos seus clientes, na língua deles. No Luxemburgo, o mesmo cliente pode pesquisar em francês, alemão ou inglês. Cada página por profissão explica o que os seus clientes esperam, o que o seu site inclui e a oferta que recomendamos.'],
+  'base_h': 'O que inclui cada site DYRO WEB',
+  'base': ['Design à medida, adaptado ao telemóvel', 'Formulário de contacto ou marcação online', 'Bases de SEO: títulos, descrições, velocidade, mapa do site enviado ao Google', 'Ajuda com o seu perfil Google (Google Maps)', 'Francês, alemão e inglês com o Pack Pro, até 5 línguas com o Pack Croissance', '2 rondas de correções incluídas', 'Online em 2 dias a 2 semanas, conforme a oferta', 'O site é seu depois de pago: código, conteúdos e acessos'],
+  'price_h': 'Quanto custa um site para a sua profissão?',
+  'price': 'Preços fixos, sem IVA: Landing page 990 €, Pack Pro 2 490 € (recomendado para a maioria das profissões), Pack Croissance 4 490 €. Loja online e ferramentas à medida a partir de 5 900 €. O orçamento grátis confirma o âmbito em 48 horas.',
+  'price_link': 'Ver todas as ofertas',
+  'reco_h': 'O nosso conselho, profissão a profissão',
+ },
+ 'lb': {
+  'why_h': 'Firwat eng Websäit, déi op Äre Beruff passt?',
+  'why': ['E Visiteur decidéiert an e puer Sekonnen, ob en op Ärer Websäit bleift. E sicht als éischt d’Äntwert op seng Fro: d’Kaart an d’Öffnungszäite vun engem Restaurant, d’Referenzen an d’Gebitt vun engem Handwierker, d’Objeten an d’Schätzung vun enger Agence. Eng allgemeng Websäit léisst e sichen; eng Websäit fir Äre Beruff äntwert direkt.',
+          'Dat ass och dat, wat Google bevirdeelegt: Säiten, déi genee op d’Recherche vun Äre Clienten äntweren, an hirer Sprooch. Zu Lëtzebuerg sicht deeselwechte Client vläicht op Franséisch, Däitsch oder Englesch. All Beruffssäit erkläert, wat Är Clienten erwaarden, wat Är Websäit enthält a wéi eng Formule mir recommandéieren.'],
+  'base_h': 'Wat all DYRO-WEB-Websäit enthält',
+  'base': ['Individuellen Design, fir den Handy optiméiert', 'Kontaktformular oder Online-Rendez-vous', 'Basis vum Référencement: Titelen, Beschreiwungen, Vitesse, Plang vum Site u Google geschéckt', 'Hëllef fir Äre Google-Profil (Google Maps)', 'Franséisch, Däitsch an Englesch mam Pack Pro, bis zu 5 Sproochen mam Pack Croissance', '2 Korrekturronnen abegraff', 'Online an 2 Deeg bis 2 Wochen, jee no Formule', 'D’Websäit gehéiert Iech, soubal se bezuelt ass: Code, Inhalter an Zougäng'],
+  'price_h': 'Wat kascht eng Websäit fir Äre Beruff?',
+  'price': 'Fix Präisser, ouni TVA: Landing Page 990 €, Pack Pro 2.490 € (fir déi meescht Beruffer recommandéiert), Pack Croissance 4.490 €. Online-Buttek an Tools op Mooss ab 5.900 €. Déi gratis Offer confirméiert den Ëmfang bannent 48 Stonnen.',
+  'price_link': 'All Offeren kucken',
+  'reco_h': 'Eise Rot, Beruff fir Beruff',
+ },
+}

@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=18">
-<link rel="stylesheet" href="/assets/css/style.css?v=18">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=19">
+<link rel="stylesheet" href="/assets/css/style.css?v=19">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=18';
+      el.src = '/assets/js/i18n.js?v=19';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -255,6 +255,35 @@
 
   <section class="tsec">
     <div class="container">
+      <h2 class="tsec__h" data-reveal>Porquê um site pensado para a sua profissão?</h2>
+      <div class="prose hubprose" data-reveal><p>Um visitante decide em poucos segundos se fica no seu site. Procura primeiro a resposta à sua pergunta: a ementa e o horário de um restaurante, os trabalhos e a zona de intervenção de um artesão, os imóveis e a avaliação de uma agência. Um site genérico obriga-o a procurar; um site pensado para a sua profissão responde de imediato.</p><p>É também o que o Google valoriza: páginas que respondem com precisão às pesquisas dos seus clientes, na língua deles. No Luxemburgo, o mesmo cliente pode pesquisar em francês, alemão ou inglês. Cada página por profissão explica o que os seus clientes esperam, o que o seu site inclui e a oferta que recomendamos.</p></div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>O que inclui cada site DYRO WEB</h2>
+      <ul class="checks hubchecks" data-reveal><li>Design à medida, adaptado ao telemóvel</li><li>Formulário de contacto ou marcação online</li><li>Bases de SEO: títulos, descrições, velocidade, mapa do site enviado ao Google</li><li>Ajuda com o seu perfil Google (Google Maps)</li><li>Francês, alemão e inglês com o Pack Pro, até 5 línguas com o Pack Croissance</li><li>2 rondas de correções incluídas</li><li>Online em 2 dias a 2 semanas, conforme a oferta</li><li>O site é seu depois de pago: código, conteúdos e acessos</li></ul>
+      <h2 class="tsec__h" data-reveal style="margin-top:56px;font-size:clamp(20px,2vw,26px)">Quanto custa um site para a sua profissão?</h2>
+      <p class="tnote" data-reveal style="margin-top:14px">Preços fixos, sem IVA: Landing page 990 €, Pack Pro 2 490 € (recomendado para a maioria das profissões), Pack Croissance 4 490 €. Loja online e ferramentas à medida a partir de 5 900 €. O orçamento grátis confirma o âmbito em 48 horas. <a class="banner__link" href="/pt/#offres">Ver todas as ofertas →</a></p>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>O nosso conselho, profissão a profissão</h2>
+      <div class="tgrid hubgrid" data-spotlight-group>
+        <article class="card advice hubreco" data-reveal style="--i:0"><h3><a href="/pt/site-internet/agence-immobiliere.html">Agência imobiliária</a></h3><p>O Pack Pro (2 490 € + IVA) para uma agência local, ou o Pack Croissance (4 490 € + IVA) para ser visível em cada localidade onde tem imóveis.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:1"><h3><a href="/pt/site-internet/artisan.html">Artesão</a></h3><p>O Pack Pro (2 490 € + IVA) para apresentar as suas especialidades e os seus trabalhos, ou a Landing page (990 € + IVA) para começar já com uma única página.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:2"><h3><a href="/pt/site-internet/restaurant.html">Restaurante</a></h3><p>O Pack Pro (2 490 € + IVA), com reservas online e a sua ementa em três línguas, ou a Landing page (990 € + IVA) se uma página chegar.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:3"><h3><a href="/pt/site-internet/cabinet-medical.html">Consultório médico</a></h3><p>O Pack Pro (2 490 € + IVA) em francês, alemão e inglês, com marcação online, ou o Pack Croissance (4 490 € + IVA) para acrescentar o português e o luxemburguês.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:4"><h3><a href="/pt/site-internet/commerce.html">Loja e comércio</a></h3><p>O Pack Pro (2 490 € + IVA) para começar, uma loja online à medida (a partir de 5 900 € + IVA) para vender em todo o Luxemburgo.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
       <div class="card tcta" data-reveal>
         <div><h2>Um orçamento claro, em 48 horas.</h2><p>Preços sem IVA. O orçamento grátis fixa o preço exato. Primeira resposta em 24 horas, orçamento em 48 horas.</p></div>
         <div class="tcta__actions"><a class="btn btn--chrome btn--lg" href="/pt/devis.html"><span>Pedir orçamento grátis</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn btn--ghost btn--lg" href="https://cal.com/dyroweb/appel-web" data-cal="dyroweb/appel-web" target="_blank" rel="noopener" data-ev="book"><span>Marcar uma chamada de 20 min</span></a></div>
@@ -320,6 +349,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=18" defer></script>
+<script src="/assets/js/main.js?v=19" defer></script>
 </body>
 </html>

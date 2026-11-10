@@ -7,6 +7,12 @@ HUB = {
     'eyebrow': 'Conseils',
     'h1': 'Les bonnes questions avant de créer votre site.',
     'lead': 'Prix, Google, langues : ce que nous expliquons chaque semaine aux entreprises du Luxembourg, écrit simplement.',
+    # Ajouté le 10/11/2026 : Google jugeait la page trop pauvre (« Explorée, actuellement non indexée »)
+    'intro': ['Créer ou refaire un site, c’est une série de décisions : combien investir, quelles langues proposer, comment être trouvé sur Google, ce qu’il faut confier à une agence et ce qu’il vaut mieux garder en main. Au Luxembourg, où vos clients parlent souvent trois ou quatre langues, ces choix pèsent plus qu’ailleurs.',
+              'Ces articles répondent aux questions que nous posent les artisans, commerçants, restaurateurs et agences immobilières, sans jargon et avec des exemples concrets. Chacun se lit en quelques minutes et renvoie vers les outils gratuits du site : l’audit de votre site actuel et l’estimation de prix en ligne.'],
+    'posts_h': 'Les articles',
+    'trades_h': 'Conseils par métier',
+    'trades': 'Un restaurant, un artisan et une agence immobilière n’ont pas besoin du même site. Pour chaque métier : ce que vos clients cherchent, ce que doit contenir votre site et la formule que nous recommandons.',
 }
 
 POSTS = [

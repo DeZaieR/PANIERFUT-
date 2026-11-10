@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=18">
-<link rel="stylesheet" href="/assets/css/style.css?v=18">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=19">
+<link rel="stylesheet" href="/assets/css/style.css?v=19">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=18';
+      el.src = '/assets/js/i18n.js?v=19';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -255,6 +255,35 @@
 
   <section class="tsec">
     <div class="container">
+      <h2 class="tsec__h" data-reveal>Why a website built for your trade?</h2>
+      <div class="prose hubprose" data-reveal><p>A visitor decides in a few seconds whether to stay on your website. They look first for the answer to their question: a restaurant’s menu and opening hours, a tradesperson’s past work and service area, an agency’s listings and valuations. A generic website makes them search; a website built for your trade answers straight away.</p><p>It is also what Google favours: pages that answer your customers’ searches precisely, in their language. In Luxembourg, the same customer may search in French, German or English. Each trade page explains what your customers expect, what your website includes and which package we recommend.</p></div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>What every DYRO WEB website includes</h2>
+      <ul class="checks hubchecks" data-reveal><li>Custom design, built for mobile</li><li>Contact form or online booking</li><li>SEO basics: titles, descriptions, speed, sitemap sent to Google</li><li>Help with your Google Business Profile (Google Maps)</li><li>French, German and English with the Pack Pro, up to 5 languages with the Pack Croissance</li><li>2 rounds of revisions included</li><li>Online in 2 days to 2 weeks depending on the package</li><li>The website is yours once paid in full: code, content and access</li></ul>
+      <h2 class="tsec__h" data-reveal style="margin-top:56px;font-size:clamp(20px,2vw,26px)">How much does a website for your trade cost?</h2>
+      <p class="tnote" data-reveal style="margin-top:14px">Fixed prices, excluding VAT: Landing page €990, Pack Pro €2,490 (recommended for most trades), Pack Croissance €4,490. Online shops and custom tools from €5,900. The free quote confirms the scope within 48 hours. <a class="banner__link" href="/en/#offres">See all packages →</a></p>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>Our advice, trade by trade</h2>
+      <div class="tgrid hubgrid" data-spotlight-group>
+        <article class="card advice hubreco" data-reveal style="--i:0"><h3><a href="/en/site-internet/agence-immobiliere.html">Real estate agency</a></h3><p>The Pack Pro (€2,490 excl. VAT) for a local agency, or the Pack Croissance (€4,490 excl. VAT) to be visible in every town where you have listings.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:1"><h3><a href="/en/site-internet/artisan.html">Tradesperson</a></h3><p>The Pack Pro (€2,490 excl. VAT) to present your trades and your work, or the Landing page (€990 excl. VAT) to start right away with a single page.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:2"><h3><a href="/en/site-internet/restaurant.html">Restaurant</a></h3><p>The Pack Pro (€2,490 excl. VAT), with online booking and your menu in three languages, or the Landing page (€990 excl. VAT) if one page is enough.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:3"><h3><a href="/en/site-internet/cabinet-medical.html">Medical practice</a></h3><p>The Pack Pro (€2,490 excl. VAT) in French, German and English, with online appointments, or the Pack Croissance (€4,490 excl. VAT) to add Portuguese and Luxembourgish.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:4"><h3><a href="/en/site-internet/commerce.html">Shop</a></h3><p>The Pack Pro (€2,490 excl. VAT) to start, a custom online shop (from €5,900 excl. VAT) to sell across Luxembourg.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
       <div class="card tcta" data-reveal>
         <div><h2>A clear quote, within 48 hours.</h2><p>Prices excl. VAT. The free quote sets the exact price. First reply within 24 hours, quote within 48 hours.</p></div>
         <div class="tcta__actions"><a class="btn btn--chrome btn--lg" href="/en/devis.html"><span>Request a free quote</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn btn--ghost btn--lg" href="https://cal.com/dyroweb/appel-web" data-cal="dyroweb/appel-web" target="_blank" rel="noopener" data-ev="book"><span>Book a 20-min call</span></a></div>
@@ -320,6 +349,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=18" defer></script>
+<script src="/assets/js/main.js?v=19" defer></script>
 </body>
 </html>

@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/fonts.css?v=18">
-<link rel="stylesheet" href="/assets/css/style.css?v=18">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=19">
+<link rel="stylesheet" href="/assets/css/style.css?v=19">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -55,7 +55,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=18';
+      el.src = '/assets/js/i18n.js?v=19';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -255,6 +255,35 @@
 
   <section class="tsec">
     <div class="container">
+      <h2 class="tsec__h" data-reveal>Pourquoi un site pensé pour votre métier ?</h2>
+      <div class="prose hubprose" data-reveal><p>Un visiteur décide en quelques secondes s’il reste sur votre site. Il cherche d’abord la réponse à sa question : la carte et les horaires d’un restaurant, les réalisations et la zone d’intervention d’un artisan, les biens et l’estimation d’une agence. Un site générique l’oblige à chercher ; un site pensé pour votre métier lui répond tout de suite.</p><p>C’est aussi ce que Google met en avant : des pages qui répondent précisément aux recherches de vos clients, dans leur langue. Au Luxembourg, un même client peut chercher en français, en allemand ou en anglais. Chaque page métier explique ce que vos clients attendent, ce que comprend votre site et la formule que nous recommandons.</p></div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>Ce que comprend chaque site DYRO WEB</h2>
+      <ul class="checks hubchecks" data-reveal><li>Design sur mesure, adapté au mobile</li><li>Formulaire de contact ou prise de rendez-vous en ligne</li><li>Bases du référencement : titres, descriptions, vitesse, plan du site envoyé à Google</li><li>Aide pour votre fiche Google (Google Maps)</li><li>Français, allemand et anglais avec le Pack Pro, jusqu’à 5 langues avec le Pack Croissance</li><li>2 tours de corrections inclus</li><li>Mise en ligne en 2 jours à 2 semaines selon la formule</li><li>Le site vous appartient une fois réglé : code, contenus et accès</li></ul>
+      <h2 class="tsec__h" data-reveal style="margin-top:56px;font-size:clamp(20px,2vw,26px)">Combien coûte un site pour votre métier ?</h2>
+      <p class="tnote" data-reveal style="margin-top:14px">Prix fixes, hors TVA : Landing page 990 €, Pack Pro 2 490 € (recommandé pour la plupart des métiers), Pack Croissance 4 490 €. Boutique en ligne et outils sur mesure dès 5 900 €. Le devis gratuit confirme le périmètre sous 48 h. <a class="banner__link" href="/#offres">Voir le détail des offres →</a></p>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
+      <h2 class="tsec__h" data-reveal>Notre conseil, métier par métier</h2>
+      <div class="tgrid hubgrid" data-spotlight-group>
+        <article class="card advice hubreco" data-reveal style="--i:0"><h3><a href="/site-internet/agence-immobiliere.html">Agence immobilière</a></h3><p>Le Pack Pro (2 490 € HT) pour une agence locale, ou le Pack Croissance (4 490 € HT) pour être visible dans chaque commune où vous avez des mandats.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:1"><h3><a href="/site-internet/artisan.html">Artisan</a></h3><p>Le Pack Pro (2 490 € HT) pour présenter vos métiers et vos réalisations, ou la Landing page (990 € HT) pour démarrer tout de suite avec une seule page.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:2"><h3><a href="/site-internet/restaurant.html">Restaurant</a></h3><p>Le Pack Pro (2 490 € HT), avec réservation en ligne et votre carte en trois langues, ou la Landing page (990 € HT) si une seule page suffit.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:3"><h3><a href="/site-internet/cabinet-medical.html">Cabinet médical et paramédical</a></h3><p>Le Pack Pro (2 490 € HT) en français, allemand et anglais, avec prise de rendez-vous en ligne, ou le Pack Croissance (4 490 € HT) pour ajouter le portugais et le luxembourgeois.</p></article>
+        <article class="card advice hubreco" data-reveal style="--i:4"><h3><a href="/site-internet/commerce.html">Commerce et boutique</a></h3><p>Le Pack Pro (2 490 € HT) pour démarrer, une boutique en ligne sur mesure (dès 5 900 € HT) pour vendre partout au Luxembourg.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsec">
+    <div class="container">
       <div class="card tcta" data-reveal>
         <div><h2>Un devis clair, sous 48 h.</h2><p>Prix hors TVA. Le devis gratuit fixe le prix exact. Première réponse sous 24 h, devis sous 48 h.</p></div>
         <div class="tcta__actions"><a class="btn btn--chrome btn--lg" href="/devis.html"><span>Demander un devis gratuit</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn btn--ghost btn--lg" href="https://cal.com/dyroweb/appel-web" data-cal="dyroweb/appel-web" target="_blank" rel="noopener" data-ev="book"><span>Réserver un appel de 20 min</span></a></div>
@@ -320,6 +349,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=18" defer></script>
+<script src="/assets/js/main.js?v=19" defer></script>
 </body>
 </html>
