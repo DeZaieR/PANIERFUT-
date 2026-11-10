@@ -17,20 +17,19 @@ POSTS = [
   'h1': 'Combien coûte un site internet au Luxembourg en 2026 ?',
   'desc': 'Landing page, site vitrine, multilingue ou boutique : les prix d’un site internet au Luxembourg, ce qui les fait varier et les coûts à prévoir après la mise en ligne.',
   'card': 'Les fourchettes de prix, ce qui les fait varier, les coûts après la mise en ligne et l’aide de l’État de 70 %.',
-  'lead': 'Réponse courte : de 1 290 € HT pour une page unique à 6 900 € HT pour un site complet en cinq langues, et jusqu’à 70 % remboursés par l’État pour les projets éligibles. Voici ce qui fait la différence, pour que vous sachiez quoi demander.',
+  'lead': 'Réponse courte : de 990 € HT pour une page unique à 4 490 € HT pour un site complet en cinq langues, chez DYRO WEB. Voici ce qui fait la différence, pour que vous sachiez quoi demander.',
   'body': '''
 <h2>Les prix en bref</h2>
 <p>Chez DYRO WEB, les prix sont affichés. Ils donnent un bon repère du marché pour un site fait sur mesure par une agence :</p>
 <div class="table-wrap"><table>
-<thead><tr><th>Type de site</th><th>Pour qui</th><th>Prix (HT)</th><th>Après aide SME Packages*</th></tr></thead>
+<thead><tr><th>Type de site</th><th>Pour qui</th><th>Prix (HT)</th></tr></thead>
 <tbody>
-<tr><td>Landing page (une page)</td><td>Démarrer vite, sans dossier d’aide</td><td>1 290 €</td><td>Non éligible (moins de 3 000 €)</td></tr>
-<tr><td>Pack Pro (5 à 7 pages, FR, DE et EN)</td><td>La plupart des PME et indépendants</td><td>3 900 €</td><td>1 170 €</td></tr>
-<tr><td>Pack Croissance (jusqu’à 5 langues, SEO local avancé)</td><td>Viser tout le marché luxembourgeois</td><td>6 900 €</td><td>2 070 €</td></tr>
-<tr><td>Sur mesure et boutique en ligne</td><td>Vendre en ligne, outils métier</td><td>9 900 à 25 000 €</td><td>2 970 à 7 500 €</td></tr>
-<tr><td>Maintenance et hébergement</td><td>Garder le site à jour et en ligne</td><td>49 à 199 € par mois</td><td>—</td></tr>
+<tr><td>Landing page (une page)</td><td>Démarrer vite, lancer une offre</td><td>990 €</td></tr>
+<tr><td>Pack Pro (5 à 7 pages, FR, DE et EN)</td><td>La plupart des PME et indépendants</td><td>2 490 €</td></tr>
+<tr><td>Pack Croissance (jusqu’à 5 langues, SEO local avancé)</td><td>Viser tout le marché luxembourgeois</td><td>4 490 €</td></tr>
+<tr><td>Sur mesure et boutique en ligne</td><td>Vendre en ligne, outils métier</td><td>dès 5 900 €</td></tr>
+<tr><td>Maintenance et hébergement</td><td>Garder le site à jour et en ligne</td><td>49 à 199 € par mois</td></tr>
 </tbody></table></div>
-<p>* Montant restant à votre charge si votre dossier est accepté : l’aide est accordée par l’État, pas par l’agence, et n’est jamais garantie. Détails plus bas.</p>
 <p>La TVA luxembourgeoise de 17 % s’ajoute à ces montants.</p>
 
 <h2>Ce qui fait varier le prix</h2>
@@ -61,8 +60,8 @@ POSTS = [
 </ul>
 
 <h2>Une aide de l’État de 70 % pour les projets digitaux</h2>
-<p>Le programme <strong>SME Packages – Digital</strong> du ministère de l’Économie prend en charge 70 % des coûts éligibles d’un projet digital compris entre 3 000 et 25 000 € HT. Il s’adresse aux PME qui ont une autorisation d’établissement et leur siège au Luxembourg.</p>
-<p>La première étape est un échange avec la House of Entrepreneurship de la Chambre de Commerce, ou avec la Chambre des Métiers pour les artisans. L’aide est versée après le paiement de la facture finale. Renseignez-vous avant de signer un devis : un projet déjà commencé n’est plus éligible. Chez DYRO WEB, le Pack Pro et le Pack Croissance sont pensés pour ce programme, et nous préparons le dossier avec vous. Les conditions exactes sont sur <a href="https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html" target="_blank" rel="noopener">Guichet.lu</a>.</p>
+<p>Le programme <strong>SME Packages – Digital</strong> du ministère de l’Économie prend en charge 70 % des coûts éligibles d’un projet digital compris entre 3 000 et 25 000 € HT. Il s’adresse aux PME qui ont une autorisation d’établissement et leur siège au Luxembourg. Le devis doit venir d’un prestataire établi depuis au moins un an.</p>
+<p>La première étape est un échange avec la House of Entrepreneurship de la Chambre de Commerce, ou avec la Chambre des Métiers pour les artisans. L’aide est versée après le paiement de la facture finale. Renseignez-vous avant de signer un devis : un projet déjà commencé n’est plus éligible. Les conditions exactes sont sur <a href="https://guichet.public.lu/fr/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html" target="_blank" rel="noopener">Guichet.lu</a>.</p>
 
 <h2>Comment éviter les mauvaises surprises</h2>
 <ul>
@@ -173,7 +172,7 @@ POSTS = [
 <p>Un drapeau désigne un pays, pas une langue. Au Luxembourg, les codes FR, DE, EN, PT et LU sont plus clairs pour tout le monde.</p>
 
 <h2>Combien coûte une langue de plus ?</h2>
-<p>Chaque langue ajoute une traduction, une relecture, la mise en page et le référencement de chaque page. Chez DYRO WEB, le Pack Pro inclut le français, l’allemand et l’anglais ; le Pack Croissance couvre jusqu’à cinq langues, pour 6 900 € HT. Vous pouvez aussi commencer avec deux langues et en ajouter plus tard, si le site est prévu pour dès le départ. Détails dans notre article sur le <a href="/blog/cout-site-internet-luxembourg.html">prix d’un site internet</a>.</p>
+<p>Chaque langue ajoute une traduction, une relecture, la mise en page et le référencement de chaque page. Chez DYRO WEB, le Pack Pro inclut le français, l’allemand et l’anglais ; le Pack Croissance couvre jusqu’à cinq langues, pour 4 490 € HT. Vous pouvez aussi commencer avec deux langues et en ajouter plus tard, si le site est prévu pour dès le départ. Détails dans notre article sur le <a href="/blog/cout-site-internet-luxembourg.html">prix d’un site internet</a>.</p>
 <div class="callout"><p>Vous hésitez sur les langues de votre site ? Décrivez vos clients : nous vous conseillons, avec un devis gratuit sous 48 h.</p><a class="btn btn--chrome" href="__DEVIS__">Demander un devis gratuit</a></div>
 ''',
  },

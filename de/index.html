@@ -33,7 +33,7 @@
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/fonts.css?v=6">
-<link rel="stylesheet" href="/assets/css/style.css?v=17">
+<link rel="stylesheet" href="/assets/css/style.css?v=18">
 <!-- analytics:start -->
 <!-- Mesure d'audience maison, sans cookies : code en bas de assets/js/main.js, serveur dans api/_stats.php.
      Tableau de bord : https://dyrostudios.com/stats/ (les deux sites). -->
@@ -58,7 +58,7 @@
     if (lang !== 'fr' && !window.DYRO_I18N) {
       if (lang !== page) r.classList.add('i18n-wait');
       var el = document.createElement('script');
-      el.src = '/assets/js/i18n.js?v=17';
+      el.src = '/assets/js/i18n.js?v=18';
       el.id = 'dyro-i18n';
       document.head.appendChild(el);
       setTimeout(function () { r.classList.remove('i18n-wait'); }, 3000);
@@ -70,97 +70,100 @@
 </script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "DYRO WEB",
-  "url": "https://dyroweb.online/",
-  "sameAs": ["https://www.instagram.com/dyroweb/", "https://www.linkedin.com/showcase/dyro-web/"],
-  "logo": "https://dyroweb.online/assets/img/apple-touch-icon.png",
-  "image": "https://dyroweb.online/assets/img/og-image.jpg",
-  "description": "Création de sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.",
+ "@context": "https://schema.org",
+ "@type": "ProfessionalService",
+ "name": "DYRO WEB",
+ "url": "https://dyroweb.online/",
+ "sameAs": [
+  "https://www.instagram.com/dyroweb/",
+  "https://www.linkedin.com/showcase/dyro-web/"
+ ],
+ "logo": "https://dyroweb.online/assets/img/apple-touch-icon.png",
+ "image": "https://dyroweb.online/assets/img/og-image.jpg",
+ "description": "Création de sites vitrines, landing pages et boutiques en ligne pour les entreprises du Luxembourg, en français, allemand, anglais, portugais et luxembourgeois.",
+ "email": "contact@dyroweb.online",
+ "telephone": "+352 691 349 632",
+ "address": {
+  "@type": "PostalAddress",
+  "addressCountry": "LU"
+ },
+ "areaServed": [
+  {
+   "@type": "Country",
+   "name": "Luxembourg"
+  },
+  {
+   "@type": "Place",
+   "name": "Grande Région"
+  }
+ ],
+ "priceRange": "€€",
+ "contactPoint": {
+  "@type": "ContactPoint",
+  "contactType": "sales",
   "email": "contact@dyroweb.online",
   "telephone": "+352 691 349 632",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "LU"
-  },
-  "areaServed": [
-    {
-      "@type": "Country",
-      "name": "Luxembourg"
-    },
-    {
-      "@type": "Place",
-      "name": "Grande Région"
-    }
-  ],
-  "priceRange": "€€",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "contact@dyroweb.online",
-    "telephone": "+352 691 349 632",
-    "availableLanguage": [
-      "French",
-      "German",
-      "English",
-      "Portuguese",
-      "Luxembourgish"
-    ]
-  },
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "name": "Landing page",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR",
-        "price": 1290,
-        "valueAddedTaxIncluded": false
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Pack Pro",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR",
-        "price": 3900,
-        "valueAddedTaxIncluded": false
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Pack Croissance",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR",
-        "price": 6900,
-        "valueAddedTaxIncluded": false
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Sur mesure et e-commerce",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR",
-        "minPrice": 9900,
-        "valueAddedTaxIncluded": false,
-        "maxPrice": 25000
-      }
-    },
-    {
-      "@type": "Offer",
-      "name": "Assistant IA",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "EUR",
-        "price": 4900,
-        "valueAddedTaxIncluded": false
-      }
-    }
+  "availableLanguage": [
+   "French",
+   "German",
+   "English",
+   "Portuguese",
+   "Luxembourgish"
   ]
+ },
+ "makesOffer": [
+  {
+   "@type": "Offer",
+   "name": "Landing page",
+   "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "price": 1290,
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "Pack Pro",
+   "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "price": 3900,
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "Pack Croissance",
+   "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "price": 6900,
+    "valueAddedTaxIncluded": false
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "Sur mesure et e-commerce",
+   "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "minPrice": 9900,
+    "valueAddedTaxIncluded": false,
+    "maxPrice": 25000
+   }
+  },
+  {
+   "@type": "Offer",
+   "name": "Assistant IA",
+   "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "price": 4900,
+    "valueAddedTaxIncluded": false
+   }
+  }
+ ]
 }
 </script>
 <script type="application/ld+json" id="ld-faq">
@@ -173,7 +176,7 @@
    "name": "Wie lange dauert die Erstellung meiner Website?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Mit einer SME-Packages-Förderung startet das Projekt nach Genehmigung Ihres Antrags. Individuelle Projekte werden im Angebot geplant."
+    "text": "Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant."
    }
   },
   {
@@ -197,15 +200,7 @@
    "name": "Wie läuft die Zahlung ab?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Bei Unterzeichnung wird eine Anzahlung von 30 % fällig, der Restbetrag bei Lieferung, zahlbar innerhalb von 15 Tagen. Mit einer SME-Packages-Förderung bezahlen Sie die Rechnung, danach erstattet Ihnen der Staat 70 % der förderfähigen Kosten."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Kann ich für meine Website eine staatliche Förderung erhalten?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Ja, wenn Ihr Unternehmen ein KMU mit Sitz in Luxemburg und Niederlassungsgenehmigung ist. Die SME Packages erstatten 70 % der förderfähigen Kosten von Projekten zwischen 3.000 und 25.000 € netto: Das gilt für Pack Pro und Pack Croissance, den KI-Assistenten und individuelle Projekte. Die Landingpage liegt unter dieser Schwelle und ist nicht förderfähig. Eine Voranalyse beim House of Entrepreneurship ist Pflicht, und das Projekt startet erst nach Genehmigung Ihres Antrags: Wir begleiten Sie bei jedem Schritt."
+    "text": "Bei Unterzeichnung wird eine Anzahlung von 30 % fällig, der Restbetrag bei Lieferung, zahlbar innerhalb von 15 Tagen."
    }
   },
   {
@@ -528,7 +523,7 @@
           <div class="svc__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3.5h2.8l2.5 11.6a1.8 1.8 0 0 0 1.8 1.4h8.6a1.8 1.8 0 0 0 1.7-1.3L21.5 7.5H5.7" pathLength="1"/><path class="f" d="M5.7 7.5h15.8l-1.6 6.4a1.8 1.8 0 0 1-1.7 1.3H7.3z" pathLength="1"/><circle cx="9.5" cy="20.2" r="1.5" pathLength="1"/><circle cx="17.5" cy="20.2" r="1.5" pathLength="1"/></svg></div>
           <h3 data-i18n="svc.4.h">Onlineshop</h3>
           <p data-i18n="svc.4.p">Ein schneller Onlineshop, der sich im Alltag einfach verwalten lässt: Katalog, Online-Zahlung, Bestellverfolgung.</p>
-          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.4.tag">Ab 9.900 € netto</span><a href="#offres" class="svc__go" aria-label="Preis für Onlineshop ansehen" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+          <div class="svc__foot"><span class="tag tag--svc" data-i18n="svc.4.tag">Ab 5.900 € netto</span><a href="#offres" class="svc__go" aria-label="Preis für Onlineshop ansehen" data-i18n-attr="aria-label:svc.4.aria"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
         </article>
 
         <article class="card svc" data-tilt="5">
@@ -757,7 +752,7 @@
           <li class="card step">
             <span class="step__num" data-n="02">02</span>
             <h3 data-i18n="proc.2.h">Klares Angebot</h3>
-            <p data-i18n="proc.2.p">Ein Angebot mit drei Optionen, Nettopreisen und detailliertem Umfang. Eine Anzahlung von 30 % startet die Arbeit; mit der SME-Packages-Förderung beginnen wir nach Genehmigung Ihres Antrags.</p>
+            <p data-i18n="proc.2.p">Ein Angebot mit drei Optionen, Nettopreisen und detailliertem Umfang. Eine Anzahlung von 30 % startet die Arbeit.</p>
             <span class="step__tag" data-i18n="proc.2.tag">3 Optionen, keine Unklarheiten</span>
           </li>
           <li class="card step">
@@ -790,17 +785,16 @@
       <header class="section__head section__head--center">
         <p class="eyebrow" data-reveal data-i18n="price.eyebrow">Preise</p>
         <h2 class="section__title" id="pricing-title" data-split data-i18n="price.title">Klare Preise, netto ausgewiesen.</h2>
-        <p class="section__lead" data-reveal data-i18n="pk.lead">Festpreise. Pack Pro und Pack Croissance sind für die SME-Packages-Förderung ausgelegt: Der Staat kann Ihnen 70 % des Projekts erstatten.</p>
+        <p class="section__lead" data-reveal data-i18n="pk.lead">Festpreise, netto. Das Pack Pro passt zu den meisten KMU; das Pack Croissance zielt auf ganz Luxemburg.</p>
       </header>
 
       <div class="pricing__grid" data-stagger data-spotlight-group>
         <article class="card price">
           <header>
             <h3 data-i18n="price.1.h">Landingpage</h3>
-            <p class="price__for" data-i18n="price.1.for">Für einen schnellen Start, ohne Förderantrag.</p>
+            <p class="price__for" data-i18n="price.1.for">Für einen schnellen Start mit einer einzigen Seite.</p>
           </header>
-          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="1290">1 290</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
-          <p class="price__net price__net--none" data-i18n="pk.1.net">Unter 3.000 € netto: keine Förderung, sofortiger Start</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="990">990</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
           <ul class="price__list">
             <li data-i18n="price.1.time"><strong>Lieferung in 2 bis 3 Werktagen</strong></li>
             <li data-i18n="price.1.l1">Eine Seite, ein Ziel</li>
@@ -817,10 +811,9 @@
           <span class="badge" data-i18n="price.badge">Empfohlen</span>
           <header>
             <h3 data-i18n="price.2.h">Pack Pro</h3>
-            <p class="price__for" data-i18n="price.2.for">Die komplette Website eines KMU, staatlich förderfähig.</p>
+            <p class="price__for" data-i18n="price.2.for">Die komplette Website eines KMU, in drei Sprachen.</p>
           </header>
-          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="3900">3 900</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
-          <p class="price__net" data-i18n="pk.2.net"><strong>1.170 € netto</strong> nach Förderung*</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="2490">2 490</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
           <ul class="price__list">
             <li data-i18n="price.2.time"><strong>Lieferung in 3 bis 5 Werktagen</strong></li>
             <li data-i18n="pk.2.l1">5 bis 7 Seiten, individuelles Design</li>
@@ -829,7 +822,6 @@
             <li data-i18n="pk.2.l4">Online-Terminbuchung</li>
             <li data-i18n="price.l.form">Kontaktformular</li>
             <li data-i18n="price.l.rev">2 Korrekturschleifen</li>
-            <li data-i18n="pk.l.aid">Förderantrag gemeinsam vorbereitet</li>
             <li data-i18n="pk.l.gift">3 Monate Wartung gratis</li>
           </ul>
           <a href="/de/devis.html#pro" class="btn btn--chrome price__btn" data-magnetic="0.2"><span data-i18n="cta.quote">Angebot anfordern</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -840,8 +832,7 @@
             <h3 data-i18n="price.3.h">Pack Croissance</h3>
             <p class="price__for" data-i18n="price.3.for">Für den gesamten luxemburgischen Markt und mehr Kunden.</p>
           </header>
-          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="6900">6 900</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
-          <p class="price__net" data-i18n="pk.3.net"><strong>2.070 € netto</strong> nach Förderung*</p>
+          <p class="price__amount"><span class="price__pre" data-i18n="price.pre"></span><span class="price__n" data-count-to="4490">4 490</span><span class="price__cur" data-i18n="price.cur">€ netto</span></p>
           <ul class="price__list">
             <li data-i18n="price.3.time"><strong>Lieferung in 1 bis 2 Wochen</strong></li>
             <li data-i18n="price.3.l1">Bis zu 5 Sprachen: FR, DE, EN, PT, LU</li>
@@ -851,7 +842,6 @@
             <li data-i18n="pk.3.l5">KI-Visuals von Dyro Studios</li>
             <li data-i18n="pk.3.l6">Launch-Kampagne in den sozialen Netzwerken</li>
             <li data-i18n="price.l.rev">2 Korrekturschleifen</li>
-            <li data-i18n="pk.l.aid">Förderantrag gemeinsam vorbereitet</li>
             <li data-i18n="pk.l.gift">3 Monate Wartung gratis</li>
           </ul>
           <a href="/de/devis.html#premium" class="btn btn--ghost price__btn"><span data-i18n="cta.quote">Angebot anfordern</span><svg class="btn__arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -861,34 +851,19 @@
       <div class="pricing__extra pricing__extra--3" data-stagger>
         <a class="extra" href="/de/devis.html#ecommerce">
           <span class="extra__label" data-i18n="price.x1.label">Individuell und Onlineshop</span>
-          <span class="extra__val" data-i18n="price.x1.val">9.900 bis 25.000 € netto</span>
-          <span class="extra__note" data-i18n="price.x1.note">2.970 bis 7.500 € netto nach Förderung* · Shop, Branchen-Tools</span>
+          <span class="extra__val" data-i18n="price.x1.val">ab 5.900 € netto</span>
+          <span class="extra__note" data-i18n="price.x1.note">Onlineshop, Branchen-Tools · auf Anfrage</span>
         </a>
         <a class="extra" href="/de/devis.html#ia">
           <span class="extra__label" data-i18n="pk.ia.label">KI-Assistent</span>
-          <span class="extra__val" data-i18n="pk.ia.val">4.900 € netto</span>
-          <span class="extra__note" data-i18n="pk.ia.note">1.470 € netto nach Förderung* · antwortet Ihren Kunden rund um die Uhr auf Ihrer Website und WhatsApp, vereinbart Termine · Monatsabo laut Angebot</span>
+          <span class="extra__val" data-i18n="pk.ia.val">ab 1.990 € netto</span>
+          <span class="extra__note" data-i18n="pk.ia.note">Antwortet Ihren Kunden rund um die Uhr auf Ihrer Website und WhatsApp, vereinbart Termine · Monatsabo laut Angebot</span>
         </a>
         <div class="extra">
           <span class="extra__label" data-i18n="price.x2.label">Wartung &amp; Hosting</span>
           <span class="extra__val" data-i18n="price.x2.val">49 · 99 · 199 € netto / Monat</span>
           <span class="extra__note" data-i18n="price.x2.note">Essentiel, Pro, Croissance · 12 Monate Laufzeit · 3 Monate gratis mit den Packs</span>
         </div>
-      </div>
-
-      <div class="aid" id="aide" data-reveal>
-        <div class="aid__head">
-          <p class="eyebrow" data-i18n="aid.eyebrow">SME Packages</p>
-          <h3 class="aid__title" data-i18n="aid.title">Bis zu 70 % vom Staat erstattet</h3>
-          <p class="aid__lead" data-i18n="aid.lead">Das Wirtschaftsministerium erstattet KMU mit Sitz in Luxemburg 70 % der förderfähigen Kosten eines Digital- oder KI-Projekts zwischen 3.000 und 25.000 € netto.</p>
-        </div>
-        <ol class="aid__steps">
-          <li><strong data-i18n="aid.s1.h">Voranalyse</strong><span data-i18n="aid.s1.p">Ein verpflichtendes Gespräch mit dem House of Entrepreneurship oder, für Handwerksbetriebe, der Chambre des Métiers. Wir helfen Ihnen bei der Vorbereitung.</span></li>
-          <li><strong data-i18n="aid.s2.h">Angebot und Antrag</strong><span data-i18n="aid.s2.p">Wir erstellen das Angebot und begleiten Sie beim Förderantrag.</span></li>
-          <li><strong data-i18n="aid.s3.h">Umsetzung</strong><span data-i18n="aid.s3.p">Das Projekt startet erst nach Genehmigung Ihres Antrags, nie vorher: Ein bereits begonnenes Projekt ist nicht mehr förderfähig.</span></li>
-          <li><strong data-i18n="aid.s4.h">Erstattung</strong><span data-i18n="aid.s4.p">Sie bezahlen die Rechnung, danach zahlt Ihnen der Staat 70 % der förderfähigen Kosten.</span></li>
-        </ol>
-        <p class="aid__fine" data-i18n="aid.fine">* Ihr Eigenanteil, wenn Ihr Antrag genehmigt wird. Die Förderung gewährt das Wirtschaftsministerium, nicht DYRO WEB: Sie ist nicht garantiert. Sie zahlen zunächst den Gesamtpreis und die MwSt. und erhalten die Erstattung danach. Wird die Förderung abgelehnt, wird das Angebot kostenlos storniert. <a href="https://guichet.public.lu/de/entreprises/financement-aides/regime-sme-packages/soutien-pme/sme-packages-digital.html" target="_blank" rel="noopener">Bedingungen auf Guichet.lu</a></p>
       </div>
 
       <p class="pricing__note" data-reveal data-i18n="price.note">Nettopreise, zuzüglich 17 % luxemburgischer MwSt. Anzahlung von 30 % bei Unterzeichnung, Restbetrag bei Lieferung. Domain, Lizenzen und Bilddatenbanken werden separat berechnet. Produktionszeiten ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung; die Zeit für Ihre Korrekturdurchsicht kommt hinzu.</p>
@@ -906,7 +881,7 @@
       <div class="faq__list" data-stagger>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span data-i18n="faq.q1">Wie lange dauert die Erstellung meiner Website?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Mit einer SME-Packages-Förderung startet das Projekt nach Genehmigung Ihres Antrags. Individuelle Projekte werden im Angebot geplant.</p></div></div>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p data-i18n="faq.a1">Eine Landingpage liefern wir in 2 bis 3 Werktagen, das Pack Pro in 3 bis 5 Werktagen und das Pack Croissance in 1 bis 2 Wochen, ab Eingang Ihrer Inhalte (Texte, Fotos, Logo) und der Anzahlung. Die Zeit für Ihre Korrekturdurchsicht kommt hinzu. Individuelle Projekte werden im Angebot geplant.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span data-i18n="faq.q2">Gehört mir die Website wirklich?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -918,11 +893,7 @@
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span data-i18n="faq.q4">Wie läuft die Zahlung ab?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Bei Unterzeichnung wird eine Anzahlung von 30 % fällig, der Restbetrag bei Lieferung, zahlbar innerhalb von 15 Tagen. Mit einer SME-Packages-Förderung bezahlen Sie die Rechnung, danach erstattet Ihnen der Staat 70 % der förderfähigen Kosten.</p></div></div>
-        </div>
-        <div class="faq__item">
-          <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a11" id="faq-q11"><span data-i18n="faq.q11">Kann ich für meine Website eine staatliche Förderung erhalten?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
-          <div class="faq__a" id="faq-a11" role="region" aria-labelledby="faq-q11"><div><p data-i18n="faq.a11">Ja, wenn Ihr Unternehmen ein KMU mit Sitz in Luxemburg und Niederlassungsgenehmigung ist. Die SME Packages erstatten 70 % der förderfähigen Kosten von Projekten zwischen 3.000 und 25.000 € netto: Das gilt für Pack Pro und Pack Croissance, den KI-Assistenten und individuelle Projekte. Die Landingpage liegt unter dieser Schwelle und ist nicht förderfähig. Eine Voranalyse beim House of Entrepreneurship ist Pflicht, und das Projekt startet erst nach Genehmigung Ihres Antrags: Wir begleiten Sie bei jedem Schritt.</p></div></div>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p data-i18n="faq.a4">Bei Unterzeichnung wird eine Anzahlung von 30 % fällig, der Restbetrag bei Lieferung, zahlbar innerhalb von 15 Tagen.</p></div></div>
         </div>
         <div class="faq__item">
           <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span data-i18n="faq.q5">Wie viele Korrekturen sind inklusive?</span><span class="faq__icon" aria-hidden="true"></span></button></h3>
@@ -1075,6 +1046,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js?v=17" defer></script>
+<script src="/assets/js/main.js?v=18" defer></script>
 </body>
 </html>

@@ -43,15 +43,15 @@
     const startedAt = Date.now();
 
     // Grille de prix (HT) — identique à la section Offres.
-    // max === min : prix fixe. aid : éligible SME Packages (70 % remboursés, projet de 3 000 à 25 000 € HT).
+    // max === min : prix fixe ; max null : « dès ». aid : éligible SME Packages (aucune formule pour l’instant).
     const AID_RATE = 0.7;
     const ALL = ['fr', 'de', 'en', 'pt', 'lb'];
     const PLANS = {
-      landing: { min: 1290, max: 1290, name: 'price.1.h', incl: ['fr'] },
-      pro: { min: 3900, max: 3900, aid: true, name: 'price.2.h', incl: ['fr', 'de', 'en'] },
-      premium: { min: 6900, max: 6900, aid: true, name: 'price.3.h', incl: ALL },
-      ecommerce: { min: 9900, max: 25000, aid: true, name: 'price.x1.label', incl: ['fr', 'de', 'en'] },
-      ia: { min: 4900, max: 4900, aid: true, name: 'pk.ia.label', incl: ALL },
+      landing: { min: 990, max: 990, name: 'price.1.h', incl: ['fr'] },
+      pro: { min: 2490, max: 2490, name: 'price.2.h', incl: ['fr', 'de', 'en'] },
+      premium: { min: 4490, max: 4490, name: 'price.3.h', incl: ALL },
+      ecommerce: { min: 5900, max: null, name: 'price.x1.label', incl: ['fr', 'de', 'en'] },
+      ia: { min: 1990, max: null, name: 'pk.ia.label', incl: ALL },
       unsure: { name: 'dv.unsure' },
     };
     const AID = { yes: 'dv.a.yes', info: 'dv.a.info', no: 'dv.a.no' };

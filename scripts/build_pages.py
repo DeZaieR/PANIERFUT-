@@ -22,7 +22,7 @@ def relink(html):
 shared = relink(shared)
 footer = relink(footer)
 mbar = '<nav class="mbar"' + idx.split('<nav class="mbar"', 1)[1].split('</nav>', 1)[0] + '</nav>'
-V = '17'
+V = '18'
 BOOT = open(os.path.join(PARTIALS, 'boot.html')).read()
 ANALYTICS = '<!-- analytics:start -->\n' + open(os.path.join(PARTIALS, 'analytics.html')).read().rstrip('\n') + '\n<!-- analytics:end -->\n'
 BOOK = re.search(r'href="(https://cal\.com/[^"]+)" data-cal=', idx).group(1)  # lien de réservation (Cal.com), repris de l’accueil
@@ -279,14 +279,13 @@ devis = head('Demande de devis · DYRO WEB',
         <fieldset class="step-panel" data-step="1">
           <legend class="q-title" tabindex="-1" data-i18n="dv.q1">Quel type de site vous faut-il ?</legend>
           <div class="choice-grid" data-spotlight-group>
-{choice('landing', 'price.1.h', 'Landing page', 'price.1.for', 'Pour démarrer vite, sans dossier d’aide.', 'price.1.range', '1 290 € HT, prix fixe')}
-{choice('pro', 'price.2.h', 'Pack Pro', 'price.2.for', 'Le site complet d’une PME, éligible à l’aide de l’État.', 'price.2.range', '3 900 € HT · 1 170 € après aide*')}
-{choice('premium', 'price.3.h', 'Pack Croissance', 'price.3.for', 'Pour viser tout le Luxembourg et attirer plus de clients.', 'price.3.range', '6 900 € HT · 2 070 € après aide*')}
-{choice('ecommerce', 'price.x1.label', 'Sur mesure et e-commerce', 'pk.x1.for', 'Boutique en ligne ou outil métier, sur devis.', 'pk.x1.range', '9 900 à 25 000 € HT · 2 970 à 7 500 € après aide*')}
-{choice('ia', 'pk.ia.label', 'Assistant IA', 'pk.ia.for', 'Répond à vos clients 24 h/24 et prend les rendez-vous.', 'pk.ia.range', '4 900 € HT · 1 470 € après aide*')}
+{choice('landing', 'price.1.h', 'Landing page', 'price.1.for', 'Pour démarrer vite avec une seule page.', 'price.1.range', '990 € HT, prix fixe')}
+{choice('pro', 'price.2.h', 'Pack Pro', 'price.2.for', 'Le site complet d’une PME, en trois langues.', 'price.2.range', '2 490 € HT, prix fixe')}
+{choice('premium', 'price.3.h', 'Pack Croissance', 'price.3.for', 'Pour viser tout le Luxembourg et attirer plus de clients.', 'price.3.range', '4 490 € HT, prix fixe')}
+{choice('ecommerce', 'price.x1.label', 'Sur mesure et e-commerce', 'pk.x1.for', 'Boutique en ligne ou outil métier, sur devis.', 'pk.x1.range', 'dès 5 900 € HT, sur devis')}
+{choice('ia', 'pk.ia.label', 'Assistant IA', 'pk.ia.for', 'Répond à vos clients 24 h/24 et prend les rendez-vous.', 'pk.ia.range', 'dès 1 990 € HT + abonnement mensuel')}
 {choice('unsure', 'dv.unsure', 'Je ne sais pas encore', 'dv.unsure.d', 'Nous vous conseillons la formule adaptée.')}
           </div>
-          <p class="q-hint" data-i18n="dv.aid.hint">* Montant restant à votre charge si votre dossier SME Packages est accepté : l’État rembourse 70 % des coûts éligibles des projets de 3 000 à 25 000 € HT.</p>
           <p class="field-error" data-error="type" aria-live="polite"></p>
         </fieldset>
 
@@ -326,12 +325,6 @@ devis = head('Demande de devis · DYRO WEB',
             {chip('deadline', 'soon', 'dv.d.soon', 'D’ici 1 à 2 mois')}
             {chip('deadline', 'later', 'dv.d.later', 'Dans 3 mois ou plus')}
             {chip('deadline', 'none', 'dv.d.none', 'Pas de date fixe')}
-          </div>
-          <p class="q-sub" data-i18n="dv.q3d">Aide de l’État (SME Packages)</p>
-          <div class="chips" role="radiogroup" aria-label="Aide de l’État (SME Packages)" data-i18n-attr="aria-label:dv.q3d">
-            {chip('aid', 'yes', 'dv.a.yes', 'Oui, je veux la demander')}
-            {chip('aid', 'info', 'dv.a.info', 'J’aimerais en savoir plus')}
-            {chip('aid', 'no', 'dv.a.no', 'Non')}
           </div>
           <div class="field field--site">
             <label for="q-site"><span data-i18n="dv.site">Adresse de votre site actuel</span> <span class="opt">(<span data-i18n="dv.optional">facultatif</span>)</span></label>
