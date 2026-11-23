@@ -7,10 +7,22 @@
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
+  /* Une seule action dorée par écran : tant que les boutons du hero sont visibles,
+     ceux de l'en-tête et de la barre du bas restent en contour (voir site.css). */
+  function pastHero() {
+    const root = document.documentElement;
+    const cta = $('[data-hero-actions]');
+    if (!cta || !('IntersectionObserver' in window)) { root.classList.add('is-past-hero'); return; }
+    new IntersectionObserver(([e]) => {
+      root.classList.toggle('is-past-hero', !e.isIntersecting && e.boundingClientRect.top < 0);
+    }).observe(cta);
+  }
+
   function init() {
     splitWords();
     reveals();
     header();
+    pastHero();
     langMenu();
     mobileMenu();
     rooms();

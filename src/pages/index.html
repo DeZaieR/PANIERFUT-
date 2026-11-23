@@ -29,7 +29,7 @@
           <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>{{hero.f.time2::Livré en <strong>2 à 3 jours</strong>, ou 24 h en Express}}</span></li>
           <li data-reveal><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v10H4zM2 7h20v4H2zM12 7v14M12 7c-2-4-6-4-6-1.5S10 7 12 7c2 0 6-1 6-1.5S14 3 12 7"/></svg><span>{{hero.f.trial::<strong>1 photo offerte</strong> pour tester}}</span></li>
         </ul>
-        <div class="hero__cta" data-reveal style="--d:.5s">
+        <div class="hero__cta" data-reveal style="--d:.5s" data-hero-actions>
           <a class="btn btn--gold btn--lg" href="{{@url contact/}}?type=devis" data-magnetic>{{cta.quote::Demander un devis}}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn--ghost btn--lg" href="#tarifs">{{cta.prices::Voir les tarifs}}</a>
         </div>
