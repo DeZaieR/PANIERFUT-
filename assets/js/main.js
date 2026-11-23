@@ -329,7 +329,9 @@
       progress.style.transform = `scaleX(${clamp(sy / docH, 0, 1)})`;
     });
 
-    const heroActions = $('[data-hero-actions]');
+    // Boutons du hero (accueil) ou de l'en-tête de page (métiers, blog) : tant qu'ils sont visibles,
+    // les boutons devis de l'en-tête et de la barre du bas restent en contour.
+    const heroActions = $('[data-hero-actions], .page-hero__actions');
     if (heroActions) {
       new IntersectionObserver(([e]) => {
         root.classList.toggle('is-past-hero', !e.isIntersecting && e.boundingClientRect.top < 0);
